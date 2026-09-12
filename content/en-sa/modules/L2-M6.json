@@ -1,0 +1,800 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "polite_imperative",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "kadā + V-āmaḥ",
+      "vayam + <place>-acc + gacchāmaḥ",
+      "kim + V-āmaḥ",
+      "mayā saha + V-tu",
+      "astu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A verb ending in -āmaḥ means 'we': gacchāmaḥ is 'we go', khādāmaḥ is 'we eat', paśyāmaḥ is 'we see'. L1 taught -mi for 'I' and -ti for 'he, she, your honour', and this is the third person-marking the course opens. It is built on the same stem those two were built on, so nothing about the verb changes except its last syllable."
+    },
+    {
+      "tag": "delta",
+      "text": "A suggestion is carried by the QUESTION, not by a special form of the verb. kim gacchāmaḥ? is 'shall we go?', and gacchāmaḥ on its own is 'we are going'. The same three words do statement and proposal; only kim and the rise at the end tell them apart."
+    },
+    {
+      "tag": "interference",
+      "text": "A grammar book will offer gacchema for 'let us go' — the optative, a whole mood with its own set of endings. This course writes it NOWHERE, in this module or any other. Everyday spoken Sanskrit proposes a plan in the plain present, and reaching for the optative here buys a paradigm the course cannot explain and does not need."
+    },
+    {
+      "tag": "free",
+      "text": "kadā asks 'when'. It stands where the answer will stand, exactly as kutra and kim have since L1-M2, and the answers cost nothing at all: adya, śvaḥ, prātaḥ, sāyam and pratidinam are all L1's words and none of them takes an ending."
+    },
+    {
+      "tag": "free",
+      "text": "There is no clock in this course yet. 'At six' and 'half past four' need a numeral system this module cannot afford beside a new person-ending, so a time is settled as a part of the day — prātaḥ, sāyam — and the hour waits for a later level."
+    },
+    {
+      "tag": "delta",
+      "text": "'With me' is mayā saha: the by-ending M4 opened, sitting on the person, and saha AFTER it. There is no preposition in the phrase and there is nothing in front of mayā."
+    },
+    {
+      "tag": "delta",
+      "text": "saha is POSTPOSITIVE — it follows the word it belongs to — which is the placement law L1-M10 taught for ca and this module simply reuses. mayā saha, never saha mayā, for the same reason it is pustakam phalam ca and never ca phalam."
+    },
+    {
+      "tag": "delta",
+      "text": "mayā is the 'by me, with me' shape of aham. L1-M1's row gave aham, mama ('my') and mahyam ('to me'); this is the fourth shape of that one word, and it is the shape saha reaches for."
+    },
+    {
+      "tag": "free",
+      "text": "astu closes a plan in one word: 'let it be', 'agreed', 'fine'. It is the same verb as L1-M3's asti with the -tu ending every request in this level carries — asti reports that something IS, astu accepts that it will be."
+    },
+    {
+      "tag": "free",
+      "text": "vayam is 'we', and you will hear it far less than English 'we'. The -āmaḥ ending has already said who is going, so the bare gacchāmaḥ is the normal shape and vayam is added only for weight or contrast — the same economy L1-M10 spent a whole rule on for aham."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "kadā gacchāmaḥ?",
+      "script": "कदा गच्छामः?",
+      "cue": "When shall we go?",
+      "literal": "when we-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kadā",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [
+              "kadā"
+            ],
+            "note": "'When'. It sits at the front, where the answer will sit, exactly as kutra does. L1 taught six question words and deliberately held this one back until there was a module that needed it."
+          },
+          {
+            "display": "gacchāmaḥ",
+            "cue": "we go · shall we go",
+            "tag": "delta",
+            "forms": [
+              "gacchāmaḥ"
+            ],
+            "note": "M2's verb of going with the 'we' ending on it. That module taught gacchati, gacchāmi and the past and future shapes; -āmaḥ is new here, and it is the whole delta of this module."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "Nobody is named in this question and nobody needs to be. The ending has already said that the speaker is one of the people going."
+          }
+        ],
+        "rules": [
+          3,
+          0,
+          1
+        ]
+      },
+      "trap": "English cannot ask this in two words. 'When shall we go?' needs a helper verb before it can propose anything, and here the plain present does the whole job with a question word in front of it.",
+      "sound": "ka-DAA GACH-chhaa-mah. The -chchh- of gacchāmaḥ is one long held cluster, and the final -aḥ is a light breath, not a syllable of its own.",
+      "variations": [
+        {
+          "display": "kadā vidyālayam gacchāmaḥ?",
+          "script": "कदा विद्यालयम् गच्छामः?",
+          "cue": "When shall we go to the school?",
+          "changed": "a destination is added in the bare accusative M6 taught, and the question around it does not move"
+        },
+        {
+          "display": "kadā bhavān gacchati?",
+          "script": "कदा भवान् गच्छति?",
+          "cue": "When are you going?",
+          "changed": "the question is asked OF somebody instead of about us both, so the ending goes back to the third person"
+        },
+        {
+          "display": "kutra gacchāmaḥ?",
+          "script": "कुत्र गच्छामः?",
+          "cue": "Where shall we go?",
+          "changed": "kadā gives way to M2's kutra — the two words occupy the same slot and ask different halves of the same plan"
+        }
+      ],
+      "mistake": {
+        "display": "kadā gacchema?",
+        "why": "gacchema is the optative, the mood a grammar offers for 'let us go'. It is a real form and this course writes it nowhere: the suggestion is already in the question, and gacchāmaḥ is what a speaker says."
+      },
+      "usage": "The question that starts a plan, and often the whole of somebody's first turn.",
+      "register": "neutral",
+      "mnemonic": "-mi is me, -ti is that one, -maḥ is the two of us and anyone else coming."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "vayam śvaḥ vidyālayam gacchāmaḥ.",
+      "script": "वयम् श्वः विद्यालयम् गच्छामः।",
+      "cue": "We are going to the school tomorrow.",
+      "literal": "we tomorrow school-to we-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vayam",
+            "cue": "we",
+            "tag": "delta",
+            "forms": [
+              "vayam"
+            ],
+            "note": "'We'. Written here once so that a learner has met it, and dropped in almost every other sentence of the module — the -āmaḥ ending has already said it."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (as the place gone to)",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's school in the shape a destination takes. Nothing about that shape changes because the verb now has two people in it."
+          },
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's 'tomorrow', unchanged and unchangeable — a time word in this course takes no ending at all."
+          }
+        ],
+        "rules": [
+          9,
+          0,
+          3
+        ]
+      },
+      "sound": "va-YAM SHVAH vid-YAA-la-yam GACH-chhaa-mah. śvaḥ is one syllable: the sh and the v run together with nothing between them.",
+      "variations": [
+        {
+          "display": "śvaḥ vidyālayam gacchāmaḥ.",
+          "script": "श्वः विद्यालयम् गच्छामः।",
+          "cue": "We are going to the school tomorrow.",
+          "changed": "vayam drops and the sentence means exactly the same thing — this is the normal shape, and the one above is the emphatic one"
+        },
+        {
+          "display": "vayam adya gṛham gacchāmaḥ.",
+          "script": "वयम् अद्य गृहम् गच्छामः।",
+          "cue": "We are going home today.",
+          "changed": "the day and the destination both change, and the ending carrying the two of us does not"
+        },
+        {
+          "display": "aham śvaḥ vidyālayam gacchāmi.",
+          "script": "अहम् श्वः विद्यालयम् गच्छामि।",
+          "cue": "I am going to the school tomorrow.",
+          "changed": "one person goes instead of two, so -maḥ becomes -mi and vayam becomes aham"
+        }
+      ],
+      "usage": "A plan stated rather than proposed — the answer to somebody else's kadā.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "kim adya pustakālayam gacchāmaḥ?",
+      "script": "किम् अद्य पुस्तकालयम् गच्छामः?",
+      "cue": "Shall we go to the library today?",
+      "literal": "(question) today library-to we-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's question marker at the front, and it is the only thing separating a proposal from a statement here. Everything after it would be a plain report of what we are doing."
+          },
+          {
+            "display": "gacchāmaḥ",
+            "cue": "we go · shall we go",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same three syllables as the sentence before, doing a different act because kim is standing in front of them."
+          },
+          {
+            "display": "pustakālayam",
+            "cue": "library (as the place gone to)",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's library as a destination. A compound is one word and one row, so the whole of it takes the one ending at the end."
+          }
+        ],
+        "rules": [
+          1,
+          0,
+          3
+        ]
+      },
+      "trap": "There is no word here for 'shall'. English builds a proposal out of a helper verb; this language builds it out of a question marker and the ordinary present, and the two sentences differ by one small word at the front.",
+      "variations": [
+        {
+          "display": "adya pustakālayam gacchāmaḥ.",
+          "script": "अद्य पुस्तकालयम् गच्छामः।",
+          "cue": "We are going to the library today.",
+          "changed": "kim drops and the proposal becomes a statement — the only change in the line"
+        },
+        {
+          "display": "kim śvaḥ pustakālayam gacchāmaḥ?",
+          "script": "किम् श्वः पुस्तकालयम् गच्छामः?",
+          "cue": "Shall we go to the library tomorrow?",
+          "changed": "the day moves and nothing else does, because a time word has no ending to move"
+        },
+        {
+          "display": "kim adya vidyālayam gacchāmaḥ?",
+          "script": "किम् अद्य विद्यालयम् गच्छामः?",
+          "cue": "Shall we go to the school today?",
+          "changed": "the destination changes and takes the same -am it took as a library"
+        }
+      ],
+      "mistake": {
+        "display": "kim adya pustakālayaḥ gacchāmaḥ?",
+        "why": "The library is left in its naming shape. A place you go TO takes the -am ending M6 opened, and the verb having two people in it changes nothing about that."
+      },
+      "usage": "The everyday proposal, and the sentence this module is really for.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "kṛpayā mayā saha āgacchatu.",
+      "script": "कृपया मया सह आगच्छतु।",
+      "cue": "Please come with me.",
+      "literal": "please by-me with let-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mayā",
+            "cue": "by me · with me",
+            "tag": "delta",
+            "forms": [
+              "mayā"
+            ],
+            "note": "The fourth shape of M1's aham: aham is 'I', mama is 'my', mahyam is 'to me', and mayā is 'by me'. It is the same -ā ending M4 put on yānena and mārgeṇa, on a person instead of a thing."
+          },
+          {
+            "display": "saha",
+            "cue": "with · together with",
+            "tag": "delta",
+            "forms": [
+              "saha"
+            ],
+            "note": "'With', and it stands AFTER the word it belongs to. That is the same placement law M10 taught for ca — it is mayā saha, and saha mayā is the English order put into Sanskrit words."
+          },
+          {
+            "display": "āgacchatu",
+            "cue": "please come · let (him) come",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please come', unchanged. The invitation is a request, so it carries the -tu ending every request in this level carries."
+          }
+        ],
+        "rules": [
+          5,
+          6,
+          7
+        ]
+      },
+      "trap": "English puts 'with' in front of 'me' and this language puts it behind. Worse, the pronoun itself changes shape — it is not aham with a word after it, it is mayā, and the two changes happen together.",
+      "sound": "kri-PA-yaa ma-YAA SA-ha aa-GACH-cha-tu. mayā is two beats with the long aa at the end, and saha is two short ones.",
+      "variations": [
+        {
+          "display": "mayā saha āgacchatu.",
+          "script": "मया सह आगच्छतु।",
+          "cue": "Please come with me.",
+          "changed": "kṛpayā drops and the invitation is exactly as courteous, because the courtesy was always in -tu"
+        },
+        {
+          "display": "kṛpayā mayā saha vidyālayam āgacchatu.",
+          "script": "कृपया मया सह विद्यालयम् आगच्छतु।",
+          "cue": "Please come to the school with me.",
+          "changed": "a destination is added, and mayā saha stays exactly where it was"
+        },
+        {
+          "display": "kṛpayā mayā saha gacchatu.",
+          "script": "कृपया मया सह गच्छतु।",
+          "cue": "Please come along with me.",
+          "changed": "M4's gacchatu replaces āgacchatu, so the movement is away rather than towards the speaker"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā saha mayā āgacchatu.",
+        "why": "saha has been put in front, where English puts 'with'. It is postpositive — it follows what it governs — for the same reason ca and api do, and an English speaker reaches for this order every time."
+      },
+      "usage": "The invitation itself, said to one person addressed as bhavān or bhavatī.",
+      "register": "neutral",
+      "mnemonic": "The little words that mean 'and', 'also' and 'with' all come after. Say the thing first, then say what you are doing to it."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "kṛpayā mayā saha bhojanam khādatu.",
+      "script": "कृपया मया सह भोजनम् खादतु।",
+      "cue": "Please have the meal with me.",
+      "literal": "please by-me with meal let-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saha",
+            "cue": "with · together with",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same two words as the sentence before, in front of a different verb. mayā saha is a unit and it does not rearrange itself for whatever follows."
+          },
+          {
+            "display": "khādatu",
+            "cue": "please eat · let (him) eat",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's offering shape, now carrying an invitation rather than a plate. Hosting and planning are built out of the same one ending."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal · food",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's meal, the thing eaten. The by-ending is on the person, not on the food — those are two different jobs and two different endings."
+          }
+        ],
+        "rules": [
+          5,
+          6,
+          8
+        ]
+      },
+      "sound": "kri-PA-yaa ma-YAA SA-ha BHO-ja-nam KHAA-da-tu. Said as one line, with the smallest of pauses after saha.",
+      "variations": [
+        {
+          "display": "mayā saha annam khādatu.",
+          "script": "मया सह अन्नम् खादतु।",
+          "cue": "Please eat with me.",
+          "changed": "M5's annam replaces the whole meal, and kṛpayā drops"
+        },
+        {
+          "display": "kṛpayā mayā saha jalam pibatu.",
+          "script": "कृपया मया सह जलम् पिबतु।",
+          "cue": "Please have some water with me.",
+          "changed": "eating becomes drinking; mayā saha does not notice"
+        },
+        {
+          "display": "kṛpayā mayā saha upaviśatu.",
+          "script": "कृपया मया सह उपविशतु।",
+          "cue": "Please sit with me.",
+          "changed": "L2-M1's upaviśatu takes no object at all, and mayā saha is still the whole of 'with me'"
+        }
+      ],
+      "usage": "An invitation to a meal rather than an offer of one — the difference from M5 is that the speaker is eating too.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "kim sāyam annam khādāmaḥ?",
+      "script": "किम् सायम् अन्नम् खादामः?",
+      "cue": "Shall we eat in the evening?",
+      "literal": "(question) in-the-evening food we-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khādāmaḥ",
+            "cue": "we eat · shall we eat",
+            "tag": "delta",
+            "forms": [
+              "khādāmaḥ"
+            ],
+            "note": "M4's verb of eating with the 'we' ending. It is built exactly as gacchāmaḥ is — the ending is the lesson, and it sits on any verb the course already teaches."
+          },
+          {
+            "display": "sāyam",
+            "cue": "in the evening",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's 'in the evening'. This is as precise as a time gets in this course: there is no clock here, and a part of the day is what a plan is settled on."
+          },
+          {
+            "display": "annam",
+            "cue": "food · cooked rice",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's food, and still the thing eaten rather than the person eating. Nothing about it changes because two people are now doing the eating."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "sāyam is 'in the evening' and that is the whole of the time. A learner who wants to say 'at seven' is reaching for a numeral system this course has not built yet, and the honest plan is made out of parts of the day.",
+      "sound": "KIM SAA-yam AN-nam khaa-DAA-mah. khādāmaḥ has two long aa vowels in a row and both are held.",
+      "variations": [
+        {
+          "display": "sāyam annam khādāmaḥ.",
+          "script": "सायम् अन्नम् खादामः।",
+          "cue": "We are eating in the evening.",
+          "changed": "kim drops and the proposal becomes the settled plan"
+        },
+        {
+          "display": "kim prātaḥ annam khādāmaḥ?",
+          "script": "किम् प्रातः अन्नम् खादामः?",
+          "cue": "Shall we eat in the morning?",
+          "changed": "M4's prātaḥ replaces sāyam — the other end of the day, and the same shape of sentence"
+        },
+        {
+          "display": "kim vayam sāyam bhojanam khādāmaḥ?",
+          "script": "किम् वयम् सायम् भोजनम् खादामः?",
+          "cue": "Shall we have the meal in the evening?",
+          "changed": "vayam is written out for weight and the food becomes a whole meal"
+        }
+      ],
+      "mistake": {
+        "display": "kim sāyam annam khādāmi?",
+        "why": "-mi is 'I'. This asks whether I, alone, shall eat — which is a strange question to put to somebody else. A joint plan needs the -maḥ ending."
+      },
+      "usage": "Settling the half of a plan that is about food, which in practice is most of it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "astu. śvaḥ prātaḥ gacchāmaḥ.",
+      "script": "अस्तु। श्वः प्रातः गच्छामः।",
+      "cue": "Agreed. We'll go tomorrow morning.",
+      "literal": "let-it-be. tomorrow in-the-morning we-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "astu",
+            "cue": "agreed · fine · let it be",
+            "tag": "delta",
+            "forms": [
+              "astu"
+            ],
+            "note": "'Let it be', and in a conversation about plans it is 'agreed'. It is M3's asti with the request ending: asti says something IS, astu accepts that it will be."
+          },
+          {
+            "display": "prātaḥ",
+            "cue": "in the morning · early",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's 'in the morning', stacked after śvaḥ with no word between them. Two time words in a row simply narrow each other."
+          },
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's 'tomorrow'. Together with prātaḥ it is as close to a time as this level gets, and it is close enough for a plan."
+          }
+        ],
+        "rules": [
+          8,
+          4,
+          0
+        ]
+      },
+      "sound": "AS-tu. SHVAH PRAA-tah GACH-chhaa-mah. astu is two quick beats and is usually said on its own before the rest follows.",
+      "variations": [
+        {
+          "display": "ām. śvaḥ prātaḥ gacchāmaḥ.",
+          "script": "आम्। श्वः प्रातः गच्छामः।",
+          "cue": "Yes. We'll go tomorrow morning.",
+          "changed": "M2's ām agrees instead — ām answers a question, astu accepts a proposal, and here either will do"
+        },
+        {
+          "display": "astu. sāyam gacchāmaḥ.",
+          "script": "अस्तु। सायम् गच्छामः।",
+          "cue": "Agreed. We'll go in the evening.",
+          "changed": "the time is renegotiated in the same breath as the agreement"
+        },
+        {
+          "display": "astu.",
+          "script": "अस्तु।",
+          "cue": "Agreed.",
+          "changed": "one word closes the plan and nothing else is needed, which is how a plan usually does close"
+        }
+      ],
+      "usage": "The word that ends the negotiation, said the moment the other person's suggestion is acceptable.",
+      "register": "neutral",
+      "mnemonic": "asti is 'it is'; astu is 'let it be'. One reports the world, the other agrees to it."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "kadā bhavān gṛham gacchati?",
+      "script": "कदा भवान् गृहम् गच्छति?",
+      "cue": "When are you going home?",
+      "literal": "when your-honour home-to goes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kadā",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same question word, now asked of one person rather than of us both. kadā does not change for who is being asked."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite 'you', still taking the third-person -ti verb. A module about 'we' does not disturb the register the course has spoken since M2."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "The -ti ending, back for one sentence. Setting it beside gacchāmaḥ is the clearest way to hear what -āmaḥ is doing."
+          }
+        ],
+        "rules": [
+          3,
+          0,
+          9
+        ]
+      },
+      "trap": "The ending changed and the word order did not. English marks the difference between 'are you going' and 'are we going' with a different pronoun; here it is the last syllable of the verb, and the pronoun is usually not there at all.",
+      "variations": [
+        {
+          "display": "kadā bhavatī gṛham gacchati?",
+          "script": "कदा भवती गृहम् गच्छति?",
+          "cue": "When are you going home?",
+          "changed": "the person asked is a woman, so bhavān becomes bhavatī — and the verb does not move, because it never agreed with gender"
+        },
+        {
+          "display": "bhavān kadā gṛham gacchati?",
+          "script": "भवान् कदा गृहम् गच्छति?",
+          "cue": "When are you going home?",
+          "changed": "kadā moves in behind the subject; the question is the same one and the emphasis shifts slightly onto the person"
+        },
+        {
+          "display": "aham sāyam gṛham gacchāmi.",
+          "script": "अहम् सायम् गृहम् गच्छामि।",
+          "cue": "I am going home in the evening.",
+          "changed": "the answer rather than the question, with the -mi ending because only one person is going"
+        }
+      ],
+      "usage": "Asked of the other person when the plan depends on their day rather than on yours.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "kim vayam puṣpāṇi paśyāmaḥ?",
+      "script": "किम् वयम् पुष्पाणि पश्यामः?",
+      "cue": "Shall we go and see the flowers?",
+      "literal": "(question) we flowers we-see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "paśyāmaḥ",
+            "cue": "we see · shall we see",
+            "tag": "delta",
+            "forms": [
+              "paśyāmaḥ"
+            ],
+            "note": "M4's verb of seeing with the 'we' ending. It is the third and last -āmaḥ shape this module writes: the ending is the lesson, and a fourth verb in it would teach nothing new."
+          },
+          {
+            "display": "vayam",
+            "cue": "we",
+            "tag": "delta",
+            "forms": [],
+            "note": "Written here for the second and last time in the module. Notice that the eight other sentences manage without it, which is the point."
+          },
+          {
+            "display": "puṣpāṇi",
+            "cue": "flowers",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's flowers, more than one of them. What is seen takes the same shape it takes as the thing that pleases you."
+          }
+        ],
+        "rules": [
+          0,
+          9,
+          1
+        ]
+      },
+      "sound": "KIM va-YAM push-PAA-ni pash-YAA-mah. The ṣ of puṣpāṇi and the ś of paśyāmaḥ are two different sh sounds; the first is made further back in the mouth.",
+      "variations": [
+        {
+          "display": "kim puṣpāṇi paśyāmaḥ?",
+          "script": "किम् पुष्पाणि पश्यामः?",
+          "cue": "Shall we see the flowers?",
+          "changed": "vayam drops, which is what nearly every real sentence does with it"
+        },
+        {
+          "display": "vayam puṣpāṇi paśyāmaḥ.",
+          "script": "वयम् पुष्पाणि पश्यामः।",
+          "cue": "We are looking at the flowers.",
+          "changed": "kim drops and the proposal becomes a report of what is happening"
+        },
+        {
+          "display": "kim bhavān puṣpāṇi paśyati?",
+          "script": "किम् भवान् पुष्पाणि पश्यति?",
+          "cue": "Do you see the flowers?",
+          "changed": "the question is put to the other person, so the ending goes back to -ti and the proposal becomes an ordinary question"
+        }
+      ],
+      "usage": "The kind of small suggestion a plan is actually made of, once the where and the when are settled.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "kim śvaḥ pustakālayam gacchāmaḥ? ām, astu.",
+      "script": "किम् श्वः पुस्तकालयम् गच्छामः? आम्, अस्तु।",
+      "cue": "Shall we go to the library tomorrow? Yes, agreed.",
+      "literal": "(question) tomorrow library-to we-go? yes, let-it-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "astu",
+            "cue": "agreed · fine · let it be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plan closing. Two words answer the whole proposal, and neither of them repeats a single word of it."
+          },
+          {
+            "display": "gacchāmaḥ",
+            "cue": "we go · shall we go",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ending this module exists for, in the sentence that shows what it is for: a proposal made and accepted in one exchange."
+          },
+          {
+            "display": "ām",
+            "cue": "yes",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'yes', answering the kim. ām answers the question; astu accepts the plan — and a speaker very often says both."
+          }
+        ],
+        "rules": [
+          1,
+          8,
+          0
+        ]
+      },
+      "trap": "The answer contains no verb at all. English repeats something — 'yes, let's' — and this exchange closes on two indeclinable words, one of which is a verb form doing no verb's work.",
+      "sound": "KIM SHVAH pus-ta-KAA-la-yam GACH-chhaa-mah? AAM, AS-tu. The answer is said quickly and lower than the question.",
+      "variations": [
+        {
+          "display": "kim śvaḥ pustakālayam gacchāmaḥ? astu.",
+          "script": "किम् श्वः पुस्तकालयम् गच्छामः? अस्तु।",
+          "cue": "Shall we go to the library tomorrow? Agreed.",
+          "changed": "astu alone answers, which is the commonest reply of the two"
+        },
+        {
+          "display": "kim adya pustakālayam gacchāmaḥ? ām.",
+          "script": "किम् अद्य पुस्तकालयम् गच्छामः? आम्।",
+          "cue": "Shall we go to the library today? Yes.",
+          "changed": "the day moves and the answer is the bare yes"
+        },
+        {
+          "display": "kim śvaḥ pustakālayam gacchāmaḥ? na, aham na gacchāmi.",
+          "script": "किम् श्वः पुस्तकालयम् गच्छामः? न, अहम् न गच्छामि।",
+          "cue": "Shall we go to the library tomorrow? No, I am not going.",
+          "changed": "the plan is declined, and the refusal drops to the -mi ending because it is only about the speaker"
+        }
+      ],
+      "mistake": {
+        "display": "kim śvaḥ pustakālayam gacchāmaḥ? ām, asti.",
+        "why": "asti reports that something exists — 'yes, it is' — which answers nothing that was asked. Agreeing to a plan is astu, with the same -tu ending every request in this level carries."
+      },
+      "usage": "The whole module in one exchange: a proposal carried by a question, and an agreement carried by one word.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "kadā vayam gṛham gacchāmaḥ?",
+      "script": "कदा वयम् गृहम् गच्छामः?",
+      "cue": "When are we going home?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "kṛpayā mayā saha pustakālayam āgacchatu.",
+      "script": "कृपया मया सह पुस्तकालयम् आगच्छतु।",
+      "cue": "Please come to the library with me."
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "astu. sāyam annam khādāmaḥ.",
+      "script": "अस्तु। सायम् अन्नम् खादामः।",
+      "cue": "Agreed. We'll eat in the evening."
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "kim adya pustakam paśyāmaḥ?",
+      "script": "किम् अद्य पुस्तकम् पश्यामः?",
+      "cue": "Shall we look at the book today?"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "kṛpayā mayā saha atra upaviśatu.",
+      "script": "कृपया मया सह अत्र उपविशतु।",
+      "cue": "Please sit here with me."
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "kadā bhavatī vidyālayam gacchati?",
+      "script": "कदा भवती विद्यालयम् गच्छति?",
+      "cue": "When are you going to the school?"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "vayam pratidinam vidyālayam gacchāmaḥ.",
+      "script": "वयम् प्रतिदिनम् विद्यालयम् गच्छामः।",
+      "cue": "We go to the school every day."
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "kim śvaḥ sāyam gacchāmaḥ? ām.",
+      "script": "किम् श्वः सायम् गच्छामः? आम्।",
+      "cue": "Shall we go tomorrow evening? Yes."
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "mama mitram mayā saha āgacchatu.",
+      "script": "मम मित्रम् मया सह आगच्छतु।",
+      "cue": "Let my friend come with me."
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "kadā gacchāmaḥ? prātaḥ gacchāmaḥ.",
+      "script": "कदा गच्छामः? प्रातः गच्छामः।",
+      "cue": "When shall we go? We'll go in the morning."
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "astu, kintu aham adya na gacchāmi.",
+      "script": "अस्तु, किन्तु अहम् अद्य न गच्छामि।",
+      "cue": "Agreed, but I am not going today."
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "rāmaḥ mayā saha pustakālayam gacchati.",
+      "script": "रामः मया सह पुस्तकालयम् गच्छति।",
+      "cue": "Rāma is going to the library with me."
+    },
+    {
+      "id": "L2-M6-C13",
+      "display": "vayam sundarāṇi puṣpāṇi paśyāmaḥ.",
+      "script": "वयम् सुन्दराणि पुष्पाणि पश्यामः।",
+      "cue": "We are looking at the beautiful flowers."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

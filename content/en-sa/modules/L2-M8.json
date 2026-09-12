@@ -1,0 +1,803 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "polite_imperative",
+      "verbless_nominal_present",
+      "participial_past"
+    ],
+    "allowedPatterns": [
+      "kim + jātam",
+      "mama + N + na asti",
+      "kṛpayā + sāhāyyam + karotu",
+      "aham + asvasthaḥ / asvasthā",
+      "aham + na + jānāmi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "'What happened?' is kim jātam? — literally 'what has come about?'. jātam is a participle, not a past-tense verb, so this is the same kind of past M5 settled for the whole course: something in the shape of an adjective, describing how things now stand."
+    },
+    {
+      "tag": "interference",
+      "text": "A grammar will answer 'what happened' with kim abhavat, the imperfect. That is real Sanskrit and this course writes it NOWHERE — not here, not in any module, not in any level. A whole extra set of past endings would be a system nothing else in the course could explain, and everyday speech has jātam."
+    },
+    {
+      "tag": "delta",
+      "text": "jātam is a FIXED phrase, learned whole, the way kṣamyatām was in L2-M1. Those are the only two of their kind in this level. The family jātam belongs to means something passive — gataḥ is 'gone', pītam is 'drunk' — so this course does not build new ones, and you will not see kṛtam or naṣṭam anywhere."
+    },
+    {
+      "tag": "delta",
+      "text": "'My book is missing' is mama pustakam na asti — 'my book is not'. There is no verb here for losing or missing: the thing simply is not, and M3's na asti says it. Reaching for a participle to say 'lost' is reaching into the family this course keeps shut."
+    },
+    {
+      "tag": "delta",
+      "text": "Help is something you DO: sāhāyyam karotu is 'please give help', built out of M4's verb of doing with the request ending M1 opened. Nothing new is needed to ask for it."
+    },
+    {
+      "tag": "free",
+      "text": "samasyā names the trouble without naming anybody. samasyā asti — 'there is a problem' — is the calmest sentence in this module, and it is calm because nobody is its subject."
+    },
+    {
+      "tag": "free",
+      "text": "na jānāmi is 'I do not know', with na in front of the verb exactly where it has been since M2. jānāti is the same verb about somebody else, and admitting you do not know is an ordinary sentence, not an apology."
+    },
+    {
+      "tag": "delta",
+      "text": "asvasthaḥ is 'unwell' of a man and asvasthā of a woman, agreeing with the speaker the way khinnaḥ and santuṣṭaḥ did in M9. It is built out of a- ('not') on svastha ('well'), so the word carries its own negative and needs no na."
+    },
+    {
+      "tag": "interference",
+      "text": "A complaint in this register keeps its subject impersonal. kim jātam? and samasyā asti say that something is wrong; bhavān with an accusing verb says who did it. English slides into the second person the moment it is annoyed, and the third-person politeness of this course is what stops a complaint becoming a charge."
+    },
+    {
+      "tag": "free",
+      "text": "vaidyaḥ is a doctor, vaidyā a woman doctor. mām is 'me' as the thing a verb reaches for — M1's aham gave aham, mama and mahyam, and this is the fourth shape of that one word after M6's mayā."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "kim jātam?",
+      "script": "किम् जातम्?",
+      "cue": "What happened?",
+      "literal": "what come-about",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jātam",
+            "cue": "happened · come about",
+            "tag": "delta",
+            "forms": [
+              "jātam"
+            ],
+            "note": "'Happened'. Learn it whole, the way kṣamyatām was learned whole: it is a participle, and the family it belongs to is one this course does not otherwise open."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's kim in its 'what' reading, which it has carried since that module. The same word that turns a statement into a question also asks what."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Not here, and worth noticing. jātam is doing the work on its own — two words are a whole question, with no verb of being between them."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          1
+        ]
+      },
+      "trap": "There is no past-tense verb in this question. English has one — 'happened' — and here the word is closer to 'come about', an adjective-shaped thing describing how matters now stand.",
+      "sound": "KIM JAA-tam. Two beats, the second long. The whole question is said quickly and low.",
+      "variations": [
+        {
+          "display": "kim atra jātam?",
+          "script": "किम् अत्र जातम्?",
+          "cue": "What happened here?",
+          "changed": "M7's atra pins the question to a place, and the two words at the heart of it do not move"
+        },
+        {
+          "display": "kim jātam? kim samasyā asti?",
+          "script": "किम् जातम्? किम् समस्या अस्ति?",
+          "cue": "What happened? Is there a problem?",
+          "changed": "a second question follows, with kim in its OTHER reading — the yes/no marker — in the same breath as its 'what' reading"
+        },
+        {
+          "display": "kim hyaḥ jātam?",
+          "script": "किम् ह्यः जातम्?",
+          "cue": "What happened yesterday?",
+          "changed": "M5's hyaḥ puts the trouble in the past explicitly; jātam was already past and the time word only says when"
+        }
+      ],
+      "mistake": {
+        "display": "kim abhavat?",
+        "why": "abhavat is the imperfect — the form a grammar gives for 'what happened', and a perfectly real one. This course writes no imperfect anywhere at all, and a speaker asks kim jātam?"
+      },
+      "usage": "Said to the room rather than to a person, which is what keeps it from being an accusation.",
+      "register": "neutral",
+      "mnemonic": "jātam is 'come about'. Nothing in it is a verb of doing, and nobody in it is to blame."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "atra samasyā asti.",
+      "script": "अत्र समस्या अस्ति।",
+      "cue": "There is a problem here.",
+      "literal": "here problem is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "delta",
+            "forms": [
+              "samasyā"
+            ],
+            "note": "'A problem'. It is feminine, so an adjective on it would end -ā — and in this module nothing is put on it, because naming the trouble plainly is the whole technique."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'there is'. The problem exists; nobody caused it, and nobody is mentioned. That is what makes the sentence usable in front of the person responsible."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's 'here', at the front where a place word sits. It locates the trouble without locating anybody in it."
+          }
+        ],
+        "rules": [
+          5,
+          8,
+          3
+        ]
+      },
+      "trap": "English almost cannot say this without 'we have a problem' or 'you have a problem'. This sentence has no person in it at all, and the politeness of the whole module comes from that absence.",
+      "variations": [
+        {
+          "display": "samasyā asti.",
+          "script": "समस्या अस्ति।",
+          "cue": "There is a problem.",
+          "changed": "the place drops and two words carry the whole complaint"
+        },
+        {
+          "display": "atra samasyā na asti.",
+          "script": "अत्र समस्या न अस्ति।",
+          "cue": "There is no problem here.",
+          "changed": "na goes in front of asti and the sentence becomes the reassurance rather than the complaint"
+        },
+        {
+          "display": "mama samasyā asti.",
+          "script": "मम समस्या अस्ति।",
+          "cue": "I have a problem.",
+          "changed": "mama replaces atra, and the frame becomes the one M3 used for having things"
+        }
+      ],
+      "usage": "Said at a counter, and said in a tone that expects the other person to help rather than defend themselves.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "mama pustakam na asti.",
+      "script": "मम पुस्तकम् न अस्ति।",
+      "cue": "My book is missing.",
+      "literal": "my book not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "interference",
+            "forms": [],
+            "note": "M3's frame doing a job English does with a verb. 'Is missing' is here simply 'is not' — there is no verb of losing in this course, and none is wanted."
+          },
+          {
+            "display": "jātam",
+            "cue": "happened · come about",
+            "tag": "delta",
+            "forms": [],
+            "note": "Not in this sentence, deliberately. The family jātam belongs to would give naṣṭam for 'lost', and this course opens exactly one member of it and no more."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's book, the thing that is not there. It stays in its naming shape because it is the subject of asti, even though English makes it the thing lost."
+          }
+        ],
+        "rules": [
+          3,
+          2,
+          8
+        ]
+      },
+      "trap": "There is nothing in this sentence for 'missing'. A learner who has met a Sanskrit participle will want naṣṭam, and that word belongs to a passive family this course teaches one frozen member of. The book simply is not.",
+      "sound": "MA-ma PUS-ta-kam NA AS-ti. na and asti run together in speech and are kept apart on the page.",
+      "variations": [
+        {
+          "display": "mama dūrabhāṣaḥ na asti.",
+          "script": "मम दूरभाषः न अस्ति।",
+          "cue": "My telephone is missing.",
+          "changed": "M7's telephone is the thing gone, and the frame does not notice what is in it"
+        },
+        {
+          "display": "mama pustakam atra na asti.",
+          "script": "मम पुस्तकम् अत्र न अस्ति।",
+          "cue": "My book is not here.",
+          "changed": "a place is added and the complaint narrows from lost to not-in-this-room"
+        },
+        {
+          "display": "kim jātam? mama pustakam na asti.",
+          "script": "किम् जातम्? मम पुस्तकम् न अस्ति।",
+          "cue": "What happened? My book is missing.",
+          "changed": "the question and its answer stand together, which is how this module's two halves fit"
+        }
+      ],
+      "mistake": {
+        "display": "mama pustakam naṣṭam.",
+        "why": "naṣṭam is a real word, 'lost', and it is the bare participle this course keeps out. Its family is passive and productive, and opening it here would put a paradigm in the course that nothing else explains. The missing book is written with na asti."
+      },
+      "usage": "The complaint a traveller makes most often, and it needs no new grammar at all.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "kṛpayā sāhāyyam karotu.",
+      "script": "कृपया साहाय्यम् करोतु।",
+      "cue": "Please help me.",
+      "literal": "please help let-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sāhāyyam",
+            "cue": "help · assistance",
+            "tag": "delta",
+            "forms": [
+              "sāhāyyam"
+            ],
+            "note": "'Help', and it is a THING, not an action. What you ask for is that somebody DO help, which is why the verb beside it is M4's verb of doing."
+          },
+          {
+            "display": "karotu",
+            "cue": "please do · let (him) do",
+            "tag": "delta",
+            "forms": [
+              "karotu"
+            ],
+            "note": "M4's karoti with the request ending. That module taught karoti, karomi and the past and future shapes; this is the asking shape, and it is new here."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please', optional as always. A request for help carries it more often than an offer of fruit does, but the courtesy is still in the -tu."
+          }
+        ],
+        "rules": [
+          4,
+          8,
+          5
+        ]
+      },
+      "trap": "There is no 'me' in this sentence and it does not need one. 'Do help' with nobody named is a complete request, and the person it is for is the one saying it.",
+      "sound": "kri-PA-yaa saa-HAAY-yam ka-RO-tu. The -yy- of sāhāyyam is held: say the y twice.",
+      "variations": [
+        {
+          "display": "sāhāyyam karotu.",
+          "script": "साहाय्यम् करोतु।",
+          "cue": "Please help.",
+          "changed": "kṛpayā drops and the request is still courteous, because the courtesy was always the ending"
+        },
+        {
+          "display": "kṛpayā mama sāhāyyam karotu.",
+          "script": "कृपया मम साहाय्यम् करोतु।",
+          "cue": "Please help me.",
+          "changed": "mama names whose help it is, which is how this language attaches the person to it"
+        },
+        {
+          "display": "kṛpayā vaidyaḥ sāhāyyam karotu.",
+          "script": "कृपया वैद्यः साहाय्यम् करोतु।",
+          "cue": "Please let the doctor help.",
+          "changed": "somebody else is asked to do the helping, in the naming shape, and the verb does not move"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā sāhāyyam karoti.",
+        "why": "karoti reports that somebody does help — a statement about a third party. Asking for it needs karotu, and kṛpayā in front of a report leaves it a report, exactly as M5's offering plate showed."
+      },
+      "usage": "Said to a stranger, and the sentence most worth knowing in the whole module.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "aham na jānāmi.",
+      "script": "अहम् न जानामि।",
+      "cue": "I do not know.",
+      "literal": "I not know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "delta",
+            "forms": [
+              "jānāmi",
+              "jānāti"
+            ],
+            "note": "'I know', with jānāti for somebody else. Its citation shape here is the first-person one, as icchāmi's was in M3, because that is the shape a learner needs first."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'not', in front of the verb where it has been since that module. Nothing about admitting ignorance needs a special negative."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "Written here because the sentence is short enough to carry it and the admission is personal. The -mi ending would have said it alone."
+          }
+        ],
+        "rules": [
+          6,
+          8,
+          5
+        ]
+      },
+      "variations": [
+        {
+          "display": "na jānāmi.",
+          "script": "न जानामि।",
+          "cue": "I do not know.",
+          "changed": "aham drops, which is the shape a speaker actually uses"
+        },
+        {
+          "display": "saḥ mārgam na jānāti.",
+          "script": "सः मार्गम् न जानाति।",
+          "cue": "He does not know the way.",
+          "changed": "the ignorance is somebody else's, so -mi becomes -ti, and M4's road is what is not known"
+        },
+        {
+          "display": "kṣamyatām. aham na jānāmi.",
+          "script": "क्षम्यताम्। अहम् न जानामि।",
+          "cue": "Sorry. I do not know.",
+          "changed": "L2-M1's apology goes in front, which is what softens the admission into an answer"
+        }
+      ],
+      "usage": "An ordinary answer, not an apology — though it is often given one, as the third variation shows.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "aham asvasthaḥ. kṛpayā vaidyaḥ mām paśyatu.",
+      "script": "अहम् अस्वस्थः। कृपया वैद्यः माम् पश्यतु।",
+      "cue": "I am unwell. Please have the doctor see me.",
+      "literal": "I unwell. please doctor me let-see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "asvasthaḥ",
+            "cue": "unwell · not well",
+            "tag": "delta",
+            "forms": [
+              "asvasthaḥ",
+              "asvasthā"
+            ],
+            "note": "'Unwell', agreeing with the speaker: asvasthaḥ from a man, asvasthā from a woman. The a- at the front is the negative, so no na is needed anywhere."
+          },
+          {
+            "display": "vaidyaḥ",
+            "cue": "doctor",
+            "tag": "delta",
+            "forms": [
+              "vaidyaḥ",
+              "vaidyā"
+            ],
+            "note": "'A doctor', with vaidyā for a woman. It is the subject of the request: what is asked is that the doctor do the looking."
+          },
+          {
+            "display": "mām",
+            "cue": "me (as the thing a verb reaches)",
+            "tag": "delta",
+            "forms": [
+              "mām"
+            ],
+            "note": "The fifth shape of M1's aham, after mama, mahyam and M6's mayā. This is the one a verb reaches for, the shape pustakam takes when it is wanted."
+          }
+        ],
+        "rules": [
+          7,
+          9,
+          4
+        ]
+      },
+      "trap": "The first half has no verb at all. 'I am unwell' is two words side by side, exactly as 'I am Indian' was in M1 — the word for 'am' this course teaches is asti, and it is not used of yourself in this frame.",
+      "sound": "a-HAM as-VAS-thah. kri-PA-yaa VAID-yah MAAM PASH-ya-tu. asvasthaḥ has a consonant cluster in the middle, sv-sth, and both halves are said fully.",
+      "variations": [
+        {
+          "display": "aham asvasthā. kṛpayā vaidyā mām paśyatu.",
+          "script": "अहम् अस्वस्था। कृपया वैद्या माम् पश्यतु।",
+          "cue": "I am unwell. Please have the doctor see me.",
+          "changed": "a woman is speaking and the doctor is a woman too, so BOTH words fork — and mām, which is not a gendered word, does not"
+        },
+        {
+          "display": "aham asvasthaḥ.",
+          "script": "अहम् अस्वस्थः।",
+          "cue": "I am unwell.",
+          "changed": "the request drops and two words are the whole statement"
+        },
+        {
+          "display": "mama bhrātā asvasthaḥ. kṛpayā vaidyaḥ āgacchatu.",
+          "script": "मम भ्राता अस्वस्थः। कृपया वैद्यः आगच्छतु।",
+          "cue": "My brother is unwell. Please have the doctor come.",
+          "changed": "somebody else is unwell, so the adjective agrees with him instead, and the request becomes one to come rather than to look"
+        }
+      ],
+      "mistake": {
+        "display": "aham asvasthaḥ asmi.",
+        "why": "asmi is a real word for 'I am' and this course writes it nowhere. Since M1 a sentence like this has been two naming words side by side — aham chātraḥ, aham bhāratīyaḥ — and adding a verb of being is the English shape put into Sanskrit words."
+      },
+      "usage": "Said to somebody who can act on it. The polite third-person register is what makes the second half a request rather than an order.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "mama bhaginī asvasthā.",
+      "script": "मम भगिनी अस्वस्था।",
+      "cue": "My sister is unwell.",
+      "literal": "my sister unwell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "asvasthaḥ",
+            "cue": "unwell · not well",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here as asvasthā, because the person it describes is a woman. The fork is on whoever is unwell, not on whoever is speaking about them."
+          },
+          {
+            "display": "bhaginī",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's sister. The relationship nouns of that module are what this one describes as unwell, and none of them changes shape to do it."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "Here as mama, 'my'. Three words with no verb between them are a complete sentence, which is still the commonest shape in this course."
+          }
+        ],
+        "rules": [
+          7,
+          8,
+          5
+        ]
+      },
+      "variations": [
+        {
+          "display": "mama bhrātā asvasthaḥ.",
+          "script": "मम भ्राता अस्वस्थः।",
+          "cue": "My brother is unwell.",
+          "changed": "a brother instead of a sister, so the adjective goes back to -aḥ"
+        },
+        {
+          "display": "mama bhaginī asvasthā, ataḥ sā gṛhe asti.",
+          "script": "मम भगिनी अस्वस्था, अतः सा गृहे अस्ति।",
+          "cue": "My sister is unwell, so she is at home.",
+          "changed": "M9's ataḥ hangs a consequence on the end, and the sentence becomes a small report"
+        },
+        {
+          "display": "mama mātā asvasthā.",
+          "script": "मम माता अस्वस्था।",
+          "cue": "My mother is unwell.",
+          "changed": "another of M2's relationship words takes the slot, agreeing exactly the same way"
+        }
+      ],
+      "usage": "Given as the reason for an absence, and usually with no more detail than this.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "kim jātam? mama yānam atra na asti.",
+      "script": "किम् जातम्? मम यानम् अत्र न अस्ति।",
+      "cue": "What happened? My vehicle is not here.",
+      "literal": "what come-about? my vehicle here not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jātam",
+            "cue": "happened · come about",
+            "tag": "delta",
+            "forms": [],
+            "note": "The question opening a complaint, with its answer following in the same breath. Notice that the answer contains no past at all — the trouble is stated as it stands now."
+          },
+          {
+            "display": "yānam",
+            "cue": "vehicle · conveyance",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's vehicle in its naming shape, as the thing that is not there. It was the means of travelling in that module and is the subject of a complaint in this one."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "na asti again, doing what English does with a verb of disappearing. Two modules of this course now rest on that one small frame."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          8
+        ]
+      },
+      "trap": "Both halves avoid saying who. English would reach for 'somebody has taken my car'; here the question is impersonal and the answer says only that the vehicle is not where it was.",
+      "variations": [
+        {
+          "display": "kim jātam? mama pustakam atra na asti.",
+          "script": "किम् जातम्? मम पुस्तकम् अत्र न अस्ति।",
+          "cue": "What happened? My book is not here.",
+          "changed": "the thing missing changes and neither half of the frame moves"
+        },
+        {
+          "display": "mama yānam atra na asti. kṛpayā sāhāyyam karotu.",
+          "script": "मम यानम् अत्र न अस्ति। कृपया साहाय्यम् करोतु।",
+          "cue": "My vehicle is not here. Please help me.",
+          "changed": "the question gives way to the request, which is the more useful of the two halves"
+        },
+        {
+          "display": "kim jātam? mama yānam atra asti.",
+          "script": "किम् जातम्? मम यानम् अत्र अस्ति।",
+          "cue": "What happened? My vehicle is here.",
+          "changed": "na drops and the answer contradicts the worry — one small word between a complaint and a relief"
+        }
+      ],
+      "usage": "The whole shape of a calm complaint: ask what has come about, then say what is not there.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "kimartham bhavān khinnaḥ? samasyā asti.",
+      "script": "किमर्थम् भवान् खिन्नः? समस्या अस्ति।",
+      "cue": "Why are you upset? There is a problem.",
+      "literal": "why your-honour sad? problem is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "delta",
+            "forms": [],
+            "note": "The answer, and it names no one. Somebody has asked what is wrong and the reply gives the trouble without giving a culprit."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'downcast', agreeing with bhavān. khinnā is the same question asked of a woman, exactly as that module taught it."
+          },
+          {
+            "display": "kimartham",
+            "cue": "why · for what reason",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'why'. It asks for a reason, which is what the second half gives — and there is no word for 'because' needed between them."
+          }
+        ],
+        "rules": [
+          5,
+          8,
+          6
+        ]
+      },
+      "trap": "The answer does not begin with a word for 'because'. M9's yataḥ exists and is not needed: a reason may simply follow the question, and the join is the full stop.",
+      "sound": "ki-MAR-tham bha-VAAN KHIN-nah? sa-mas-YAA AS-ti. The question rises and the answer falls flat.",
+      "variations": [
+        {
+          "display": "kimartham bhavatī khinnā? samasyā asti.",
+          "script": "किमर्थम् भवती खिन्ना? समस्या अस्ति।",
+          "cue": "Why are you upset? There is a problem.",
+          "changed": "asked of a woman, so both the address and the adjective fork — and the answer, having no person in it, does not"
+        },
+        {
+          "display": "kimartham bhavān khinnaḥ? yataḥ mama pustakam na asti.",
+          "script": "किमर्थम् भवान् खिन्नः? यतः मम पुस्तकम् न अस्ति।",
+          "cue": "Why are you upset? Because my book is missing.",
+          "changed": "M9's yataḥ is written out and the reason becomes explicit, which is the fuller and slightly heavier version"
+        },
+        {
+          "display": "kimartham bhavān khinnaḥ?",
+          "script": "किमर्थम् भवान् खिन्नः?",
+          "cue": "Why are you upset?",
+          "changed": "the question stands alone, waiting for whatever answer comes"
+        }
+      ],
+      "mistake": {
+        "display": "kimartham bhavān khinnā?",
+        "why": "khinnā is the shape used of a woman and bhavān is the address used to a man. An adjective in this course agrees with whoever it describes, and the two halves of this question have been let out of step."
+      },
+      "usage": "Asked gently. The answer keeps the trouble impersonal, which is what lets the conversation continue.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "kṣamyatām. mama samasyā asti. kṛpayā sāhāyyam karotu.",
+      "script": "क्षम्यताम्। मम समस्या अस्ति। कृपया साहाय्यम् करोतु।",
+      "cue": "Excuse me. I have a problem. Please help me.",
+      "literal": "be-forgiven. my problem is. please help let-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṣamyatām",
+            "cue": "sorry · forgive me",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's fixed apology, opening a request rather than closing an incident. It is the level's other frozen form, and it is doing the work English gives to 'excuse me'."
+          },
+          {
+            "display": "sāhāyyam",
+            "cue": "help · assistance",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ask, at the end where the point of a turn goes. Everything before it is context, and this course puts context first."
+          },
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "delta",
+            "forms": [],
+            "note": "The trouble, named in one word between the apology and the request. Three short sentences are a whole approach to a stranger."
+          }
+        ],
+        "rules": [
+          5,
+          4,
+          8
+        ]
+      },
+      "trap": "Three separate sentences, not one. English would build a single long line — 'sorry, I've got a problem, could you help' — and here each piece is closed before the next begins.",
+      "sound": "ksham-ya-TAAM. MA-ma sa-mas-YAA AS-ti. kri-PA-yaa saa-HAAY-yam ka-RO-tu. The apology is said first and alone.",
+      "variations": [
+        {
+          "display": "kṣamyatām. kṛpayā sāhāyyam karotu.",
+          "script": "क्षम्यताम्। कृपया साहाय्यम् करोतु।",
+          "cue": "Excuse me. Please help me.",
+          "changed": "the trouble is left unsaid, which is what you do when it is obvious"
+        },
+        {
+          "display": "kṣamyatām. aham asvasthaḥ. kṛpayā sāhāyyam karotu.",
+          "script": "क्षम्यताम्। अहम् अस्वस्थः। कृपया साहाय्यम् करोतु।",
+          "cue": "Excuse me. I am unwell. Please help me.",
+          "changed": "the trouble named is the speaker's own health, and the shape of the approach is unchanged"
+        },
+        {
+          "display": "mama samasyā asti. kim bhavān sāhāyyam karoti?",
+          "script": "मम समस्या अस्ति। किम् भवान् साहाय्यम् करोति?",
+          "cue": "I have a problem. Will you help me?",
+          "changed": "the request is rebuilt as a question, which asks whether help is coming instead of asking for it"
+        }
+      ],
+      "usage": "The whole module in three short sentences, and the way to open with a stranger who is busy.",
+      "register": "neutral",
+      "mnemonic": "Apologise, name the trouble, ask. Three sentences and three full stops, in that order."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "kim jātam? mama pustakam na asti.",
+      "script": "किम् जातम्? मम पुस्तकम् न अस्ति।",
+      "cue": "What happened? My book is missing."
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "kṛpayā vaidyaḥ āgacchatu.",
+      "script": "कृपया वैद्यः आगच्छतु।",
+      "cue": "Please have the doctor come."
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "sā asvasthā, ataḥ sā gṛhe asti.",
+      "script": "सा अस्वस्था, अतः सा गृहे अस्ति।",
+      "cue": "She is unwell, so she is at home."
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "aham mārgam na jānāmi.",
+      "script": "अहम् मार्गम् न जानामि।",
+      "cue": "I do not know the way."
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "mama samasyā asti. kṛpayā sāhāyyam karotu.",
+      "script": "मम समस्या अस्ति। कृपया साहाय्यम् करोतु।",
+      "cue": "I have a problem. Please help me."
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "kimartham bhavatī khinnā?",
+      "script": "किमर्थम् भवती खिन्ना?",
+      "cue": "Why are you upset?"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "rāmaḥ asvasthaḥ. vaidyaḥ tatra asti.",
+      "script": "रामः अस्वस्थः। वैद्यः तत्र अस्ति।",
+      "cue": "Rāma is unwell. The doctor is there."
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "saḥ mām na jānāti.",
+      "script": "सः माम् न जानाति।",
+      "cue": "He does not know me."
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "kṣamyatām. aham na jānāmi.",
+      "script": "क्षम्यताम्। अहम् न जानामि।",
+      "cue": "Sorry. I do not know."
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "mama dūrabhāṣaḥ na asti. kim jātam?",
+      "script": "मम दूरभाषः न अस्ति। किम् जातम्?",
+      "cue": "My telephone is missing. What happened?"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "vaidyā mām paśyatu.",
+      "script": "वैद्या माम् पश्यतु।",
+      "cue": "Let the doctor see me."
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "atra samasyā na asti.",
+      "script": "अत्र समस्या न अस्ति।",
+      "cue": "There is no problem here."
+    },
+    {
+      "id": "L2-M8-C13",
+      "display": "kim bhavān asvasthaḥ?",
+      "script": "किम् भवान् अस्वस्थः?",
+      "cue": "Are you unwell?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
