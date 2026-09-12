@@ -1169,21 +1169,28 @@ second that was BORN conforming to the no-reading rule.** English (L1) → Sansk
 rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: decisions a brief must
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
-[`docs/122-llm-review-en-sa-L1-L2.md`](docs/122-llm-review-en-sa-L1-L2.md) — one document, now five
-waves, forty-six sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+[`docs/122-llm-review-en-sa-L1-L2.md`](docs/122-llm-review-en-sa-L1-L2.md) — one document, now six
+waves, fifty-six sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
 modules and ten cumulative indexes closing at **139 surfaces**, and the emitted `courses.json`
 lists all ten courses. The chrome is English (`revealLabel` = "Reveal the Sanskrit") and the switcher offers the
-pair as `english → sanskrit`. **Its L2–L5 ladders stay `draft: true`** — a level's flag clears only
-when all ten of its rungs are authored. #613 opened L2 with `L2-M1` and `L2-M2` against the L2 briefs (#612),
-and #614 added `L2-M3` (the a-stem adjective made productive across three genders and into the
-accusative), `L2-M4` (the instrumental — the level's first new case — and the `-taḥ` direction
-family) and `L2-M5` (an offer that is an imperative, and `alam` + instrumental as a refusal that
-negates nothing), so a build now reports `en-sa: 15 modules (L1-M1..M10, L2-M1..M5)` and closes at
-**208 surfaces**; L2-M6–M10 and the whole of L3–L5 are still #423's ratified placeholder lists with
-nothing authored in them.
+pair as `english → sanskrit`. **LEVEL 2 IS NOW CLOSED AND ITS `draft` FLAG IS OFF (#615)** — a level's
+flag clears only when all ten of its rungs are authored, and unlike L1, whose flag waited for a
+separate graduation issue, L2's came off with its tenth rung. #613 opened L2 with `L2-M1` and
+`L2-M2` against the L2 briefs (#612); #614 added `L2-M3` (the a-stem adjective made productive
+across three genders and into the accusative), `L2-M4` (the instrumental — the level's first new
+case — and the `-taḥ` direction family) and `L2-M5` (an offer that is an imperative, and `alam` +
+instrumental as a refusal that negates nothing); and #615 closed it with `L2-M6` (the first-person
+plural, and a suggestion carried by a question rather than by the optative), `L2-M7` (a phone call
+that opens with `namaste`, and a module that says out loud that `dūrabhāṣaḥ` is a twentieth-century
+coinage), `L2-M8` (`kim jātam?`, with the imperfect named in English prose and written nowhere),
+`L2-M9` (comparison as an ablative, with no word for "than" anywhere on the page) and `L2-M10`
+(four-sentence accounts whose participial past forks once, at the speaker, and forks whole). A build
+now reports `en-sa: 20 modules (L1-M1..M10, L2-M1..M10)` and closes at **247 surfaces**; the whole of
+L3–L5 is still #423's ratified placeholder lists with nothing authored in them, and all three keep
+`draft: true`.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
 rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
@@ -1210,8 +1217,8 @@ surfaces) before a single display was written; and M10's first draft of S03's th
 (`… paṭhiṣyati lekhiṣyati ca?`) actually tripped the line at `shown but untaught: 2 surfaces`, and
 was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
-neither the graduation nor either L2 wave (#613, #614) touched it — L2 writes no new proper noun at
-all, and the only names in the level are L1-M1's `rāmaḥ` and `sītā`.
+neither the graduation nor any of the three L2 waves (#613, #614, #615) touched it — the whole of L2
+writes no new proper noun at all, and the only names in the level are L1-M1's `rāmaḥ` and `sītā`.
 
 **The font measurement of #605 was re-run against the content that now exists, not against the
 plan.** `docs/121` §10 read `@fontsource`'s SOURCE faces on 2026-09-12, before a single module was
@@ -2368,9 +2375,9 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Ten courses now ship — **465
+  content" boot screen, because no module had cleared the gate. Ten courses now ship — **470
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko, and
-  fifteen on en-sa, which is all of L1 plus the first five rungs of L2 (#611, #613, #614) — every one
+  twenty on en-sa, which is the whole of L1 and the whole of L2 (#611, #613, #614, #615) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

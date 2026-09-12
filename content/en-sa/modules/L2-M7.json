@@ -1,0 +1,800 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "polite_imperative",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "namaste + . + aham + N-nom + vadāmi",
+      "kaḥ / kā + bhavān / bhavatī",
+      "kim + bhavān + śṛṇoti",
+      "N-dat + saṃdeśaḥ + asti",
+      "dūrabhāṣeṇa + vadatu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A call opens with namaste — the word M2 taught for arriving and leaving both, and the word a spoken-Sanskrit speaker genuinely says when the phone is picked up. There is no separate telephone greeting in this language, and this course will not invent one."
+    },
+    {
+      "tag": "free",
+      "text": "dūrabhāṣaḥ is a MODERN word, and you should know that while you learn it. It was coined in the twentieth century by the spoken-Sanskrit movement out of dūra ('far') and bhāṣa ('speech'), because there were no telephones in the language's classical life. It is the word people use; it is not an ancient one."
+    },
+    {
+      "tag": "delta",
+      "text": "A caller names himself in the plain naming shape: aham rāmaḥ vadāmi, 'I, Rāma, am speaking'. There is no separate word for 'this is' and no special form for a name on the phone."
+    },
+    {
+      "tag": "delta",
+      "text": "kaḥ asks 'who' of a man and kā of a woman — the question word itself changes, which no question word in L1 did. M2's kim covered every question that level asked; a call is the first job that genuinely needs to ask who."
+    },
+    {
+      "tag": "delta",
+      "text": "vadati is 'speaks': vadāmi when it is me, vadatu when it is a request. One verb, the same three endings the course has been building on since M4, and it is what a call is made of."
+    },
+    {
+      "tag": "delta",
+      "text": "śṛṇoti is 'hears' and śṛṇomi is 'I hear'. A bad line is aham na śṛṇomi, with na in front of the verb exactly where M2 put it."
+    },
+    {
+      "tag": "delta",
+      "text": "The telephone you speak BY takes the by-ending M4 opened: dūrabhāṣeṇa vadati is 'speaks on the telephone'. It is the same -ena that sits on yānena and jalena, and the telephone is a means of speaking in exactly the way a vehicle is a means of travelling."
+    },
+    {
+      "tag": "free",
+      "text": "saṃdeśaḥ is a message, and it is a modern use of an old word in the same way dūrabhāṣaḥ is a modern word. Its nasal is written INSIDE the token, which is correct: that is a join inside one word, like the one in saṃskṛtam. The rule this course holds is only that no word ENDS in it."
+    },
+    {
+      "tag": "free",
+      "text": "The call closes with the two words M1 and M2 already gave: dhanyavādaḥ and namaste. The same greeting that opened it closes it, which is the cheapest thing in this course and the most used."
+    },
+    {
+      "tag": "interference",
+      "text": "Both sides of the call speak the polite register, all the way through: bhavān or bhavatī with a third-person verb. English drops into first names on the phone almost at once; here the address does not move, and a name is never used to call somebody's attention because this course opens no vocative at all."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "namaste. aham rāmaḥ vadāmi.",
+      "script": "नमस्ते। अहम् रामः वदामि।",
+      "cue": "Hello. Rāma speaking.",
+      "literal": "hello. I Rāma speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "delta",
+            "forms": [
+              "vadati",
+              "vadāmi",
+              "vadatu"
+            ],
+            "note": "'Speaks'. Here as vadāmi, 'I speak', which is what a caller says about himself. vadatu is the request shape, and all three are one word and one row."
+          },
+          {
+            "display": "namaste",
+            "cue": "hello · goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's greeting, opening a phone call. There is no telephone word in this language, and a spoken-Sanskrit speaker really does answer with this one."
+          },
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name in its plain naming shape, sitting beside aham with nothing joining them. English needs 'this is'; here the two words simply stand together."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "English answers a phone with a word that means nothing else — 'hello' is for telephones and doorways and little else. namaste is the ordinary greeting doing an extra job, so nothing here is special to a phone at all.",
+      "sound": "na-mas-TE. a-HAM RAA-mah va-DAA-mi. vadāmi has a short first a and a long second one: va-DAA-mi.",
+      "variations": [
+        {
+          "display": "namaste. aham sītā vadāmi.",
+          "script": "नमस्ते। अहम् सीता वदामि।",
+          "cue": "Hello. Sītā speaking.",
+          "changed": "a woman names herself, and only the name changes — vadāmi never agreed with gender"
+        },
+        {
+          "display": "aham rāmaḥ vadāmi.",
+          "script": "अहम् रामः वदामि।",
+          "cue": "Rāma speaking.",
+          "changed": "the greeting drops, which is what happens when the call has already been answered"
+        },
+        {
+          "display": "namaskāraḥ. aham rāmaḥ vadāmi.",
+          "script": "नमस्कारः। अहम् रामः वदामि।",
+          "cue": "Greetings. Rāma speaking.",
+          "changed": "M2's other greeting opens instead — a shade more formal and equally ordinary"
+        }
+      ],
+      "mistake": {
+        "display": "namaste. aham rāma vadāmi.",
+        "why": "The name has been cut back to its bare stem. A caller names himself in the naming shape, rāmaḥ — the shape that ends -aḥ is not decoration, it is what makes the word the subject of the sentence."
+      },
+      "usage": "The first thing said on either end of a call, by the person who dialled and by the person who picked up.",
+      "register": "neutral",
+      "mnemonic": "vadāmi is what you DO on a phone, and it ends in the same -mi as gacchāmi and paṭhāmi. Nothing about the telephone changes the verb."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "kaḥ bhavān?",
+      "script": "कः भवान्?",
+      "cue": "Who is this?",
+      "literal": "who your-honour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kaḥ",
+            "cue": "who (of a man)",
+            "tag": "delta",
+            "forms": [
+              "kaḥ",
+              "kā"
+            ],
+            "note": "'Who', and it forks: kaḥ asks about a man, kā about a woman. M2's kim asked everything L1 needed; a phone call is the first place that has to ask who."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite 'you'. There is no verb in this question at all — two words in the naming shape, side by side, are a complete sentence in this language."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "Not in this sentence, and that is the point. kim asks what; kaḥ asks who, and the two have never been the same question."
+          }
+        ],
+        "rules": [
+          3,
+          9,
+          2
+        ]
+      },
+      "trap": "There is no verb here and there does not need to be. English cannot ask 'who is this?' without 'is'; this language sets the question word beside the person and stops.",
+      "sound": "KAH bha-VAAN. Both words end in the light breath this course writes -aḥ and -n; neither is stressed hard.",
+      "variations": [
+        {
+          "display": "kā bhavatī?",
+          "script": "का भवती?",
+          "cue": "Who is this?",
+          "changed": "the person asked is a woman, so BOTH words fork — the question word as well as the address"
+        },
+        {
+          "display": "kaḥ vadati?",
+          "script": "कः वदति?",
+          "cue": "Who is speaking?",
+          "changed": "a verb is added and the address drops, which is the blunter version of the same question"
+        },
+        {
+          "display": "kaḥ dūrabhāṣeṇa vadati?",
+          "script": "कः दूरभाषेण वदति?",
+          "cue": "Who is speaking on the telephone?",
+          "changed": "the means is named, using the by-ending M4 opened"
+        }
+      ],
+      "mistake": {
+        "display": "kaḥ bhavatī?",
+        "why": "kaḥ is the shape used of a man. Asked of a woman it is kā bhavatī — the question word agrees with who is being asked, which is a thing no L1 question word did."
+      },
+      "usage": "Asked when the voice is not recognised, and not thought rude.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "kā bhavatī? aham sītā vadāmi.",
+      "script": "का भवती? अहम् सीता वदामि।",
+      "cue": "Who is this? Sītā speaking.",
+      "literal": "who your-honour(f)? I Sītā speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kaḥ",
+            "cue": "who (of a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here as kā, asked of a woman. The two shapes are one word and one row, exactly as bhavān and bhavatī were in M2."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name, answering in the same naming shape rāmaḥ used. A name does not change because it is spoken into a telephone."
+          },
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "delta",
+            "forms": [],
+            "note": "vadāmi again, unchanged for a woman speaking. The verb in this language marks person and never gender in the present."
+          }
+        ],
+        "rules": [
+          3,
+          2,
+          4
+        ]
+      },
+      "trap": "Two things forked in the first half and nothing forked in the second. kā and bhavatī both moved because a woman is being asked; vadāmi did not move at all, because a present-tense verb here never notices gender.",
+      "variations": [
+        {
+          "display": "kaḥ bhavān? aham rāmaḥ vadāmi.",
+          "script": "कः भवान्? अहम् रामः वदामि।",
+          "cue": "Who is this? Rāma speaking.",
+          "changed": "the whole exchange between two men, with both halves of the fork going the other way"
+        },
+        {
+          "display": "kā bhavatī? aham adhyāpikā vadāmi.",
+          "script": "का भवती? अहम् अध्यापिका वदामि।",
+          "cue": "Who is this? The teacher speaking.",
+          "changed": "the answer is a role rather than a name, in the same naming shape"
+        },
+        {
+          "display": "kā bhavatī? aham sītā.",
+          "script": "का भवती? अहम् सीता।",
+          "cue": "Who is this? I'm Sītā.",
+          "changed": "the verb drops and two naming words answer on their own, exactly as the question was asked"
+        }
+      ],
+      "usage": "The whole of a phone opening, in two turns, with the register never moving off bhavatī.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "kim bhavān śṛṇoti?",
+      "script": "किम् भवान् शृणोति?",
+      "cue": "Can you hear me?",
+      "literal": "(question) your-honour hears",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śṛṇoti",
+            "cue": "hears · listens",
+            "tag": "delta",
+            "forms": [
+              "śṛṇoti",
+              "śṛṇomi"
+            ],
+            "note": "'Hears'. śṛṇomi is 'I hear'. Between them they are most of what gets said on a bad line, and neither needs an object to be a complete sentence."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "The polite 'you' with its third-person verb, which is the register this course has spoken since M2 and does not leave on the telephone."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's yes/no marker at the front. It is what makes this a question rather than a report that somebody can hear."
+          }
+        ],
+        "rules": [
+          5,
+          9,
+          4
+        ]
+      },
+      "trap": "There is no 'me' in this sentence. English needs an object — 'can you hear ME' — and here the verb stands alone, because what is being asked is whether hearing is happening at all.",
+      "sound": "KIM bha-VAAN SHRI-no-ti. The śṛ- of śṛṇoti is a sh followed by the short ri vowel, all in one beat.",
+      "variations": [
+        {
+          "display": "kim bhavatī śṛṇoti?",
+          "script": "किम् भवती शृणोति?",
+          "cue": "Can you hear me?",
+          "changed": "asked of a woman; the address forks and the verb does not"
+        },
+        {
+          "display": "bhavān śṛṇoti.",
+          "script": "भवान् शृणोति।",
+          "cue": "You can hear me.",
+          "changed": "kim drops and the question becomes the relieved statement that follows it"
+        },
+        {
+          "display": "kim bhavān śṛṇoti? ām, śṛṇomi.",
+          "script": "किम् भवान् शृणोति? आम्, शृणोमि।",
+          "cue": "Can you hear me? Yes, I can hear you.",
+          "changed": "the answer is added, and the ending swings from -ti to -mi because the person hearing is now the one speaking"
+        }
+      ],
+      "mistake": {
+        "display": "kim bhavān śṛṇomi?",
+        "why": "-mi is 'I'. This asks whether I hear your honour, which is the opposite question. The ending has to follow whoever is doing the hearing."
+      },
+      "usage": "The first thing said when the line is bad, and often the only thing said for a while.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "aham na śṛṇomi. kṛpayā punaḥ vadatu.",
+      "script": "अहम् न शृणोमि। कृपया पुनः वदतु।",
+      "cue": "I can't hear you. Please say that again.",
+      "literal": "I not hear. please again let-speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śṛṇoti",
+            "cue": "hears · listens",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here as śṛṇomi with na in front of it. Negation in this course has been one word in front of the verb since M2, and it has not changed."
+          },
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here as vadatu, the request shape. Asking somebody to repeat themselves is an ordinary request and carries the ordinary -tu."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'again', which did the work of 'more' at a table and does the work of 'repeat' on a telephone. The word did not change; the verb in front of it did."
+          }
+        ],
+        "rules": [
+          5,
+          4,
+          8
+        ]
+      },
+      "trap": "'Say that again' has no 'that' in it. punaḥ vadatu is 'speak again', and the thing to be repeated is never named — which is how this course also said 'more food'.",
+      "sound": "a-HAM NA SHRI-no-mi. kri-PA-yaa PU-nah va-DA-tu. The second half is said faster, the way a request usually is.",
+      "variations": [
+        {
+          "display": "aham na śṛṇomi.",
+          "script": "अहम् न शृणोमि।",
+          "cue": "I can't hear you.",
+          "changed": "the complaint stands alone and the request is left to be understood"
+        },
+        {
+          "display": "kṛpayā punaḥ vadatu.",
+          "script": "कृपया पुनः वदतु।",
+          "cue": "Please say that again.",
+          "changed": "the request stands alone, which is the politer half to say first"
+        },
+        {
+          "display": "sā na śṛṇoti. kṛpayā punaḥ vadatu.",
+          "script": "सा न शृणोति। कृपया पुनः वदतु।",
+          "cue": "She can't hear you. Please say that again.",
+          "changed": "somebody else is the one who cannot hear, so the ending moves to -ti and the request does not move at all"
+        }
+      ],
+      "usage": "Said without apology. Asking for a repetition is not an admission of anything in this register.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "sītā dūrabhāṣeṇa vadati.",
+      "script": "सीता दूरभाषेण वदति।",
+      "cue": "Sītā is on the telephone.",
+      "literal": "Sītā by-telephone speaks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dūrabhāṣaḥ",
+            "cue": "telephone",
+            "tag": "delta",
+            "forms": [
+              "dūrabhāṣaḥ",
+              "dūrabhāṣeṇa"
+            ],
+            "note": "'Telephone', built from dūra ('far') and bhāṣa ('speech'). It is a twentieth-century coinage, not a classical word. Here in the by-shape: you speak BY the telephone."
+          },
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain third-person shape, reporting about somebody who is not the speaker. This is the sentence you say to the person standing next to you, not into the phone."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name as the subject. A compound noun in the by-shape sits between the subject and the verb with nothing marking it as an instrument except its own ending."
+          }
+        ],
+        "rules": [
+          6,
+          1,
+          4
+        ]
+      },
+      "trap": "English needs a preposition — ON the telephone — and here the whole of it is the -ena at the end of the word. Looking for a separate word to carry 'on' is looking for something that is not there.",
+      "sound": "SEE-taa doo-ra-BHAA-she-na VA-da-ti. dūrabhāṣeṇa is six beats; the ṣ is a sh made with the tongue curled back.",
+      "variations": [
+        {
+          "display": "rāmaḥ dūrabhāṣeṇa vadati.",
+          "script": "रामः दूरभाषेण वदति।",
+          "cue": "Rāma is on the telephone.",
+          "changed": "the person speaking changes, and the instrument's ending does not notice"
+        },
+        {
+          "display": "aham dūrabhāṣeṇa vadāmi.",
+          "script": "अहम् दूरभाषेण वदामि।",
+          "cue": "I am on the telephone.",
+          "changed": "the speaker reports on themselves, so -ti becomes -mi"
+        },
+        {
+          "display": "dūrabhāṣaḥ atra asti.",
+          "script": "दूरभाषः अत्र अस्ति।",
+          "cue": "The telephone is here.",
+          "changed": "the telephone stops being the means and becomes the thing talked about, so it goes back to its naming shape"
+        }
+      ],
+      "mistake": {
+        "display": "sītā dūrabhāṣaḥ vadati.",
+        "why": "The telephone is left in its naming shape, which makes it a second subject. The means of doing something takes the -ena M4 opened — the same ending as yānena and jalena."
+      },
+      "usage": "Said about somebody, not to them: this is the line you get when you ask for a person who is already on another call.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "mama dūrabhāṣaḥ navaḥ asti.",
+      "script": "मम दूरभाषः नवः अस्ति।",
+      "cue": "My telephone is new.",
+      "literal": "my telephone new is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dūrabhāṣaḥ",
+            "cue": "telephone",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here in the naming shape, as the thing being described rather than the thing spoken by. Its -aḥ is what the adjective has to match."
+          },
+          {
+            "display": "navaḥ",
+            "cue": "new",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'new', agreeing with a masculine word and so ending -aḥ. A modern word takes the ordinary adjective paradigm like any other."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "Here as mama, 'my'. mama X asti is how this course has said 'I have X' since M3, and it says it about a telephone the same way."
+          }
+        ],
+        "rules": [
+          1,
+          6,
+          8
+        ]
+      },
+      "variations": [
+        {
+          "display": "mama dūrabhāṣaḥ purāṇaḥ asti.",
+          "script": "मम दूरभाषः पुराणः अस्ति।",
+          "cue": "My telephone is old.",
+          "changed": "M3's purāṇaḥ replaces navaḥ, and it agrees the same way"
+        },
+        {
+          "display": "mama dūrabhāṣaḥ na asti.",
+          "script": "मम दूरभाषः न अस्ति।",
+          "cue": "I do not have a telephone.",
+          "changed": "the adjective drops and na denies the whole thing, which is this course's way of saying you do not have something"
+        },
+        {
+          "display": "bhavataḥ dūrabhāṣaḥ navaḥ asti.",
+          "script": "भवतः दूरभाषः नवः अस्ति।",
+          "cue": "Your telephone is new.",
+          "changed": "M2's 'of your honour' takes the place of mama, and the rest of the sentence is untouched"
+        }
+      ],
+      "usage": "Small talk, and the one sentence in the module that is not part of a call.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "bhavate saṃdeśaḥ asti.",
+      "script": "भवते संदेशः अस्ति।",
+      "cue": "There is a message for you.",
+      "literal": "to-your-honour message is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saṃdeśaḥ",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [
+              "saṃdeśaḥ"
+            ],
+            "note": "'A message' — an old word doing a modern job. Its nasal is written inside the token, which is a join inside one word and correct; no word in this course ENDS in one."
+          },
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'to your honour', the shape that carried the liking frame and carries this one. bhavatyai is the same thing said to a woman."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'there is'. The message exists and somebody is the one it exists FOR, which is the whole of the construction."
+          }
+        ],
+        "rules": [
+          7,
+          8,
+          9
+        ]
+      },
+      "trap": "This is a 'there is' sentence with a person attached, not a 'you have' sentence. The message is the subject; your honour is only who it is for — the same shape of thought as the liking frame from M1.",
+      "variations": [
+        {
+          "display": "bhavatyai saṃdeśaḥ asti.",
+          "script": "भवत्यै संदेशः अस्ति।",
+          "cue": "There is a message for you.",
+          "changed": "said to a woman, so bhavate becomes bhavatyai — and the message does not move"
+        },
+        {
+          "display": "mama saṃdeśaḥ asti.",
+          "script": "मम संदेशः अस्ति।",
+          "cue": "I have a message.",
+          "changed": "the 'to' shape gives way to the 'my' shape, and the sentence becomes possession rather than delivery"
+        },
+        {
+          "display": "bhavate saṃdeśaḥ na asti.",
+          "script": "भवते संदेशः न अस्ति।",
+          "cue": "There is no message for you.",
+          "changed": "na in front of asti denies the whole thing, exactly as M3 taught"
+        }
+      ],
+      "usage": "Said by whoever answered the phone earlier, to the person it was for.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "rāmaḥ gṛhe na asti. kṛpayā punaḥ dūrabhāṣeṇa vadatu.",
+      "script": "रामः गृहे न अस्ति। कृपया पुनः दूरभाषेण वदतु।",
+      "cue": "Rāma is not at home. Please call again.",
+      "literal": "Rāma at-home not is. please again by-telephone let-speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dūrabhāṣaḥ",
+            "cue": "telephone",
+            "tag": "delta",
+            "forms": [],
+            "note": "In the by-shape again, now inside a request. 'Call again' in this course is 'speak again by telephone' — there is no separate verb for telephoning."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "Here as gṛhe, 'at home'. M6 gave three shapes of this word and this is the one for where somebody is, as against gṛham for where they are going."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "free",
+            "forms": [],
+            "note": "'Again' doing its third job in three modules: more food, say it again, call again. One small word covering what English spreads over three."
+          }
+        ],
+        "rules": [
+          6,
+          4,
+          8
+        ]
+      },
+      "trap": "'Call again' is built out of nothing new: punaḥ from M5, dūrabhāṣeṇa from four sentences ago, and the -tu ending from M1. A learner looking for a verb meaning 'to telephone' is looking for a word this language did not need.",
+      "sound": "RAA-mah GRI-he NA AS-ti. kri-PA-yaa PU-nah doo-ra-BHAA-she-na va-DA-tu. The first half is said flat, the second with the small lift a request carries.",
+      "variations": [
+        {
+          "display": "sītā gṛhe na asti. kṛpayā punaḥ dūrabhāṣeṇa vadatu.",
+          "script": "सीता गृहे न अस्ति। कृपया पुनः दूरभाषेण वदतु।",
+          "cue": "Sītā is not at home. Please call again.",
+          "changed": "the person who is out changes, and nothing else in either half moves"
+        },
+        {
+          "display": "rāmaḥ gṛhe asti.",
+          "script": "रामः गृहे अस्ति।",
+          "cue": "Rāma is at home.",
+          "changed": "na drops and the call succeeds, which is the other half of this exchange"
+        },
+        {
+          "display": "rāmaḥ gṛhe na asti. kṛpayā sāyam punaḥ vadatu.",
+          "script": "रामः गृहे न अस्ति। कृपया सायम् पुनः वदतु।",
+          "cue": "Rāma is not at home. Please call again in the evening.",
+          "changed": "a time is added out of M4's stock, and the telephone is left unsaid because it is obvious"
+        }
+      ],
+      "mistake": {
+        "display": "rāmaḥ gṛham na asti. kṛpayā punaḥ dūrabhāṣeṇa vadatu.",
+        "why": "gṛham is where you are GOING; gṛhe is where you ARE. M6 opened both shapes and this sentence needs the second one — being at home is not motion towards it."
+      },
+      "usage": "The answer given to a caller by whoever is in the house, and the politest form of it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "astu. dhanyavādaḥ. namaste.",
+      "script": "अस्तु। धन्यवादः। नमस्ते।",
+      "cue": "Fine. Thank you. Goodbye.",
+      "literal": "let-it-be. thanks. goodbye",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "namaste",
+            "cue": "hello · goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "The same word that opened the call, closing it. This is the cheapest thing M2 taught and it has now paid for itself in every module of the course."
+          },
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's thanks. On a telephone it does the work of English 'all right then' as much as of 'thank you' — it marks that the business of the call is over."
+          },
+          {
+            "display": "astu",
+            "cue": "agreed · fine · let it be",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's word of agreement, one module old and already the natural way to close. It accepts whatever was just said without repeating any of it."
+          }
+        ],
+        "rules": [
+          8,
+          0,
+          9
+        ]
+      },
+      "trap": "Three separate words, each a complete utterance, said one after another. English strings a closing together — 'all right then, thanks, bye' — and this language puts full stops between them.",
+      "sound": "AS-tu. dhan-ya-VAA-dah. na-mas-TE. Each is said on its own, with a real pause between, and the last one falls away.",
+      "variations": [
+        {
+          "display": "dhanyavādaḥ. namaste.",
+          "script": "धन्यवादः। नमस्ते।",
+          "cue": "Thank you. Goodbye.",
+          "changed": "astu drops, which is what happens when there was nothing to agree to"
+        },
+        {
+          "display": "astu. namaste.",
+          "script": "अस्तु। नमस्ते।",
+          "cue": "Fine. Goodbye.",
+          "changed": "the thanks drops and the close is two words, which is the commonest length"
+        },
+        {
+          "display": "astu. śvaḥ punaḥ vadatu.",
+          "script": "अस्तु। श्वः पुनः वदतु।",
+          "cue": "Fine. Call again tomorrow.",
+          "changed": "the close carries an instruction instead of a farewell, using M6's plan words"
+        }
+      ],
+      "usage": "How a call ends, and the last words either side says.",
+      "register": "neutral",
+      "mnemonic": "namaste opens the call and namaste closes it. One word, two doors."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "namaste. aham adhyāpakaḥ vadāmi.",
+      "script": "नमस्ते। अहम् अध्यापकः वदामि।",
+      "cue": "Hello. This is the teacher speaking."
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "kaḥ dūrabhāṣeṇa vadati?",
+      "script": "कः दूरभाषेण वदति?",
+      "cue": "Who is speaking on the telephone?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "kim bhavatī śṛṇoti?",
+      "script": "किम् भवती शृणोति?",
+      "cue": "Can you hear me?"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "sā na śṛṇoti. kṛpayā punaḥ vadatu.",
+      "script": "सा न शृणोति। कृपया पुनः वदतु।",
+      "cue": "She cannot hear. Please say that again."
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "mama bhrātā dūrabhāṣeṇa vadati.",
+      "script": "मम भ्राता दूरभाषेण वदति।",
+      "cue": "My brother is on the telephone."
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "bhavate saṃdeśaḥ asti. kṛpayā punaḥ dūrabhāṣeṇa vadatu.",
+      "script": "भवते संदेशः अस्ति। कृपया पुनः दूरभाषेण वदतु।",
+      "cue": "There is a message for you. Please call again."
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "rāmaḥ dūrabhāṣeṇa vadati, kintu aham na śṛṇomi.",
+      "script": "रामः दूरभाषेण वदति, किन्तु अहम् न शृणोमि।",
+      "cue": "Rāma is speaking on the telephone, but I cannot hear him."
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "mama dūrabhāṣaḥ purāṇaḥ asti.",
+      "script": "मम दूरभाषः पुराणः अस्ति।",
+      "cue": "My telephone is old."
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "adhyāpikā dūrabhāṣeṇa vadati.",
+      "script": "अध्यापिका दूरभाषेण वदति।",
+      "cue": "The teacher is on the telephone."
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "kṛpayā sāyam punaḥ vadatu.",
+      "script": "कृपया सायम् पुनः वदतु।",
+      "cue": "Please call again in the evening."
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "dhanyavādaḥ. namaste.",
+      "script": "धन्यवादः। नमस्ते।",
+      "cue": "Thank you. Goodbye."
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "sītā gṛhe na asti. saṃdeśaḥ asti.",
+      "script": "सीता गृहे न अस्ति। संदेशः अस्ति।",
+      "cue": "Sītā is not at home. There is a message."
+    },
+    {
+      "id": "L2-M7-C13",
+      "display": "kim saṃdeśaḥ asti? ām, asti.",
+      "script": "किम् संदेशः अस्ति? आम्, अस्ति।",
+      "cue": "Is there a message? Yes, there is."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

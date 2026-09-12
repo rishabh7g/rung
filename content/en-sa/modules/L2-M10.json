@@ -1,0 +1,795 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "participial_past",
+      "simple_present",
+      "simple_future",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "prathamam + <clause> + . + tataḥ + <clause>",
+      "anantaram + <clause>",
+      "ante + <clause>",
+      "aham + V-tavān / V-tavatī",
+      "<four-sentence account, aham written once at most>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "An account is told with four little words at the front of its sentences: prathamam ('first'), tataḥ ('then'), anantaram ('after that') and ante ('in the end'). None of them takes an ending, and each sits exactly where English puts its own — which makes them the easy half of this module."
+    },
+    {
+      "tag": "delta",
+      "text": "The hard half is agreement. Every -tavān and -tavatī in one account describes the SAME person, so all four participles fork together: a man's account is -tavān all the way through and a woman's is -tavatī all the way through. Halfway is not a mistake of style; it is an account that nobody could have told."
+    },
+    {
+      "tag": "delta",
+      "text": "The fork is on whoever the account is ABOUT, not on whoever is listening. When you are telling your own story that is you, so a woman says gatavatī even to a man; when the story is about somebody else, the participle follows them."
+    },
+    {
+      "tag": "interference",
+      "text": "aham belongs in at most the FIRST sentence of an account, and usually in none of them. The -mi and the participle have already said who is speaking, and an account that opens every sentence with aham is grammatical and audibly wrong — it is the loudest anglophone tell this course can fix."
+    },
+    {
+      "tag": "free",
+      "text": "tataḥ is one letter from M9's ataḥ ('so') and shares its shape with six other little words this course owns: kutaḥ, yataḥ, purataḥ, pṛṣṭhataḥ, vāmataḥ, dakṣiṇataḥ and agrataḥ. They are separate words with separate meanings, and swapping one for another builds a perfectly grammatical sentence that says something else."
+    },
+    {
+      "tag": "delta",
+      "text": "There is still no imperfect and there is still no bare participle. M8's ruling holds to the last account of the level: abhavat is written nowhere, and gataḥ, kṛtam and naṣṭam are written nowhere. An account wants them more than any other module and does not get them."
+    },
+    {
+      "tag": "free",
+      "text": "The account's verbs are L1's, every one: gatavān, khāditavān, paṭhitavān, likhitavān, kṛtavān and pītavān, each with its -tavatī twin. This module opens four small words and reuses everything else, which is what makes it the test of the level rather than an addition to it."
+    },
+    {
+      "tag": "free",
+      "text": "M9's yataḥ ('because') and ataḥ ('so') can sit inside an account, and M10's ca, kintu, tathāpi and api can join its clauses. An account is not a special kind of sentence; it is four ordinary ones in a row."
+    },
+    {
+      "tag": "delta",
+      "text": "Each sentence in an account is closed before the next begins. English runs an account together with 'and then' and 'after that I'; here every sentence ends, and the sequencer at the front of the next one is the whole of the join."
+    },
+    {
+      "tag": "free",
+      "text": "The account can be told in the future with exactly the same four words: śvaḥ prathamam vidyālayam gamiṣyāmi, tataḥ saṃskṛtam paṭhiṣyāmi. The sequencers know nothing about tense, and this is the cheapest thing in the module."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "prathamam aham vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram gṛham gatavān. ante bhojanam khāditavān.",
+      "script": "प्रथमम् अहम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते भोजनम् खादितवान्।",
+      "cue": "First I went to the school. Then I studied Sanskrit. After that I went home. In the end I had a meal.",
+      "literal": "first I school-to went. then Sanskrit read. after-that home-to went. in-the-end meal ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [
+              "prathamam"
+            ],
+            "note": "'First', opening an account. It takes no ending and never changes shape, and it sits at the very front of its sentence where English puts it too."
+          },
+          {
+            "display": "tataḥ",
+            "cue": "then · after that",
+            "tag": "delta",
+            "forms": [
+              "tataḥ"
+            ],
+            "note": "'Then'. It is one letter from M9's ataḥ ('so') and it is a different word: tataḥ orders events, ataḥ draws a conclusion."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's verb of going, here as gatavān — the past M5 settled for the whole course. It agrees with the speaker, so a woman says gatavatī."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "Four sentences and one aham. English repeats the subject in every clause, and here the participle's ending has already said who did it — writing aham four times is the single most audible mistake this module can produce.",
+      "sound": "pra-tha-MAM a-HAM vid-YAA-la-yam GA-ta-vaan. TA-tah sams-KRI-tam PA-thi-ta-vaan. The sequencer is said first and a little apart from what follows it.",
+      "variations": [
+        {
+          "display": "prathamam aham vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. anantaram gṛham gatavatī. ante bhojanam khāditavatī.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते भोजनम् खादितवती।",
+          "cue": "First I went to the school. Then I studied Sanskrit. After that I went home. In the end I had a meal.",
+          "changed": "the whole account is told by a woman, so ALL FOUR participles fork to -tavatī — this is the variation that matters most in this module"
+        },
+        {
+          "display": "prathamam aham vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. ante gṛham gatavān.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अन्ते गृहम् गतवान्।",
+          "cue": "First I went to the school. Then I studied Sanskrit. In the end I went home.",
+          "changed": "the account shortens to three sentences and anantaram simply drops; four is the shape, not a quota"
+        },
+        {
+          "display": "śvaḥ prathamam vidyālayam gamiṣyāmi. tataḥ saṃskṛtam paṭhiṣyāmi. ante gṛham gamiṣyāmi.",
+          "script": "श्वः प्रथमम् विद्यालयम् गमिष्यामि। ततः संस्कृतम् पठिष्यामि। अन्ते गृहम् गमिष्यामि।",
+          "cue": "Tomorrow I will go to the school first. Then I will study Sanskrit. In the end I will go home.",
+          "changed": "the same account in the future, with the same four sequencers and L1's -ṣyāmi endings — the little words know nothing about tense"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam aham vidyālayam gatavān. tataḥ aham saṃskṛtam paṭhitavān. anantaram aham gṛham gatavān. ante aham bhojanam khāditavān.",
+        "why": "Every sentence is grammatical and the account is wrong. aham belongs in the first sentence at most; the -tavān on each verb has already said who is speaking, and repeating the pronoun four times is the English habit showing through."
+      },
+      "usage": "The plainest account this course can tell: a day in four sentences.",
+      "register": "neutral",
+      "mnemonic": "prathamam, tataḥ, anantaram, ante. First, then, after that, in the end — four words in the order they will always come."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "prathamam aham pustakālayam gatavatī. tataḥ pustakam paṭhitavatī. anantaram gṛham gatavatī. ante jalam pītavatī.",
+      "script": "प्रथमम् अहम् पुस्तकालयम् गतवती। ततः पुस्तकम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते जलम् पीतवती।",
+      "cue": "First I went to the library. Then I read a book. After that I went home. In the end I drank some water.",
+      "literal": "first I library-to went. then book read. after-that home-to went. in-the-end water drank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anantaram",
+            "cue": "after that · afterwards",
+            "tag": "delta",
+            "forms": [
+              "anantaram"
+            ],
+            "note": "'After that'. It is the longest of the four sequencers and the one that carries the middle of an account, and like the others it takes no ending."
+          },
+          {
+            "display": "ante",
+            "cue": "in the end · finally",
+            "tag": "delta",
+            "forms": [
+              "ante"
+            ],
+            "note": "'In the end', closing an account. It is what tells a listener the story is finishing, and nothing else in the four sentences does."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "Here as gatavatī, because a woman is telling the account. This is the same one row M2 opened, and the fork is on the person and not on the verb."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The whole account is feminine because one person is telling it. Nothing in the story is about a woman except the person speaking, and that is enough to decide all four endings.",
+      "sound": "pra-tha-MAM a-HAM pus-ta-KAA-la-yam GA-ta-va-tee. AN-te JA-lam PEE-ta-va-tee. The -vatī ending is three light beats and the final one is long.",
+      "variations": [
+        {
+          "display": "prathamam aham pustakālayam gatavān. tataḥ pustakam paṭhitavān. anantaram gṛham gatavān. ante jalam pītavān.",
+          "script": "प्रथमम् अहम् पुस्तकालयम् गतवान्। ततः पुस्तकम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते जलम् पीतवान्।",
+          "cue": "First I went to the library. Then I read a book. After that I went home. In the end I drank some water.",
+          "changed": "the same account told by a man, with all four participles forking the other way"
+        },
+        {
+          "display": "prathamam aham pustakālayam gatavatī. tataḥ pustakam paṭhitavatī. anantaram gṛham gatavatī. ante dugdham pītavatī.",
+          "script": "प्रथमम् अहम् पुस्तकालयम् गतवती। ततः पुस्तकम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते दुग्धम् पीतवती।",
+          "cue": "First I went to the library. Then I read a book. After that I went home. In the end I drank some milk.",
+          "changed": "the last thing drunk changes and no ending moves, because a noun in this slot never touched the participle"
+        },
+        {
+          "display": "prathamam sā pustakālayam gatavatī. tataḥ pustakam paṭhitavatī. anantaram gṛham gatavatī. ante jalam pītavatī.",
+          "script": "प्रथमम् सा पुस्तकालयम् गतवती। ततः पुस्तकम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते जलम् पीतवती।",
+          "cue": "First she went to the library. Then she read a book. After that she went home. In the end she drank some water.",
+          "changed": "the account is about somebody else — 'she' — so sā appears once and the participles stay -tavatī"
+        }
+      ],
+      "usage": "A woman's account of the same kind of day, and the one to read straight after the first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "hyaḥ prathamam jalam pītavān. tataḥ phalam khāditavān. anantaram saṃskṛtam likhitavān. ante aham santuṣṭaḥ.",
+      "script": "ह्यः प्रथमम् जलम् पीतवान्। ततः फलम् खादितवान्। अनन्तरम् संस्कृतम् लिखितवान्। अन्ते अहम् सन्तुष्टः।",
+      "cue": "Yesterday I first drank some water. Then I ate a fruit. After that I wrote Sanskrit. In the end I was content.",
+      "literal": "yesterday first water drank. then fruit ate. after-that Sanskrit wrote. in-the-end I content",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tataḥ",
+            "cue": "then · after that",
+            "tag": "delta",
+            "forms": [],
+            "note": "Ordering the second event. Notice hyaḥ at the very front: a time word fixes the whole account, and the sequencers then order what happened inside it."
+          },
+          {
+            "display": "pibati",
+            "cue": "drinks",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's verb of drinking, here as pītavān. That module shipped the participle and this one only arranges it."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'yesterday'. One time word at the head of an account covers all four sentences, and repeating it in each would be as wrong as repeating aham."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          3
+        ]
+      },
+      "trap": "hyaḥ is said once and governs four sentences. English would put 'yesterday' in the first clause and then rely on the tense; here the participles are not a tense, so the time word carries the day on its own.",
+      "variations": [
+        {
+          "display": "hyaḥ prathamam jalam pītavatī. tataḥ phalam khāditavatī. anantaram saṃskṛtam likhitavatī. ante aham santuṣṭā.",
+          "script": "ह्यः प्रथमम् जलम् पीतवती। ततः फलम् खादितवती। अनन्तरम् संस्कृतम् लिखितवती। अन्ते अहम् सन्तुष्टा।",
+          "cue": "Yesterday I first drank some water. Then I ate a fruit. After that I wrote Sanskrit. In the end I was content.",
+          "changed": "the whole account told by a woman, ending in santuṣṭā — the adjective forks with the participles because it describes the same person"
+        },
+        {
+          "display": "hyaḥ prathamam jalam pītavān. tataḥ phalam khāditavān. ante saṃskṛtam likhitavān.",
+          "script": "ह्यः प्रथमम् जलम् पीतवान्। ततः फलम् खादितवान्। अन्ते संस्कृतम् लिखितवान्।",
+          "cue": "Yesterday I first drank some water. Then I ate a fruit. In the end I wrote Sanskrit.",
+          "changed": "three sentences instead of four, with anantaram dropped and the story none the worse"
+        },
+        {
+          "display": "hyaḥ prathamam jalam pītavān. tataḥ phalam khāditavān. anantaram saṃskṛtam likhitavān. ante aham khinnaḥ.",
+          "script": "ह्यः प्रथमम् जलम् पीतवान्। ततः फलम् खादितवान्। अनन्तरम् संस्कृतम् लिखितवान्। अन्ते अहम् खिन्नः।",
+          "cue": "Yesterday I first drank some water. Then I ate a fruit. After that I wrote Sanskrit. In the end I was downcast.",
+          "changed": "the ending reverses: M9's khinnaḥ in place of santuṣṭaḥ, and nothing before it moves"
+        }
+      ],
+      "mistake": {
+        "display": "hyaḥ prathamam jalam pītavān. ataḥ phalam khāditavān. anantaram saṃskṛtam likhitavān. ante aham santuṣṭaḥ.",
+        "why": "ataḥ has been written for tataḥ. It is a real word — M9's 'so, therefore' — and the sentence it makes is perfectly grammatical: 'so I ate a fruit'. It just is not what the account meant, and no test anywhere will catch it."
+      },
+      "usage": "An account that ends in how you felt rather than in what you did, which is the commonest way an account ends.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "prathamam rāmaḥ vidyālayam gatavān. tataḥ saḥ saṃskṛtam paṭhitavān. anantaram gṛham gatavān. ante phalam khāditavān.",
+      "script": "प्रथमम् रामः विद्यालयम् गतवान्। ततः सः संस्कृतम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते फलम् खादितवान्।",
+      "cue": "First Rāma went to the school. Then he studied Sanskrit. After that he went home. In the end he ate a fruit.",
+      "literal": "first Rāma school-to went. then he Sanskrit read. after-that home-to went. in-the-end fruit ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "Opening an account about somebody else. The sequencers do not care whose story it is."
+          },
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name as the subject of the account. He is named once, in the first sentence, and the participles carry him through the other three."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'he', written once for clarity and dropped in the last two sentences. The same economy that governs aham governs this word."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          6
+        ]
+      },
+      "trap": "The participles are masculine because RĀMA is a man, not because the speaker is. When an account is about somebody else, the fork follows them.",
+      "sound": "pra-tha-MAM RAA-mah vid-YAA-la-yam GA-ta-vaan. Said flatly, as a report rather than a story.",
+      "variations": [
+        {
+          "display": "prathamam sītā vidyālayam gatavatī. tataḥ sā saṃskṛtam paṭhitavatī. anantaram gṛham gatavatī. ante phalam khāditavatī.",
+          "script": "प्रथमम् सीता विद्यालयम् गतवती। ततः सा संस्कृतम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते फलम् खादितवती।",
+          "cue": "First Sītā went to the school. Then she studied Sanskrit. After that she went home. In the end she ate a fruit.",
+          "changed": "the account is about Sītā, so every participle forks with her"
+        },
+        {
+          "display": "prathamam rāmaḥ vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram gṛham gatavān. ante phalam khāditavān.",
+          "script": "प्रथमम् रामः विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते फलम् खादितवान्।",
+          "cue": "First Rāma went to the school. Then he studied Sanskrit. After that he went home. In the end he ate a fruit.",
+          "changed": "saḥ drops from the second sentence, which is what a speaker actually does once the subject is established"
+        },
+        {
+          "display": "prathamam aham vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram gṛham gatavān. ante phalam khāditavān.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते फलम् खादितवान्।",
+          "cue": "First I went to the school. Then I studied Sanskrit. After that I went home. In the end I ate a fruit.",
+          "changed": "the account becomes the speaker's own, so rāmaḥ and saḥ both give way to a single aham"
+        }
+      ],
+      "usage": "An account given about a third person — what somebody else did today.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "prathamam sītā pustakālayam gatavatī. tataḥ sā pustakam paṭhitavatī. anantaram gṛham gatavatī. ante dugdham pītavatī.",
+      "script": "प्रथमम् सीता पुस्तकालयम् गतवती। ततः सा पुस्तकम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते दुग्धम् पीतवती।",
+      "cue": "First Sītā went to the library. Then she read a book. After that she went home. In the end she drank some milk.",
+      "literal": "first Sītā library-to went. then she book read. after-that home-to went. in-the-end milk drank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ante",
+            "cue": "in the end · finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "Closing an account about somebody else. It is the only one of the four that tells a listener to stop expecting more."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name. Naming her once at the head of the account is what sets all four participles to -tavatī."
+          },
+          {
+            "display": "sā",
+            "cue": "she · that woman",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'she', standing in for the name in the second sentence and dropped thereafter."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          8
+        ]
+      },
+      "trap": "The gender of this account was decided by one word in the first sentence, and four verbs three sentences later still obey it. Nothing in the last sentence says who is being talked about at all.",
+      "variations": [
+        {
+          "display": "prathamam rāmaḥ pustakālayam gatavān. tataḥ saḥ pustakam paṭhitavān. anantaram gṛham gatavān. ante dugdham pītavān.",
+          "script": "प्रथमम् रामः पुस्तकालयम् गतवान्। ततः सः पुस्तकम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते दुग्धम् पीतवान्।",
+          "cue": "First Rāma went to the library. Then he read a book. After that he went home. In the end he drank some milk.",
+          "changed": "the same account about a man, with all four participles forking together"
+        },
+        {
+          "display": "prathamam sītā pustakālayam gatavatī. tataḥ sā pustakam paṭhitavatī. ante dugdham pītavatī.",
+          "script": "प्रथमम् सीता पुस्तकालयम् गतवती। ततः सा पुस्तकम् पठितवती। अन्ते दुग्धम् पीतवती।",
+          "cue": "First Sītā went to the library. Then she read a book. In the end she drank some milk.",
+          "changed": "three sentences, with anantaram dropped and the account still whole"
+        },
+        {
+          "display": "prathamam bhaginī pustakālayam gatavatī. tataḥ sā pustakam paṭhitavatī. anantaram gṛham gatavatī. ante dugdham pītavatī.",
+          "script": "प्रथमम् भगिनी पुस्तकालयम् गतवती। ततः सा पुस्तकम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते दुग्धम् पीतवती।",
+          "cue": "First my sister went to the library. Then she read a book. After that she went home. In the end she drank some milk.",
+          "changed": "a relationship word from M2 takes the name's place, and the participles do not notice"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam sītā pustakālayam gatavatī. tataḥ sā pustakam paṭhitavān. anantaram gṛham gatavatī. ante dugdham pītavān.",
+        "why": "Two of the four participles have forked one way and two the other. Every sentence here is grammatical on its own and the account is impossible: it would have to be about two different people who are also the same person. This is the defect this module exists to prevent."
+      },
+      "usage": "The companion of the account before it, and the pair is what makes the fork visible.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "prathamam aham yānena vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram saṃskṛtam likhitavān. ante gṛham gatavān.",
+      "script": "प्रथमम् अहम् यानेन विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् संस्कृतम् लिखितवान्। अन्ते गृहम् गतवान्।",
+      "cue": "First I went to the school by vehicle. Then I studied Sanskrit. After that I wrote Sanskrit. In the end I went home.",
+      "literal": "first I by-vehicle school-to went. then Sanskrit read. after-that Sanskrit wrote. in-the-end home-to went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anantaram",
+            "cue": "after that · afterwards",
+            "tag": "delta",
+            "forms": [],
+            "note": "The third sequencer, carrying the middle of a longer day. Two ordinary sentences between prathamam and ante are what an account is."
+          },
+          {
+            "display": "yānam",
+            "cue": "vehicle · conveyance",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's vehicle in its by-shape, yānena. An instrumental sits inside an account exactly as it sits inside any other sentence."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's road. It is not in this account and its by-shape mārgeṇa is in the second variation, which is how the two instrumentals of that module differ."
+          }
+        ],
+        "rules": [
+          0,
+          7,
+          6
+        ]
+      },
+      "trap": "The instrumental appears once, in the first sentence, and the other three sentences do not repeat it. How you travelled is said when you say you travelled, and not again.",
+      "sound": "pra-tha-MAM a-HAM YAA-ne-na vid-YAA-la-yam GA-ta-vaan. yānena is four beats with the long aa held at the front.",
+      "variations": [
+        {
+          "display": "prathamam aham yānena vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. anantaram saṃskṛtam likhitavatī. ante gṛham gatavatī.",
+          "script": "प्रथमम् अहम् यानेन विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। अनन्तरम् संस्कृतम् लिखितवती। अन्ते गृहम् गतवती।",
+          "cue": "First I went to the school by vehicle. Then I studied Sanskrit. After that I wrote Sanskrit. In the end I went home.",
+          "changed": "the whole account told by a woman, with all four participles forking"
+        },
+        {
+          "display": "prathamam aham mārgeṇa vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram saṃskṛtam likhitavān. ante gṛham gatavān.",
+          "script": "प्रथमम् अहम् मार्गेण विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् संस्कृतम् लिखितवान्। अन्ते गृहम् गतवान्।",
+          "cue": "First I went to the school along the road. Then I studied Sanskrit. After that I wrote Sanskrit. In the end I went home.",
+          "changed": "M4's other instrumental, mārgeṇa, replaces yānena — by the road rather than by vehicle"
+        },
+        {
+          "display": "prathamam aham yānena vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. ante gṛham gatavān.",
+          "script": "प्रथमम् अहम् यानेन विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अन्ते गृहम् गतवान्।",
+          "cue": "First I went to the school by vehicle. Then I studied Sanskrit. In the end I went home.",
+          "changed": "the middle sentence drops and the account runs prathamam, tataḥ, ante"
+        }
+      ],
+      "usage": "An account with one detail in it, which is about as much detail as a spoken account carries.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "prathamam mama bhaginī vidyālayam gatavatī. tataḥ sā saṃskṛtam paṭhitavatī. anantaram mārgeṇa gṛham gatavatī. ante annam khāditavatī.",
+      "script": "प्रथमम् मम भगिनी विद्यालयम् गतवती। ततः सा संस्कृतम् पठितवती। अनन्तरम् मार्गेण गृहम् गतवती। अन्ते अन्नम् खादितवती।",
+      "cue": "First my sister went to the school. Then she studied Sanskrit. After that she went home along the road. In the end she ate some food.",
+      "literal": "first my sister school-to went. then she Sanskrit read. after-that by-road home-to went. in-the-end food ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tataḥ",
+            "cue": "then · after that",
+            "tag": "delta",
+            "forms": [],
+            "note": "Ordering an account about a third person. The sequencers are the same four words whoever the story is about."
+          },
+          {
+            "display": "bhaginī",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's sister, named once at the head. Her gender decides every participle in the account, and she is not named again."
+          },
+          {
+            "display": "khādati",
+            "cue": "eats",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's verb of eating, here as khāditavatī. The participle is that module's and this one only puts it at the end of an account."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "mama bhaginī is two words in the first sentence and governs eight more. English would need 'she' in every clause; here sā appears once and then nothing at all.",
+      "variations": [
+        {
+          "display": "prathamam mama bhrātā vidyālayam gatavān. tataḥ saḥ saṃskṛtam paṭhitavān. anantaram mārgeṇa gṛham gatavān. ante annam khāditavān.",
+          "script": "प्रथमम् मम भ्राता विद्यालयम् गतवान्। ततः सः संस्कृतम् पठितवान्। अनन्तरम् मार्गेण गृहम् गतवान्। अन्ते अन्नम् खादितवान्।",
+          "cue": "First my brother went to the school. Then he studied Sanskrit. After that he went home along the road. In the end he ate some food.",
+          "changed": "the account is about a brother, so every participle forks to -tavān"
+        },
+        {
+          "display": "prathamam mama bhaginī vidyālayam gatavatī. tataḥ sā saṃskṛtam paṭhitavatī. anantaram gṛham gatavatī. ante annam khāditavatī.",
+          "script": "प्रथमम् मम भगिनी विद्यालयम् गतवती। ततः सा संस्कृतम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते अन्नम् खादितवती।",
+          "cue": "First my sister went to the school. Then she studied Sanskrit. After that she went home. In the end she ate some food.",
+          "changed": "the road drops out of the third sentence and nothing else moves"
+        },
+        {
+          "display": "prathamam mama bhaginī vidyālayam na gatavatī. tataḥ sā gṛhe saṃskṛtam paṭhitavatī. anantaram annam khāditavatī. ante jalam pītavatī.",
+          "script": "प्रथमम् मम भगिनी विद्यालयम् न गतवती। ततः सा गृहे संस्कृतम् पठितवती। अनन्तरम् अन्नम् खादितवती। अन्ते जलम् पीतवती।",
+          "cue": "First my sister did not go to the school. Then she studied Sanskrit at home. After that she ate some food. In the end she drank some water.",
+          "changed": "na goes in front of the first participle, and the account becomes a day spent at home"
+        }
+      ],
+      "usage": "An account about a member of the family, which is what most accounts are about.",
+      "register": "neutral",
+      "mnemonic": "The fork is set by the first sentence and paid for by the last three."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "prathamam aham asvasthaḥ. tataḥ vidyālayam na gatavān. anantaram gṛhe pustakam paṭhitavān. ante dugdham pītavān.",
+      "script": "प्रथमम् अहम् अस्वस्थः। ततः विद्यालयम् न गतवान्। अनन्तरम् गृहे पुस्तकम् पठितवान्। अन्ते दुग्धम् पीतवान्।",
+      "cue": "First I was unwell. Then I did not go to the school. After that I read a book at home. In the end I drank some milk.",
+      "literal": "first I unwell. then school-to not went. after-that at-home book read. in-the-end milk drank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "Opening an account whose first sentence has no verb at all. A sequencer sits happily in front of two naming words."
+          },
+          {
+            "display": "asvasthaḥ",
+            "cue": "unwell · not well",
+            "tag": "free",
+            "forms": [],
+            "note": "M8's 'unwell', agreeing with the speaker exactly as the participles after it do. The adjective and the four participles all fork together."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'not', in front of the participle where it goes in front of any verb. A thing that did not happen is part of an account like any other."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "The first sentence has no verb and the adjective in it still forks with the participles that follow. A learner who thinks the fork lives in the verb will get this account half right.",
+      "sound": "pra-tha-MAM a-HAM as-VAS-thah. TA-tah vid-YAA-la-yam NA GA-ta-vaan. The negative is said quickly and runs into the participle.",
+      "variations": [
+        {
+          "display": "prathamam aham asvasthā. tataḥ vidyālayam na gatavatī. anantaram gṛhe pustakam paṭhitavatī. ante dugdham pītavatī.",
+          "script": "प्रथमम् अहम् अस्वस्था। ततः विद्यालयम् न गतवती। अनन्तरम् गृहे पुस्तकम् पठितवती। अन्ते दुग्धम् पीतवती।",
+          "cue": "First I was unwell. Then I did not go to the school. After that I read a book at home. In the end I drank some milk.",
+          "changed": "the account is a woman's, so asvasthā and all three participles fork together — five words, one decision"
+        },
+        {
+          "display": "prathamam aham asvasthaḥ. tataḥ vidyālayam na gatavān. ante gṛhe pustakam paṭhitavān.",
+          "script": "प्रथमम् अहम् अस्वस्थः। ततः विद्यालयम् न गतवान्। अन्ते गृहे पुस्तकम् पठितवान्।",
+          "cue": "First I was unwell. Then I did not go to the school. In the end I read a book at home.",
+          "changed": "the account shortens to three sentences and drops its last event"
+        },
+        {
+          "display": "prathamam aham asvasthaḥ, yataḥ hyaḥ bhojanam na khāditavān. tataḥ vidyālayam na gatavān. anantaram gṛhe pustakam paṭhitavān. ante dugdham pītavān.",
+          "script": "प्रथमम् अहम् अस्वस्थः, यतः ह्यः भोजनम् न खादितवान्। ततः विद्यालयम् न गतवान्। अनन्तरम् गृहे पुस्तकम् पठितवान्। अन्ते दुग्धम् पीतवान्।",
+          "cue": "First I was unwell, because I did not eat a meal yesterday. Then I did not go to the school. After that I read a book at home. In the end I drank some milk.",
+          "changed": "M9's yataḥ hangs a reason inside the FIRST sentence, and the account is four sentences still"
+        }
+      ],
+      "usage": "The account you give for a day you missed, and the reason comes first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "prathamam aham bhojanam kṛtavān. tataḥ jalam pītavān. anantaram pustakam paṭhitavān. ante saṃskṛtam likhitavān.",
+      "script": "प्रथमम् अहम् भोजनम् कृतवान्। ततः जलम् पीतवान्। अनन्तरम् पुस्तकम् पठितवान्। अन्ते संस्कृतम् लिखितवान्।",
+      "cue": "First I made the meal. Then I drank some water. After that I read a book. In the end I wrote Sanskrit.",
+      "literal": "first I meal made. then water drank. after-that book read. in-the-end Sanskrit wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ante",
+            "cue": "in the end · finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "Closing the account. Four sentences and four events, one sequencer each, is the shape this module is teaching."
+          },
+          {
+            "display": "karoti",
+            "cue": "does · makes",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's verb of doing, here as kṛtavān. Making a meal is an ordinary event in an account and needs nothing new."
+          },
+          {
+            "display": "likhati",
+            "cue": "writes",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's verb of writing, here as likhitavān. This account spends no new word at all: every verb in it is L1's."
+          }
+        ],
+        "rules": [
+          6,
+          5,
+          8
+        ]
+      },
+      "trap": "Nothing in this account is new. Four sequencers were the module's whole spend, and everything else — six verbs, four nouns — has been in the course since L1.",
+      "variations": [
+        {
+          "display": "prathamam aham bhojanam kṛtavatī. tataḥ jalam pītavatī. anantaram pustakam paṭhitavatī. ante saṃskṛtam likhitavatī.",
+          "script": "प्रथमम् अहम् भोजनम् कृतवती। ततः जलम् पीतवती। अनन्तरम् पुस्तकम् पठितवती। अन्ते संस्कृतम् लिखितवती।",
+          "cue": "First I made the meal. Then I drank some water. After that I read a book. In the end I wrote Sanskrit.",
+          "changed": "the whole account told by a woman, all four participles forking together"
+        },
+        {
+          "display": "prathamam aham bhojanam kṛtavān. tataḥ jalam pītavān. ante saṃskṛtam likhitavān.",
+          "script": "प्रथमम् अहम् भोजनम् कृतवान्। ततः जलम् पीतवान्। अन्ते संस्कृतम् लिखितवान्।",
+          "cue": "First I made the meal. Then I drank some water. In the end I wrote Sanskrit.",
+          "changed": "three sentences, with the reading dropped"
+        },
+        {
+          "display": "prathamam aham annam kṛtavān. tataḥ dugdham pītavān. anantaram pustakam paṭhitavān. ante saṃskṛtam likhitavān.",
+          "script": "प्रथमम् अहम् अन्नम् कृतवान्। ततः दुग्धम् पीतवान्। अनन्तरम् पुस्तकम् पठितवान्। अन्ते संस्कृतम् लिखितवान्।",
+          "cue": "First I made the food. Then I drank some milk. After that I read a book. In the end I wrote Sanskrit.",
+          "changed": "the nouns change and the four endings do not, because a participle never agreed with its object"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam aham bhojanam akarot. tataḥ jalam pītavān. anantaram pustakam paṭhitavān. ante saṃskṛtam likhitavān.",
+        "why": "akarot is the imperfect — the tense a grammar reaches for in an account, and a real form. This course writes no imperfect anywhere, at any level: the past here is the participle, and M8 named this same ban for abhavat."
+      },
+      "usage": "An account of an evening at home, told with no new vocabulary whatever.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "prathamam vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān, yataḥ mahyam saṃskṛtam rocate. anantaram mārgeṇa gṛham gatavān. ante aham bhojanam khāditavān.",
+      "script": "प्रथमम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्, यतः मह्यम् संस्कृतम् रोचते। अनन्तरम् मार्गेण गृहम् गतवान्। अन्ते अहम् भोजनम् खादितवान्।",
+      "cue": "First I went to the school. Then I studied Sanskrit, because I like Sanskrit. After that I went home along the road. In the end I ate a meal.",
+      "literal": "first school-to went. then Sanskrit read, because to-me Sanskrit is-pleasing. after-that by-road home-to went. in-the-end I meal ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anantaram",
+            "cue": "after that · afterwards",
+            "tag": "delta",
+            "forms": [],
+            "note": "The third sequencer in the module's fullest account, and the only word in these four sentences that is doing nothing except ordering them."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'because', tucked inside the second sentence. A reason can sit inside an account without disturbing the sequencers at all."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's liking verb, in the present, inside a past account. A reason that is still true is said in the present, and that is as true here as in English."
+          }
+        ],
+        "rules": [
+          7,
+          1,
+          3
+        ]
+      },
+      "trap": "The account has aham exactly once, in the LAST sentence, and it is perfectly clear from the first. The participle carries the speaker through four sentences, a whole clause of reason, and two changes of place.",
+      "sound": "pra-tha-MAM vid-YAA-la-yam GA-ta-vaan. TA-tah sams-KRI-tam PA-thi-ta-vaan, YA-tah MAH-yam sams-KRI-tam RO-cha-te. The reason clause is said faster than what it hangs off.",
+      "variations": [
+        {
+          "display": "prathamam vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī, yataḥ mahyam saṃskṛtam rocate. anantaram mārgeṇa gṛham gatavatī. ante aham bhojanam khāditavatī.",
+          "script": "प्रथमम् विद्यालयम् गतवती। ततः संस्कृतम् पठितवती, यतः मह्यम् संस्कृतम् रोचते। अनन्तरम् मार्गेण गृहम् गतवती। अन्ते अहम् भोजनम् खादितवती।",
+          "cue": "First I went to the school. Then I studied Sanskrit, because I like Sanskrit. After that I went home along the road. In the end I ate a meal.",
+          "changed": "the whole account told by a woman — four participles fork and the present-tense rocate does not, because it agrees with Sanskrit and not with her"
+        },
+        {
+          "display": "prathamam vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram mārgeṇa gṛham gatavān. ante aham bhojanam khāditavān.",
+          "script": "प्रथमम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् मार्गेण गृहम् गतवान्। अन्ते अहम् भोजनम् खादितवान्।",
+          "cue": "First I went to the school. Then I studied Sanskrit. After that I went home along the road. In the end I ate a meal.",
+          "changed": "the reason clause drops and the account is four plain sentences"
+        },
+        {
+          "display": "prathamam vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān, yataḥ mahyam saṃskṛtam rocate. ante gṛham gatavān.",
+          "script": "प्रथमम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्, यतः मह्यम् संस्कृतम् रोचते। अन्ते गृहम् गतवान्।",
+          "cue": "First I went to the school. Then I studied Sanskrit, because I like Sanskrit. In the end I went home.",
+          "changed": "the account shortens to three and keeps its reason, which is the half worth keeping"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam vidyālayam gataḥ. tataḥ saṃskṛtam paṭhitavān, yataḥ mahyam saṃskṛtam rocate. anantaram mārgeṇa gṛham gatavān. ante aham bhojanam khāditavān.",
+        "why": "gataḥ is the bare participle, and it means 'gone' in the sense of being carried along by something else. M8 opened exactly one member of that family, jātam, and froze it. An account's past is gatavān, and the first sentence here has quietly changed voice."
+      },
+      "usage": "The module's closing account, and the level's: everything L2 opened, arranged in four sentences.",
+      "register": "neutral",
+      "mnemonic": "One person, one fork, four endings. Decide who is telling it and every -tavān in the account is already decided."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "prathamam aham gṛham gatavān. tataḥ jalam pītavān. anantaram pustakam paṭhitavān. ante saṃskṛtam likhitavān.",
+      "script": "प्रथमम् अहम् गृहम् गतवान्। ततः जलम् पीतवान्। अनन्तरम् पुस्तकम् पठितवान्। अन्ते संस्कृतम् लिखितवान्।",
+      "cue": "First I went home. Then I drank some water. After that I read a book. In the end I wrote Sanskrit."
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "prathamam aham vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. anantaram phalam khāditavatī. ante gṛham gatavatī.",
+      "script": "प्रथमम् अहम् विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। अनन्तरम् फलम् खादितवती। अन्ते गृहम् गतवती।",
+      "cue": "First I went to the school. Then I studied Sanskrit. After that I ate a fruit. In the end I went home."
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "prathamam rāmaḥ jalam pītavān. tataḥ saḥ phalam khāditavān. anantaram pustakālayam gatavān. ante pustakam paṭhitavān.",
+      "script": "प्रथमम् रामः जलम् पीतवान्। ततः सः फलम् खादितवान्। अनन्तरम् पुस्तकालयम् गतवान्। अन्ते पुस्तकम् पठितवान्।",
+      "cue": "First Rāma drank some water. Then he ate a fruit. After that he went to the library. In the end he read a book."
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "prathamam sītā annam kṛtavatī. tataḥ sā dugdham pītavatī. anantaram saṃskṛtam paṭhitavatī. ante gṛham gatavatī.",
+      "script": "प्रथमम् सीता अन्नम् कृतवती। ततः सा दुग्धम् पीतवती। अनन्तरम् संस्कृतम् पठितवती। अन्ते गृहम् गतवती।",
+      "cue": "First Sītā made the food. Then she drank some milk. After that she studied Sanskrit. In the end she went home."
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "hyaḥ prathamam aham asvasthaḥ. tataḥ gṛhe pustakam paṭhitavān. anantaram dugdham pītavān. ante bhojanam khāditavān.",
+      "script": "ह्यः प्रथमम् अहम् अस्वस्थः। ततः गृहे पुस्तकम् पठितवान्। अनन्तरम् दुग्धम् पीतवान्। अन्ते भोजनम् खादितवान्।",
+      "cue": "Yesterday I was unwell at first. Then I read a book at home. After that I drank some milk. In the end I ate a meal."
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "prathamam mama bhrātā yānena vidyālayam gatavān. tataḥ saḥ saṃskṛtam paṭhitavān. anantaram mārgeṇa gṛham gatavān. ante annam khāditavān.",
+      "script": "प्रथमम् मम भ्राता यानेन विद्यालयम् गतवान्। ततः सः संस्कृतम् पठितवान्। अनन्तरम् मार्गेण गृहम् गतवान्। अन्ते अन्नम् खादितवान्।",
+      "cue": "First my brother went to the school by vehicle. Then he studied Sanskrit. After that he went home along the road. In the end he ate some food."
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "prathamam aham mārgeṇa pustakālayam gatavān. tataḥ pustakam paṭhitavān. anantaram phalam khāditavān. ante gṛham gatavān.",
+      "script": "प्रथमम् अहम् मार्गेण पुस्तकालयम् गतवान्। ततः पुस्तकम् पठितवान्। अनन्तरम् फलम् खादितवान्। अन्ते गृहम् गतवान्।",
+      "cue": "First I went to the library along the road. Then I read a book. After that I ate a fruit. In the end I went home."
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "prathamam adhyāpikā vidyālayam gatavatī. tataḥ sā saṃskṛtam paṭhitavatī. anantaram saṃskṛtam likhitavatī. ante gṛham gatavatī.",
+      "script": "प्रथमम् अध्यापिका विद्यालयम् गतवती। ततः सा संस्कृतम् पठितवती। अनन्तरम् संस्कृतम् लिखितवती। अन्ते गृहम् गतवती।",
+      "cue": "First the teacher went to the school. Then she studied Sanskrit. After that she wrote Sanskrit. In the end she went home."
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "prathamam aham hyaḥ bhojanam khāditavān. tataḥ jalam pītavān. anantaram saṃskṛtam paṭhitavān. ante pustakam likhitavān.",
+      "script": "प्रथमम् अहम् ह्यः भोजनम् खादितवान्। ततः जलम् पीतवान्। अनन्तरम् संस्कृतम् पठितवान्। अन्ते पुस्तकम् लिखितवान्।",
+      "cue": "First I ate a meal yesterday. Then I drank some water. After that I studied Sanskrit. In the end I wrote in a book."
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "prathamam bālaḥ vidyālayam gatavān. tataḥ saḥ saṃskṛtam paṭhitavān. anantaram gṛham gatavān. ante phalam khāditavān.",
+      "script": "प्रथमम् बालः विद्यालयम् गतवान्। ततः सः संस्कृतम् पठितवान्। अनन्तरम् गृहम् गतवान्। अन्ते फलम् खादितवान्।",
+      "cue": "First the boy went to the school. Then he studied Sanskrit. After that he went home. In the end he ate a fruit."
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "prathamam bālā pustakālayam gatavatī. tataḥ sā pustakam paṭhitavatī. anantaram gṛham gatavatī. ante dugdham pītavatī.",
+      "script": "प्रथमम् बाला पुस्तकालयम् गतवती। ततः सा पुस्तकम् पठितवती। अनन्तरम् गृहम् गतवती। अन्ते दुग्धम् पीतवती।",
+      "cue": "First the girl went to the library. Then she read a book. After that she went home. In the end she drank some milk."
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "prathamam aham vidyālayam na gatavān. tataḥ gṛhe paṭhitavān. anantaram jalam pītavān. ante saṃskṛtam likhitavān.",
+      "script": "प्रथमम् अहम् विद्यालयम् न गतवान्। ततः गृहे पठितवान्। अनन्तरम् जलम् पीतवान्। अन्ते संस्कृतम् लिखितवान्।",
+      "cue": "First I did not go to the school. Then I studied at home. After that I drank some water. In the end I wrote Sanskrit."
+    },
+    {
+      "id": "L2-M10-C13",
+      "display": "prathamam mama mātā annam kṛtavatī. tataḥ sā jalam pītavatī. anantaram pustakam paṭhitavatī. ante sā santuṣṭā.",
+      "script": "प्रथमम् मम माता अन्नम् कृतवती। ततः सा जलम् पीतवती। अनन्तरम् पुस्तकम् पठितवती। अन्ते सा सन्तुष्टा।",
+      "cue": "First my mother made the food. Then she drank some water. After that she read a book. In the end she was content."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
