@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "N-acc + edō / ēst",
+      "bibe / ēs + N-acc (+ quaesō)",
+      "velim + N-acc",
+      "satis est / nōlō, grātiās / benignē",
+      "N-acc + N-acc-que + volō"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "ēst AGAINST est, AND THIS MODULE IS WHERE THE MACRON PAYS FOR ITSELF. ēst is 'he eats' and est is 'he is', and the only difference between them is the length of the e. L1-M1 took est for 'is' and every module since was forbidden to write ēst so this one could have it. Pānem est is a grammatical Latin sentence meaning 'he is bread' — nothing fails, nothing looks wrong, and the reader is simply told something else."
+    },
+    {
+      "tag": "delta",
+      "text": "edō IS IRREGULAR AND IS LEARNED AS A SET: edō 'I eat', ēst 'he eats', ēs 'eat!', edere 'to eat'. It has a second infinitive, one bar from esse ('to be'), and this course names it in prose and writes it nowhere — edere is the infinitive used here. One verb generating three near-collisions with the commonest verb in the language is a fact about Latin rather than a decision of this course, and the only defence is to write every mark."
+    },
+    {
+      "tag": "interference",
+      "text": "ēs AGAINST es is the same trade one row further down: ēs is 'eat!' and es is 'you are'. Two of the module's four collisions come out of the same verb, and both are resolved by length alone. When you read Latin without macrons — which is most printed Latin — these are the sentences you work out from context."
+    },
+    {
+      "tag": "free",
+      "text": "HOSTING IN LATIN IS IMPERATIVES, WARMLY MEANT: bibe ('drink!'), ēs ('eat!'), and L1-M8's dā, with M1's quaesō available to soften any of them. There is no natural Latin for 'would you like…?' — a host gives an order and it reads as generosity. An English speaker hears a bare imperative as brusque and will want to build a question; there is nothing to build it out of."
+    },
+    {
+      "tag": "interference",
+      "text": "REFUSING WITHOUT OFFENCE, in three phrases and no constructions: nōlō, grātiās ('no thanks'), satis est ('that is enough'), and benignē — which is the trap. benignē means 'kindly' and is a REFUSAL: it declines an offer by praising it. An English speaker who says it meaning 'how kind of you!' has just said no, and been understood."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ENCLITIC -que, BACK FROM L1-M10 AND EARNING ITS PLACE: vīnum aquam-que volō. It rides on the back of the SECOND thing joined, never the first, and this course writes the hyphen so the seam is visible where Latin writes aquamque. et is equally correct and flatter; -que ties two things into one request."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Pānem edō.",
+      "cue": "I am eating bread.",
+      "literal": "bread I-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pānem",
+            "cue": "bread",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the thing eaten. L1-M8's word, back as food rather than as something to buy."
+          },
+          {
+            "display": "edō",
+            "cue": "I eat",
+            "tag": "delta",
+            "forms": [
+              "edō",
+              "ēst",
+              "edere"
+            ],
+            "note": "'I eat', and irregular enough to learn whole: edō 'I eat', ēst 'he eats', edere 'to eat'. The bar on ēst is the only thing keeping it off the verb 'to be'."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "A plain sentence, and the last plain one in the module. edō looks regular and is not: the shapes this course writes are edō, ēst and edere, and learning them as a set now is cheaper than meeting ēst cold in the next sentence.",
+      "sound": "PĀ-nem E-dō. Both vowels of edō are short — which is the whole point, because the shape two lines down is long.",
+      "variations": [
+        {
+          "display": "Pānem edere volō.",
+          "cue": "I want to eat bread.",
+          "changed": "L1-M3's volō with the infinitive"
+        },
+        {
+          "display": "Cēnam edō.",
+          "cue": "I am eating dinner.",
+          "changed": "a different thing eaten"
+        },
+        {
+          "display": "Pānem nōn edō.",
+          "cue": "I do not eat bread.",
+          "changed": "L1-M3's negative"
+        }
+      ],
+      "usage": "Said about what is in front of you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "Pānem ēst.",
+      "cue": "He is eating bread.",
+      "literal": "bread he-eats",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pānem",
+            "cue": "bread",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the thing eaten. L1-M8's word, back as food rather than as something to buy."
+          },
+          {
+            "display": "ēst",
+            "cue": "he eats",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He eats' — edō's third-person shape, and one bar from est, 'he is'. Hold the ē long and the two are different words; drop it and they are the same one."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "ēst and est. One is 'he eats' and one is 'he is', and the only difference is the length of the e. This is the sharpest pair in the language and it arrives in a sentence you could otherwise read at a glance — Pānem est would be 'he is bread'.",
+      "sound": "PĀ-nem ĒST. Hold that ē: it is twice the length of the e in est, and the length is carrying the whole meaning.",
+      "variations": [
+        {
+          "display": "Cēnam ēst.",
+          "cue": "He is eating dinner.",
+          "changed": "a different thing eaten"
+        },
+        {
+          "display": "Quid ēst?",
+          "cue": "What is he eating?",
+          "changed": "a question, where the pair is even harder — Quid est? is 'what is it?'"
+        },
+        {
+          "display": "Pānem ēst et aquam bibit.",
+          "cue": "He eats bread and drinks water.",
+          "changed": "both verbs of a meal in one line"
+        }
+      ],
+      "mistake": {
+        "display": "Pānem est.",
+        "why": "the bar dropped, which turns 'he is eating bread' into 'he is bread'. Nothing in the spelling looks wrong, nothing in the grammar fails, and the sentence still means something — which is exactly why this course writes every macron it can."
+      },
+      "usage": "Said about someone else at the table.",
+      "mnemonic": "The long e is the mouth staying open to eat.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Bibe aquam, quaesō.",
+      "cue": "Drink some water, please.",
+      "literal": "drink water please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bibe",
+            "cue": "drink!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Drink!' — the order shape of L1-M5's bibō. Latin hosts with commands, warmly meant, and quaesō is how you take the edge off one."
+          },
+          {
+            "display": "aquam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water' as the object — aqua as the subject, aquam as the thing wanted or drunk. L1-M3's very first noun."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "'Please', literally 'I beg'. M1's word, and it softens an order without changing it: the command stays a command."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "A bare order where English builds a question. 'Would you like some water?' has no natural Latin equivalent — a Roman host says 'drink!', and it is hospitality rather than rudeness. The instinct to soften it into a question is the thing to resist.",
+      "variations": [
+        {
+          "display": "Bibe vīnum, quaesō.",
+          "cue": "Drink some wine, please.",
+          "changed": "a different drink"
+        },
+        {
+          "display": "Aquam bibe.",
+          "cue": "Drink the water.",
+          "changed": "the order reversed and quaesō dropped, which is blunter but not rude"
+        },
+        {
+          "display": "Dā mihi aquam, quaesō.",
+          "cue": "Give me some water, please.",
+          "changed": "L1-M8's dā, asking rather than offering"
+        }
+      ],
+      "usage": "Said by whoever is doing the hosting.",
+      "mnemonic": "Hospitality in Latin is an imperative.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Ēs pānem, quaesō.",
+      "cue": "Eat some bread, please.",
+      "literal": "eat bread please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ēs",
+            "cue": "eat!",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Eat!' — edō's order shape, and one bar from es, 'you are'. The module's second pair separated by nothing but length, in the same verb as the first."
+          },
+          {
+            "display": "pānem",
+            "cue": "bread",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the thing eaten. L1-M8's word, back as food rather than as something to buy."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "'Please', literally 'I beg'. M1's word, and it softens an order without changing it: the command stays a command."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The same verb has now produced two words that collide with 'to be': ēst against est, and ēs against es. One irregular verb is responsible for both, and both are resolved by the bar alone — Es pānem would be 'you are bread'.",
+      "sound": "ĒS PĀ-nem, QUAE-sō. Three long vowels in a row at the front: the order is all length and no hurry.",
+      "variations": [
+        {
+          "display": "Ēs cēnam, quaesō.",
+          "cue": "Eat your dinner, please.",
+          "changed": "a different thing eaten"
+        },
+        {
+          "display": "Ēs pānem et bibe aquam.",
+          "cue": "Eat bread and drink water.",
+          "changed": "both orders in one line"
+        },
+        {
+          "display": "Pānem edere nōn volō.",
+          "cue": "I do not want to eat bread.",
+          "changed": "the refusal, with the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Es pānem, quaesō.",
+        "why": "the bar dropped again, and this time the result is 'you are bread, please'. edō is the one verb in the language that mints two of these, which is why the module teaches the whole set at once rather than a shape at a time."
+      },
+      "usage": "Said while passing a plate.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "Velim vīnum.",
+      "cue": "I would like some wine.",
+      "literal": "I-should-like wine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "velim",
+            "cue": "I would like",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I should like' — M1's polite request. It is a subjunctive, which this level writes and does not explain; take it whole, as the word that makes an order into an asking."
+          },
+          {
+            "display": "vīnum",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Wine', and it is neuter: vīnum is both the subject shape and the object shape, so nothing moves when it becomes the thing you want."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "vīnum does not move. It is neuter, so the shape you want something in is the shape it already had — and after three modules of adjectives and objects changing their endings, a word that refuses to is worth noticing.",
+      "variations": [
+        {
+          "display": "Velim aquam.",
+          "cue": "I would like some water.",
+          "changed": "a feminine noun, which DOES move: aqua becomes aquam"
+        },
+        {
+          "display": "Velim pānem, quaesō.",
+          "cue": "I would like some bread, please.",
+          "changed": "quaesō added, which stacks with velim rather than replacing it"
+        },
+        {
+          "display": "Vīnum volō.",
+          "cue": "I want wine.",
+          "changed": "volō instead, which is plain rather than impolite"
+        }
+      ],
+      "usage": "Said when you are ordering rather than being served.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Vīnum aquam-que volō.",
+      "cue": "I want wine and water.",
+      "literal": "wine water-and I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vīnum",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Wine', and it is neuter: vīnum is both the subject shape and the object shape, so nothing moves when it becomes the thing you want."
+          },
+          {
+            "display": "aquam-que",
+            "cue": "and water",
+            "tag": "interference",
+            "forms": [
+              "aquam-que",
+              "vīnum-que"
+            ],
+            "note": "L1-M10's -que, joined to the back of the second thing joined: aquam-que 'and water', vīnum-que 'and wine'. The hyphen is this course's; Latin writes aquamque."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "The 'and' comes after the word it joins and sticks to it. L1-M10 taught this and a meal is where it earns its keep: Vīnum et aquam volō is equally correct and flatter, and the enclitic ties the two into one order.",
+      "variations": [
+        {
+          "display": "Vīnum et aquam volō.",
+          "cue": "I want wine and water.",
+          "changed": "L1-M1's et instead, which is the everyday choice"
+        },
+        {
+          "display": "Velim vīnum pānem-que.",
+          "cue": "I would like wine and bread.",
+          "changed": "the polite verb, and -que on a different noun"
+        },
+        {
+          "display": "Aquam vīnum-que bibō.",
+          "cue": "I drink water and wine.",
+          "changed": "the two nouns swapped, so -que moves with the second one"
+        }
+      ],
+      "usage": "Said when you want both of two things.",
+      "mnemonic": "-que rides on the second thing, never the first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "Satis est, grātiās.",
+      "cue": "That is enough, thank you.",
+      "literal": "enough it-is thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "satis",
+            "cue": "enough",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Enough', and it never changes shape — it is not an adjective and has nothing to agree with. English 'satisfy' and 'satiate' are the same word."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "grātiās",
+            "cue": "thanks",
+            "tag": "free",
+            "forms": [],
+            "note": "'Thanks', literally 'thank-yous' — plural, always, and there is no singular of it in this use. L1-M2's word."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "est here, with no bar, and it means 'it is'. Two sentences after ēst the plain shape comes back, and the sentence beside it in this module's pool proves you now have to read the bar rather than the letters.",
+      "variations": [
+        {
+          "display": "Satis est.",
+          "cue": "That is enough.",
+          "changed": "grātiās dropped, which is shorter and no less polite"
+        },
+        {
+          "display": "Nōn satis est.",
+          "cue": "It is not enough.",
+          "changed": "L1-M3's negative"
+        },
+        {
+          "display": "Grātiās, satis est.",
+          "cue": "Thank you, that is enough.",
+          "changed": "the halves swapped, which is the warmer order"
+        }
+      ],
+      "usage": "Said with a hand over a glass.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Nōlō, grātiās.",
+      "cue": "No thank you.",
+      "literal": "I-do-not-want thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōlō",
+            "cue": "I do not want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I do not want' — L1-M3's refusal, one word rather than two, because Latin has a whole verb for not wanting rather than a negative on volō."
+          },
+          {
+            "display": "grātiās",
+            "cue": "thanks",
+            "tag": "free",
+            "forms": [],
+            "note": "'Thanks', literally 'thank-yous' — plural, always, and there is no singular of it in this use. L1-M2's word."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Two words and the whole job done. Latin refuses with a verb of not-wanting plus a thanks, and there is no construction in it at all — which means there is nothing here to get wrong except the habit of reaching for something longer.",
+      "variations": [
+        {
+          "display": "Nōlō vīnum, grātiās.",
+          "cue": "I do not want wine, thank you.",
+          "changed": "the thing refused named"
+        },
+        {
+          "display": "Grātiās, sed nōlō.",
+          "cue": "Thank you, but no.",
+          "changed": "L1-M9's sed, which is the gentler shape"
+        },
+        {
+          "display": "Nōlī, quaesō.",
+          "cue": "Please do not.",
+          "changed": "M1's nōlī, which tells someone ELSE not to"
+        }
+      ],
+      "usage": "Said when you are offered something you do not want.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Benignē, sed satis est.",
+      "cue": "Very kind of you, but that is enough.",
+      "literal": "kindly but enough it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "benignē",
+            "cue": "how kind · no thank you",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Kindly' — and it is a REFUSAL. On its own benignē declines an offer while praising it, which is the opposite of what an English speaker hears in it."
+          },
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "'But'. L1-M9's word, joining two phrases here rather than two sentences."
+          },
+          {
+            "display": "satis",
+            "cue": "enough",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Enough', and it never changes shape — it is not an adjective and has nothing to agree with."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "benignē looks like a yes and is a no. It is the classical 'no thank you', and it works by thanking the offer so warmly that declining it is implied — so an English speaker who says it meaning 'how kind!' has just refused, politely and completely.",
+      "variations": [
+        {
+          "display": "Benignē, sed nōlō.",
+          "cue": "Very kind, but no.",
+          "changed": "the blunter second half"
+        },
+        {
+          "display": "Benignē, grātiās.",
+          "cue": "Very kind, thank you.",
+          "changed": "the two politest words in the module together, and still a refusal"
+        },
+        {
+          "display": "Satis est, benignē.",
+          "cue": "That is enough, thank you.",
+          "changed": "the halves swapped, with sed no longer needed"
+        }
+      ],
+      "usage": "Said to someone offering you a third helping.",
+      "mnemonic": "benignē praises the offer instead of taking it.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "Cēnam edere volō.",
+      "cue": "I want to eat dinner.",
+      "literal": "dinner to-eat I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cēnam",
+            "cue": "dinner",
+            "tag": "delta",
+            "forms": [
+              "cēna",
+              "cēnam"
+            ],
+            "note": "'Dinner' — the one big meal of a Roman day, taken in the late afternoon. cēna as the subject, cēnam as the thing eaten."
+          },
+          {
+            "display": "edere",
+            "cue": "to eat",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To eat' — edō's infinitive, and the one this course uses. The verb has a second infinitive, one bar from esse ('to be'), and this course never writes it."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "edere is edō's infinitive and it is not the only one. The other is a bar away from esse, 'to be' — the same collision as ēst and ēs, a third time, in the same verb. This course writes edere and leaves the other one alone, and the note says so rather than pretending it does not exist.",
+      "sound": "CĒ-nam E-de-re VO-lō. Six syllables and only two long vowels: the infinitive is all short, which is what tells it apart from the verb it nearly collides with.",
+      "variations": [
+        {
+          "display": "Pānem edere volō.",
+          "cue": "I want to eat bread.",
+          "changed": "a different thing eaten"
+        },
+        {
+          "display": "Cēnam edō.",
+          "cue": "I am eating dinner.",
+          "changed": "no infinitive, so volō goes"
+        },
+        {
+          "display": "Cēna magna est.",
+          "cue": "The dinner is big.",
+          "changed": "the noun as a plain subject with L2-M3's adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Cēnam edere nōn est.",
+        "why": "a refusal built out of 'to be' because the verbs sound alike. Nōlō is the whole refusal and needs nothing after it — this is what the ēst collision costs once it has been met three times and the ear starts hearing edō and sum as one family."
+      },
+      "usage": "Said when you are hungry.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Aquam bibe, quaesō.",
+      "cue": "Drink the water, please."
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "Pānem ēs, quaesō.",
+      "cue": "Eat the bread, please."
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Vīnum bibit.",
+      "cue": "He is drinking wine."
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Velim vīnum pānem-que.",
+      "cue": "I would like wine and bread."
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "Cēna magna est.",
+      "cue": "The dinner is big."
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Nōn satis est.",
+      "cue": "It is not enough."
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "Pānem edere volō.",
+      "cue": "I want to eat bread."
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Quid ēst?",
+      "cue": "What is he eating?"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Vīnum nōn bibō.",
+      "cue": "I do not drink wine."
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "Benignē, sed nōlō.",
+      "cue": "Very kind, but no."
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Dā mihi pānem, quaesō.",
+      "cue": "Give me some bread, please."
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "Aquam vīnum-que bibō.",
+      "cue": "I drink water and wine."
+    },
+    {
+      "id": "L2-M5-C13",
+      "display": "Cēna parva est.",
+      "cue": "The dinner is small."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

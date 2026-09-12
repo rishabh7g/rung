@@ -124,3 +124,110 @@ and `docs/127` §6.
 6. **Is the genitive's arrival at M2 too early?** It is introduced on one job — possession between
    people — and `docs/127` §1 chose that deliberately. The alternative is to leave all four cases to
    L3 and let M2 describe people without owning them.
+---
+
+## Wave 2 — L2-M3, L2-M4 and L2-M5 (#640), 2026-09-12
+
+Authored in ladder order against the L2 briefs (#638), rebuilding between modules. All three signed
+`verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`, `verifiedAt: 2026-09-12`.
+
+### 2.1 What was checked
+
+- **`npm run content:validate`** → all three `ok`; `CONTENT 480/480 ok`.
+- **The strict build** → `en-la: 15 modules (L1-M1..M10, L2-M1..M5)`, `index L2-M3: 238 surfaces`,
+  `index L2-M4: 250`, `index L2-M5: 261`, and **no `shown but untaught` line** — the ratchet holds at
+  zero through fifteen rungs.
+- **The folded index** — 261 surfaces against a `surfaceCount` of 261, `maxSpan` 1.
+- **The orthography sweep** (the substitute for the build gate `checkScriptMode` does not give a
+  `native` course) — 1,492 readable Latin strings across the emitted course: zero `j`, zero
+  apostrophes, zero acutes, zero combining marks, zero non-NFC, and no `script` line anywhere. The
+  141 `mistake` plates were swept separately, since they are allowed to break the spelling bans and
+  not the encoding ones.
+- **`scripts/verify.sh --fast`** → quoted in the commit message.
+
+### 2.2 The reserved keys, spent and unspent
+
+`docs/123` §1.1 listed the pairs the macron keeps apart and L1 was forbidden to spend. Read back from
+the folded index after this wave:
+
+- `est` → `L1-M1-S01`, `ēst` → `L2-M5-S01`. **The pair `docs/127` §3 promised, delivered.**
+- `es` → `L1-M1-S01`, `ēs` → `L2-M5-S04`. **A second pair out of the same verb**, not in any plan —
+  `edō`'s imperative collides with "you are" exactly as its third person collides with "is". The
+  module teaches both as one fact about one irregular verb rather than as two coincidences.
+- Still free, and still owed to the modules that were promised them: `legēbam`, `habēbam`, `eram`
+  (L4-M8), `nē` (L3-M4), `venī`, `sīc`, `rosa`/`rosā`, `nōnne`, `num`, `domī` (L4-M9).
+- `esse` and `ēsse` appear **nowhere as a readable Latin string** — both are named in English prose,
+  which is what `docs/127` §3 asked for, and a guard in the authoring script checked every display
+  and every `forms` entry rather than the file's text, because the prose mention would have tripped a
+  naive grep.
+
+### 2.3 The seam, and the one new joined form
+
+L2-M5 is the level's second seam module. `vīnum aquam-que volō` needed nothing new — `aquam-que` has
+been L1-M10's since `L1-M10-S03` — but the variation `Velim vīnum pānem-que` and the pool item
+`Aquam vīnum-que bibō` mint `vīnum-que`, which the build caught as untaught. It went into the
+**`-que` row's `forms`**, which is en-la's arrangement and not en-ko's, and the ordering law holds by
+construction: `vīnum` opens in S05 and the seam is written in S06, one sentence later.
+
+Read back:
+
+| Key | Owner |
+|---|---|
+| `que` | `L1-M10-S03` — unmoved |
+| `aquam-que` | `L1-M10-S03` — unmoved |
+| `vīnum` | `L2-M5-S05` |
+| `vīnum-que` | `L2-M5-S06` |
+
+### 2.4 Three surfaces shown before they were owned, and one two-shape row
+
+The ratchet caught `magnī`, `nigram` and `parvae` in L2-M3's variations, and the pool gate caught
+`magnam`, `magnae` and `magnōs`. All six were genuine shapes of adjectives the module teaches, so all
+six went into their lexeme's `forms` — and `magnus`'s note was rewritten, because a note that said
+"the three shapes: magnus, magna, magnum" would have been read by a learner tapping `magnōs`.
+
+L2-M4's `domum`/`domō` are **one row with two forms**, per `docs/127` §4: they are two shapes of one
+noun and neither is more basic. S09 writes the accusative and S10 the ablative, one bar apart with
+opposite directions, and S10's row repeats the same note rather than minting a second lexeme. `domī`
+is named in both notes and in rule 4 and is written nowhere.
+
+### 2.5 A row display that matches the sentence rather than the lexeme
+
+`docs/127` §3 said `ēst` is "a `forms` entry of `edō` and not its own row". The emitted content does
+both: `edō`'s row in S01 carries `["edō", "ēst", "edere"]`, and S02 — whose sentence IS `Pānem ēst` —
+carries a row whose `display` is `ēst`, because a deconstruction row has to align with a token the
+learner can tap. Nothing in `tools/validate.ts` requires that alignment, but every module in every
+course has it, and the app reads the row for the word under the finger. The brief's intent is met by
+the **note**, which is written true of the whole verb in both rows. Worth recording because a reader
+comparing §3 to the JSON will otherwise think one of them is wrong.
+
+### 2.6 Enrichment below M3
+
+`ENRICHMENT_FULL_THROUGH_MODULE = 3`, so L2-M3 carries all five blocks on all ten sentences and M4 and
+M5 do not have to. They carry `trap`, three `variations` and `usage` on every sentence, `mistake` on
+seven of ten each, and `sound` and `mnemonic` where quantity or a collision makes them say something —
+M4's `domum`/`domō` and M5's `ēst`/`est` and `ēs`/`es`, where the whole lesson is a length you have to
+hear. A `sound` line on `Ubi es?` would have been words about nothing.
+
+### 2.7 Open questions for the fluent-speaker gate
+
+Additions to the thirty standing in `docs/123` §11, `docs/124` §6, `docs/125` §5, `docs/126` §6,
+`docs/127` §6 and §1.7 above.
+
+1. **Is `benignē` still live enough to teach as the polite refusal?** It is classical and it is
+   exactly right, and a modern speaker of living Latin may reach for `nōlō, grātiās` every time and
+   never say it. M5 teaches both and leads with `nōlō`.
+2. **Is `Quō venīs?` natural**, or does `veniō` want `unde` and `ad` and leave `quō` to `eō`? The pool
+   writes it and the module does not, which is a hedge a teacher can settle in one sentence.
+3. **Is `pedibus` the idiom, or `pedibus īre`?** M5 writes the bare ablative beside `eō` and `veniō`
+   both, on the model of `raedā`. If the fixed phrase needs the verb of going, the `veniō` sentence is
+   the one that is wrong.
+4. **`rēctā` as an ablative of means is a stretch worth checking.** The module teaches it as "by a
+   straight route", which makes three means-ablatives in one module and is tidy; it may simply be an
+   adverb with no live case feeling left in it.
+5. **Is `cēna` the right meal for a course taught in English?** It was the one substantial Roman meal
+   and it was eaten in the late afternoon, so "dinner" is close and "lunch" is arguably closer. The
+   note says when it was eaten and lets the learner decide, which may be evasion.
+6. **Does the module teach too many collisions at once?** `ēst`/`est`, `ēs`/`es` and the named
+   `ēsse`/`esse` are three in ten sentences, all from one verb. The alternative is to split `edō`
+   across M5 and M8 and teach the imperative later, at the cost of a hosting module that cannot say
+   "eat!".
