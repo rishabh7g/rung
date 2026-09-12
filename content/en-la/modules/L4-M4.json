@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "quamquam + V-indicative + , + tamen + V",
+      "licet + V-subjunctive",
+      "certē + V + , + sed + V",
+      "nōnne + V (expecting yes)",
+      "num + V (expecting no)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "quamquam TAKES THE INDICATIVE AND licet THE SUBJUNCTIVE, AND BOTH MEAN 'ALTHOUGH'. quamquam venit, tamen nōn gaudeō concedes a FACT — he really is coming. licet veniat concedes a possibility, with L3-M4's mood. That is the module's hardest pair and the only guide is this: licet is ALSO a verb, meaning 'it is allowed', so it behaves like one and takes a mood after it. After four modules of subjunctives a learner's reflex is the mood, and quamquam is where the reflex is wrong."
+    },
+    {
+      "tag": "free",
+      "text": "quamquam AND tamen WORK AS A PAIR, and Latin is happier than English about writing both. 'Although … still' feels redundant in English and is the normal shape here — the same asymmetry as M2's ideō … quia. tamen still comes SECOND in its clause, which L3-M3 settled, and it is one of six words in this course that must."
+    },
+    {
+      "tag": "delta",
+      "text": "certē … sed IS THE CONCEDE-AND-HOLD FRAME AND IT COSTS ONE WORD. certē is new; sed is L1-M9's. Grant the point, then keep your position — and because the frame is almost free, the module's cap goes on the two concessive conjunctions and the two question particles instead. Three concessive words in one sentence (quamquam, certē, tamen) is normal Latin and heavier in translation than in the original."
+    },
+    {
+      "tag": "interference",
+      "text": "nōnne EXPECTS YES AND num EXPECTS NO, AND BOTH KEYS WERE HELD FREE FOR THIRTY-THREE MODULES. L1-M2 taught -ne for a NEUTRAL yes-or-no question and wrote nōnne and num nowhere, so that this module could have the loaded ones. nōnne is nōn plus -ne, which is why 'is he not coming?' is the literal shape and 'surely he is' the meaning. Between them they are the politest tools in the course, because each one tells the listener which answer you are hoping for — which is what makes a question persuasive rather than neutral."
+    },
+    {
+      "tag": "delta",
+      "text": "licet TAKES THE MOOD'S PAST FOR A PAST CONCESSION: licet errāverim, 'although I may have been wrong' — the PERFECT subjunctive. M3 opened the pluperfect and imperfect subjunctives for counterfactuals and this is a fourth tense of the same mood, but it costs nothing new to build: the perfect stem plus -erim. A concession about the past needs it, and nothing else in this module does."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "Quamquam venit, nōn gaudeō.",
+      "cue": "Although he is coming, I am not glad.",
+      "literal": "although he-comes not I-am-glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quamquam",
+            "cue": "although",
+            "tag": "delta",
+            "forms": [
+              "quamquam"
+            ],
+            "note": "'Although', and it takes the INDICATIVE — a plain fact conceded. Its partner licet takes a subjunctive and means the same thing."
+          },
+          {
+            "display": "venit",
+            "cue": "he comes",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He comes' — veniō's third person present, and one bar from vēnit, 'he came'."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies. L1-M3's word."
+          },
+          {
+            "display": "gaudeō",
+            "cue": "I am glad",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am glad': gaudeō, gaudet. L4-M3's verb, and here in the plain indicative."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "quamquam takes the plain indicative, which is the opposite of what a learner will expect after a level of subjunctives. It concedes a FACT — he really is coming — and the concession is in the conjunction rather than in a mood.",
+      "sound": "QUAM-quam VE-nit, nōn GAU-de-ō. Seven syllables and only quamquam is heavy.",
+      "variations": [
+        {
+          "display": "Quamquam venit, gaudeō.",
+          "cue": "Although he is coming, I am glad.",
+          "changed": "the second half positive, which makes the concession odd and still correct"
+        },
+        {
+          "display": "Quamquam vēnit, nōn gaudeō.",
+          "cue": "Although he came, I am not glad.",
+          "changed": "a past fact conceded"
+        },
+        {
+          "display": "Licet veniat, nōn gaudeō.",
+          "cue": "Although he may be coming, I am not glad.",
+          "changed": "the other concessive, which takes a mood"
+        }
+      ],
+      "mistake": {
+        "display": "Quamquam veniat, nōn gaudeō.",
+        "why": "a subjunctive after quamquam. That is licet's construction, and quamquam wants the indicative — four modules of moods make the subjunctive the reflex, and this conjunction is where the reflex is wrong."
+      },
+      "usage": "Said conceding something you do not like.",
+      "mnemonic": "quamquam takes a fact; licet takes a mood.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "Quamquam venit, tamen nōn gaudeō.",
+      "cue": "Although he is coming, I am still not glad.",
+      "literal": "although he-comes however not I-am-glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quamquam",
+            "cue": "although",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Although', and it takes the INDICATIVE — a plain fact conceded. Its partner licet takes a subjunctive and means the same thing."
+          },
+          {
+            "display": "venit",
+            "cue": "he comes",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He comes' — veniō's third person present."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', and it comes SECOND in its clause. L3-M3's word, and it is the usual partner of quamquam — the pair frames the whole concession."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "gaudeō",
+            "cue": "I am glad",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am glad': gaudeō, gaudet."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "quamquam and tamen work as a pair, and English does the same with 'although … still'. Latin is happier than English about writing both, so the redundancy an English speaker feels is the normal shape here — exactly as with M2's ideō … quia.",
+      "variations": [
+        {
+          "display": "Quamquam aeger sum, tamen labōrō.",
+          "cue": "Although I am ill, I still work.",
+          "changed": "L3-M7's adjective and a different second half"
+        },
+        {
+          "display": "Quamquam venit, nōn gaudeō.",
+          "cue": "Although he is coming, I am not glad.",
+          "changed": "tamen dropped, which is shorter and no different in meaning"
+        },
+        {
+          "display": "Quamquam venit, gaudeō tamen.",
+          "cue": "Although he is coming, I am glad, though.",
+          "changed": "tamen later in its clause, still second among its own words"
+        }
+      ],
+      "usage": "Said making a concession explicit.",
+      "mnemonic": "quamquam opens; tamen holds the line.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Certē errāvī, sed nōn mē pudet.",
+      "cue": "Certainly I was wrong, but I am not ashamed.",
+      "literal": "certainly I-erred but not me it-shames",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [
+              "certē"
+            ],
+            "note": "'Certainly', and it concedes before it disagrees. certē … sed is the frame: grant the point, then hold your ground."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          },
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "'But'. L1-M9's word, joining two clauses from the front."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative, because pudet wants it. L3-M6's row."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It shames' — impersonal, accusative of the person. L3-M6's verb."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Concede first, then disagree. certē … sed is the whole move, and it is built from one new word plus L1-M9's sed — so the most useful thing in the module costs almost nothing, which is what leaves room for the two concessives and the two question particles.",
+      "sound": "cer-TĒ er-RĀ-vī, SED nōn MĒ PU-det. Four long vowels, and the concession carries two of them.",
+      "variations": [
+        {
+          "display": "Certē errāvī, sed mē pudet.",
+          "cue": "Certainly I was wrong, and I am ashamed.",
+          "changed": "the second half positive, which concedes twice"
+        },
+        {
+          "display": "Certē aeger fuī, sed vēnī.",
+          "cue": "Certainly I was ill, but I came.",
+          "changed": "a different concession"
+        },
+        {
+          "display": "Errāvī, sed nōn mē pudet.",
+          "cue": "I was wrong, but I am not ashamed.",
+          "changed": "certē dropped, which is blunter"
+        }
+      ],
+      "usage": "Said giving ground to keep an argument.",
+      "mnemonic": "certē concedes; sed holds.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "Nōnne venit?",
+      "cue": "Surely he is coming?",
+      "literal": "surely-not? he-comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōnne",
+            "cue": "surely … ?",
+            "tag": "interference",
+            "forms": [
+              "nōnne"
+            ],
+            "note": "'Surely … ?' — a question expecting YES. L1-M2 taught -ne for a neutral question and left this key free for exactly this."
+          },
+          {
+            "display": "venit",
+            "cue": "he comes",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He comes' — veniō's third person present."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "nōnne expects YES. L1-M2 taught -ne for a neutral question — agis-ne bene? — and left this key free for thirty-three modules so that this module could have the loaded one. It is built from nōn plus -ne, which is why 'is he not coming?' is the literal shape and 'surely he is' the meaning.",
+      "sound": "NŌN-ne VE-nit? The long ō is the negative inside the word, and it is the only length in the line.",
+      "variations": [
+        {
+          "display": "Nōnne vēnit?",
+          "cue": "Surely he came?",
+          "changed": "the past, where the bar does all the work"
+        },
+        {
+          "display": "Nōnne aeger es?",
+          "cue": "Surely you are ill?",
+          "changed": "L3-M7's adjective and the listener"
+        },
+        {
+          "display": "Agis-ne bene?",
+          "cue": "Are you well?",
+          "changed": "L1-M2's neutral particle, on the very sentence that reserved these two keys"
+        }
+      ],
+      "usage": "Said when you expect agreement.",
+      "mnemonic": "nōnne wants yes.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Num aeger es?",
+      "cue": "Surely you are not ill?",
+      "literal": "surely-not you-are ill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "num",
+            "cue": "surely not … ?",
+            "tag": "interference",
+            "forms": [
+              "num"
+            ],
+            "note": "'Surely not … ?' — a question expecting NO. The mirror of nōnne, and L1-M2 left this key free too."
+          },
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum. L3-M7's word."
+          },
+          {
+            "display": "es",
+            "cue": "you are",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You are' — sum, es, est, sunt. L1-M1's verb."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "num expects NO, and it is nōnne's mirror. Both keys were held free by L1-M2 for thirty-three modules, and between them they give a learner the politest tools in the course: each one tells the listener which answer you are hoping for, which is what makes a question persuasive rather than neutral.",
+      "variations": [
+        {
+          "display": "Num vēnit?",
+          "cue": "Surely he did not come?",
+          "changed": "the past and someone else"
+        },
+        {
+          "display": "Num errāvī?",
+          "cue": "Surely I did not make a mistake?",
+          "changed": "asked about yourself, which is a way of fishing for reassurance"
+        },
+        {
+          "display": "Nōnne aeger es?",
+          "cue": "Surely you are ill?",
+          "changed": "the other particle, expecting the opposite answer"
+        }
+      ],
+      "mistake": {
+        "display": "Num aeger es? Ita.",
+        "why": "num answered with yes. The particle expects no, so an affirmative answer contradicts the question's own expectation — which is not wrong Latin but tells a listener you did not hear what was being asked."
+      },
+      "usage": "Said when you hope the answer is no.",
+      "mnemonic": "num wants no; nōnne wants yes.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "Licet veniat, nōn gaudeō.",
+      "cue": "Although he may be coming, I am not glad.",
+      "literal": "granted he-may-come not I-am-glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "licet",
+            "cue": "although",
+            "tag": "interference",
+            "forms": [
+              "licet"
+            ],
+            "note": "'Although, granted that', and it takes a SUBJUNCTIVE. The tighter of the two concessives, and it is also a verb meaning 'it is allowed'."
+          },
+          {
+            "display": "veniat",
+            "cue": "he may come",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That he may come' — the present subjunctive of veniō. L3-M4's mood, and licet demands it."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "gaudeō",
+            "cue": "I am glad",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am glad': gaudeō, gaudet."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "licet takes the subjunctive and quamquam the indicative, and they mean the same thing. That is the module's hardest pair: one concessive concedes a fact and the other concedes a possibility, and only the mood after them tells you which you are reading.",
+      "sound": "LI-cet VE-ni-at, nōn GAU-de-ō. Nine light syllables — a concession with a mood in it is quicker than one with a fact.",
+      "variations": [
+        {
+          "display": "Licet aeger sim, labōrō.",
+          "cue": "Although I may be ill, I work.",
+          "changed": "sum's subjunctive, which L3-M4 opened"
+        },
+        {
+          "display": "Licet veniat, gaudeō.",
+          "cue": "Although he may be coming, I am glad.",
+          "changed": "the second half positive"
+        },
+        {
+          "display": "Quamquam venit, nōn gaudeō.",
+          "cue": "Although he is coming, I am not glad.",
+          "changed": "the other concessive, which takes a fact"
+        }
+      ],
+      "mistake": {
+        "display": "Licet venit, nōn gaudeō.",
+        "why": "the indicative after licet. That is quamquam's construction — licet is also a verb meaning 'it is allowed', and it behaves like one by taking a mood after it, which is the only way to remember which of the two wants what."
+      },
+      "usage": "Said conceding a possibility rather than a fact.",
+      "mnemonic": "licet is a verb, so it takes a mood.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "Nōnne certē errāvistī?",
+      "cue": "Surely you were certainly wrong?",
+      "literal": "surely-not certainly you-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōnne",
+            "cue": "surely … ?",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Surely … ?' — a question expecting YES. L1-M2 taught -ne for a neutral question and left this key free for exactly this."
+          },
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes before it disagrees. certē … sed is the frame: grant the point, then hold your ground."
+          },
+          {
+            "display": "errāvistī",
+            "cue": "you were wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You went wrong' — the perfect's you-shape, -istī where the present is -ās. L2-M8's verb."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "A loaded question with a concession inside it, which is the module's job in three words. nōnne expects yes and certē says you already think so — so the sentence is not really asking, and that is exactly what makes it persuasive.",
+      "variations": [
+        {
+          "display": "Nōnne errāvistī?",
+          "cue": "Surely you were wrong?",
+          "changed": "certē dropped, which asks rather than insists"
+        },
+        {
+          "display": "Num errāvistī?",
+          "cue": "Surely you were not wrong?",
+          "changed": "the other particle, which lets the listener off"
+        },
+        {
+          "display": "Certē errāvistī.",
+          "cue": "Certainly you were wrong.",
+          "changed": "a statement, with no question at all"
+        }
+      ],
+      "usage": "Said pressing a point.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Quamquam certē errāvī, tamen nōn mē pudet.",
+      "cue": "Although I was certainly wrong, I am still not ashamed.",
+      "literal": "although certainly I-erred however not me it-shames",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quamquam",
+            "cue": "although",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Although', and it takes the INDICATIVE — a plain fact conceded. Its partner licet takes a subjunctive and means the same thing."
+          },
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes before it disagrees. certē … sed is the frame: grant the point, then hold your ground."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', second in its clause. L3-M3's word, and quamquam's usual partner."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative, because pudet wants it."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It shames' — impersonal, accusative of the person."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Three concessive words in one sentence and none of them is redundant. quamquam opens the concession, certē strengthens what is conceded, tamen marks the turn — and English would use two of the three at most, which is why this reads as heavier in translation than it is in Latin.",
+      "sound": "QUAM-quam cer-TĒ er-RĀ-vī, TA-men nōn MĒ PU-det. Fourteen syllables and five long vowels.",
+      "variations": [
+        {
+          "display": "Quamquam certē errāvī, tamen mē pudet.",
+          "cue": "Although I was certainly wrong, I am ashamed after all.",
+          "changed": "the turn reversed"
+        },
+        {
+          "display": "Certē errāvī, sed nōn mē pudet.",
+          "cue": "Certainly I was wrong, but I am not ashamed.",
+          "changed": "the lighter frame, saying the same thing"
+        },
+        {
+          "display": "Quamquam errāvī, tamen nōn mē pudet.",
+          "cue": "Although I was wrong, I am still not ashamed.",
+          "changed": "certē dropped"
+        }
+      ],
+      "usage": "Said holding your ground at length.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Licet errāverim, certē mē adiuvā.",
+      "cue": "Although I may have been wrong, do help me.",
+      "literal": "granted I-may-have-erred certainly me help!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "licet",
+            "cue": "although",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Although, granted that', and it takes a SUBJUNCTIVE. The tighter of the two concessives, and it is also a verb meaning 'it is allowed'."
+          },
+          {
+            "display": "errāverim",
+            "cue": "I may have been wrong",
+            "tag": "interference",
+            "forms": [
+              "errāverim"
+            ],
+            "note": "'That I may have gone wrong' — the PERFECT subjunctive of errō. licet takes a mood, and a past concession takes the mood's past."
+          },
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes before it disagrees. certē … sed is the frame: grant the point, then hold your ground."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Me' — the object of the order. L3-M6's row, and here it is a plain accusative object rather than an impersonal's person."
+          },
+          {
+            "display": "adiuvā",
+            "cue": "help!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Help!' — L3-M6's order shape of adiuvō."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "mē twice over in this module and two different jobs. In S03 and S08 it was the person a feeling happens to; here it is the ordinary object of an order. Same word, same shape, and the verb decides — which is what an accusative always does and what the impersonals made confusing.",
+      "variations": [
+        {
+          "display": "Licet errāverim, mē adiuvā.",
+          "cue": "Although I may have been wrong, help me.",
+          "changed": "certē dropped"
+        },
+        {
+          "display": "Quamquam errāvī, certē mē adiuvā.",
+          "cue": "Although I was wrong, do help me.",
+          "changed": "the fact conceded instead of the possibility"
+        },
+        {
+          "display": "Licet errāverim, nōn mē pudet.",
+          "cue": "Although I may have been wrong, I am not ashamed.",
+          "changed": "a statement instead of a request"
+        }
+      ],
+      "usage": "Said asking a favour from a weak position.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "Num errāvī? Certē nōn omnia vīdī.",
+      "cue": "Surely I was not wrong? Certainly I did not see everything.",
+      "literal": "surely-not I-erred certainly not all I-saw",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "num",
+            "cue": "surely not … ?",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Surely not … ?' — a question expecting NO. The mirror of nōnne, and L1-M2 left this key free too."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          },
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes before it disagrees. certē … sed is the frame: grant the point, then hold your ground."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "omnia",
+            "cue": "everything",
+            "tag": "delta",
+            "forms": [
+              "omnia"
+            ],
+            "note": "'All things, everything' — L2-M3's omnis in the neuter plural. A neuter plural in -a again, which L2-M9's verba prepared."
+          },
+          {
+            "display": "vīdī",
+            "cue": "I saw",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I saw' — the perfect of videō, lengthening the vowel. L3-M10's word."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "A question that expects no, followed by a concession that undercuts it. That is the whole rhetoric of the module: num invites the listener to say you were not wrong, and certē nōn omnia vīdī hands them a reason to say you were — which is how you make a case while looking fair.",
+      "sound": "NUM er-RĀ-vī? cer-TĒ nōn OM-ni-a VĪ-dī. Thirteen syllables and five long vowels, one closing each idea.",
+      "variations": [
+        {
+          "display": "Nōnne errāvī? Certē nōn omnia vīdī.",
+          "cue": "Surely I was wrong? Certainly I did not see everything.",
+          "changed": "the particle reversed, which makes the concession an admission"
+        },
+        {
+          "display": "Num errāvī? Certē omnia vīdī.",
+          "cue": "Surely I was not wrong? Certainly I saw everything.",
+          "changed": "the concession removed, which makes it a boast"
+        },
+        {
+          "display": "Num errāvī? Nōn omnia vīdī.",
+          "cue": "Surely I was not wrong? I did not see everything.",
+          "changed": "certē dropped"
+        }
+      ],
+      "usage": "Said arguing a case in good faith.",
+      "mnemonic": "Load the question, then concede the weakness.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "Quamquam venit, gaudeō.",
+      "cue": "Although he is coming, I am glad."
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "Quamquam aeger sum, tamen labōrō.",
+      "cue": "Although I am ill, I still work."
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Certē errāvī, sed mē pudet.",
+      "cue": "Certainly I was wrong, and I am ashamed."
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "Nōnne vēnit?",
+      "cue": "Surely he came?"
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Num errāvī?",
+      "cue": "Surely I did not make a mistake?"
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "Licet aeger sim, labōrō.",
+      "cue": "Although I may be ill, I work."
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "Nōnne errāvistī?",
+      "cue": "Surely you were wrong?"
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "Quamquam errāvī, tamen nōn mē pudet.",
+      "cue": "Although I was wrong, I am still not ashamed."
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Licet errāverim, mē adiuvā.",
+      "cue": "Although I may have been wrong, help me."
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "Nōn omnia vīdī.",
+      "cue": "I did not see everything."
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Nōnne aeger es?",
+      "cue": "Surely you are ill?"
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "Licet veniat, gaudeō.",
+      "cue": "Although he may be coming, I am glad."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -132,3 +132,137 @@ Additions to the seventy-six standing in `docs/123` §11, `docs/124` §6, `docs/
    M5.
 6. **Is `vellem vēnissem` idiomatic**, or does `vellem` want `ut` and a subjunctive? M3 writes the bare
    pluperfect on the model of `utinam`.
+---
+
+## Wave 2 — L4-M4 through L4-M7 (#648), 2026-09-12
+
+Four rungs, authored in ladder order against the L4 briefs (#646), rebuilding between modules. All
+four signed `verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`,
+`verifiedAt: 2026-09-12`.
+
+This is the wave that spends the second of `docs/131` §1's four promissory notes: **the passive, at
+M7**, which L2-M8 and L3-M6 both pointed at while teaching a participle as an adjective.
+
+### 2.1 What was checked
+
+- **`npm run content:validate`** → all four `ok`; `CONTENT 512/512 ok`.
+- **The strict build** → `en-la: 37 modules`, `index L4-M4: 545 surfaces`, `L4-M5: 559`, `L4-M6: 573`,
+  `L4-M7: 593`, and **no `shown but untaught` line at any of the thirty-seven**.
+- **The folded index** — 593 surfaces against a `surfaceCount` of 593, `maxSpan` 1.
+- **The orthography sweep** — 3,863 readable Latin strings: zero on every count. The 256 `mistake`
+  plates swept separately.
+- **`git diff --stat`** over every module below L4-M4 is **empty**.
+
+### 2.2 The abbreviation decision, executed and read back
+
+`docs/131` §3 settled it by running `surface.ts`, and the emitted index confirms the execution:
+
+| Written | Key in the index |
+|---|---|
+| `SPQR` | `spqr` — `L4-M7-S05` |
+| `S.P.Q.R.` | **absent** |
+| `D.M.` | **absent** |
+
+One row, one key, the expansion in the note, and neither dotted spelling anywhere in the course. The
+row's `display` is `spqr` in lower case, which is this course's convention for every proper noun
+(`mārcus`, `iūlia`, `sāturnālia`) while the sentence carries the capitals — worth recording because an
+abbreviation is the one place that convention looks odd.
+
+`SPQR` also contains a piece of grammar this course taught thirty modules ago: the `-que` of
+`Senātus Populusque Rōmānus` is L1-M10's enclitic doing its ordinary job, and S05's trap says so.
+
+### 2.3 `cum`, and the remedy that could not be withholding
+
+`docs/131` §4 predicted that L3's remedy for `quod`, `quam` and `ut` — write one reading, name the
+other in prose — **would not be available here**, because a time clause is M6's job. Read back:
+
+```
+cum -> { moduleId: 'L1-M7', sentenceId: 'L1-M7-S10' }
+```
+
+The key never moved, as it could not. So **every `cum` row in M6 carries a note naming both readings**
+and saying which is which, and the signal is stated as a rule: a case after `cum` means "with", a mood
+means "when". S01's plate is `cum vēnit` — the indicative — and its `why` names the second danger:
+`cum vēnit` could be read as "with he-comes", which is nothing at all.
+
+That is the second collision this level has had to solve by doubling a note rather than by withholding
+a reading. §1.2 was the first, and both were predicted in the brief.
+
+### 2.4 `dōnec` takes both moods after all
+
+The brief said `dōnec` takes the indicative only, the fourth homograph handled the L3 way. **Writing
+the module showed that is not tenable**: you cannot wait for something in the indicative before it has
+happened, so `dōnec veniat, exspectābō` ("I shall wait until he comes") needs the subjunctive and no
+other shape will do.
+
+So the rule as shipped is **"indicative for a fact, subjunctive for a thing still to come"** — S03
+teaches the first half and S08 the second, and S03's plate is a subjunctive borrowed from `cum` two
+sentences above. This is a correction to `docs/131` §4 arrived at by authoring, and it makes M6 a
+module with **two** time conjunctions of opposite defaults rather than one clean pair.
+
+### 2.5 The imperfect borrowed, and the one key not spent
+
+A `cum` clause about the past needs a past beside it, and the perfect would make every sentence in M6
+a single finished event. So M6 writes **three imperfects** — `gaudēbam`, `labōrābam`, `exspectābam`,
+plus `veniēbam` in a variation — as shapes the course has not yet taught, and every one of their notes
+says M8 is where the tense is explained.
+
+**`legēbam` was caught by the pool gate and removed.** It is one of the three keys L1-M5 named for
+M8 and every review doc since has confirmed free, and a pool item had reached for it. The variation and
+the pool item were rewritten around `veniēbam` instead. The other two, `habēbam` and `eram`, are
+confirmed absent at 593 surfaces.
+
+That distinction is worth stating plainly: borrowing the imperfect's *shape* is what the brief
+authorised; spending one of the three *reserved keys* would have taken M8's arrival away from it.
+
+### 2.6 `haud sciō an`, and the rule that cuts an idiom in half
+
+M5's hero is the litotes that reversed: `haud sciō an vērum sit` is word-for-word "I do not know
+whether it is true" and idiomatically "I rather think it **is** true". `nesciō an` one word away is
+genuine doubt. The module writes both, puts them in consecutive sentences, and its plate is
+`nōn sciō an` — the wrong negative, which destroys the idiom without breaking the grammar. L2-M5's
+`benignē` was the same kind of trap and got the same treatment.
+
+S10 then finds something the brief did not anticipate: **`tamen` must come second in its clause even
+when that splits the idiom.** `haud tamen sciō an vērum sit` — six words in this course must come
+second and there is no exception for a fixed phrase, so the rule lands between `haud` and `sciō`. The
+plate is `tamen haud sciō an`, which is how English would order it.
+
+### 2.7 Counts that are now worth keeping as lists
+
+Three inventories have grown past the point where a principle helps:
+
+- **Six words with a negative inside them**: `nōlō` (L1-M3), `mālō` (L2-M9), `negō` (L3-M5), `nisi`
+  (M3), `nesciō` (M5), `nōndum` (M6). Three modules now have a plate on adding `nōn` to one of them.
+- **Five conjunctions that require the subjunctive, for five unrelated reasons**: `ut`/`nē` (purpose,
+  L3-M4), `licet` (concession, M4), `an` (something unknown, M5), `cum` (a past time clause, M6),
+  `dōnec` (a thing still to come, M6). M6-S10 carries three of them in one sentence.
+- **Seven connectives first, six second, five joining from the front** — M2's rule states the whole
+  list, and M4 and M5 add nothing to it but use it constantly.
+
+### 2.8 Corrections made during the wave
+
+- **M4 opened a seam it was not authorised to open.** A variation wrote `Venit-ne?`, minting
+  `venit-ne`; `tools/course-briefs.test.ts`'s `SEAM_MODULES` allows L1-M2, L1-M10, L2-M2, L2-M5 and
+  L2-M6 and no others. The variation now writes `Agis-ne bene?`, which L1-M2 already owns — and which
+  is the very sentence that reserved `nōnne` and `num` for M4.
+- **`legēbam`** as §2.5 records.
+- Seven shapes were shown before they were owned and each went into its own lexeme's row: `putet`,
+  `datur`, `signantur`, `officīnae`, `bibendum`, `gaudēbat`, `labōrābat`.
+
+### 2.9 Open questions for the fluent-speaker gate
+
+Additions to the eighty-two standing in the docs listed at §1.7.
+
+1. **Is `dōnec` with a subjunctive for a future wait right**, or does a Roman write `dum` there? §2.4
+   was forced by authoring and a teacher may say the conjunction is wrong rather than the mood.
+2. **Does `nōn iam` mean "no longer" as reliably as M6 claims?** `iam nōn` is the commoner order and
+   the module writes only `nōn iam`.
+3. **Is `officīna clauditur` what a modern Latin notice says?** The verb is classical and the noun is
+   the community's, so the sentence is half-borrowed in a way no single word is.
+4. **Should `SPQR` be taught at all?** It is the most recognisable Latin in the world and nothing a
+   learner will produce. `docs/131` §8 asked this of the brief and ten sentences have not settled it.
+5. **Is `licet errāverim` idiomatic**, or does a past concession want `quamquam errāvī`? M4 writes both
+   shapes and leans on `licet` for the mood.
+6. **Is `cavē canem` too famous to be useful?** A learner will recognise it and may never parse it,
+   which is the opposite of what a hero sentence should do.

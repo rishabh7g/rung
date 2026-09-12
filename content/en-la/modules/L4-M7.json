@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": [
+    "L4-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "N-nom + V-passive (clauditur, vetātur)",
+      "V-infinitive + vetātur",
+      "nōn + V-gerundive (a sign)",
+      "cavē + N-acc",
+      "dīcitur + N-acc + V-infinitive"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PASSIVE ENTERS HERE, AND TWO MODULES PROMISED IT. L2-M8's frāctus est and L3-M6's sollicitus sum were taught as ADJECTIVES with sum, both said out loud that the construction was a passive in full Latin, and both pointed at this module. The real thing is an ending: -tur in the singular, -ntur in the plural. clauditur 'it is closed', vetātur 'it is forbidden', dantur 'they are issued'. Against the active -t and -nt, the difference is three letters carrying the entire question of who is doing it."
+    },
+    {
+      "tag": "free",
+      "text": "THE PASSIVE IS OPENED IN THE THIRD PERSON ONLY, AND THAT IS ENOUGH FOR AN ANNOUNCEMENT. A passive of every person in every tense is a system twice the size of this module; an announcement needs exactly 'it is closed' and 'they are issued' — nobody named as closing or issuing, which is what the passive is FOR. L2-M8's participle-as-adjective arrangement stands for everything else, and S06 puts both in one sentence so the difference is visible: dīcitur has the ending, clausam agrees."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ANNOUNCEMENT NAMES NOBODY, AND THAT IS A REGISTER RATHER THAN AN EVASION. Things close, forms are issued, entering is forbidden — the institution never appears as a subject, which is the same shape English uses on a sign. Every sentence in this module carries the formal chip (#422), and en-la's formal is STILL NOT A PRONOUN: L2-M1 settled that politeness rides on the verb and that vōs to one person is simply wrong, and official Latin adds the impersonal passive to that rather than a pronoun. vōs appears nowhere in this module."
+    },
+    {
+      "tag": "free",
+      "text": "A SIGN DROPS EVERYTHING A READER CAN SUPPLY, INCLUDING est. M1 taught legendum est and said est was not optional; nōn intrandum on a wall has no est at all, because inscriptional Latin leaves out what a reader will fill in. That is a register, not an exception — and it is the register this module exists for."
+    },
+    {
+      "tag": "interference",
+      "text": "cavē TAKES A PLAIN OBJECT AND ENGLISH NEEDS 'OF'. cavē canem is 'beware the dog', and it is the sixth construction in this course where an English preposition has nowhere to attach — after raedā, hōrā, auxilium rogō, mūsicam audiō and eum exspectō. It is also the most famous two words of Latin ever laid in a floor."
+    },
+    {
+      "tag": "free",
+      "text": "AN ABBREVIATION IS WRITTEN WITHOUT DOTS IN THIS COURSE, AND THE REASON IS THE INDEX. Run against the real src/engine/surface.ts: SPQR normalizes to spqr and S.P.Q.R. normalizes to s.p.q.r, because rule 3 strips a TRAILING dot and keeps the interior ones. So the dotted and undotted spellings are two different keys for one thing, and a learner tapping one would be shown nothing about the other. This course writes SPQR and names D.M. and every other dotted abbreviation in prose only. SPQR stands for Senātus Populusque Rōmānus, and the -que inside it is L1-M10's enclitic doing its ordinary job."
+    },
+    {
+      "tag": "interference",
+      "text": "A PASSIVE CAN REPORT, AND dīcitur IS HOW. L3-M5 taught dīcit sē venīre with a named speaker; dīcitur officīnam clausam esse says it with nobody at all — 'it is said that'. The reported clause is unchanged, accusative and infinitive as always, and what has gone is the person doing the saying. That is the most useful single shape in official Latin, because it lets you relay something without vouching for it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Officīna hōrā nōnā clauditur.",
+      "cue": "The office closes at the ninth hour.",
+      "literal": "office at-hour ninth it-is-closed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "officīna",
+            "cue": "office",
+            "tag": "free",
+            "forms": [
+              "officīna",
+              "officīnae"
+            ],
+            "note": "'Office, workshop' — a classical word put to a modern use by the living-Latin community. L3-M8's row, and officīnae is more than one."
+          },
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — L3-M1's ablative, and the ending is the 'at'."
+          },
+          {
+            "display": "nōnā",
+            "cue": "ninth",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ninth', agreeing with hōrā. L3-M1's word, and the ninth hour is mid-afternoon."
+          },
+          {
+            "display": "clauditur",
+            "cue": "is closed",
+            "tag": "interference",
+            "forms": [
+              "claudō",
+              "clauditur",
+              "clauduntur"
+            ],
+            "note": "'It is closed' — a PASSIVE, and the -tur ending is what makes it one. claudō is 'I close'; clauditur is 'it is closed', with nobody named as closing it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "THE PASSIVE ARRIVES, and L2-M8 and L3-M6 both promised it here. Those modules taught frāctus est and sollicitus sum as ADJECTIVES with sum and said out loud that the construction was a passive in full Latin. This is the real thing: a -tur ending, and nobody named as doing it.",
+      "sound": "of-fi-CĪ-na HŌ-rā NŌ-nā CLAU-di-tur. Ten syllables and three long vowels before the verb.",
+      "variations": [
+        {
+          "display": "Officīna hōrā sextā clauditur.",
+          "cue": "The office closes at the sixth hour.",
+          "changed": "a different hour"
+        },
+        {
+          "display": "Officīnae clauduntur.",
+          "cue": "The offices are closed.",
+          "changed": "more than one, so the ending goes plural"
+        },
+        {
+          "display": "Officīna nōn clauditur.",
+          "cue": "The office does not close.",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Officīna hōrā nōnā claudit.",
+        "why": "the active ending on a passive sentence. claudit would mean the office closes something else — and the whole point of an announcement is that nobody is named as doing the closing, which is the job only a passive can do."
+      },
+      "usage": "Said on a notice at a counter.",
+      "mnemonic": "-tur is the passive.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "Hīc intrāre vetātur.",
+      "cue": "Entering here is forbidden.",
+      "literal": "here to-enter it-is-forbidden",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Here'. L1-M7's word."
+          },
+          {
+            "display": "intrāre",
+            "cue": "to enter",
+            "tag": "delta",
+            "forms": [
+              "intrō",
+              "intrāre"
+            ],
+            "note": "'To enter' — intrō's infinitive. English 'enter' is the same word, and the gerundive of it is on the next sign."
+          },
+          {
+            "display": "vetātur",
+            "cue": "is forbidden",
+            "tag": "interference",
+            "forms": [
+              "vetātur"
+            ],
+            "note": "'It is forbidden' — passive, from vetō 'I forbid'. An announcement forbids without saying who is forbidding, which is what the passive is for."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Nobody forbids and nobody enters. Official Latin says what is not done without saying who says so or who would do it — which is exactly the register the job means, and the impersonal passive is the one shape that manages both at once.",
+      "sound": "HĪC in-TRĀ-re ve-TĀ-tur. Three long vowels, one in each word.",
+      "variations": [
+        {
+          "display": "Hīc bibere vetātur.",
+          "cue": "Drinking here is forbidden.",
+          "changed": "L1-M5's verb forbidden instead"
+        },
+        {
+          "display": "Intrāre nōn vetātur.",
+          "cue": "Entering is not forbidden.",
+          "changed": "the negative, which is a permission"
+        },
+        {
+          "display": "Nōn intrandum.",
+          "cue": "No entry.",
+          "changed": "M1's gerundive, which is what a sign actually says"
+        }
+      ],
+      "usage": "Said on a sign.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "Nōn intrandum.",
+      "cue": "No entry.",
+      "literal": "not to-be-entered",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "intrandum",
+            "cue": "to be entered",
+            "tag": "interference",
+            "forms": [
+              "intrandum",
+              "bibendum"
+            ],
+            "note": "'It is not to be entered' — M1's gerundive with nothing to agree with, and no est at all. A sign drops 'to be'; bibendum is the same shape of bibō."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two words and no verb. M1 taught legendum est and said est was not optional; a SIGN drops it, because inscriptional Latin leaves out everything a reader can supply. That is a register rather than an exception, and it is the register this module exists for.",
+      "variations": [
+        {
+          "display": "Nōn intrandum est.",
+          "cue": "One must not enter.",
+          "changed": "est written, which is a sentence rather than a sign"
+        },
+        {
+          "display": "Nōn bibendum.",
+          "cue": "No drinking.",
+          "changed": "a different prohibition"
+        },
+        {
+          "display": "Hīc intrāre vetātur.",
+          "cue": "Entering here is forbidden.",
+          "changed": "the passive, which is the announcement rather than the sign"
+        }
+      ],
+      "usage": "Said on a door.",
+      "mnemonic": "A sign drops what a reader can supply.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "Cavē canem.",
+      "cue": "Beware of the dog.",
+      "literal": "beware! dog",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cavē",
+            "cue": "beware!",
+            "tag": "delta",
+            "forms": [
+              "cavē"
+            ],
+            "note": "'Beware!' — caveō's order shape, and it takes an object: cavē canem. It is the most famous two words of Latin on any wall."
+          },
+          {
+            "display": "canem",
+            "cue": "the dog",
+            "tag": "delta",
+            "forms": [
+              "canis",
+              "canem"
+            ],
+            "note": "'Dog' as the object — canis as the subject, canem as the thing to beware of. English 'canine' keeps it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "cavē takes a plain object and English needs 'of'. It is the sixth construction in this course where an English preposition has nowhere to attach — after raedā, hōrā, auxilium rogō, mūsicam audiō and eum exspectō — and it is the most famous two words of Latin ever laid in a floor.",
+      "sound": "CA-vē CA-nem. Four syllables and one long vowel, which is the imperative's.",
+      "variations": [
+        {
+          "display": "Cavē.",
+          "cue": "Take care.",
+          "changed": "no object, which is the everyday use"
+        },
+        {
+          "display": "Canem cavē.",
+          "cue": "Beware of the dog.",
+          "changed": "the order reversed, which Latin allows and the mosaics do not"
+        },
+        {
+          "display": "Canis hīc est.",
+          "cue": "The dog is here.",
+          "changed": "the noun as a subject, where its own shape shows"
+        }
+      ],
+      "usage": "Said on a threshold, in mosaic.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "SPQR.",
+      "cue": "The Senate and the Roman People.",
+      "literal": "Senate People-and Roman",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spqr",
+            "cue": "the Senate and the Roman People",
+            "tag": "free",
+            "forms": [
+              "spqr"
+            ],
+            "note": "Senātus Populusque Rōmānus — 'the Senate and the Roman People'. Written without dots in this course, because a dotted spelling would be a second key for one thing."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Four letters and the whole Roman state. It stands for Senātus Populusque Rōmānus, and the -que inside it is L1-M10's enclitic doing its ordinary job — so the abbreviation contains a piece of grammar this course taught thirty modules ago.",
+      "variations": [
+        {
+          "display": "SPQR hīc est.",
+          "cue": "SPQR is here.",
+          "changed": "put in a sentence, which no inscription does"
+        },
+        {
+          "display": "Cavē canem.",
+          "cue": "Beware of the dog.",
+          "changed": "the other famous inscription"
+        },
+        {
+          "display": "Officīna clauditur.",
+          "cue": "The office is closed.",
+          "changed": "a plain announcement instead"
+        }
+      ],
+      "usage": "Said nowhere and written everywhere in Rome.",
+      "mnemonic": "The -que in SPQR is L1-M10's.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "Dīcitur officīnam clausam esse.",
+      "cue": "It is said that the office is closed.",
+      "literal": "it-is-said office closed to-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcitur",
+            "cue": "it is said",
+            "tag": "interference",
+            "forms": [
+              "dīcitur"
+            ],
+            "note": "'It is said' — passive, from dīcō. L3-M5 taught dīcit for a named speaker; this says it with nobody at all."
+          },
+          {
+            "display": "officīnam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "'Office' in the OBJECT shape, because the clause is reported. L3-M8's word inside L3-M3's construction."
+          },
+          {
+            "display": "clausam",
+            "cue": "closed",
+            "tag": "interference",
+            "forms": [
+              "clausus",
+              "clausam"
+            ],
+            "note": "'Closed' — a participle used as an ADJECTIVE, agreeing with officīnam. L2-M8's frāctus arrangement, which this module's passive does not replace."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive. L3-M3's word."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "A passive verb reporting an adjective that looks passive. dīcitur is the real passive and clausam esse is L2-M8's participle-as-adjective — so one sentence has both arrangements in it, and the difference is that dīcitur has a -tur ending and clausam agrees.",
+      "sound": "DĪ-ci-tur of-fi-CĪ-nam CLAU-sam ES-se. Eleven syllables and the two long ī sounds open it.",
+      "variations": [
+        {
+          "display": "Dīcitur officīnam clausam nōn esse.",
+          "cue": "It is said that the office is not closed.",
+          "changed": "the negative inside the reported clause"
+        },
+        {
+          "display": "Dīcitur eum vēnisse.",
+          "cue": "It is said that he has come.",
+          "changed": "L3-M5's construction with a person"
+        },
+        {
+          "display": "Dīcit officīnam clausam esse.",
+          "cue": "He says the office is closed.",
+          "changed": "L3-M5's named speaker, which is the active"
+        }
+      ],
+      "usage": "Said passing on an official notice.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "Hīc chartae dantur.",
+      "cue": "Forms are issued here.",
+      "literal": "here forms they-are-given",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Here'. L1-M7's word."
+          },
+          {
+            "display": "chartae",
+            "cue": "forms",
+            "tag": "free",
+            "forms": [
+              "chartae"
+            ],
+            "note": "'Forms, papers' — charta for one, chartae for more than one. L3-M8's word, and the plural is fresh."
+          },
+          {
+            "display": "dantur",
+            "cue": "are given",
+            "tag": "interference",
+            "forms": [
+              "dantur",
+              "datur",
+              "signantur"
+            ],
+            "note": "'They are given' — the passive of L1-M8's dā, plural. dat is 'he gives', datur 'it is given', dantur 'they are given': -ntur is the plural passive."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "dat and dantur are the same verb and opposite voices. L3-M9 taught dat, dant and damus in the active; this is the passive, and the whole difference is -ntur against -nt — one letter in the middle, carrying the entire question of who is doing it.",
+      "variations": [
+        {
+          "display": "Hīc charta datur.",
+          "cue": "A form is issued here.",
+          "changed": "one form, so the ending goes singular"
+        },
+        {
+          "display": "Chartae nōn dantur.",
+          "cue": "Forms are not issued.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Hīc chartae signantur.",
+          "cue": "Forms are signed here.",
+          "changed": "L3-M8's verb in the passive"
+        }
+      ],
+      "usage": "Said on a notice above a counter.",
+      "mnemonic": "-nt is active; -ntur is passive.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "Officīna clauditur; crās chartae dantur.",
+      "cue": "The office is closing; forms are issued tomorrow.",
+      "literal": "office it-is-closed tomorrow forms they-are-given",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "officīna",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "'Office' as the subject."
+          },
+          {
+            "display": "clauditur",
+            "cue": "is closing",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It is closed' — a PASSIVE, and the -tur ending is what makes it one. claudō is 'I close'; clauditur is 'it is closed', with nobody named as closing it."
+          },
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. L1-M4's word, and one of six caseless time adverbs."
+          },
+          {
+            "display": "chartae",
+            "cue": "forms",
+            "tag": "free",
+            "forms": [],
+            "note": "'Forms' — charta for one, chartae for more than one."
+          },
+          {
+            "display": "dantur",
+            "cue": "are given",
+            "tag": "interference",
+            "forms": [],
+            "note": "'They are given' — the passive of dā, plural."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "Two passives in two clauses and nobody named in either. That is what official Latin sounds like: things close, forms are issued, and the institution never appears as a subject — which is a register rather than an evasion, and it is the same one English uses on a sign.",
+      "variations": [
+        {
+          "display": "Officīna clauditur; crās charta datur.",
+          "cue": "The office is closing; a form is issued tomorrow.",
+          "changed": "one form"
+        },
+        {
+          "display": "Officīna clauditur; crās nōn dantur.",
+          "cue": "The office is closing; none are issued tomorrow.",
+          "changed": "the negative, with the subject understood"
+        },
+        {
+          "display": "Officīna hōrā nōnā clauditur.",
+          "cue": "The office closes at the ninth hour.",
+          "changed": "the time instead of the second clause"
+        }
+      ],
+      "usage": "Said on a notice in a window.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "Cavē canem; nōn intrandum.",
+      "cue": "Beware of the dog; no entry.",
+      "literal": "beware! dog not to-be-entered",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cavē",
+            "cue": "beware!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Beware!' — caveō's order shape, and it takes an object: cavē canem. It is the most famous two words of Latin on any wall."
+          },
+          {
+            "display": "canem",
+            "cue": "the dog",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Dog' as the object. canis as a subject, canem as the thing to beware of."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "intrandum",
+            "cue": "to be entered",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It is not to be entered' — M1's gerundive with no est. A sign drops the verb 'to be'."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "Two signs on one wall and neither is a sentence. An imperative with an object and a gerundive with nothing at all — this is the whole of what inscriptional Latin is, and the register chip on every line of this module is formal because a wall does not have a register of its own.",
+      "sound": "CA-vē CA-nem; nōn in-TRAN-dum. Eight syllables and two long vowels.",
+      "variations": [
+        {
+          "display": "Cavē canem; hīc intrāre vetātur.",
+          "cue": "Beware of the dog; entering here is forbidden.",
+          "changed": "the announcement instead of the sign"
+        },
+        {
+          "display": "Cavē; nōn intrandum.",
+          "cue": "Take care; no entry.",
+          "changed": "no dog"
+        },
+        {
+          "display": "Nōn intrandum; cavē canem.",
+          "cue": "No entry; beware of the dog.",
+          "changed": "the two swapped"
+        }
+      ],
+      "usage": "Said by a door, in two lines.",
+      "register": "formal"
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Dīcitur officīnam crās clausam esse; hīc chartae nōn dantur.",
+      "cue": "It is said the office is closed tomorrow; forms are not issued here.",
+      "literal": "it-is-said office tomorrow closed to-be here forms not they-are-given",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcitur",
+            "cue": "it is said",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It is said' — passive, from dīcō. L3-M5 taught dīcit for a named speaker; this says it with nobody at all."
+          },
+          {
+            "display": "officīnam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "'Office' in the object shape, because the clause is reported."
+          },
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. L1-M4's word."
+          },
+          {
+            "display": "clausam",
+            "cue": "closed",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Closed' — a participle as an adjective, agreeing with officīnam."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Here'. L1-M7's word."
+          },
+          {
+            "display": "chartae",
+            "cue": "forms",
+            "tag": "free",
+            "forms": [],
+            "note": "'Forms' — charta for one, chartae for more than one."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "dantur",
+            "cue": "are given",
+            "tag": "interference",
+            "forms": [],
+            "note": "'They are given' — the passive of dā, plural."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "Three impersonal shapes in one notice: a passive reporting verb, a participle used as an adjective, and a plural passive. Nobody appears anywhere in it — no speaker, no closer, no giver — and every one of those absences is doing work rather than hiding something.",
+      "sound": "DĪ-ci-tur of-fi-CĪ-nam CRĀS CLAU-sam ES-se; HĪC CHAR-tae nōn DAN-tur. Nineteen syllables — the longest notice of the module.",
+      "variations": [
+        {
+          "display": "Dīcitur officīnam crās clausam esse.",
+          "cue": "It is said the office is closed tomorrow.",
+          "changed": "one clause only"
+        },
+        {
+          "display": "Officīna crās clauditur; hīc chartae nōn dantur.",
+          "cue": "The office closes tomorrow; forms are not issued here.",
+          "changed": "asserted rather than reported, so officīna goes back to the subject shape"
+        },
+        {
+          "display": "Dīcitur officīnam clausam esse.",
+          "cue": "It is said the office is closed.",
+          "changed": "the time dropped"
+        }
+      ],
+      "usage": "Said relaying an official notice you do not vouch for.",
+      "mnemonic": "Nobody appears, and every absence is doing work.",
+      "register": "formal"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M7-C01",
+      "display": "Officīna hōrā sextā clauditur.",
+      "cue": "The office closes at the sixth hour."
+    },
+    {
+      "id": "L4-M7-C02",
+      "display": "Hīc bibere vetātur.",
+      "cue": "Drinking here is forbidden."
+    },
+    {
+      "id": "L4-M7-C03",
+      "display": "Nōn intrandum est.",
+      "cue": "One must not enter."
+    },
+    {
+      "id": "L4-M7-C04",
+      "display": "Cavē.",
+      "cue": "Take care."
+    },
+    {
+      "id": "L4-M7-C05",
+      "display": "SPQR hīc est.",
+      "cue": "SPQR is here."
+    },
+    {
+      "id": "L4-M7-C06",
+      "display": "Dīcitur eum vēnisse.",
+      "cue": "It is said that he has come."
+    },
+    {
+      "id": "L4-M7-C07",
+      "display": "Hīc charta datur.",
+      "cue": "A form is issued here."
+    },
+    {
+      "id": "L4-M7-C08",
+      "display": "Chartae nōn dantur.",
+      "cue": "Forms are not issued."
+    },
+    {
+      "id": "L4-M7-C09",
+      "display": "Cavē canem; hīc intrāre vetātur.",
+      "cue": "Beware of the dog; entering here is forbidden."
+    },
+    {
+      "id": "L4-M7-C10",
+      "display": "Officīna nōn clauditur.",
+      "cue": "The office does not close."
+    },
+    {
+      "id": "L4-M7-C11",
+      "display": "Officīnae clauduntur.",
+      "cue": "The offices are closed."
+    },
+    {
+      "id": "L4-M7-C12",
+      "display": "Dīcitur officīnam clausam esse.",
+      "cue": "It is said the office is closed."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

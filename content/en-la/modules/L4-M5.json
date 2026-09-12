@@ -1,0 +1,895 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "haud sciō an + V-subjunctive",
+      "nesciō an + V-subjunctive",
+      "nōn omnīnō + V",
+      "V-subjunctive (potential, standing alone)",
+      "velim + V-subjunctive"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "haud sciō an MEANS THE OPPOSITE OF WHAT IT LOOKS LIKE, and it is the politest disagreement in the language. Word for word it is 'I do not know whether it is true'; as an idiom it is 'I rather think it IS true'. The understatement is so settled that it reversed — so an English speaker reads doubt where a Roman heard gentle assertion. L2-M5's benignē was the same kind of trap, and like benignē it has to be learned as a phrase or not used at all."
+    },
+    {
+      "tag": "delta",
+      "text": "nesciō an IS THE GENUINE DOUBT AND haud sciō an IS NOT, which is the module's central pair: one word apart and opposite in force. And the idiom takes haud, never nōn — haud denies a single WORD rather than a clause, and nōn sciō an is a plain statement of ignorance, which is what the words say and not what the phrase means. One wrong negative and the understatement is gone."
+    },
+    {
+      "tag": "delta",
+      "text": "nesciō IS THE FIFTH WORD IN THIS COURSE WITH A NEGATIVE INSIDE IT, after L1-M3's nōlō, L2-M9's mālō, L3-M5's negō and M3's nisi. By now that is a habit of the language rather than a list of exceptions, and it is worth naming as one: Latin prefers to weld a negative into a word than to put one beside it."
+    },
+    {
+      "tag": "interference",
+      "text": "nōn omnīnō GIVES YOU THE MIDDLE GROUND L3-M3's cōnsentiō DID NOT HAVE. That module's agreement was all or nothing; nōn omnīnō cōnsentiō qualifies instead of refusing. And the ORDER is load-bearing: nōn omnīnō is 'not entirely' and omnīnō nōn is 'entirely not', which is stronger than a flat refusal. Both are grammatical, which is what makes the position matter."
+    },
+    {
+      "tag": "delta",
+      "text": "THE POTENTIAL SUBJUNCTIVE IS THE MODULE'S ONE NEW USE OF A MOOD IT ALREADY HAS. L3-M4 opened the present subjunctive for conditions, purpose and advice; here the same forms say 'might' standing alone — dīcat aliquis, 'someone might say'; fortasse vērum sit, 'it might perhaps be true'. No new endings, one new job. L3-M3 wrote fortasse with a plain indicative and said it changed nothing else; with the mood it gives a second degree of hedge."
+    },
+    {
+      "tag": "free",
+      "text": "THE REPORTED CLAUSE IS L3-M3's AND L3-M5's, UNCHANGED: dīcat aliquis mē errāvisse. mē rather than sē, because the person reported is the speaker — which was L3-M10's last mistake plate — and a perfect infinitive because the wrongness is earlier than the saying."
+    },
+    {
+      "tag": "delta",
+      "text": "velim PLUS A SUBJUNCTIVE IS A WISH ABOUT SOMEBODY ELSE, and it needs no ut at all: velim cōnsentiās, 'I should like you to agree'. L2-M1 wrote velim with a plain object for twenty-five modules and M3 showed it was a present subjunctive all along — this is the fuller construction, and the absent ut is the one thing about it an English speaker will not expect."
+    },
+    {
+      "tag": "interference",
+      "text": "A NEUTER ADJECTIVE BECOMES A NOUN BY BEING USED AS ONE: vērum is 'true' in haud sciō an vērum sit and 'the truth' in an vērum dīxerīs, and nothing about the word changes. Latin does this freely and English does it with a handful of words like 'the good'. L3-M3's vērō was the same word's ablative doing an adverb's job, which makes three uses of one stem across two levels."
+    },
+    {
+      "tag": "interference",
+      "text": "tamen COMES SECOND IN ITS CLAUSE EVEN WHEN THAT CUTS AN IDIOM IN HALF: haud tamen sciō an vērum sit. Six words in this course must come second and there is no exception for a fixed phrase — which is the module's hardest positional fact, because splitting haud sciō an feels like breaking it and is what the rule requires."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "Haud sciō an vērum sit.",
+      "cue": "I rather think it is true.",
+      "literal": "not I-know whether true it-may-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haud",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "haud"
+            ],
+            "note": "'Not' — but it denies a single WORD rather than a clause, and it is the negative this idiom takes. nōn is the ordinary one and will not do here."
+          },
+          {
+            "display": "sciō",
+            "cue": "I know",
+            "tag": "delta",
+            "forms": [
+              "sciō",
+              "scit",
+              "nesciō"
+            ],
+            "note": "'I know': sciō 'I know', scit 'he knows', nesciō 'I do not know'. English 'science' and 'conscious' come from it."
+          },
+          {
+            "display": "an",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [
+              "an"
+            ],
+            "note": "'Whether'. It introduces the thing not known, and it takes a subjunctive after it."
+          },
+          {
+            "display": "vērum",
+            "cue": "true",
+            "tag": "delta",
+            "forms": [
+              "vērum"
+            ],
+            "note": "'True' — vērum as a neuter adjective, the shape that agrees with nothing in particular. L3-M3's vērō was its ablative doing an adverb's job."
+          },
+          {
+            "display": "sit",
+            "cue": "it may be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That it may be' — sum's present subjunctive. L3-M4's mood, required after an."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "THIS MEANS THE OPPOSITE OF WHAT IT LOOKS LIKE. Word for word it is 'I do not know whether it is true'; as an idiom it is 'I rather think it IS true'. The understatement is so settled that it reversed — and an English speaker reads doubt where a Roman heard gentle assertion. L2-M5's benignē was the same kind of trap.",
+      "sound": "HAUD SCI-ō an VĒ-rum SIT. Six syllables and two long vowels, and the whole phrase is spoken quickly.",
+      "variations": [
+        {
+          "display": "Haud sciō an errāverim.",
+          "cue": "I rather think I was wrong.",
+          "changed": "M4's perfect subjunctive, conceding about yourself"
+        },
+        {
+          "display": "Nesciō an vērum sit.",
+          "cue": "I am not sure whether it is true.",
+          "changed": "nesciō instead, which really is doubt"
+        },
+        {
+          "display": "Vērum est.",
+          "cue": "It is true.",
+          "changed": "the flat assertion, which is what the idiom means and not how it sounds"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn sciō an vērum sit.",
+        "why": "nōn where haud belongs. The idiom takes haud and nothing else — nōn sciō an is a plain statement of ignorance, which is what the words say and not what the phrase means. One wrong negative and the understatement is gone."
+      },
+      "usage": "Said disagreeing as gently as the language allows.",
+      "mnemonic": "haud sciō an asserts; nesciō an doubts.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Nesciō an errāveris.",
+      "cue": "I am not sure whether you were wrong.",
+      "literal": "I-do-not-know whether you-may-have-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nesciō",
+            "cue": "I do not know",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I do not know' — nōn welded onto sciō, and the FIFTH word in this course with a negative inside it: nōlō, mālō, negō, nisi, nesciō."
+          },
+          {
+            "display": "an",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Whether', with a subjunctive after it."
+          },
+          {
+            "display": "errāveris",
+            "cue": "you may have been wrong",
+            "tag": "interference",
+            "forms": [
+              "errāverīs",
+              "errāveris"
+            ],
+            "note": "'That you may have gone wrong' — the perfect subjunctive of errō, in the you-shape. M4's tense."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "nesciō an really is doubt, where haud sciō an is assertion. Two phrases one word apart with opposite force, and this is the module's central pair — the litotes reversed and the plain negative did not.",
+      "variations": [
+        {
+          "display": "Nesciō an vērum sit.",
+          "cue": "I am not sure whether it is true.",
+          "changed": "a different thing doubted"
+        },
+        {
+          "display": "Haud sciō an errāveris.",
+          "cue": "I rather think you were wrong.",
+          "changed": "the idiom, which asserts what this one doubts"
+        },
+        {
+          "display": "Nesciō.",
+          "cue": "I do not know.",
+          "changed": "the bare verb, with nothing doubted"
+        }
+      ],
+      "usage": "Said when you genuinely do not know.",
+      "mnemonic": "nesciō is the fifth negative-inside-a-word.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Nōn omnīnō cōnsentiō.",
+      "cue": "I do not entirely agree.",
+      "literal": "not entirely I-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies — and here it denies omnīnō rather than the agreeing."
+          },
+          {
+            "display": "omnīnō",
+            "cue": "entirely",
+            "tag": "delta",
+            "forms": [
+              "omnīnō"
+            ],
+            "note": "'Entirely, altogether'. With nōn in front it is 'not entirely', which is how you disagree without refusing."
+          },
+          {
+            "display": "cōnsentiō",
+            "cue": "I agree",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I agree' — cum plus L1-M9's sentiō, 'to feel with'. L3-M3's verb."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "L3-M3's cōnsentiō was all or nothing. nōn omnīnō gives you the middle: you are not refusing, you are qualifying — and the negative belongs to omnīnō, so 'not entirely' rather than 'entirely not', which is a different position altogether.",
+      "variations": [
+        {
+          "display": "Omnīnō cōnsentiō.",
+          "cue": "I agree entirely.",
+          "changed": "the negative dropped, which is full agreement"
+        },
+        {
+          "display": "Nōn omnīnō errāvī.",
+          "cue": "I was not entirely wrong.",
+          "changed": "L2-M8's verb, defending yourself"
+        },
+        {
+          "display": "Nōn cōnsentiō.",
+          "cue": "I do not agree.",
+          "changed": "the flat refusal, which is L3-M3's"
+        }
+      ],
+      "mistake": {
+        "display": "Omnīnō nōn cōnsentiō.",
+        "why": "the negative moved onto the verb. That says 'I entirely do not agree', which is stronger than a flat refusal and the opposite of a hedge — and the two orders are both grammatical, which is what makes the position load-bearing."
+      },
+      "usage": "Said disagreeing by degrees.",
+      "mnemonic": "nōn omnīnō softens; omnīnō nōn hardens.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Dīcat aliquis mē errāvisse.",
+      "cue": "Someone might say I was wrong.",
+      "literal": "he-might-say someone me to-have-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcat",
+            "cue": "he might say",
+            "tag": "interference",
+            "forms": [
+              "dīcat",
+              "putet"
+            ],
+            "note": "'He might say' — the POTENTIAL subjunctive. Same shape L3-M4 opened for purpose and conditions, saying 'might' on its own; putet is putō in the same mood."
+          },
+          {
+            "display": "aliquis",
+            "cue": "someone",
+            "tag": "delta",
+            "forms": [
+              "aliquis"
+            ],
+            "note": "'Someone, anyone' — aliquis as a subject. It is quis with ali- in front, so the question word has become an indefinite."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative of a reported clause, and it is mē rather than sē because the person reported is the speaker. L3-M10's last plate was this."
+          },
+          {
+            "display": "errāvisse",
+            "cue": "to have been wrong",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To have gone wrong' — the perfect infinitive of errō. M3's shape, inside L3-M3's construction."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "No new endings and a new job. L3-M4 opened this mood for purpose, conditions and advice; here the same form says 'might' standing alone, which is the cheapest new thing a fifth module of a fourth level can teach. And the reported clause is L3-M3's, with mē because the speaker is the one reported.",
+      "sound": "DĪ-cat A-li-quis MĒ er-rā-VIS-se. Eight syllables, and the two long vowels sit at the edges.",
+      "variations": [
+        {
+          "display": "Dīcat aliquis tē errāvisse.",
+          "cue": "Someone might say you were wrong.",
+          "changed": "the fault moved to the listener"
+        },
+        {
+          "display": "Dīcat aliquis mē nōn errāvisse.",
+          "cue": "Someone might say I was not wrong.",
+          "changed": "the negative inside the reported clause"
+        },
+        {
+          "display": "Putet aliquis mē errāvisse.",
+          "cue": "Someone might think I was wrong.",
+          "changed": "L3-M3's verb of thinking in the same mood"
+        }
+      ],
+      "usage": "Said raising an objection to yourself before anyone else does.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Velim nōn omnīnō cōnsentiās.",
+      "cue": "I should like you not to agree entirely.",
+      "literal": "I-should-like not entirely you-may-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "velim",
+            "cue": "I should like",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I should like' — L2-M1's word, and M3 showed it was a present subjunctive all along. With another subjunctive after it, it is the politest request in the course."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies — omnīnō, not the agreeing."
+          },
+          {
+            "display": "omnīnō",
+            "cue": "entirely",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Entirely, altogether'. With nōn in front it is 'not entirely', which is how you disagree without refusing."
+          },
+          {
+            "display": "cōnsentiās",
+            "cue": "you may agree",
+            "tag": "interference",
+            "forms": [
+              "cōnsentiās"
+            ],
+            "note": "'That you may agree' — the present subjunctive of cōnsentiō. L3-M4's mood after velim, which is how a wish about someone else is built."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "velim plus a subjunctive is a wish about somebody else, and L2-M1 wrote velim with a plain object for twenty-five modules. This is the fuller construction — 'I should like you to' — and it needs no ut at all, which is the one thing about it an English speaker will not expect.",
+      "variations": [
+        {
+          "display": "Velim cōnsentiās.",
+          "cue": "I should like you to agree.",
+          "changed": "the hedge dropped"
+        },
+        {
+          "display": "Velim veniās.",
+          "cue": "I should like you to come.",
+          "changed": "L3-M4's subjunctive of a taught verb"
+        },
+        {
+          "display": "Nōn omnīnō cōnsentiō.",
+          "cue": "I do not entirely agree.",
+          "changed": "about the speaker instead, with no wish"
+        }
+      ],
+      "usage": "Said inviting someone to disagree with you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Haud sciō an errāverim; certē nōn omnia vīdī.",
+      "cue": "I rather think I was wrong; certainly I did not see everything.",
+      "literal": "not I-know whether I-may-have-erred certainly not all I-saw",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haud",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not' — but it denies a single WORD rather than a clause, and it is the negative this idiom takes. nōn is the ordinary one and will not do here."
+          },
+          {
+            "display": "sciō",
+            "cue": "I know",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I know': sciō 'I know', scit 'he knows', nesciō 'I do not know'. English 'science' and 'conscious' come from it."
+          },
+          {
+            "display": "an",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Whether', with a subjunctive after it."
+          },
+          {
+            "display": "errāverim",
+            "cue": "I may have been wrong",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That I may have gone wrong' — the perfect subjunctive of errō. M4's tense, and the shape a past hedge needs."
+          },
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly'. M4's word, which concedes before it disagrees."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "omnia",
+            "cue": "everything",
+            "tag": "delta",
+            "forms": [],
+            "note": "'All things' — L2-M3's omnis in the neuter plural. M4's word."
+          },
+          {
+            "display": "vīdī",
+            "cue": "I saw",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I saw' — the perfect of videō. L3-M10's word."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "The hedge and the concession together, and the hedge is doing the work of an admission. haud sciō an errāverim is as close as this language gets to 'I think I may have been wrong' — and because the idiom asserts rather than doubts, it is an admission in the shape of a doubt.",
+      "sound": "HAUD SCI-ō an er-rā-VE-rim; cer-TĒ nōn OM-ni-a VĪ-dī. Sixteen syllables, and the long vowels are all in the second half.",
+      "variations": [
+        {
+          "display": "Nesciō an errāverim; certē nōn omnia vīdī.",
+          "cue": "I am not sure whether I was wrong; certainly I did not see everything.",
+          "changed": "the genuine doubt instead of the idiom"
+        },
+        {
+          "display": "Haud sciō an errāverim.",
+          "cue": "I rather think I was wrong.",
+          "changed": "the concession dropped"
+        },
+        {
+          "display": "Certē errāvī; nōn omnia vīdī.",
+          "cue": "Certainly I was wrong; I did not see everything.",
+          "changed": "M4's flat concession, with no hedge at all"
+        }
+      ],
+      "usage": "Said admitting something without conceding it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Fortasse vērum sit.",
+      "cue": "It might perhaps be true.",
+      "literal": "perhaps true it-may-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fortasse",
+            "cue": "perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Perhaps'. L3-M3's softener, which changes nothing else — except that here it sits with a subjunctive rather than an indicative."
+          },
+          {
+            "display": "vērum",
+            "cue": "true",
+            "tag": "delta",
+            "forms": [],
+            "note": "'True' — vērum as a neuter adjective, the shape that agrees with nothing in particular. L3-M3's vērō was its ablative doing an adverb's job."
+          },
+          {
+            "display": "sit",
+            "cue": "it may be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It may be' — sum's present subjunctive, POTENTIAL: 'might be' rather than 'is'. Same form as the one after an, different job."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "L3-M3 wrote fortasse with a plain indicative and said it changed nothing. With the potential subjunctive it changes something: fortasse vērum est is 'perhaps it is true' and fortasse vērum sit is 'it might perhaps be true' — two degrees of hedge where that module had one.",
+      "variations": [
+        {
+          "display": "Fortasse vērum est.",
+          "cue": "Perhaps it is true.",
+          "changed": "L3-M3's indicative, which is the firmer hedge"
+        },
+        {
+          "display": "Fortasse errāverim.",
+          "cue": "I might perhaps have been wrong.",
+          "changed": "the perfect subjunctive, hedging about the past"
+        },
+        {
+          "display": "Haud sciō an vērum sit.",
+          "cue": "I rather think it is true.",
+          "changed": "the idiom, which hedges the words and asserts the meaning"
+        }
+      ],
+      "usage": "Said at the far end of not committing.",
+      "mnemonic": "fortasse est hedges; fortasse sit hedges twice.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Licet errāverim, haud sciō an tū quoque errāveris.",
+      "cue": "Although I may have been wrong, I rather think you were wrong too.",
+      "literal": "granted I-may-have-erred not I-know whether you also you-may-have-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "licet",
+            "cue": "although",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Although, granted that' — and it takes a subjunctive. M4's word."
+          },
+          {
+            "display": "errāverim",
+            "cue": "I may have been wrong",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That I may have gone wrong' — the perfect subjunctive of errō."
+          },
+          {
+            "display": "haud",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not' — but it denies a single WORD rather than a clause, and it is the negative this idiom takes. nōn is the ordinary one and will not do here."
+          },
+          {
+            "display": "sciō",
+            "cue": "I know",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I know': sciō 'I know', scit 'he knows', nesciō 'I do not know'. English 'science' and 'conscious' come from it."
+          },
+          {
+            "display": "an",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Whether', with a subjunctive after it."
+          },
+          {
+            "display": "tū",
+            "cue": "you",
+            "tag": "interference",
+            "forms": [],
+            "note": "'You', one person — and it is here for the contrast, which is the one job a pronoun has. L1-M2's row."
+          },
+          {
+            "display": "quoque",
+            "cue": "also",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Also', and it comes SECOND in its clause. L1-M10's word."
+          },
+          {
+            "display": "errāveris",
+            "cue": "you may have been wrong",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may have gone wrong' — the perfect subjunctive of errō in the you-shape."
+          }
+        ],
+        "rules": [
+          0,
+          8
+        ]
+      },
+      "trap": "Concede, then turn it round, and both halves are in the same mood for different reasons: licet demands a subjunctive and an demands one too. So the sentence has four subjunctive shapes in it and only one of them is a hedge — the others are what their conjunctions require.",
+      "sound": "LI-cet er-rā-VE-rim, HAUD SCI-ō an TŪ QUO-que er-rā-VE-ris. Eighteen syllables — the longest line of the module.",
+      "variations": [
+        {
+          "display": "Licet errāverim, nesciō an tū quoque errāveris.",
+          "cue": "Although I may have been wrong, I am not sure whether you were too.",
+          "changed": "the genuine doubt, which is much less pointed"
+        },
+        {
+          "display": "Licet errāverim, certē tū quoque errāvistī.",
+          "cue": "Although I may have been wrong, certainly you were wrong too.",
+          "changed": "M4's flat concession, which drops the politeness entirely"
+        },
+        {
+          "display": "Haud sciō an tū quoque errāveris.",
+          "cue": "I rather think you were wrong too.",
+          "changed": "the concession dropped"
+        }
+      ],
+      "usage": "Said returning a charge politely.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "Nōn omnīnō errāvī; nesciō tamen an vērum dīxerīs.",
+      "cue": "I was not entirely wrong; I am not sure, though, whether you told the truth.",
+      "literal": "not entirely I-erred I-do-not-know however whether true you-may-have-said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies — omnīnō."
+          },
+          {
+            "display": "omnīnō",
+            "cue": "entirely",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Entirely, altogether'. With nōn in front it is 'not entirely', which is how you disagree without refusing."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          },
+          {
+            "display": "nesciō",
+            "cue": "I do not know",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I do not know' — nōn welded onto sciō, the fifth negative-inside-a-word in this course."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', and it comes SECOND in its clause. L3-M3's word."
+          },
+          {
+            "display": "an",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Whether', with a subjunctive after it."
+          },
+          {
+            "display": "vērum",
+            "cue": "the truth",
+            "tag": "delta",
+            "forms": [],
+            "note": "'The truth' — vērum as a neuter noun here rather than an adjective: 'the true thing'. Latin turns adjectives into nouns freely and the neuter is where it does it."
+          },
+          {
+            "display": "dīxerīs",
+            "cue": "you may have said",
+            "tag": "interference",
+            "forms": [
+              "dīxerīs"
+            ],
+            "note": "'That you may have said' — the perfect subjunctive of dīcō. L3-M5's verb in M4's tense."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "vērum is an adjective in S01 and a noun here, and nothing about the word changes. Latin makes a neuter adjective into a noun by using it as one — 'the true thing' — which is a habit rather than a rule and which English does only with a few words like 'the good'.",
+      "variations": [
+        {
+          "display": "Nōn omnīnō errāvī; nesciō tamen an errāverīs.",
+          "cue": "I was not entirely wrong; I am not sure, though, whether you were wrong.",
+          "changed": "a plainer second half"
+        },
+        {
+          "display": "Nōn omnīnō errāvī; haud sciō an vērum dīxerīs.",
+          "cue": "I was not entirely wrong; I rather think you told the truth.",
+          "changed": "the idiom instead, which reverses the force"
+        },
+        {
+          "display": "Nesciō an vērum dīxerīs.",
+          "cue": "I am not sure whether you told the truth.",
+          "changed": "the first half dropped"
+        }
+      ],
+      "usage": "Said in an argument neither side is winning.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Velim cōnsentiās; haud tamen sciō an vērum sit.",
+      "cue": "I should like you to agree; I rather think it is true, though.",
+      "literal": "I-should-like you-may-agree not however I-know whether true it-may-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "velim",
+            "cue": "I should like",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I should like' — L2-M1's word, and a present subjunctive itself. With another subjunctive after it, the politest request in the course."
+          },
+          {
+            "display": "cōnsentiās",
+            "cue": "you may agree",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may agree' — the present subjunctive of cōnsentiō."
+          },
+          {
+            "display": "haud",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not' — but it denies a single WORD rather than a clause, and it is the negative this idiom takes. nōn is the ordinary one and will not do here."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', second in its clause — and here 'its clause' is the haud sciō an phrase, which is why tamen sits inside it."
+          },
+          {
+            "display": "sciō",
+            "cue": "I know",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I know': sciō 'I know', scit 'he knows', nesciō 'I do not know'. English 'science' and 'conscious' come from it."
+          },
+          {
+            "display": "an",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Whether', with a subjunctive after it."
+          },
+          {
+            "display": "vērum",
+            "cue": "true",
+            "tag": "delta",
+            "forms": [],
+            "note": "'True' — vērum as a neuter adjective, the shape that agrees with nothing in particular. L3-M3's vērō was its ablative doing an adverb's job."
+          },
+          {
+            "display": "sit",
+            "cue": "it may be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It may be' — sum's present subjunctive."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "tamen goes second in its clause and the clause is haud sciō an, so it lands between haud and sciō — which looks like the middle of a fixed phrase and is exactly where the rule puts it. Six words that must come second, and this is the one place in the course where the rule cuts an idiom in half.",
+      "sound": "VE-lim cōn-sen-TI-ās; HAUD TA-men SCI-ō an VĒ-rum SIT. Fifteen syllables, and the idiom carries three of the long vowels.",
+      "variations": [
+        {
+          "display": "Velim cōnsentiās; haud sciō an vērum sit.",
+          "cue": "I should like you to agree; I rather think it is true.",
+          "changed": "tamen dropped, which leaves the idiom whole"
+        },
+        {
+          "display": "Velim cōnsentiās.",
+          "cue": "I should like you to agree.",
+          "changed": "the hedge dropped"
+        },
+        {
+          "display": "Nōn omnīnō cōnsentiō; haud tamen sciō an errāverīs.",
+          "cue": "I do not entirely agree; I rather think you were wrong, though.",
+          "changed": "both halves turned around"
+        }
+      ],
+      "mistake": {
+        "display": "Velim cōnsentiās; tamen haud sciō an vērum sit.",
+        "why": "tamen put first in its clause. It must come second and there is no exception for an idiom — which is the module's hardest positional fact, because splitting haud sciō an feels like breaking the phrase and is what the rule requires."
+      },
+      "usage": "Said asking for agreement you half expect not to get.",
+      "mnemonic": "tamen is second even inside an idiom.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "Haud sciō an errāverim.",
+      "cue": "I rather think I was wrong."
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Nesciō an vērum sit.",
+      "cue": "I am not sure whether it is true."
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Omnīnō cōnsentiō.",
+      "cue": "I agree entirely."
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Dīcat aliquis tē errāvisse.",
+      "cue": "Someone might say you were wrong."
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Velim cōnsentiās.",
+      "cue": "I should like you to agree."
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Nōn omnīnō errāvī.",
+      "cue": "I was not entirely wrong."
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Fortasse vērum est.",
+      "cue": "Perhaps it is true."
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Haud sciō an tū quoque errāveris.",
+      "cue": "I rather think you were wrong too."
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "Nesciō an vērum dīxerīs.",
+      "cue": "I am not sure whether you told the truth."
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Nesciō.",
+      "cue": "I do not know."
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Fortasse errāverim.",
+      "cue": "I might perhaps have been wrong."
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "Vērum est.",
+      "cue": "It is true."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
