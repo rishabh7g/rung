@@ -1170,7 +1170,7 @@ rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: de
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
 [`docs/122-llm-review-en-sa-L1-L3.md`](docs/122-llm-review-en-sa-L1-L3.md) — one document, now
-eight waves, seventy-two sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+nine waves, eighty sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1188,7 +1188,8 @@ that opens with `namaste`, and a module that says out loud that `dūrabhāṣa�
 coinage), `L2-M8` (`kim jātam?`, with the imperfect named in English prose and written nowhere),
 `L2-M9` (comparison as an ablative, with no word for "than" anywhere on the page) and `L2-M10`
 (four-sentence accounts whose participial past forks once, at the speaker, and forks whole).
-**LEVEL 3 IS NOW OPEN (#617)**: `L3-M1` teaches the absolutive `-tvā`/`-ya`, which tells a habitual
+**LEVEL 3 IS NOW CLOSED AND ITS `draft` FLAG IS OFF TOO (#619)** — three complete levels, thirty
+rungs, and the same rule that cleared L2's flag at its tenth rung. #617 opened it: `L3-M1` teaches the absolutive `-tvā`/`-ya`, which tells a habitual
 day in one breath instead of four clauses and whose entire new-word spend is the seven absolutives
 themselves, and `L3-M2` pays the level's biggest debt with the relative–correlative — the `ya-`
 clause first and complete, a `ta-` word answering it that is never dropped, and both halves gendered
@@ -1201,10 +1202,21 @@ cell `bhavān` and `bhavatī` already take), beside `yadi … tarhi`, whose `tar
 M2's correlative may never be, which is the contrast that earns M4 its place after M2; and `L3-M5`
 opens `iti`, the catalogue's only postposed quotative — no word for "that", no tense shift, no
 person shift, and `uktavān` given a row of its own because the past of speaking is a different root
-from `vadati` and is not a shape of it. A build now reports
-`en-sa: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` and closes at **275 surfaces**; L3 keeps its
-level `draft: true` at five rungs of ten, and L4–L5 are still #423's ratified placeholder lists with
-nothing authored in them.
+from `vadati` and is not a shape of it. **#619 closed the level with five more**: `L3-M6` teaches
+the DATIVE OF THE EXPERIENCER (`mahyam duḥkham asti`, "to-me there-is sorrow") beside L1-M9's
+adjective frame, with the crossed frames as its mistake plate and `bhītaḥ`/`kruddhaḥ` entering as
+lexicalised adjectives on L2-M3's colour precedent so that the productive bare `-ta` participle
+stays refused; `L3-M7` makes the PAIN THE SUBJECT and the body part a LOCATIVE (`mama śirasi vedanā
+asti`) with no verb of hurting anywhere, and names the medicine verb it will not guess at; `L3-M8`
+borrows the classical register's NOUNS AND NOTHING ELSE — `kāryālayaḥ` makes `-ālaya` a family of
+three — and keeps the sandhi unwritten in the one module where a printed form really would join it;
+`L3-M9` opens the third-person plural `-anti` and `santi`, the last person-cell the course needed,
+and names NO festival, because a proper noun rides unindexed and is counted; and `L3-M10` builds
+eight-sentence accounts out of the whole ladder with **zero new surfaces**, the participial past
+forking once at the speaker and the correlatives staying inside their sentences while the sequencers
+join them. A build now reports
+`en-sa: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)` and closes at **317 surfaces**, `maxSpan`
+still 1; L4–L5 are still #423's ratified placeholder lists with nothing authored in them.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
 rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
@@ -1232,9 +1244,11 @@ surfaces) before a single display was written; and M10's first draft of S03's th
 was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
 neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
-nor #618's three, touched it — L2 and L3 write no new proper noun at all, and the only names above
-L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the NOMINATIVE rather than
-opening the vocative a module of quoted dialogue would most want.
+nor #618's three, nor #619's five, touched it — L2 and L3 write no new proper noun at all, and the
+only names above L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the
+NOMINATIVE rather than opening the vocative a module of quoted dialogue would most want. **#619's
+`L3-M9` is the sharpest case in the whole catalogue**: a module about festivals, which have names,
+that names none — a festival is `utsavaḥ` and the day goes in `usage`, hedged.
 
 **The font measurement of #605 was re-run against the content that now exists, not against the
 plan.** `docs/121` §10 read `@fontsource`'s SOURCE faces on 2026-09-12, before a single module was
@@ -2391,10 +2405,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Ten courses now ship — **475
+  content" boot screen, because no module had cleared the gate. Ten courses now ship — **480
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko, and
-  twenty-five on en-sa, which is the whole of L1, the whole of L2 and the first five rungs of L3
-  (#611, #613, #614, #615, #617, #618) — every one
+  thirty on en-sa, which is the whole of L1, the whole of L2 and the whole of L3
+  (#611, #613, #614, #615, #617, #618, #619) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

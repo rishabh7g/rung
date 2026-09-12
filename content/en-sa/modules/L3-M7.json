@@ -1,0 +1,950 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": [
+    "L3-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "optative_third_singular",
+      "polite_imperative",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "mama + N-loc + vedanā + asti",
+      "mama + N-loc + vedanā + na asti",
+      "aham + asvasthaḥ/asvasthā",
+      "bhavān/bhavatī + na + V-et",
+      "kṛpayā + N-acc + V-tu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The pain is the SUBJECT and the body part is the LOCATIVE. mama śirasi vedanā asti is \"in my head there is pain\". There is no verb for hurting anywhere in it — L1-M7's locative doing a new job and L1-M3's asti doing its oldest one."
+    },
+    {
+      "tag": "delta",
+      "text": "mama is the possessor of the BODY PART, not of the pain. The sentence divides as mama śirasi — \"in my head\" — and then vedanā asti. A learner who attaches mama to vedanā has built \"my pain exists\", which is not what is said."
+    },
+    {
+      "tag": "delta",
+      "text": "śiraḥ is the irregular one and it is worth the trouble because it is the commonest. Its locative is śirasi, not śire. Learn the two shapes as a pair; nothing else in this course declines like it and no paradigm is being opened."
+    },
+    {
+      "tag": "free",
+      "text": "The other three body words are regular a-stems and their locatives are the ending you have had since L1-M6: udaram · udare, hastaḥ · haste, pādaḥ · pāde, exactly as gṛham · gṛhe. Put śirasi beside udare and the contrast teaches itself."
+    },
+    {
+      "tag": "free",
+      "text": "vedanā is feminine and singular and asti agrees with it — with the pain, never with you and never with the body part. It does not move when the body part changes, because the body part is not the subject of anything."
+    },
+    {
+      "tag": "free",
+      "text": "Advice is L3-M4's optative and costs nothing new: bhavān adya na gacchet, bhavatī alpam khādet. This course has exactly three of those shapes — gacchet, paṭhet, khādet — and reaching for a fourth verb in that ending is reaching for something that is not here."
+    },
+    {
+      "tag": "free",
+      "text": "auṣadham is a NOUN and only a noun. The verb a speaker uses for taking medicine is not settled enough to teach, so this module says mama auṣadham asti and auṣadham icchāmi and leaves the gap open. A form you are not sure of is a form you do not write."
+    },
+    {
+      "tag": "free",
+      "text": "Asking is done with the frames you own. kṛpayā (L2-M1) stacks on an imperative — kṛpayā auṣadham dadātu, kṛpayā sāhāyyam karotu — and L2-M8's vaidyaḥ mām paśyatu is still how you ask to be seen."
+    },
+    {
+      "tag": "free",
+      "text": "aham asvasthaḥ and aham asvasthā are L2-M8's adjective on the speaker: the nominative frame of L3-M6, not the locative one, and no asti with it. Being unwell is about you; a pain is about a place."
+    },
+    {
+      "tag": "free",
+      "text": "There is no word here for a BIG pain. mahat is a consonant-stem adjective L2-M3 deferred and this course has never opened, so degree on a feeling is L2-M9's adhikam and alpam and degree on a pain is simply not said. Register is bhavān and bhavatī with a third-person verb, on both sides of the counter."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "mama śirasi vedanā asti.",
+      "script": "मम शिरसि वेदना अस्ति।",
+      "cue": "My head hurts.",
+      "literal": "my head-in pain is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"my\". It belongs to the head, not to the pain — the sentence splits after śirasi, not before vedanā."
+          },
+          {
+            "display": "śiraḥ",
+            "cue": "head",
+            "tag": "delta",
+            "forms": [
+              "śiraḥ",
+              "śirasi"
+            ],
+            "note": "The citation form is śiraḥ and the \"in the head\" form is śirasi. An odd stem, learnt as this pair and no further."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "delta",
+            "forms": [],
+            "note": "A feminine noun, and the SUBJECT of the sentence. The pain is what exists; you are only the place it is in."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", agreeing with vedanā. This is the only verb in the sentence and it means nothing more than \"there is\"."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English makes the person the subject and the hurting a verb. This builds neither: no one is the subject except the pain, and there is no verb of hurting in the language to look for.",
+      "sound": "MA-ma SHI-ra-si ve-da-NAA AS-ti. The s of śirasi is the sh of \"ship\", and the final aa of vedanā is long and open.",
+      "variations": [
+        {
+          "display": "mama śirasi vedanā na asti.",
+          "script": "मम शिरसि वेदना न अस्ति।",
+          "cue": "My head does not hurt.",
+          "changed": "negated on asti, which is the only verb in the sentence — nothing about the body part or the pain moves"
+        },
+        {
+          "display": "rāmasya śirasi vedanā asti.",
+          "script": "रामस्य शिरसि वेदना अस्ति।",
+          "cue": "Rāma has a headache.",
+          "changed": "the person changes, so L1-M1's genitive rāmasya replaces mama; the locative and the subject are untouched"
+        },
+        {
+          "display": "mama haste vedanā asti.",
+          "script": "मम हस्ते वेदना अस्ति।",
+          "cue": "My hand hurts.",
+          "changed": "the body part moves to a regular a-stem, so the locative is the ordinary -e of gṛhe — the contrast śirasi against haste is the whole declension story of this module"
+        }
+      ],
+      "mistake": {
+        "display": "aham vedanā asti.",
+        "why": "The English shape, with the person as subject. vedanā is already the subject and aham has nothing to be, and the sentence has lost the one thing it was for: where it hurts."
+      },
+      "usage": "The everyday sentence. It is what you say to a friend and what you say to a doctor, unchanged.",
+      "register": "neutral",
+      "mnemonic": "The pain exists. You are the address it exists at."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "adya mama udare vedanā asti.",
+      "script": "अद्य मम उदरे वेदना अस्ति।",
+      "cue": "My stomach hurts today.",
+      "literal": "today my stomach-in pain is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's \"today\", pinning the complaint to a day rather than making it a standing condition."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "Attached to udare. The split is mama udare, then vedanā asti."
+          },
+          {
+            "display": "udaram",
+            "cue": "stomach · belly",
+            "tag": "delta",
+            "forms": [
+              "udaram",
+              "udare"
+            ],
+            "note": "A regular neuter a-stem: udare is the same locative ending as gṛhe and vidyālaye. Put it beside śirasi to see what is irregular about śiraḥ."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "free",
+            "forms": [],
+            "note": "Still feminine, still singular, still the subject. The body part changing does not touch it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Agreeing with vedanā and nothing else. It would be the same word whichever part of the body were named."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "udare looks like a plural to an English eye and is not. It is one stomach, in it.",
+      "variations": [
+        {
+          "display": "adya mama udare vedanā na asti.",
+          "script": "अद्य मम उदरे वेदना न अस्ति।",
+          "cue": "My stomach does not hurt today.",
+          "changed": "negated — na before asti, the same place it goes in every sentence of this module"
+        },
+        {
+          "display": "kim bhavataḥ udare vedanā asti?",
+          "script": "किम् भवतः उदरे वेदना अस्ति?",
+          "cue": "Does your stomach hurt?",
+          "changed": "turned into a question about the listener, so L1-M2's kim opens it and bhavataḥ — the polite genitive — takes mama's place"
+        },
+        {
+          "display": "mama udare vedanā asti, ataḥ aham na khādāmi.",
+          "script": "मम उदरे वेदना अस्ति, अतः अहम् न खादामि।",
+          "cue": "My stomach hurts, so I am not eating.",
+          "changed": "a consequence added with L1-M9's ataḥ; the second clause is an ordinary nominative sentence, which shows the two frames sitting side by side"
+        }
+      ],
+      "usage": "What you say when it is today's problem. A standing complaint would be said differently and this course does not say it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "mama haste vedanā na asti.",
+      "script": "मम हस्ते वेदना न अस्ति।",
+      "cue": "My hand does not hurt.",
+      "literal": "my hand-in pain not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"my\", attached to the hand."
+          },
+          {
+            "display": "hastaḥ",
+            "cue": "hand",
+            "tag": "delta",
+            "forms": [
+              "hastaḥ",
+              "haste"
+            ],
+            "note": "A regular masculine a-stem. haste is \"in the hand\", the same -e as mārge would be."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject, here the thing being denied. Denying a pain still keeps the pain as the grammatical subject."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"not\", in front of asti. na asti together is L1-M3's \"there is not\"."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Negating existence is how this language says something does not hurt. There is no verb to negate instead."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "You are not saying \"I do not have pain\". You are saying that in that place there is none, which is why the locative survives the negation untouched.",
+      "sound": "MA-ma HAS-te ve-da-NAA na AS-ti. na and asti are two words and stay two words here.",
+      "variations": [
+        {
+          "display": "mama haste vedanā asti.",
+          "script": "मम हस्ते वेदना अस्ति।",
+          "cue": "My hand hurts.",
+          "changed": "the negation removed, which is all that separates a complaint from a denial in this frame"
+        },
+        {
+          "display": "kim bhavatyāḥ haste vedanā asti?",
+          "script": "किम् भवत्याः हस्ते वेदना अस्ति?",
+          "cue": "Does your hand hurt?",
+          "changed": "a question to a woman — the polite genitive bhavatyāḥ replaces mama, and kim opens the sentence"
+        },
+        {
+          "display": "mama haste vedanā na asti, kintu mama pāde vedanā asti.",
+          "script": "मम हस्ते वेदना न अस्ति, किन्तु मम पादे वेदना अस्ति।",
+          "cue": "My hand does not hurt, but my foot does.",
+          "changed": "two clauses contrasted with L1-M10's kintu, each carrying its own locative and its own asti — Sanskrit repeats the frame where English would say \"but my foot does\""
+        }
+      ],
+      "usage": "Answering a doctor who has guessed the wrong place. The full second clause is normal; the English short answer is not available.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "aham asvasthaḥ, auṣadham icchāmi.",
+      "script": "अहम् अस्वस्थः, औषधम् इच्छामि।",
+      "cue": "I am unwell, I want medicine.",
+      "literal": "I unwell, medicine want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "Nominative, because what follows is an adjective. This is L3-M6's other frame, not the locative one."
+          },
+          {
+            "display": "asvasthaḥ",
+            "cue": "unwell · not well",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's adjective, masculine for a male speaker. asvasthā is the feminine shape; no asti is needed with either."
+          },
+          {
+            "display": "auṣadham",
+            "cue": "medicine",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun, here the thing wanted. This course has no verb for taking medicine, so the noun does all the work."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"I want\". Its -mi has already said who, which is why the second clause needs no aham of its own."
+          }
+        ],
+        "rules": [
+          8,
+          6,
+          2
+        ]
+      },
+      "trap": "Being unwell and having a pain are two different sentences with two different shapes. asvasthaḥ is about you and takes the nominative; vedanā is about a place and takes the locative.",
+      "sound": "a-HAM a-SVAS-thah, AU-sha-dham ICH-chhaa-mi. The au of auṣadham is one sound, like the ow of \"how\".",
+      "variations": [
+        {
+          "display": "aham asvasthā, auṣadham icchāmi.",
+          "script": "अहम् अस्वस्था, औषधम् इच्छामि।",
+          "cue": "I am unwell, I want medicine. (a woman speaking)",
+          "changed": "a woman speaking moves the adjective and leaves the verb alone — icchāmi has never carried gender"
+        },
+        {
+          "display": "aham asvasthaḥ, kintu mama auṣadham asti.",
+          "script": "अहम् अस्वस्थः, किन्तु मम औषधम् अस्ति।",
+          "cue": "I am unwell, but I have medicine.",
+          "changed": "the second clause becomes possession — mama auṣadham asti, L1-M3's \"there is\" doing the work English does with \"have\""
+        },
+        {
+          "display": "kim bhavān asvasthaḥ?",
+          "script": "किम् भवान् अस्वस्थः?",
+          "cue": "Are you unwell?",
+          "changed": "asked of the listener, who is nominative bhavān here because the frame is an adjective one — a genitive would need a pain to go with it"
+        }
+      ],
+      "mistake": {
+        "display": "mama asvasthaḥ asti.",
+        "why": "The adjective forced into the locative module's shape. asvasthaḥ is a nominative adjective and needs somebody in the nominative to agree with; after mama there is nobody, and asti is left with no subject."
+      },
+      "usage": "How you open at a counter or with a doctor. Short, and you say what you want next.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "kṛpayā auṣadham dadātu.",
+      "script": "कृपया औषधम् ददातु।",
+      "cue": "Please give me medicine.",
+      "literal": "please medicine let-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's \"please\". It stacks on an imperative and never replaces one; the imperative still has to be there."
+          },
+          {
+            "display": "auṣadham",
+            "cue": "medicine",
+            "tag": "free",
+            "forms": [],
+            "note": "The same shape as in S04 — a neuter noun looks the same as the thing wanted and as the thing given."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him/her) give",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's third-person imperative. There is no \"me\" in the sentence: who it is for is obvious and goes unsaid."
+          }
+        ],
+        "rules": [
+          7,
+          6
+        ]
+      },
+      "trap": "A polite request in this course is always a THIRD-person imperative with kṛpayā on it. Nothing here addresses the other person directly, and nothing needs to.",
+      "variations": [
+        {
+          "display": "kṛpayā vaidyā mām paśyatu.",
+          "script": "कृपया वैद्या माम् पश्यतु।",
+          "cue": "Please may the doctor see me.",
+          "changed": "a different request on the same frame — L2-M8's vaidyā, a woman doctor, is named as the subject of the imperative"
+        },
+        {
+          "display": "kṛpayā sāhāyyam karotu.",
+          "script": "कृपया साहाय्यम् करोतु।",
+          "cue": "Please help.",
+          "changed": "L2-M8's request for help, which is the same three-part shape with a different noun and a different imperative"
+        },
+        {
+          "display": "kṛpayā auṣadham dadātu, yataḥ aham asvasthaḥ.",
+          "script": "कृपया औषधम् ददातु, यतः अहम् अस्वस्थः।",
+          "cue": "Please give me medicine, because I am unwell.",
+          "changed": "a reason attached with L1-M9's yataḥ, which turns a bare request into the thing a speaker actually says at a counter"
+        }
+      ],
+      "usage": "Modern administrative and clinical Sanskrit is spoken this way. The request is the imperative and kṛpayā is what makes it polite.",
+      "register": "neutral",
+      "mnemonic": "kṛpayā never stands alone. Something has to be let happen."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "bhavān adya na gacchet.",
+      "script": "भवान् अद्य न गच्छेत्।",
+      "cue": "You should not go today.",
+      "literal": "your-honour today not should-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite \"you\", in the nominative and taking a third-person verb, as it has since the first level."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's \"today\". Advice is almost always about a day rather than about life."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"not\", in front of the verb. Advice against something is the optative negated and nothing more."
+          },
+          {
+            "display": "gacchet",
+            "cue": "should go · could go",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative, third singular — the cell bhavān already takes. gacchet, paṭhet and khādet are the three this course writes."
+          }
+        ],
+        "rules": [
+          5,
+          9
+        ]
+      },
+      "trap": "This is advice and not a prohibition. It says going would be unwise, not that it is forbidden; the forms a grammar would offer for forbidding are not in this course.",
+      "sound": "bha-VAAN AD-ya na GACH-chhet. The -et ending is one short syllable and carries the whole meaning of \"should\".",
+      "variations": [
+        {
+          "display": "bhavatī adya na gacchet.",
+          "script": "भवती अद्य न गच्छेत्।",
+          "cue": "You should not go today. (to a woman)",
+          "changed": "the listener's gender moves bhavān to bhavatī and leaves the verb alone — a third-person verb has never agreed with gender"
+        },
+        {
+          "display": "bhavān adya gṛham gacchet.",
+          "script": "भवान् अद्य गृहम् गच्छेत्।",
+          "cue": "You should go home today.",
+          "changed": "the negation dropped and a destination added, which turns advice against into advice for with no change to the verb"
+        },
+        {
+          "display": "bhavān adya alpam khādet.",
+          "script": "भवान् अद्य अल्पम् खादेत्।",
+          "cue": "You should eat a little today.",
+          "changed": "a different verb in the same cell — L3-M4's khādet — with L2-M9's alpam grading it down"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān adya na gacchati.",
+        "why": "The plain present where the optative was meant. It reports that you are not going today rather than advising it, and a doctor who said it would be telling you your own plans."
+      },
+      "usage": "What a doctor says, and what a friend says. Nothing about it is stern.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "mama pāde vedanā asti, ataḥ aham na gacchāmi.",
+      "script": "मम पादे वेदना अस्ति, अतः अहम् न गच्छामि।",
+      "cue": "My foot hurts, so I am not going.",
+      "literal": "my foot-in pain is, so I not go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "Attached to the foot, and only to the foot — the second clause has its own subject and needs nothing from here."
+          },
+          {
+            "display": "pādaḥ",
+            "cue": "foot",
+            "tag": "delta",
+            "forms": [
+              "pādaḥ",
+              "pāde"
+            ],
+            "note": "A regular masculine a-stem, so \"in the foot\" is pāde. L2-M4 named the dual padbhyām as deferred and it still is."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of the first clause. The second clause changes subject entirely, which is why ataḥ and not a comma is doing the joining."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", closing the first clause."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"so\", at the head of the consequence. The cause came first, which is the order this language keeps."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "The second clause's own subject, and the first time the speaker appears in the nominative in this sentence at all."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "In front of gacchāmi, the verb of its own clause."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go · I am going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"I go\". A plain present here, because the speaker is reporting a decision rather than advising one."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          1
+        ]
+      },
+      "trap": "The speaker is in the genitive in the first half and in the nominative in the second, and both are correct. The case follows the clause's own grammar, never the person.",
+      "variations": [
+        {
+          "display": "mama pāde vedanā asti, ataḥ aham gṛham gacchāmi.",
+          "script": "मम पादे वेदना अस्ति, अतः अहम् गृहम् गच्छामि।",
+          "cue": "My foot hurts, so I am going home.",
+          "changed": "the consequence becomes positive with a destination — L1-M6's gṛham — and the negation drops out"
+        },
+        {
+          "display": "mama pāde vedanā na asti, ataḥ aham gacchāmi.",
+          "script": "मम पादे वेदना न अस्ति, अतः अहम् गच्छामि।",
+          "cue": "My foot does not hurt, so I am going.",
+          "changed": "both halves negated in mirror, which shows the two clauses are joined by meaning rather than grammatically bound"
+        },
+        {
+          "display": "mama pāde vedanā asti, tathāpi aham gacchāmi.",
+          "script": "मम पादे वेदना अस्ति, तथापि अहम् गच्छामि।",
+          "cue": "My foot hurts, even so I am going.",
+          "changed": "the joint becomes L1-M10's concessive tathāpi, so the same two clauses now pull against each other"
+        }
+      ],
+      "usage": "Excusing yourself. The reason comes first, which is the order this language prefers everywhere.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "kim bhavataḥ śirasi vedanā asti?",
+      "script": "किम् भवतः शिरसि वेदना अस्ति?",
+      "cue": "Does your head hurt?",
+      "literal": "question your-honour's head-in pain is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's question marker at the front. Nothing else about the sentence changes to make it a question."
+          },
+          {
+            "display": "bhavān",
+            "cue": "your honour's · your (polite)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite \"you\" in its genitive shape bhavataḥ, standing exactly where mama stands when you talk about yourself."
+          },
+          {
+            "display": "śiraḥ",
+            "cue": "head",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative śirasi again. Whose head it is sits in front of it, in the genitive, and never joins it into one word."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of the question, as it is the subject of the answer. Asking does not move it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Unchanged by the question. In this course a yes/no question is the statement with kim in front of it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          9
+        ]
+      },
+      "trap": "bhavataḥ is a genitive, not a subject. The question is whether a pain exists in a particular head, and the listener is named only as the owner of the head.",
+      "sound": "KIM bha-va-TAH SHI-ra-si ve-da-NAA AS-ti. The final h of bhavataḥ is a light breath, not a hard k.",
+      "variations": [
+        {
+          "display": "kim bhavatyāḥ śirasi vedanā asti?",
+          "script": "किम् भवत्याः शिरसि वेदना अस्ति?",
+          "cue": "Does your head hurt? (to a woman)",
+          "changed": "the listener's gender moves the genitive to bhavatyāḥ; everything else in the question is indifferent to it"
+        },
+        {
+          "display": "kim bhavataḥ śirasi vedanā na asti?",
+          "script": "किम् भवतः शिरसि वेदना न अस्ति?",
+          "cue": "Does your head not hurt?",
+          "changed": "a negative question — kim and na sit in the same sentence without cancelling, because kim is a marker and not a word of its own"
+        },
+        {
+          "display": "kutra bhavataḥ vedanā asti?",
+          "script": "कुत्र भवतः वेदना अस्ति?",
+          "cue": "Where is your pain?",
+          "changed": "an open question instead of a yes/no one: L1-M2's kutra replaces kim and takes the place of the locative, which is what is being asked for"
+        }
+      ],
+      "usage": "The question a doctor asks. kutra bhavataḥ vedanā asti? is the one they ask first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "rogaḥ na asti iti vaidyaḥ uktavān.",
+      "script": "रोगः न अस्ति इति वैद्यः उक्तवान्।",
+      "cue": "'There is no illness', the doctor said.",
+      "literal": "illness not is quote doctor said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rogaḥ",
+            "cue": "illness · disease",
+            "tag": "delta",
+            "forms": [],
+            "note": "A masculine noun and the subject of the quoted clause. It names a condition, where vedanā names what you feel."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "Inside the quote, in front of the quoted clause's own verb. The report does not reach in and change it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", in the present because that is the tense the doctor used."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, marking where the doctor's words stop. It always comes after them."
+          },
+          {
+            "display": "vaidyaḥ",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's doctor, in the nominative as the one who spoke. vaidyā is the shape for a woman."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's \"said\", agreeing with the doctor who spoke and with nobody else in the sentence."
+          }
+        ],
+        "rules": [
+          4,
+          9
+        ]
+      },
+      "trap": "The quote is in the present and stays there. English would say \"the doctor said there was no illness\" and shift the tense; nothing shifts here.",
+      "variations": [
+        {
+          "display": "rogaḥ na asti iti vaidyā uktavatī.",
+          "script": "रोगः न अस्ति इति वैद्या उक्तवती।",
+          "cue": "'There is no illness', the doctor said. (a woman doctor)",
+          "changed": "the doctor is a woman, so both the noun and the participle move together — the quote is untouched, because it was never about her"
+        },
+        {
+          "display": "rogaḥ asti iti vaidyaḥ uktavān.",
+          "script": "रोगः अस्ति इति वैद्यः उक्तवान्।",
+          "cue": "'There is an illness', the doctor said.",
+          "changed": "the negation removed from inside the quote; negating uktavān instead would say the doctor did not speak"
+        },
+        {
+          "display": "mama śirasi vedanā asti iti aham uktavān.",
+          "script": "मम शिरसि वेदना अस्ति इति अहम् उक्तवान्।",
+          "cue": "'My head hurts', I said.",
+          "changed": "the other side of the counter — the patient's own sentence quoted, with the speaker reporting himself and keeping his own mama"
+        }
+      ],
+      "usage": "Passing on what a doctor told you. rogaḥ is what a doctor names; vedanā is what you report.",
+      "register": "neutral",
+      "mnemonic": "You bring the vedanā. The vaidyaḥ names the rogaḥ."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "yadi bhavatyāḥ udare vedanā asti tarhi bhavatī alpam khādet.",
+      "script": "यदि भवत्याः उदरे वेदना अस्ति तर्हि भवती अल्पम् खादेत्।",
+      "cue": "If your stomach hurts, then you should eat little.",
+      "literal": "if your-honour's stomach-in pain is then your-honour a-little should-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's \"if\", opening the condition. The condition comes first, complete, exactly as it did there."
+          },
+          {
+            "display": "bhavatī",
+            "cue": "your honour's · your (polite, to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite \"you\" for a woman, here in its genitive shape bhavatyāḥ because it owns the stomach."
+          },
+          {
+            "display": "udaram",
+            "cue": "stomach · belly",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative udare again, inside the condition. The frame does not change for being conditional."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of the yadi clause, which is a whole sentence in its own right."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "A plain present inside the condition. L3-M4 settled that a conditional needs no optative in its first half."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's \"then\", and it may be DROPPED — unlike L3-M2's correlative, which never may."
+          },
+          {
+            "display": "bhavatī",
+            "cue": "you (polite, to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "The same listener, now in the nominative because this clause makes her the one who acts. Two clauses, two cases, one person."
+          },
+          {
+            "display": "alpam",
+            "cue": "a little · not much",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's \"a little\", grading the eating down."
+          },
+          {
+            "display": "khādet",
+            "cue": "should eat",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative, third singular, which is the cell bhavatī takes. Advice, not instruction."
+          }
+        ],
+        "rules": [
+          5,
+          0,
+          9
+        ]
+      },
+      "trap": "The same listener is genitive in the first clause and nominative in the second. Each clause gives her the case its own grammar needs, and neither borrows from the other.",
+      "sound": "YA-di bha-va-TYAAH u-DA-re ve-da-NAA AS-ti TAR-hi bha-va-TEE AL-pam KHAA-det. Long, and it still has only two verbs in it.",
+      "variations": [
+        {
+          "display": "yadi bhavataḥ udare vedanā asti tarhi bhavān alpam khādet.",
+          "script": "यदि भवतः उदरे वेदना अस्ति तर्हि भवान् अल्पम् खादेत्।",
+          "cue": "If your stomach hurts, then you should eat little. (to a man)",
+          "changed": "the listener is a man, so both his shapes move together — the genitive in the condition and the nominative in the consequence"
+        },
+        {
+          "display": "yadi bhavatyāḥ udare vedanā asti bhavatī alpam khādet.",
+          "script": "यदि भवत्याः उदरे वेदना अस्ति भवती अल्पम् खादेत्।",
+          "cue": "If your stomach hurts, you should eat little.",
+          "changed": "tarhi dropped, which is allowed and unremarkable — L3-M2's correlative could not survive the same cut"
+        },
+        {
+          "display": "yadi bhavatyāḥ udare vedanā na asti tarhi bhavatī gacchet.",
+          "script": "यदि भवत्याः उदरे वेदना न अस्ति तर्हि भवती गच्छेत्।",
+          "cue": "If your stomach does not hurt, then you should go.",
+          "changed": "the condition negated, which reverses the advice as well — na goes on the condition's own asti"
+        }
+      ],
+      "usage": "Advice with its condition attached: the longest shape this module needs, and still two ordinary clauses.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "adya mama pāde vedanā asti.",
+      "script": "अद्य मम पादे वेदना अस्ति।",
+      "cue": "My foot hurts today."
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "kim bhavataḥ haste vedanā asti?",
+      "script": "किम् भवतः हस्ते वेदना अस्ति?",
+      "cue": "Does your hand hurt?"
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "aham asvasthā, ataḥ aham na gacchāmi.",
+      "script": "अहम् अस्वस्था, अतः अहम् न गच्छामि।",
+      "cue": "I am unwell, so I am not going."
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "kṛpayā sāhāyyam karotu, aham asvasthaḥ.",
+      "script": "कृपया साहाय्यम् करोतु, अहम् अस्वस्थः।",
+      "cue": "Please help, I am unwell."
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "mama auṣadham gṛhe asti.",
+      "script": "मम औषधम् गृहे अस्ति।",
+      "cue": "My medicine is at home."
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "yadi bhavataḥ śirasi vedanā asti tarhi bhavān na paṭhet.",
+      "script": "यदि भवतः शिरसि वेदना अस्ति तर्हि भवान् न पठेत्।",
+      "cue": "If your head hurts, then you should not read."
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "rogaḥ asti iti vaidyā uktavatī.",
+      "script": "रोगः अस्ति इति वैद्या उक्तवती।",
+      "cue": "'There is an illness', the doctor said."
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "mama udare vedanā asti, ataḥ aham alpam khādāmi.",
+      "script": "मम उदरे वेदना अस्ति, अतः अहम् अल्पम् खादामि।",
+      "cue": "My stomach hurts, so I eat little."
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "bhavatyāḥ pāde vedanā asti iti saḥ uktavān.",
+      "script": "भवत्याः पादे वेदना अस्ति इति सः उक्तवान्।",
+      "cue": "'Your foot hurts', he said."
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "mama śirasi vedanā asti, tathāpi aham vidyālayam gacchāmi.",
+      "script": "मम शिरसि वेदना अस्ति, तथापि अहम् विद्यालयम् गच्छामि।",
+      "cue": "My head hurts, even so I am going to school."
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "kutra bhavatyāḥ vedanā asti?",
+      "script": "कुत्र भवत्याः वेदना अस्ति?",
+      "cue": "Where is your pain?"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "aham asvasthaḥ, mahyam cintā asti.",
+      "script": "अहम् अस्वस्थः, मह्यम् चिन्ता अस्ति।",
+      "cue": "I am unwell, I am worried."
+    },
+    {
+      "id": "L3-M7-C13",
+      "display": "yaḥ chātraḥ asvasthaḥ saḥ na paṭhati.",
+      "script": "यः छात्रः अस्वस्थः सः न पठति।",
+      "cue": "The student who is unwell does not study."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
