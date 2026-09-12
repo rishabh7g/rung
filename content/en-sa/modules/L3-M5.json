@@ -1,0 +1,947 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": ["L3-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future",
+      "participial_past",
+      "optative_third_singular",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "<quoted clause> + iti + saḥ/sā + uktavān/uktavatī",
+      "<quoted clause> + iti + N-nom + vadati",
+      "<quoted question> + iti + saḥ/sā + pṛcchati",
+      "<quoted clause> + iti + aham + uktavān",
+      "saḥ/sā + kim + uktavān/uktavatī"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The shape is: the words as spoken, then iti, then the verb of saying. aham gacchāmi iti saḥ uktavān is \"'I am going', he said\". Everything before iti is the quote and nothing in it has been touched."
+    },
+    {
+      "tag": "delta",
+      "text": "There is NO word for 'that'. iti is not a joining word and it is not a conjunction — it is a closing quote mark made of letters. Looking for the Sanskrit for 'he said THAT' is looking for something this language does not have."
+    },
+    {
+      "tag": "delta",
+      "text": "There is no tense shift and no person shift. The quote keeps the original speaker's own aham and the original speaker's own present, because the report is DIRECT. English says 'he said he was going' and moves both; this moves neither."
+    },
+    {
+      "tag": "delta",
+      "text": "iti comes AFTER the quote. That is the same law L1-M10's ca follows and L2-M9's vā follows, in a third word: these little words sit behind what they attach to rather than in front of it. Placement is not a new thing to learn here."
+    },
+    {
+      "tag": "free",
+      "text": "The quoted sentence keeps every rule of the ladder below it. Pada form with no join written across a word boundary, bhavān or bhavatī with a third-person verb, na in front of its own verb — a quote is an ordinary sentence that happens to be inside another one."
+    },
+    {
+      "tag": "delta",
+      "text": "uktavān is its OWN word and not a shape of L2-M7's vadati. The past of speaking is built on a different root, much as go and went are two words in English that share one meaning. Learn vadati and uktavān as two entries, not as one verb with two ends."
+    },
+    {
+      "tag": "free",
+      "text": "The report agrees with WHO SPOKE, never with who is repeating it. A man who spoke is uktavān and a woman who spoke is uktavatī, and that does not change no matter who is telling you about it afterwards."
+    },
+    {
+      "tag": "free",
+      "text": "A reported question keeps its question word INSIDE the quote: kutra bhavān gacchati iti saḥ pṛcchati. English pulls the question word out and flattens the question into a statement — 'he asks where you are going'. Here the question is quoted whole, exactly as it was asked."
+    },
+    {
+      "tag": "free",
+      "text": "The speaker is named in the NOMINATIVE: rāmaḥ uktavān, sītā uktavatī. Sanskrit has a whole case for calling someone by name and this course writes it nowhere; inside a quote you address the other person with bhavān or bhavatī, as everywhere else."
+    },
+    {
+      "tag": "free",
+      "text": "Two verbs of saying are enough. vadati reports in the present and uktavān reports in the past, and L1-M2's kathayatu is still the polite 'please tell'. 'He said' is uktavān — the past tense a grammar book would offer instead belongs to a set of forms this course has not opened."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "aham gacchāmi iti saḥ uktavān.",
+      "script": "अहम् गच्छामि इति सः उक्तवान्।",
+      "cue": "'I am going', he said.",
+      "literal": "I go quote he said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I' — and it is the man who spoke, not the person telling you. Direct report keeps the original speaker's own word for himself."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go · I am going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go', in the present because that is what he actually said. Nothing about the report reaches inside and changes it."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative. It has no meaning of its own and no English word: it marks where the quote stops. It always comes after the quoted words, never before them."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'. He is outside the quote and is the subject of the verb of saying."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man) · has said",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said'. A row of its own: it is NOT a past shape of L2-M7's vadati, because it is built on a different root. uktavatī is the shape when a woman spoke."
+          }
+        ],
+        "rules": [0, 2, 1]
+      },
+      "trap": "The aham inside the quote is HIS, not yours. Read it as the speaker of the sentence and you have made the man announce your plans. Everything before iti belongs to whoever was quoted.",
+      "sound": "a-HAM GACH-chhaa-mi I-ti SAH UK-ta-vaan. iti is two very light syllables and it runs straight onto the word before it in speech.",
+      "variations": [
+        {
+          "display": "aham gacchāmi iti sā uktavatī.",
+          "script": "अहम् गच्छामि इति सा उक्तवती।",
+          "cue": "'I am going', she said.",
+          "changed": "a woman spoke, so both the pronoun and the participle move — the quote is untouched, because the quote was never about her gender"
+        },
+        {
+          "display": "aham gacchāmi iti saḥ vadati.",
+          "script": "अहम् गच्छामि इति सः वदति।",
+          "cue": "'I am going', he says.",
+          "changed": "the report moves to the present with L2-M7's vadati; the quote does not move with it, because it never moved in the first place"
+        },
+        {
+          "display": "aham na gacchāmi iti saḥ uktavān.",
+          "script": "अहम् न गच्छामि इति सः उक्तवान्।",
+          "cue": "'I am not going', he said.",
+          "changed": "the negation goes inside the quote, on the verb he actually spoke — negating uktavān instead would say he did not speak at all"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ uktavān yat saḥ gacchati.",
+        "why": "The English shape, built three wrong ways at once: a complementiser where there is none, the person shifted from aham to saḥ, and the quote moved behind the verb. yat is L3-M2's neuter relative pronoun and it never introduces a report in this course."
+      },
+      "usage": "The ordinary way to pass on what someone told you. Nothing about it is formal or literary; it is what you say when a friend asks what he told you.",
+      "register": "neutral",
+      "mnemonic": "Quote first, iti next, teller last. English does it back to front."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "mama pustakam atra asti iti sā uktavatī.",
+      "script": "मम पुस्तकम् अत्र अस्ति इति सा उक्तवती।",
+      "cue": "'My book is here', she said.",
+      "literal": "my book here is quote she said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my' — hers, not yours. Every word before iti is the woman's own."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book. mama pustakam asti is 'I have a book', unchanged by being quoted."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's 'here'. It means where SHE was standing, which is one of the things a direct report hands over whole."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. Present, because that is the tense she used."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative, marking the end of her words. Everything before it is hers and everything after it is yours."
+          },
+          {
+            "display": "sā",
+            "cue": "she",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'she', outside the quote as the one who spoke."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said · has said",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said', in the shape for a woman speaker. It agrees with whoever spoke, and never with whoever is repeating it."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "atra means where she was, not where you are. A direct report hands over the whole of the original sentence, including the words that only make sense from where the speaker was standing.",
+      "sound": "MA-ma PUS-ta-kam AT-ra AS-ti I-ti SAA UK-ta-va-tii. uktavatī ends on a long ii and is four syllables where uktavān is three.",
+      "variations": [
+        {
+          "display": "mama pustakam atra asti iti saḥ uktavān.",
+          "script": "मम पुस्तकम् अत्र अस्ति इति सः उक्तवान्।",
+          "cue": "'My book is here', he said.",
+          "changed": "a man spoke; the participle takes the other ending and the quote is word for word the same"
+        },
+        {
+          "display": "mama pustakam atra na asti iti sā uktavatī.",
+          "script": "मम पुस्तकम् अत्र न अस्ति इति सा उक्तवती।",
+          "cue": "'My book is not here', she said.",
+          "changed": "na goes inside the quote, in front of the verb she used — the reporting half is untouched"
+        },
+        {
+          "display": "mama pustakam atra asti iti sā vadati.",
+          "script": "मम पुस्तकम् अत्र अस्ति इति सा वदति।",
+          "cue": "'My book is here', she says.",
+          "changed": "the report in the present instead of the past; vadati and uktavatī are two different words and this is the pair that shows it"
+        }
+      ],
+      "usage": "Repeating what someone said about their own things. The mama stays hers, which is exactly what makes this report direct.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "kutra bhavān gacchati iti saḥ pṛcchati.",
+      "script": "कुत्र भवान् गच्छति इति सः पृच्छति।",
+      "cue": "'Where are you going?' he asks.",
+      "literal": "where you go quote he asks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'where'. It stays inside the quote, at the front of the question that was actually asked."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'you'. Inside a quote you address someone exactly as you would outside one, which is with bhavān and a third-person verb."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'goes'. Third person because bhavān takes a third-person verb, not because the sentence is a report."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative. It closes a question exactly as it closes a statement — there is no separate word for reporting a question."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he', the one asking."
+          },
+          {
+            "display": "pṛcchati",
+            "cue": "asks",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Asks'. A verb of its own, and the one that takes a quoted question the way vadati takes a quoted statement."
+          }
+        ],
+        "rules": [7, 3]
+      },
+      "trap": "The question word does not move. English lifts 'where' out and turns the question into a statement — 'he asks where you are going'. Here the whole question is quoted, question word and all, and iti closes it.",
+      "sound": "KUT-ra bha-VAAN GACH-cha-ti I-ti SAH PRICH-cha-ti. The pṛ- of pṛcchati is a p and a tapped r together, with the vowel between them barely there.",
+      "variations": [
+        {
+          "display": "kutra bhavatī gacchati iti saḥ pṛcchati.",
+          "script": "कुत्र भवती गच्छति इति सः पृच्छति।",
+          "cue": "'Where are you going?' he asks. (asking a woman)",
+          "changed": "the person addressed inside the quote becomes a woman; the asker outside it does not change"
+        },
+        {
+          "display": "kutra bhavān gacchati iti sā pṛcchati.",
+          "script": "कुत्र भवान् गच्छति इति सा पृच्छति।",
+          "cue": "'Where are you going?' she asks.",
+          "changed": "the asker changes and the quote does not — the two halves of this sentence are independent of each other"
+        },
+        {
+          "display": "kadā bhavān gacchati iti saḥ pṛcchati.",
+          "script": "कदा भवान् गच्छति इति सः पृच्छति।",
+          "cue": "'When are you going?' he asks.",
+          "changed": "a different question word inside the quote, in the same front position — L2-M6's kadā behaves exactly as kutra does"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ pṛcchati kutra aham gacchāmi.",
+        "why": "The English indirect question, assembled piece by piece: the verb first, the question word pulled out of its quote, and the person shifted from bhavān to aham. All three are wrong here, and there is no iti anywhere to close a quote that was never made."
+      },
+      "usage": "Telling somebody what you were asked. It is also how you report a question you overheard, which in a language with no indirect question is the only way to do it.",
+      "register": "neutral",
+      "mnemonic": "A quoted question is still a question. Nothing about it flattens."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "aham saṃskṛtam jānāmi iti chātraḥ vadati.",
+      "script": "अहम् संस्कृतम् जानामि इति छात्रः वदति।",
+      "cue": "'I know Sanskrit', the student says.",
+      "literal": "I sanskrit know quote student says",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I' — the student's own word for himself, kept whole inside the quote."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit, as the thing known."
+          },
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'I know'. First person, because the student said it about himself and nothing has shifted it."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative, closing the student's sentence before the report begins."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's student, named in the nominative as the one who spoke."
+          },
+          {
+            "display": "vadati",
+            "cue": "says · speaks",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's 'says', unchanged. It reports in the present; uktavān reports in the past, and they are two different words rather than two ends of one."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "vadati and uktavān look like a verb and its past and they are not. They come from two different roots, and knowing one tells you nothing about the shape of the other.",
+      "variations": [
+        {
+          "display": "aham saṃskṛtam jānāmi iti chātrā vadati.",
+          "script": "अहम् संस्कृतम् जानामि इति छात्रा वदति।",
+          "cue": "'I know Sanskrit', the student says. (a woman)",
+          "changed": "the student is a woman; the noun takes the feminine ending and the verb of saying does not move, because a present verb carries no gender"
+        },
+        {
+          "display": "aham saṃskṛtam na jānāmi iti chātraḥ vadati.",
+          "script": "अहम् संस्कृतम् न जानामि इति छात्रः वदति।",
+          "cue": "'I don't know Sanskrit', the student says.",
+          "changed": "the quote negated; na sits inside, in front of the verb the student used"
+        },
+        {
+          "display": "aham saṃskṛtam jānāmi iti chātraḥ uktavān.",
+          "script": "अहम् संस्कृतम् जानामि इति छात्रः उक्तवान्।",
+          "cue": "'I know Sanskrit', the student said.",
+          "changed": "the report moves to the past, and only the last word changes — the quote has no tense of the report to agree with"
+        }
+      ],
+      "usage": "Reporting a claim somebody makes about themselves. Because nothing shifts, the sentence stays neutral about whether you believe it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "aham adya na gacchāmi iti rāmaḥ uktavān.",
+      "script": "अहम् अद्य न गच्छामि इति रामः उक्तवान्।",
+      "cue": "'I am not going today', Rāma said.",
+      "literal": "I today not go quote rama said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I' — Rāma's, because the quote is his."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. It means the day HE spoke, which is another thing direct report hands over unchanged."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', inside the quote and in front of the verb he used."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go', in the present he spoke in."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative, closing the quote before the speaker is named."
+          },
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's name, in the nominative as the one who spoke. Sanskrit has a separate case for calling someone by name and this course writes it nowhere."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man)",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said', agreeing with Rāma. Not a shape of vadati: the two verbs of saying come from different roots and each has to be learnt on its own."
+          }
+        ],
+        "rules": [8, 6]
+      },
+      "trap": "adya is the day the quote was spoken, not the day you are repeating it. There is no shifting machinery here at all, so a report from last week still says adya if that is what was said.",
+      "sound": "a-HAM A-dya na GACH-chhaa-mi I-ti RAA-mah UK-ta-vaan. The name is two syllables with a long first one and the usual breathed ending.",
+      "variations": [
+        {
+          "display": "aham adya na gacchāmi iti sītā uktavatī.",
+          "script": "अहम् अद्य न गच्छामि इति सीता उक्तवती।",
+          "cue": "'I am not going today', Sītā said.",
+          "changed": "the speaker is a woman, so the participle changes with her — the name and the participle agree, and the quote does not know either of them"
+        },
+        {
+          "display": "aham śvaḥ gacchāmi iti rāmaḥ uktavān.",
+          "script": "अहम् श्वः गच्छामि इति रामः उक्तवान्।",
+          "cue": "'I am going tomorrow', Rāma said.",
+          "changed": "the day inside the quote moves to tomorrow and the verb stays present — śvaḥ is doing the work a future tense would do"
+        },
+        {
+          "display": "aham adya na gacchāmi iti rāmaḥ vadati.",
+          "script": "अहम् अद्य न गच्छामि इति रामः वदति।",
+          "cue": "'I am not going today', Rāma says.",
+          "changed": "the report becomes present; the quote is identical, which is the clearest possible demonstration that it never shifts"
+        }
+      ],
+      "usage": "Passing on a refusal or a change of plan. Naming the speaker is normal and is done in the plain nominative — no special case, no title.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "idam pustakam uttamam iti sītā uktavatī.",
+      "script": "इदम् पुस्तकम् उत्तमम् इति सीता उक्तवती।",
+      "cue": "'This book is excellent', Sītā said.",
+      "literal": "this book excellent quote sita said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'this', neuter for pustakam. It points at whatever she was pointing at."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', neuter. A quoted opinion is a verbless nominal sentence and iti closes it just the same."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative. It needs no verb in front of it — anything a person can say can be quoted, including a sentence with no verb at all."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's name, in the nominative as the one who spoke."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said · has said",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said', in the woman's shape because Sītā is the one who spoke. It agrees with her and with nothing else in the sentence."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "The participle agrees with the person quoted, not with the book and not with you. Two things in this sentence are neuter and neither of them is what uktavatī is looking at.",
+      "variations": [
+        {
+          "display": "idam pustakam uttamam iti rāmaḥ uktavān.",
+          "script": "इदम् पुस्तकम् उत्तमम् इति रामः उक्तवान्।",
+          "cue": "'This book is excellent', Rāma said.",
+          "changed": "a man spoke the same words; only the name and the participle move, and they move together"
+        },
+        {
+          "display": "idam pustakam na uttamam iti sītā uktavatī.",
+          "script": "इदम् पुस्तकम् न उत्तमम् इति सीता उक्तवती।",
+          "cue": "'This book is not good', Sītā said.",
+          "changed": "the quoted opinion negated — na goes in front of the adjective, because the quote has no verb for it to stand before"
+        },
+        {
+          "display": "satyam iti sītā uktavatī.",
+          "script": "सत्यम् इति सीता उक्तवती।",
+          "cue": "'True', Sītā said.",
+          "changed": "the quote shrinks to a single word; L3-M3's satyam is a whole answer, and iti closes a one-word quote as readily as a long one"
+        }
+      ],
+      "mistake": {
+        "display": "sītā uktavān idam pustakam uttamam.",
+        "why": "Two errors at once. uktavān is the shape for a man and Sītā is not one. And the quote has been put behind the verb, where English puts it, which leaves iti nowhere to stand — so the sentence has stopped marking where her words begin."
+      },
+      "usage": "Passing on somebody's opinion. Because there is no shift of any kind, a quoted opinion stays clearly theirs rather than becoming half yours.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "bhavatī kim paṭhati iti saḥ pṛcchati.",
+      "script": "भवती किम् पठति इति सः पृच्छति।",
+      "cue": "'What are you reading?' he asks.",
+      "literal": "you what read quote he asks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavatī",
+            "cue": "you (a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'you' for a woman, inside the quote. The register inside a quote is the register of the conversation being quoted."
+          },
+          {
+            "display": "kim",
+            "cue": "what",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'what', as the thing being read. It stays where the asker put it and does not move out of the quote."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'reads', third person to go with bhavatī."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative, closing the question."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he', the one asking."
+          },
+          {
+            "display": "pṛcchati",
+            "cue": "asks",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Asks'. The report has its own verb and its own subject, and neither of them is inside the question."
+          }
+        ],
+        "rules": [7, 2]
+      },
+      "trap": "Neither the person nor the tense has moved. English would make this 'he asks what she is reading' and would change both. Here the woman is still addressed as bhavatī, exactly as she was to her face.",
+      "variations": [
+        {
+          "display": "bhavān kim paṭhati iti sā pṛcchati.",
+          "script": "भवान् किम् पठति इति सा पृच्छति।",
+          "cue": "'What are you reading?' she asks.",
+          "changed": "both people swap: a woman is asking and a man is addressed, and the two changes are in two different halves of the sentence"
+        },
+        {
+          "display": "bhavatī kutra paṭhati iti saḥ pṛcchati.",
+          "script": "भवती कुत्र पठति इति सः पृच्छति।",
+          "cue": "'Where do you study?' he asks.",
+          "changed": "a different question word in the same slot; kim asked about the thing, kutra asks about the place"
+        },
+        {
+          "display": "bhavatī kim paṭhati iti saḥ na pṛcchati.",
+          "script": "भवती किम् पठति इति सः न पृच्छति।",
+          "cue": "'What are you reading?' — he does not ask that.",
+          "changed": "na negates the asking, outside the quote; inside the quote nothing has changed, and the question still stands as asked"
+        }
+      ],
+      "usage": "Reporting a question asked of somebody else. Whether you are the one asked or not, the quote keeps whatever the asker actually said.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "aham gṛham gatavān iti saḥ uktavān.",
+      "script": "अहम् गृहम् गतवान् इति सः उक्तवान्।",
+      "cue": "'I went home', he said.",
+      "literal": "I home went quote he said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', his own."
+          },
+          {
+            "display": "gṛham",
+            "cue": "home (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house, as a destination."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past, agreeing with the man who spoke. It is inside the quote because it is what he said about himself."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative. Two past forms now stand on either side of it and neither of them caused the other."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man)",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said'. gatavān is a shape of L1-M2's gacchati; uktavān is not a shape of anything the course has taught, which is why it has this row."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "The past inside the quote is his past, and it did not come from the past outside it. English pushes a past report one step further back — 'he said he HAD gone' — and there is no such step here.",
+      "sound": "a-HAM GRI-ham GA-ta-vaan I-ti SAH UK-ta-vaan. Two words end in -vaan and they rhyme on purpose, because they are the same ending on two different roots.",
+      "variations": [
+        {
+          "display": "aham gṛham gatavatī iti sā uktavatī.",
+          "script": "अहम् गृहम् गतवती इति सा उक्तवती।",
+          "cue": "'I went home', she said.",
+          "changed": "a woman spoke, so BOTH participles fork — the one inside the quote and the one outside it agree with the same person"
+        },
+        {
+          "display": "aham gṛham na gatavān iti saḥ uktavān.",
+          "script": "अहम् गृहम् न गतवान् इति सः उक्तवान्।",
+          "cue": "'I did not go home', he said.",
+          "changed": "the quote negated; he still said something, so the na cannot go near uktavān"
+        },
+        {
+          "display": "aham gṛham gamiṣyāmi iti saḥ uktavān.",
+          "script": "अहम् गृहम् गमिष्यामि इति सः उक्तवान्।",
+          "cue": "'I will go home', he said.",
+          "changed": "the quote moves to the future while the report stays in the past — the two tenses are independent, which English will not allow"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ gṛham gatavān iti saḥ uktavān.",
+        "why": "The person inside the quote has been shifted to match English's 'he said he had gone home'. As written, the man is reporting that somebody else went home. Direct report keeps the original aham, always."
+      },
+      "usage": "Reporting what somebody told you about their own past. It is the commonest place an English speaker's habits break the sentence, because English shifts both the person and the tense here.",
+      "register": "neutral",
+      "mnemonic": "Two pasts, one on each side of iti, and neither one moved the other."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "saḥ kim uktavān?",
+      "script": "सः किम् उक्तवान्?",
+      "cue": "What did he say?",
+      "literal": "he what said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'."
+          },
+          {
+            "display": "kim",
+            "cue": "what",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'what'. This question has no quote in it, so there is nothing for iti to close and none is written."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man)",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said', agreeing with him. The answer to this question will come back as a quote with iti; the question itself needs neither."
+          }
+        ],
+        "rules": [5, 9]
+      },
+      "trap": "iti appears only when there is an actual quote. A question about what someone said has no words to quote yet, so writing iti here would be closing a quote that was never opened.",
+      "variations": [
+        {
+          "display": "sā kim uktavatī?",
+          "script": "सा किम् उक्तवती?",
+          "cue": "What did she say?",
+          "changed": "the person asked about is a woman, so the participle forks — the question word does not"
+        },
+        {
+          "display": "saḥ kim vadati?",
+          "script": "सः किम् वदति?",
+          "cue": "What is he saying?",
+          "changed": "the present instead of the past, and with it the other verb of saying entirely — two roots, two words"
+        },
+        {
+          "display": "bhavān kim uktavān?",
+          "script": "भवान् किम् उक्तवान्?",
+          "cue": "What did you say?",
+          "changed": "asked of the person in front of you rather than about somebody absent; bhavān takes the same third-person shape saḥ did"
+        }
+      ],
+      "usage": "Asking to have something repeated, or asking what a third person's answer was. It is the question this whole module answers.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "mama pustakam na asti iti aham uktavān.",
+      "script": "मम पुस्तकम् न अस्ति इति अहम् उक्तवान्।",
+      "cue": "'I don't have my book', I said.",
+      "literal": "my book not is quote I said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'. Here the quoted speaker and the reporter are the same person, so both ahams are yours."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', inside the quote."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. mama pustakam na asti is 'I don't have my book', quoted whole."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The quotative. It sits between the quote and the verb of saying, and nowhere else — putting it after uktavān would leave the quote unclosed."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', outside the quote this time, as the one who said it."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man)",
+            "tag": "delta",
+            "forms": ["uktavān", "uktavatī"],
+            "note": "'Said', agreeing with the speaker — so a woman reporting her own words writes uktavatī, and the quote itself does not change."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "Quoting yourself is built exactly like quoting anyone else. There is no shorter form for it and no shift, so the aham appears twice and means the same person both times.",
+      "sound": "MA-ma PUS-ta-kam na AS-ti I-ti a-HAM UK-ta-vaan. iti leans back onto asti in speech and the two run together as one group.",
+      "variations": [
+        {
+          "display": "mama pustakam na asti iti aham uktavatī.",
+          "script": "मम पुस्तकम् न अस्ति इति अहम् उक्तवती।",
+          "cue": "'I don't have my book', I said. (a woman speaking)",
+          "changed": "the reporter is a woman and the participle forks with her; the quote is identical, because the quote said nothing about gender"
+        },
+        {
+          "display": "mama pustakam na asti iti aham vadāmi.",
+          "script": "मम पुस्तकम् न अस्ति इति अहम् वदामि।",
+          "cue": "'I don't have my book', I say.",
+          "changed": "the report moves to the present with L2-M7's vadāmi; the other verb of saying, and no relation to the first"
+        },
+        {
+          "display": "mama pustakam atra asti iti aham uktavān.",
+          "script": "मम पुस्तकम् अत्र अस्ति इति अहम् उक्तवान्।",
+          "cue": "'My book is here', I said.",
+          "changed": "the quote turned positive and given a place; everything after iti is untouched, as it always is"
+        }
+      ],
+      "mistake": {
+        "display": "aham uktavān mama pustakam na asti iti.",
+        "why": "iti has been left at the very end, after the verb of saying. It is a closing quote mark: it marks where the quoted words stop, so it must stand between the quote and the verb. As written, the verb of saying is inside the quote."
+      },
+      "usage": "Repeating what you yourself said, usually because you were not heard the first time. The shape does not change when the speaker and the reporter are the same person.",
+      "register": "neutral",
+      "mnemonic": "iti closes the quote. Nothing that comes after the verb can close anything."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "aham saṃskṛtam paṭhāmi iti saḥ uktavān.",
+      "script": "अहम् संस्कृतम् पठामि इति सः उक्तवान्।",
+      "cue": "'I study Sanskrit', he said."
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "kutra bhavatī gacchati iti sā pṛcchati.",
+      "script": "कुत्र भवती गच्छति इति सा पृच्छति।",
+      "cue": "'Where are you going?' she asks."
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "idam bhojanam uttamam iti rāmaḥ uktavān.",
+      "script": "इदम् भोजनम् उत्तमम् इति रामः उक्तवान्।",
+      "cue": "'This food is excellent', Rāma said."
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "aham adya vidyālayam gatavatī iti sā uktavatī.",
+      "script": "अहम् अद्य विद्यालयम् गतवती इति सा उक्तवती।",
+      "cue": "'I went to school today', she said."
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "mama mitram atra asti iti saḥ vadati.",
+      "script": "मम मित्रम् अत्र अस्ति इति सः वदति।",
+      "cue": "'My friend is here', he says."
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "satyam iti sā uktavatī.",
+      "script": "सत्यम् इति सा उक्तवती।",
+      "cue": "'True', she said."
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "bhavān kim icchati iti saḥ pṛcchati.",
+      "script": "भवान् किम् इच्छति इति सः पृच्छति।",
+      "cue": "'What would you like?' he asks."
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "aham na tathā manye iti saḥ uktavān.",
+      "script": "अहम् न तथा मन्ये इति सः उक्तवान्।",
+      "cue": "'I don't think so', he said."
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "sā kim uktavatī?",
+      "script": "सा किम् उक्तवती?",
+      "cue": "What did she say?"
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "aham śvaḥ gamiṣyāmi iti sītā uktavatī.",
+      "script": "अहम् श्वः गमिष्यामि इति सीता उक्तवती।",
+      "cue": "'I will go tomorrow', Sītā said."
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "kadā bhavān gacchati iti sā pṛcchati.",
+      "script": "कदा भवान् गच्छति इति सा पृच्छति।",
+      "cue": "'When are you going?' she asks."
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "mama samasyā asti iti saḥ uktavān.",
+      "script": "मम समस्या अस्ति इति सः उक्तवान्।",
+      "cue": "'I have a problem', he said."
+    },
+    {
+      "id": "L3-M5-C13",
+      "display": "yadi bhavān icchati tarhi aham gacchāmi iti sā uktavatī.",
+      "script": "यदि भवान् इच्छति तर्हि अहम् गच्छामि इति सा उक्तवती।",
+      "cue": "'If you like, then I will go', she said."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

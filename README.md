@@ -1170,7 +1170,7 @@ rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: de
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
 [`docs/122-llm-review-en-sa-L1-L3.md`](docs/122-llm-review-en-sa-L1-L3.md) — one document, now
-seven waves, sixty-four sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+eight waves, seventy-two sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1192,9 +1192,18 @@ coinage), `L2-M8` (`kim jātam?`, with the imperfect named in English prose and 
 day in one breath instead of four clauses and whose entire new-word spend is the seven absolutives
 themselves, and `L3-M2` pays the level's biggest debt with the relative–correlative — the `ya-`
 clause first and complete, a `ta-` word answering it that is never dropped, and both halves gendered
-and case-marked independently. A build now reports
-`en-sa: 22 modules (L1-M1..M10, L2-M1..M10, L3-M1..M2)` and closes at **262 surfaces**; L3 keeps its
-level `draft: true` at two rungs of ten, and L4–L5 are still #423's ratified placeholder lists with
+and case-marked independently. **#618 carries it to five rungs**: `L3-M3` agrees with `satyam`,
+disagrees by negating the manner word (`na tathā`) and opens exactly one new ending cell, the
+first-singular ātmanepada `manye`, while its reasons spend nothing at all — `yataḥ` and `ataḥ` have
+been L1-M9's since the first level; `L3-M4` lifts a ban both earlier levels kept and opens the
+OPTATIVE, deliberately and in the third singular `-et` alone (`gacchet`, `paṭhet`, `khādet` — the
+cell `bhavān` and `bhavatī` already take), beside `yadi … tarhi`, whose `tarhi` is DROPPABLE where
+M2's correlative may never be, which is the contrast that earns M4 its place after M2; and `L3-M5`
+opens `iti`, the catalogue's only postposed quotative — no word for "that", no tense shift, no
+person shift, and `uktavān` given a row of its own because the past of speaking is a different root
+from `vadati` and is not a shape of it. A build now reports
+`en-sa: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` and closes at **275 surfaces**; L3 keeps its
+level `draft: true` at five rungs of ten, and L4–L5 are still #423's ratified placeholder lists with
 nothing authored in them.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
@@ -1222,9 +1231,10 @@ surfaces) before a single display was written; and M10's first draft of S03's th
 (`… paṭhiṣyati lekhiṣyati ca?`) actually tripped the line at `shown but untaught: 2 surfaces`, and
 was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
-neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs
-touched it — L2 and L3 write no new proper noun at all, and the only names above L1 are L1-M1's
-`rāmaḥ` and `sītā`.
+neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
+nor #618's three, touched it — L2 and L3 write no new proper noun at all, and the only names above
+L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the NOMINATIVE rather than
+opening the vocative a module of quoted dialogue would most want.
 
 **The font measurement of #605 was re-run against the content that now exists, not against the
 plan.** `docs/121` §10 read `@fontsource`'s SOURCE faces on 2026-09-12, before a single module was
@@ -1435,6 +1445,24 @@ L3-M2 also carries the sharpest thing the shared index has done to this course: 
 "because" and `quam` is L2-M9's "than", so **the relative pronoun is taught in three of its five
 shapes** and the other two are named in a rule and written nowhere. Writing either would serve a
 learner the wrong note with no build failure at all.
+
+**en-la's L4 has opened, and it is where four deferred systems come due (#646-#647, 2026-09-12).**
+Ten briefs ([`docs/131`](docs/131-en-la-L4-brief-decisions.md)) and three modules so far
+([`docs/132`](docs/132-llm-review-en-la-L4.md)): `en-la: 33 modules`, **538 cumulative surfaces**, and
+**no `shown but untaught` line at any of the thirty-three**. The gerund and gerundive land at M1, and
+the past counterfactual is written **in full** at M3 — the pluperfect subjunctive in both halves, which
+is where this course diverges from en-sa's honest workaround, plus the imperfect subjunctive for the
+present unreal. Two new subjunctive tenses in one module, the largest grammatical spend in en-la,
+affordable only because everything else in M3 is L3's vocabulary. The passive, the imperfect and the
+locative are still owed, at M7, M8 and M9.
+
+**M1's own rule caught M1**, which is worth recording: it warned that the gerund and the gerundive
+would sit in the emitted index as one key if an author were careless, and they did — in both
+directions. `legendum` resolved to the gerund's row while a later sentence uses it as a gerundive, and
+`scrībendum` the other way. Neither fails a build; a learner tapping one would simply have been shown
+the other's note. Both notes now name **both** readings, which is the remedy `docs/131` §4 prescribed
+for `cum` one module early, and withholding a reading was never available because teaching the pair is
+the module's job.
 
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
@@ -2547,11 +2575,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **502
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **508
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
-  twenty-two on en-sa, which is the whole of L1, the whole of L2 and the first two rungs of L3
-  (#611, #613, #614, #615, #617), and thirty on en-la, which is the whole of L1, L2 and L3
-  (#637, #641, #645) — every one
+  twenty-five on en-sa, which is the whole of L1, the whole of L2 and the first five rungs of L3
+  (#611, #613, #614, #615, #617, #618), and thirty-three on en-la, which is the whole of L1, L2 and
+  L3 plus the first three rungs of L4 (#637, #641, #645, #647) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

@@ -3326,3 +3326,410 @@ run individually, as #610, #613, #614 and #615 did.
 L2-M10.json` is **EMPTY**, and so is `git diff --stat` over the other nine courses. The only tracked
 file this wave modifies under `content/` is `content/en-sa/levels.json`; everything else it adds is
 new.
+
+---
+
+## Wave 8 — L3-M3 · L3-M4 · L3-M5 (#618) — the level's three deltas
+
+Three rungs, authored strictly in ladder order with a rebuild between each, so M4's prompt saw M3's
+index and M5's saw M4's. The wave adds **thirteen surfaces** and takes en-sa from 262 to **275**;
+`en-sa: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)`. L3 is five rungs into ten and keeps its
+level `draft: true`.
+
+---
+
+## 65. What was authored
+
+**`L3-M3` — Opinions with reasons.** Ten sentences, thirty variations, thirteen pool items, ten
+rules, **FULLY ENRICHED** (`sound`, `variations`, `mistake`, `usage`, `mnemonic` on all ten, which
+the M1–M3 rule requires and the validator checks). Bounds 3–10 words; longest hero 7.
+**Four new surfaces, four new rows: `satyam`, `tathā`, `manye`, `kadācit`.** Index closes at 266.
+
+The module's spine is that agreeing and disagreeing are one word each and neither is a verb.
+`satyam` agrees with a claim, on the pattern of L1-M2's `ām`, and takes no `asti` — S01's mistake
+plate is exactly that (`idam satyam asti`). `na tathā` disagrees by negating the MANNER word, which
+is L1-M2's `na` in its second job, and S03's plate (`na asti tathā`) is the English habit of
+contradicting a verb that is not there. `manye` is the module's **one new ending cell** — the
+first-singular ātmanepada `-e`, pointed back at L1-M1's `rocate` as the third person of the same
+set, with no paradigm taught. **Reasons opened nothing**: `yataḥ`, `ataḥ` and `kimartham` are all
+L1-M9's, exactly as §3 of the briefs planned, which is what lets L3-M2 keep `yat` in one reading.
+S04's plate writes `yat` for "because" and says why it is wrong, and S06's plate swaps `yataḥ` and
+`ataḥ` — a real learner error that reverses the sentence.
+
+**`L3-M4` — If and then.** Ten sentences, thirty variations, thirteen pool items, ten rules;
+enrichment where it earns its place (`literal`, `trap`, `usage` and `variations` 10/10; `sound` 6,
+`mistake` 5, `mnemonic` 5 — the L2-M8 and L2-M10 shape). Bounds 3–11 words; longest hero 9.
+**Five new surfaces, five new rows: `yadi`, `tarhi`, and the three optatives `gacchet`, `paṭhet`,
+`khādet`.** Index closes at 271.
+
+**The optative was opened deliberately and it says so in its own rule text**, which is the thing
+§4 of the briefs asked for: rule 2 states the ruling, and rule 4 names the three things that do NOT
+come with it — `gaccheyam`, every dual and plural shape, and the athematic `kuryāt`. Rule prose is
+English, the ratchet does not see it, and this is the third use of the technique after L1-M4's
+`gacchasi` and L2-M8's `abhavat`. **Exactly three `-et` shapes are written**, which is the brief's
+cap and L2-M6's `-āmaḥ` ruling reused: the ending is the lesson and a fourth verb buys nothing.
+`tarhi`'s droppability is the module's other delta, and S05 is the hero that carries it — a
+complete sentence with no `tarhi` in it, whose mistake plate is L3-M2's correlative with its `saḥ`
+dropped, so the two pairs sit side by side in one plate and only one of them survives losing its
+second half. S04 proves the conditional needs no optative (plain present plus L2-M4's imperative),
+S06 is prohibition as `na` + optative, and S04's plate is the past counterfactual built out of
+participial pasts, named as L4-M3's and written nowhere.
+
+**`L3-M5` — What someone said.** Ten sentences, thirty variations, thirteen pool items, ten rules;
+enrichment where it earns its place (`sound` 6, `mistake` 5, `mnemonic` 4). Bounds 3–11 words;
+longest hero 7. **Four new surfaces across THREE new rows: `iti`, `pṛcchati`, and `uktavān` with
+`uktavatī` in its `forms`.** Index closes at 275.
+
+All three deltas of §5 are on the page. There is no word for "that" (rule 1); there is no tense
+shift and no person shift (rule 2); and `iti` comes AFTER the quote, pointed back at L1-M10's `ca`
+and L2-M9's `vā` rather than taught a third time (rule 3). **S01's mistake plate is the English
+indirect shape** — `saḥ uktavān yat saḥ gacchati` — which does the double duty the brief predicted:
+it is the sentence an English-trained learner builds, and it puts the `yat` complementiser in the
+one place in this course that is exempt from the ratchet and never read. Three more plates carry
+the rest of the interference: S03's indirect question (`saḥ pṛcchati kutra aham gacchāmi`), S08's
+person shift inside the quote, and S10's misplaced `iti` after the verb of saying.
+
+**`uktavān` was given its own row and the note says why.** It is not a shape of L2-M7's `vadati`:
+the past of speaking is built on a different root, and burying it in `vadati`'s `forms` would be a
+false claim about Sanskrit morphology that `maxSpan: 1` and no hyphen leaves nothing to catch. Rule
+5 states it in English and S08's note states it beside `gatavān`, which IS a shape of `gacchati` —
+two `-vān` participles in one sentence, one of them a shape of a taught verb and one of them not.
+
+---
+
+## 66. The ratchet is still at ZERO, across twenty-five rungs
+
+`npm run content:build -- --with-unverified --with-fixtures` prints **nine `shown but untaught`
+lines in the whole build and none of them en-sa's**. `tools/shown-surfaces.test.ts` is **untouched**:
+`'en-sa': 0` still holds, and en-sa is still the only course in the catalogue at zero.
+
+Three things kept it there, each a decision rather than luck.
+
+1. **Every display, variation and pool item was checked against the FOLDED index before it was
+   written into a file**, not against a paradigm. The fold was recomputed from all twenty-two
+   emitted index files (139 + 108 + 15 = 262), then again after each rung. The forms this wave
+   wanted and did not have are listed in §70; the sharpest was **`āgacchati`, which does not exist
+   in this course** — L2-M1 shipped `āgacchatu` and L3-M1 shipped `āgatya`, and the plain present
+   `āgacchati` is in no module. Two drafts of M4 and M5 wanted it (`yadi bhavatī adya na āgacchati
+   …`, `kadā bhavān āgacchati iti sā pṛcchati`) and both were rewritten onto `gacchati`.
+2. **No new proper noun.** M5 is the module in the whole ladder that most wants the vocative — it
+   is a module of reported dialogue — and it gets neither the vocative nor a third name. Speakers
+   are named in the NOMINATIVE (`rāmaḥ uktavān`, `sītā uktavatī`), and inside a quote the other
+   person is addressed with `bhavān` or `bhavatī`. `rāmaḥ` and `sītā` are L1-M1's rows and are
+   still the only two names this course writes.
+3. **Three rows exist only because a level never edits a file below it.** `gacchet`, `paṭhet` and
+   `khādet` each point back at L1-M2's and L1-M4's presents rather than being added to their
+   `forms`, exactly as L3-M1's absolutives did for the same verbs.
+
+`npx tsx tools/check-shown.ts en-sa L3-M3` / `L3-M4` / `L3-M5` each report **no SHOWN-BUT-UNTAUGHT
+finding** (41, 43 and 41 RE-TEACH lines and 12, 8 and 12 COLLIDES lines, which is the ordinary shape
+of a module that re-teaches lower-level words and repeats a row across its own sentences — L3-M1
+and L3-M2 report 48/11 and 48/8, and the tool's own header calls both information rather than a
+verdict).
+
+**`maxSpan` is 1 on all twenty-five emitted en-sa index files**, read out of them rather than
+assumed. No hyphen, no avagraha and no multi-token surface was written, and no draft wanted one.
+
+---
+
+## 67. The briefs' ownership plan, and the one claim that needed checking
+
+**Every ownership claim in the three module briefs held, and `tools/course-briefs.ts` needed no
+correction this wave** — the second wave in a row with none. Each claim was grepped against the
+folded snapshot rather than trusted, because eleven briefs on this course have been corrected for
+exactly this defect:
+
+- **M3 §3 / note 6.** `satyam`, `tathā`, `manye`, `kadācit` fresh — confirmed absent from the fold.
+  `na` and `ām` L1-M2's, `yataḥ` / `ataḥ` / `kimartham` L1-M9's, `khinnaḥ` / `khinnā` /
+  `santuṣṭaḥ` / `santuṣṭā` L1-M9's, `asti` L1-M3's, `icchāmi` / `icchati` L1-M3's, `uttamam` /
+  `navam` / `purāṇam` L2-M3's, `idam` L1-M1's, `tathāpi` L1-M10's — every one confirmed present and
+  owned where the brief says.
+- **M4 note 6.** `yadi` and `tarhi` fresh; `gacchet` ← L1-M2's `gacchati`, `paṭhet` and `khādet` ←
+  L1-M4's `paṭhati` and `khādati`; `gacchatu` L2-M4's, `āgacchatu` L2-M1's, `kṛpayā` L2-M1's, `śvaḥ`
+  **L1-M6's** (the brief says "L1-M4, L1-M6" of `adya` and `śvaḥ` together — `adya` is L1-M4's and
+  `śvaḥ` is L1-M6's, which is what the fold says and what the brief means).
+- **M5 note 6.** `iti`, `pṛcchati` and `uktavān` fresh; `vadati` / `vadāmi` / `vadatu` and
+  `śṛṇoti` / `śṛṇomi` L2-M7's, `saḥ` / `sā` L1-M5's, `tat` / `tam` L3-M2's, `kutra` / `kim`
+  L1-M2's, `jānāti` / `jānāmi` L2-M8's, and the participial pasts **L1-M2's `gatavān` / `gatavatī`
+  and L1-M4's other five pairs, never L1-M5's** — L1-M5's entire delta is `hyaḥ`, `saḥ` and `sā`
+  and it owns no participle at all, which is #615's correction holding.
+
+One claim was checked twice because it is the kind that has been wrong before. **M5 note 6 says
+`kathayati` is NOT written**, implying L1-M2's `kathayatu` exists — it does, as L1-M2's row, and
+`kathayati` is absent from the fold. The module writes neither, and reuses `vadati` and `uktavān`
+as the brief directs.
+
+---
+
+## 68. Decisions that could look like bugs
+
+### 68.1 `manye` has no third-person shape anywhere, so nobody can be asked their opinion
+
+`manye` is the first singular and the module writes that cell only. There is therefore **no way in
+this module to ask someone what they think** — `manyate` would be a second cell of a new verb, and
+opening a cell nobody decided to open is the mistake L3-M4's brief exists to prevent. What M3 asks
+instead is `bhavān kimartham tathā vadati?` ("why do you say so?"), on S08's third variation, which
+uses L2-M7's `vadati` and asks about the stated opinion rather than the held one.
+
+### 68.2 `tat kāryam` was drafted as a pool item and withdrawn
+
+A thirteenth M3 pool item read `kadācit saḥ tat kāryam kṛtavān`. `tat` resolves — it is L3-M2's —
+but that row's note calls it **the neuter correlative, answering `yat`**, and the pool item has no
+`yat` clause for it to answer. A token that resolves to a row whose note is false of the sentence
+in front of the learner is precisely the hi-mr defect of `docs/07`, so the item was rewritten to
+`kadācit saḥ adya kāryam kṛtavān`. The bare demonstrative reading of `tat` belongs to whichever
+module decides to open it, and this one did not.
+
+### 68.3 M4 writes `gacchema` in a mistake plate while its rule says the optative is one cell
+
+This is deliberate and precedented: **L2-M6 already plates `gacchema`** (`kadā gacchema?`) under a
+rule text saying the course writes it NOWHERE. `mistake.display` is exempt from the shown-surface
+ratchet by design and is never read by `buildWordIndex`, and M4's own brief note 5 asks for a plate
+on exactly this form. **`mā` was NOT plated**, even though prohibition is M4's subject: the briefs
+say it is written nowhere, and naming it in rule 6's English prose costs nothing while a plate would
+put it in a `display` field.
+
+### 68.4 M5's S09 has no `iti` in it
+
+`saḥ kim uktavān?` is a question ABOUT what someone said and quotes nothing, so there is nothing for
+`iti` to close. The word row's note says so, because the obvious learner error at this point is to
+add `iti` to every sentence containing a verb of saying.
+
+### 68.5 `kim` is used as "what" in M5-S07 and the row is glossed "(yes/no marker) · what"
+
+L1-M2's `kim` row carries both readings, and the fold gives the key to that row. M5-S07
+(`bhavatī kim paṭhati iti saḥ pṛcchati`) uses the "what" reading, and the sentence disambiguates it:
+a yes/no reading would leave `paṭhati` without an object. The word row's note says "as the thing
+being read", which is the reading the learner is shown.
+
+### 68.6 Both `uktavān` and `uktavatī` are index keys, and there are only three new rows in M5
+
+`uktavatī` sits in the `uktavān` row's `forms`, so the emitter gives it its own key pointing at that
+row — four new keys, three new rows. Every sentence that writes `uktavatī` carries a word row whose
+`display` is the citation form `uktavān`, which is the convention L1-M9's `sundaraḥ` row set for a
+sentence writing `sundaram`.
+
+### 68.7 M4's `allowedTenses` names `optative_third_singular`, not `optative`
+
+The field is a free string array rather than a schema enum, and the narrower name is the honest one:
+the course has opened one cell of the mood, and a brief read later should not be able to mistake the
+label for a claim that the whole mood is open. M5 carries the same string, because M5's pool item
+C13 quotes a `yadi … tarhi` sentence and its heroes may not write an optative that its own brief did
+not open.
+
+### 68.8 The Devanagari was generated, not typed
+
+Every `script` line in all three modules was produced by mapping each IAST token through a
+token→Devanagari table **folded out of the twenty-two already-shipped en-sa modules** (257 tokens,
+**0 conflicts** — no token is spelled two ways anywhere in the course), with the danda substituted
+for the full stop and the comma and question mark carried through. Only **fourteen** genuinely new
+tokens were written by hand: the thirteen new surfaces plus `hrasvaḥ`, which is indexed by L2-M3 but
+had until now appeared only in a `forms` list and a mistake plate, so the course had never written
+its Devanagari.
+
+---
+
+## 69. Every comprehension token resolves to the RIGHT row
+
+Each of the **39 pool items** was walked token by token against the emitted cumulative index for its
+own module, and for each token the **word row it lands on** was read out of the module and sentence
+the index names — the check PRD §6.3 does not make. **0 unresolved, 0 mis-seated.** The heroes and
+all 90 variations were walked the same way.
+
+The seatings worth recording, because they are the ones where a reader might expect a different row:
+
+- **`mama` → L1-M1's `aham` row** (it is the genitive of `aham` and lives in that row's `forms`).
+  Six pool items across the three modules depend on it.
+- **`mahyam` → L1-M1's `aham` row**, same reason. M4-C06.
+- **`gacchāmi`, `gamiṣyāmi`, `gatavatī` → L1-M2's `gacchati` row.** M3-C08/C09, M4-C03/C10,
+  M5-C04/C10.
+- **`kṛtavān` → L1-M4's `karoti` row** and **`karomi` → the same** (M3-C13, M4-C04).
+- **`uttamam` → L2-M3's `uttamaḥ` row**, `purāṇam` → `purāṇaḥ`, `navam` → `navaḥ`,
+  `sundaram` → `sundaraḥ`, `śāntam` → `śāntaḥ`, `khinnā` and `santuṣṭā` → the masculine citation
+  rows. Every one is the right lexeme in the right gender.
+- **`icchati` → L1-M3's `icchāmi` row** and **`jānāti` → L2-M8's `jānāmi` row** — both courses'
+  rows are seated on the first-person display, which is what those modules taught first.
+- **`bhavatī` → L1-M2's `bhavān` row**, seven times.
+- **`uktavatī` → L3-M5's `uktavān` row** (§68.6). **`pṛcchati` and `iti` → their own rows.**
+- **`satyam`, `tathā`, `manye`, `kadācit` → L3-M3's four rows**, reached from M4's and M5's pools as
+  well as M3's (M4-C11 and C13, M5-C06 and C08), which is the cumulative index working.
+- **`yadi` and `tarhi` → L3-M4's rows**, reached from M5-C13.
+
+M5-C13 (`yadi bhavān icchati tarhi aham gacchāmi iti sā uktavatī`) is the item worth its own line:
+it quotes a **complete L3-M4 conditional inside an L3-M5 report**, which is rule 4 of M5 — the quote
+keeps every rule of the ladder below it — demonstrated rather than asserted. Its nine tokens land on
+rows from L1-M1, L1-M2, L1-M3, L1-M5, L3-M4 and L3-M5.
+
+---
+
+## 70. Sanskrit that was deliberately NOT written
+
+Every form below was wanted by a draft of one of these three modules and left out. Each is recorded
+with the reason, because a deferral with no owner is how a course loses a decision.
+
+**Forms that do not exist in this course's index, caught by grepping the fold:**
+
+- **`āgacchati`** — the plain present of the prefixed verb. L2-M1 has `āgacchatu` and L3-M1 has
+  `āgatya`; the present is in NO module. Two drafts wanted it and both were rewritten onto
+  `gacchati`. This is the same class of defect as the `paśyāmi` near-miss of §58, and it is the one
+  to expect: **a paradigm cell an author assumes exists because its neighbours do.**
+- **`paśyāmi`** — checked again and still absent, so no sentence in these three modules says "I see".
+- **`manyate`** — the third singular of M3's new verb (§68.1).
+- **`pṛcchāmi`** — "I ask". M5 opens `pṛcchati` only; a draft variation of S07 wanted the first
+  person and was rewritten to `sā pṛcchati`.
+- **`vaidyam`, `vaidyasya`** — L2-M8 shipped `vaidyaḥ` and `vaidyā` and no oblique shape. An M4
+  draft wanted `bhavān vaidyasya samīpe gacchet` and was rewritten.
+- **`ayam` / `iyam`** — the masculine and feminine of L1-M1's `idam`. The course has the neuter
+  only, so every "this" in M3 sits on a neuter noun (`bhojanam`, `pustakam`, `kāryam`, `saṅgītam`,
+  `gṛham`) and `idam mārgaḥ` is written nowhere.
+- **`bhavantam` / `bhavatīm`** — the accusative of `bhavān` / `bhavatī`. An M5 draft wanted
+  "I told you" and was rewritten to `aham uktavān`.
+- **`tiṣṭhatu`, `kathayati`, `cintayāmi`** — none is in the fold; each was reached for once and
+  dropped.
+
+**Forms the briefs refuse, re-verified absent from every `display`, `variation`, pool item and
+`forms` list across all three modules:**
+
+every `-si` present including `gacchasi` and `jānāsi`; `tava`, `tubhyam`, `tvām`, `te`; `mā`; every
+imperfect (`abhavat`, `avadat`, `āsīt`) — "he said" is `uktavān`, which is L2-M8's ruling on
+`kim jātam` unchanged; the productive bare `-ta` participle (`gataḥ`, `kṛtam`, `naṣṭam`); the
+vocative; `svasā`; `mahat`; `asmi` — named in M3's rule 3 as the missing first-person copula and
+written nowhere; the plural participial past (`gatavantaḥ`, `uktavantaḥ`); every bare-stem
+imperative but L2-M1's `āgaccha`. **`tvam` is still at exactly one display in the whole course**,
+L2-M1-S04's, verified by walking every display, variation, pool item and mistake plate in all
+twenty-five modules.
+
+**The optative cells M4 does NOT open,** each checked by name across the three files: **`gaccheyam`**
+(first singular), **`gacchema`** (first plural — present in M4-S02's mistake plate ALONE, §68.3, and
+in no display, variation, pool item or `forms` list), **`gacchetām`** and every other dual, every
+other plural, and **`kuryāt`** — the athematic optative of L1-M4's `karoti`, which does not end
+`-et` and would teach an irregular stem inside the module that opens the regular one. **`likhet`
+and `vadet` were also refused**: the brief caps the module at three `-et` shapes and M4 writes
+`gacchet`, `paṭhet` and `khādet`. A draft of S08's first variation wanted `vadet` and was rewritten
+back to L2-M7's `vadatu`.
+
+---
+
+## 71. Open questions for the fluent-speaker gate — continuing from 127
+
+The gate is a **fluent saṃskṛta-sambhāṣaṇam speaker or a Sanskrit teacher**, and it is **UNMET**.
+Questions 1–127 are still open. These fourteen are this wave's.
+
+128. **`satyam` as the ordinary one-word agreement.** The module's premise. Confirm a speaker really
+     answers a claim with bare `satyam`, and say whether it sounds emphatic or neutral beside `ām`.
+129. **`na tathā` as the ordinary disagreement.** Confirm the phrase is said, confirm it needs no
+     verb, and say how blunt it lands — the module tells a learner that bluntness is not rudeness
+     here, and that is the claim most in need of a second opinion.
+130. **`aham tathā manye` without an `iti` clause.** M3 states an opinion with `tathā` because `iti`
+     is M5's. Confirm a speaker really says `aham tathā manye` on its own, or whether
+     `… iti manye` is so nearly obligatory that the M3 shape reads as incomplete.
+131. **`kadācit` as a hedge rather than as "sometimes".** It carries both readings. Confirm that in
+     front of a claim it is heard as "perhaps" and not as a frequency word, and name a commoner
+     hedge if there is one.
+132. **`yataḥ` after the claim and `ataḥ` after the cause.** Confirm both orders are the natural
+     ones in speech, and whether a fronted `yataḥ` clause is heard at all.
+133. **`bhavān gṛham gacchet` as everyday advice.** The optative's whole justification here.
+     Confirm the third singular `-et` is what a speaker uses to advise the person in front of them,
+     and say how it compares in force to `gacchatu`.
+134. **`tarhi` really is droppable.** The contrast that earns M4 its place after M2. Confirm a
+     dropped `tarhi` is unremarkable rather than clipped, and say whether length changes that —
+     M4-S10 is the longest and its second variation drops it.
+135. **`yadi bhavān adya na gacchati tarhi śvaḥ gacchatu`** — a plain present and an imperative with
+     no optative anywhere. Confirm this is ordinary and not a learner's shortcut.
+136. **`na` + optative as prohibition.** `bhavān adya na gacchet`. Confirm this is how advice
+     against something is given, and say how far it is from `mā` + injunctive in feel — the module
+     tells a learner they are not the same thing.
+137. **`iti` in actual speech.** The largest question of the three modules. Confirm `iti` is said in
+     sambhāṣaṇam rather than being a written convention, and say whether a speaker ever reports
+     without it.
+138. **`uktavān` / `uktavatī` against the alternatives.** Confirm this is the everyday past of
+     saying, and say what a speaker actually uses — `uktavān`, `avadat`, or something else. If the
+     answer is that `uktavān` is stiff, M5 has the `saḥ vadati` escape its brief wrote for it.
+139. **`kutra bhavān gacchati iti saḥ pṛcchati`.** Confirm `pṛcchati` takes a quoted question with
+     `iti` the way `uktavān` takes a quoted statement, and confirm the question word stays inside.
+140. **Quoting yourself:** `mama pustakam na asti iti aham uktavān` (M5-S10). Confirm the shape does
+     not change when the quoted speaker and the reporter are the same person, and that `aham`
+     appearing twice is not heard as clumsy.
+141. **Naturalness of the 39 pool items**, as questions 12, 26, 47, 66, 90, 113 and 127 asked of
+     the pools below them. They are grammatical by construction and recombined from the cumulative index; an
+     LLM cannot hear which of them nobody would say.
+     `idam gṛham sundaram, yataḥ śāntam.`,
+     `yadi bhojanam uttamam tarhi aham adhikam khādāmi.` and
+     `yadi bhavān icchati tarhi aham gacchāmi iti sā uktavatī.` are the three most worth a second
+     opinion.
+
+---
+
+## 72. Verification run for this change
+
+```
+npm run content:validate                              → CONTENT 475/475 ok
+                                                        (en-sa/L3-M3.json ok, L3-M4.json ok,
+                                                         L3-M5.json ok)
+npm run content:build -- --with-unverified --with-fixtures
+                                                      → en-sa: 25 modules
+                                                        (L1-M1..M10, L2-M1..M10, L3-M1..M5)
+                                                          index L3-M3: 266 surfaces
+                                                          index L3-M4: 271 surfaces
+                                                          index L3-M5: 275 surfaces
+                                                        NINE `shown but untaught` lines in the whole
+                                                        build and NONE of them en-sa's — still zero,
+                                                        and still the only course in the catalogue
+                                                        without one
+npx tsx tools/check-shown.ts en-sa L3-M3 / L3-M4 / L3-M5
+                                                      → no SHOWN-BUT-UNTAUGHT finding on any of them
+npx tsc --noEmit                                      → clean
+npx prettier --check <the seven files this change touches>
+                                                      → All matched files use Prettier code style!
+npx eslint src/course/types.test.ts tools/content-build.test.ts
+                                                      → clean
+npm run content:build && npm run fonts:build          → en-sa: 25 modules
+                                                        (L1-M1..M10, L2-M1..M10, L3-M1..M5) strict;
+                                                        FONTS 15/15 ok — mukta 331376 bytes
+npx vitest run   (after that STRICT build)            → 16 files, 889 tests: 888 passed, 1 failed —
+                                                        scripts/generate-splash.test.ts only
+npx vitest run tools/shown-surfaces.test.ts tools/font-coverage.test.ts \
+               src/course/types.test.ts tools/content-build.test.ts \
+               tools/css-classes.test.ts tools/course-briefs.test.ts
+                                                      → 6 files, 699 tests passed, after the STRICT
+                                                        build
+```
+
+**`tools/font-coverage.test.ts` PASSES after the strict build**, which is again why the suite is run
+in that order: it is red only after `--with-unverified --with-fixtures`, and its four characters
+(`U+000A`, `$`, `×`, `•`) predate all en-sa work. A green run here is the evidence that this wave
+added **no fifth character**: every respelling in all three modules is ASCII, the IAST that appears
+in the English half of a `sound` line is the ordinary lowercase set every shipped en-sa module
+already uses (`ā ī ū ṛ ḥ ṃ ś ṣ ṇ ṭ ṅ ñ`), and no capitalised IAST letter (the `Ṛ` U+1E5A failure
+mode of #613 §33.8) was written anywhere.
+`scripts/generate-splash.test.ts` is the one remaining red, measured rather than assumed and
+pre-existing on this container's rasterizer — it fails identically on a stashed tree.
+
+`scripts/verify.sh` was again deliberately NOT run: it stops at the first failing stage and would
+never reach CONTENT while `scripts/generate-splash.test.ts` is red on this host, so the stages were
+run individually, as #610, #613, #614, #615 and #617 did.
+
+### Pinned inventories updated by this change
+
+- `src/course/types.test.ts` — `MODULE_FILES` gains `content/en-sa/modules/L3-M3.json`, `L3-M4.json`
+  and `L3-M5.json`; the case title's count moves 472 → 475 and its wording to "en-sa's two levels
+  plus L3-M1..M5 (#618)". **The en-sa decisions case itself is unchanged** — the intimate-set ban and
+  the `neutral` register assertion are both scoped to `L1`, and these three modules chip `neutral` on
+  all thirty sentences and write no intimate pronoun at any level.
+- `tools/content-build.test.ts` — `AUTHORED` gains `L3-M3`, `L3-M4` and `L3-M5`; the three
+  `en-sa: 22 modules (L1-M1..M10, L2-M1..M10, L3-M1..M2)` assertions become
+  `en-sa: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)`; two case titles move to "two complete
+  levels and five rungs of a third" and "25 modules and 25 indexes"; the comment above `AUTHORED`
+  records that **L3's level `draft` flag STAYS** at five rungs of ten.
+- `tools/shown-surfaces.test.ts` — **untouched.** `'en-sa': 0` still holds.
+- `tools/course-briefs.ts` — **untouched.** No ownership claim in the three module briefs was wrong.
+- `content/en-sa/levels.json` — `L3-M3`, `L3-M4` and `L3-M5` lose `draft: true` and gain
+  `hasContent: true`. **L3's own level `draft` and `draftNote` stay**, because five rungs are still
+  empty. L4 and L5 are untouched.
+- `README.md` — the en-sa paragraph's module and surface counts, the ratchet paragraph, and the
+  live-site module total (472 → 475).
+
+`git diff --stat content/en-sa/modules/L1-M1.json … L1-M10.json content/en-sa/modules/L2-M1.json …
+L2-M10.json content/en-sa/modules/L3-M1.json content/en-sa/modules/L3-M2.json` is **EMPTY**, and so
+is `git diff --stat` over the other nine courses. The only tracked file this wave modifies under
+`content/` is `content/en-sa/levels.json`; everything else it adds is new.
