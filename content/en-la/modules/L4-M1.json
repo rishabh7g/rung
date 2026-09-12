@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "ad + N-gerund-acc (purpose)",
+      "N-nom + V-gerundive + est (obligation)",
+      "V-gerundive + est (impersonal obligation)",
+      "prīmum + V-imperative + , + deinde + V-imperative",
+      "cum + N-abl (a tool)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THE GERUND ARRIVES, AND L3-M2 NAMED IT AS MISSING WHILE WRITING ad labōrem eō. A gerund is a VERB USED AS A NOUN: ad legendum, ad scrībendum, ad discendum — 'for reading', 'for writing', 'for learning'. It takes the object shape after ad like any noun, so a purpose needs no clause at all. L3-M4's ut plus a subjunctive is the other way and both are correct: the gerund is tighter and can take no object, the clause can. A plain infinitive after ad is not an option — an infinitive has no case for a preposition to govern, which is why the gerund exists."
+    },
+    {
+      "tag": "interference",
+      "text": "THE GERUNDIVE IS HOW LATIN SAYS 'SHOULD', AND IT AGREES. liber legendus est is 'the book is to-be-read', hence 'the book should be read' — legendus for a masculine thing, legenda for a feminine, legendum for a neuter. That is L2-M3's agreement on a new kind of word, and L2-M8's frāctus est was the same arrangement. Latin's 'should' carries the gender of what should be done, which no English speaker will expect."
+    },
+    {
+      "tag": "interference",
+      "text": "THE GERUND AND THE GERUNDIVE ARE ONE ENDING APART AND THEY ARE DIFFERENT WORDS. ad legendum is a noun; legendum est is an adjective with nothing to agree with. Both are -ndum. After ad it is ALWAYS -ndum because a gerund has nothing to agree with; as a gerundive it moves to match. With no subject and no object at all the gerundive goes neuter and means 'one must' — legendum est, 'one must read' — which is how Latin states a rule with nobody in it, exactly as L3-M7's melius est gave advice with nobody in it."
+    },
+    {
+      "tag": "free",
+      "text": "A SET OF STEPS COSTS NO NEW GRAMMAR: prīmum lege, deinde scrībe, postrēmō dā. L2-M10's four sequencing adverbs plus L2-M5's imperative shape, and that is the whole of it — which is what leaves this module's cap free for the two -nd- forms. Instructions move freely between an imperative (accipe, 'take!') and an obligation (signandum est, 'it must be signed'), exactly as English moves between 'take' and 'it must be signed'."
+    },
+    {
+      "tag": "delta",
+      "text": "BOTH WAYS OF SAYING PURPOSE IN ONE SENTENCE, ON PURPOSE: ad discendum lege, ut linguam discās. The gerund is two words and takes no object; the clause has a verb and can take one. A learner who has only the clause will write four words where two would do, and a learner who has only the gerund cannot say what they are learning."
+    },
+    {
+      "tag": "interference",
+      "text": "cum IS 'WITH' HERE AND IT HAS A SECOND READING COMING. L1-M7 owns this key for cum plus the ablative — cum magistrō, cum stilō — and M6 of this level opens cum plus a SUBJUNCTIVE meaning 'when'. Same four letters, same key in the index, two grammars. This module's cum is a tool or a person and nothing else, and its note says the other reading is coming, because when it arrives the note will be the only place the two can be told apart."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "Ad legendum veniō.",
+      "cue": "I am coming in order to read.",
+      "literal": "for reading I-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For', with the object shape after it — and a gerund takes that shape like any noun. L1-M4's preposition doing a job it has not done before."
+          },
+          {
+            "display": "legendum",
+            "cue": "reading",
+            "tag": "interference",
+            "forms": [
+              "legendum"
+            ],
+            "note": "'Reading' — and ONE key for two words: a GERUND (a noun) after ad, and a GERUNDIVE (an adjective) in legendum est, 'one must read'. Same four letters; the frame decides."
+          },
+          {
+            "display": "veniō",
+            "cue": "I come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō, venīs, venit, venīmus, venīre."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L3-M2 said purpose was ad plus a plain noun and named the gerund as missing. Here it is: legendum is the verb legō turned into a noun, so ad legendum is 'for reading' with no clause in it at all. L3-M4's ut plus a subjunctive is the other way and needs a verb; this needs none.",
+      "sound": "ad le-GEN-dum VE-ni-ō. Six syllables and only the last carries a long vowel.",
+      "variations": [
+        {
+          "display": "Ad scrībendum veniō.",
+          "cue": "I am coming in order to write.",
+          "changed": "a different verb turned into a noun"
+        },
+        {
+          "display": "Ad discendum veniō.",
+          "cue": "I am coming in order to learn.",
+          "changed": "L3-M2's verb as a gerund"
+        },
+        {
+          "display": "Veniō ut legam.",
+          "cue": "I am coming in order to read.",
+          "changed": "L3-M4's purpose clause, which says the same thing with a verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ad legere veniō.",
+        "why": "the plain infinitive after ad. An infinitive is not a noun and cannot take a case, so a preposition has nothing to govern — the gerund exists precisely to give a verb an ending a preposition can work with."
+      },
+      "usage": "Said explaining why you have turned up.",
+      "mnemonic": "ad plus -ndum: purpose in two words.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Liber legendus est.",
+      "cue": "The book should be read.",
+      "literal": "book to-be-read it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject: liber for one, librī for more than one."
+          },
+          {
+            "display": "legendus",
+            "cue": "to be read",
+            "tag": "interference",
+            "forms": [
+              "legendus",
+              "legenda",
+              "legendum"
+            ],
+            "note": "'To be read' — a GERUNDIVE, which is a verb used as an ADJECTIVE and agrees: legendus, legenda, legendum. liber legendus est means the book should be read."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Same four letters as the sentence above and a different word. legendum there was a NOUN after a preposition; legendus here is an ADJECTIVE agreeing with liber, and it means the book is to-be-read — which is how Latin says 'should'. L2-M8's frāctus est was the same arrangement.",
+      "sound": "LI-ber le-GEN-dus EST. The stress falls on the -gen- of the gerundive, exactly as it did on the gerund.",
+      "variations": [
+        {
+          "display": "Epistula legenda est.",
+          "cue": "The letter should be read.",
+          "changed": "a feminine noun, so the gerundive moves"
+        },
+        {
+          "display": "Liber legendus nōn est.",
+          "cue": "The book should not be read.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Liber gravis est.",
+          "cue": "The book is heavy.",
+          "changed": "an ordinary adjective in the same frame, for the contrast"
+        }
+      ],
+      "mistake": {
+        "display": "Liber legenda est.",
+        "why": "the feminine ending on a masculine noun. The gerundive agrees with what must be done, and liber is masculine — this is L2-M3's error on the newest kind of word in the course, and the -a ending is the one a learner reaches for because -ndum and -nda both look like endings rather than agreements."
+      },
+      "usage": "Said recommending something firmly.",
+      "mnemonic": "It agrees, so it is an adjective.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Legendum est.",
+      "cue": "One must read.",
+      "literal": "to-be-read it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "legendum",
+            "cue": "one must read",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It is to-be-read' — the gerundive with NOTHING to agree with, so it takes the neuter and means 'one must read'. This is the shape a learner will want most and the shortest way to say should in Latin."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Two words, no subject and no object. When there is nothing for the gerundive to agree with it goes neuter and the sentence means 'one must' — which is how Latin gives an instruction about nobody in particular, exactly as L3-M7's melius est gave advice with nobody in it.",
+      "sound": "le-GEN-dum EST. Four syllables and a whole obligation, which is as short as Latin gets.",
+      "variations": [
+        {
+          "display": "Scrībendum est.",
+          "cue": "One must write.",
+          "changed": "a different obligation"
+        },
+        {
+          "display": "Legendum nōn est.",
+          "cue": "One need not read.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Melius est legere.",
+          "cue": "It is better to read.",
+          "changed": "L3-M7's advice frame, which is softer and says less"
+        }
+      ],
+      "mistake": {
+        "display": "Legenda est.",
+        "why": "a feminine ending with nothing to be feminine about. The impersonal gerundive takes the neuter precisely because there is no noun in the sentence — an -a here invents an agreement that has no partner."
+      },
+      "usage": "Said stating a rule with no one in it.",
+      "mnemonic": "Nothing to agree with, so neuter.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Prīmum lege, deinde scrībe.",
+      "cue": "First read, then write.",
+      "literal": "first read! next write!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb, at the front of its clause."
+          },
+          {
+            "display": "lege",
+            "cue": "read!",
+            "tag": "delta",
+            "forms": [
+              "lege"
+            ],
+            "note": "'Read!' — legō's order shape. L2-M5's bibe and L1-M8's dā are the same kind of word, and a set of steps is built out of them."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer, at the front of its clause."
+          },
+          {
+            "display": "scrībe",
+            "cue": "write!",
+            "tag": "delta",
+            "forms": [
+              "scrībe"
+            ],
+            "note": "'Write!' — scrībō's order shape. Same pattern as lege and as L2-M5's bibe."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "A set of steps costs no new grammar at all. L2-M10 gave the sequencing adverbs and L2-M5 the imperative, so instructions are built entirely out of the ladder — which is what leaves this module's cap free for the two -nd- shapes.",
+      "sound": "PRĪ-mum LE-ge, DE-in-de SCRĪ-be. Two long ī sounds, one opening each half.",
+      "variations": [
+        {
+          "display": "Prīmum lege, deinde dā.",
+          "cue": "First read, then give it.",
+          "changed": "L1-M8's imperative"
+        },
+        {
+          "display": "Prīmum scrībe, deinde lege.",
+          "cue": "First write, then read.",
+          "changed": "the two steps swapped"
+        },
+        {
+          "display": "Prīmum lege, deinde scrībe, postrēmō dā.",
+          "cue": "First read, then write, finally give it.",
+          "changed": "a third step with L2-M10's closer"
+        }
+      ],
+      "mistake": {
+        "display": "Prīmum legere, deinde scrībere.",
+        "why": "infinitives where imperatives belong. An infinitive names an action and an imperative orders one, so this reads as a list of activities rather than a set of steps — and L2-M5 established that Latin instructs with bare commands."
+      },
+      "usage": "Said giving instructions.",
+      "mnemonic": "Steps are adverbs plus imperatives.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Ad discendum lege, ut linguam discās.",
+      "cue": "Read in order to learn, so that you learn the language.",
+      "literal": "for learning read! so-that language you-may-learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For', with the object shape after it."
+          },
+          {
+            "display": "discendum",
+            "cue": "learning",
+            "tag": "interference",
+            "forms": [
+              "discendum"
+            ],
+            "note": "'For learning' — a gerund, L3-M2's discō turned into a noun. ad discendum is 'for the purpose of learning'."
+          },
+          {
+            "display": "lege",
+            "cue": "read!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Read!' — legō's order shape. L2-M5's bibe and L1-M8's dā are the same kind of word, and a set of steps is built out of them."
+          },
+          {
+            "display": "ut",
+            "cue": "so that",
+            "tag": "interference",
+            "forms": [],
+            "note": "'So that' — with a subjunctive. L3-M4's word, and the purpose reading only."
+          },
+          {
+            "display": "linguam",
+            "cue": "language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Language' as the thing learned. L3-M2's word."
+          },
+          {
+            "display": "discās",
+            "cue": "you may learn",
+            "tag": "interference",
+            "forms": [
+              "discās",
+              "scrībās"
+            ],
+            "note": "'That you may learn' — the present subjunctive of discō. L3-M4's mood, and scrībās is scrībō in the same mood: the ending is the same on every verb."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Both purposes in one sentence, on purpose. ad discendum is tight and has no verb; ut linguam discās has a verb and can take an object. That is the whole difference between the two, and a sentence with one of each is the only way to show it.",
+      "sound": "ad dis-CEN-dum LE-ge, ut LIN-guam dis-CĀS. The -cen- and the -cās- are the same verb, two shapes apart.",
+      "variations": [
+        {
+          "display": "Ad discendum lege, ut bene scrībās.",
+          "cue": "Read in order to learn, so that you write well.",
+          "changed": "a different purpose clause"
+        },
+        {
+          "display": "Lege ut discās.",
+          "cue": "Read so that you learn.",
+          "changed": "only the clause, with no gerund"
+        },
+        {
+          "display": "Ad discendum lege.",
+          "cue": "Read in order to learn.",
+          "changed": "only the gerund, with no clause"
+        }
+      ],
+      "mistake": {
+        "display": "Ad discendum lege, ut linguam discere.",
+        "why": "an infinitive inside the purpose clause. ut needs a subjunctive, which L3-M4 settled, and the presence of a gerund earlier in the sentence makes an author reach for another verbal noun instead of a mood."
+      },
+      "usage": "Said giving a reason for an instruction.",
+      "mnemonic": "The gerund takes no object; the clause can.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Epistula scrībenda est.",
+      "cue": "The letter should be written.",
+      "literal": "letter to-be-written it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "epistula",
+            "cue": "letter",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Letter' as the subject — epistulam as the object. L1-M6's word."
+          },
+          {
+            "display": "scrībenda",
+            "cue": "to be written",
+            "tag": "interference",
+            "forms": [
+              "scrībendus",
+              "scrībenda",
+              "scrībendum"
+            ],
+            "note": "'To be written' — the gerundive of scrībō, agreeing: scrībendus, scrībenda, scrībendum. That last shape is ALSO the gerund, ad scrībendum: one key, two words."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The gerundive is feminine here because epistula is, and the obligation has not changed at all. Latin's 'should' carries the gender of what should be done, which no English speaker will expect and which is the one thing that makes these forms feel strange rather than merely new.",
+      "sound": "e-PIS-tu-la scrī-BEN-da EST. Both long words end on a short a, and the rhyme is the agreement.",
+      "variations": [
+        {
+          "display": "Epistula scrībenda nōn est.",
+          "cue": "The letter need not be written.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Liber legendus est.",
+          "cue": "The book should be read.",
+          "changed": "a masculine noun, so both words move"
+        },
+        {
+          "display": "Scrībendum est.",
+          "cue": "One must write.",
+          "changed": "nothing to agree with, so the neuter"
+        }
+      ],
+      "mistake": {
+        "display": "Epistula scrībendus est.",
+        "why": "the masculine ending on a feminine noun. The gerundive agrees with what must be done, and epistula is feminine — this is S02's error with the genders swapped, and the two plates together are the module's fence."
+      },
+      "usage": "Said about a task that is owed.",
+      "mnemonic": "The obligation carries the gender of the task.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Cum stilō scrībendum est.",
+      "cue": "One must write with a pen.",
+      "literal": "with pen to-be-written it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cum",
+            "cue": "with",
+            "tag": "interference",
+            "forms": [],
+            "note": "'With' plus the ablative — L1-M7's word, and here it introduces a TOOL. It has a second reading, 'when' with a mood, which arrives at M6 and shares this key."
+          },
+          {
+            "display": "stilō",
+            "cue": "with a pen",
+            "tag": "delta",
+            "forms": [
+              "stilus",
+              "stilō"
+            ],
+            "note": "'With a pen' — stilus as the subject, stilō after cum. It was a pointed iron for writing on wax, and English 'style' comes from it."
+          },
+          {
+            "display": "scrībendum",
+            "cue": "one must write",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It is to-be-written' — the gerundive with nothing to agree with, so neuter: 'one must write'."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "cum here is a tool, and the same four letters mean 'when' in a construction this course has not yet taught. M6 opens it, and the two share one key in the index — so a note is the only place the difference can live, and this one says the other reading is coming.",
+      "sound": "cum STI-lō scrī-BEN-dum EST. The long ō of stilō is the case, and it is the whole of 'with'.",
+      "variations": [
+        {
+          "display": "Cum stilō scrībe.",
+          "cue": "Write with a pen.",
+          "changed": "an order instead of an obligation"
+        },
+        {
+          "display": "Stilō scrībendum est.",
+          "cue": "One must write with a pen.",
+          "changed": "cum dropped — the ablative alone is L2-M4's means, and it works here too"
+        },
+        {
+          "display": "Cum magistrō legendum est.",
+          "cue": "One must read with the teacher.",
+          "changed": "L1-M7's cum with a person rather than a tool"
+        }
+      ],
+      "mistake": {
+        "display": "Cum stilum scrībendum est.",
+        "why": "the object shape after cum. L1-M7's cum takes the ablative, which is the shape that means 'with' — and thirty modules of ad plus an object shape make the accusative the reflex a learner reaches for after any preposition."
+      },
+      "usage": "Said stating how something must be done.",
+      "mnemonic": "cum is 'with' here; 'when' comes at M6.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Prīmum chartam accipe, deinde signandum est.",
+      "cue": "First take the form, then it must be signed.",
+      "literal": "first form take! next to-be-signed it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb."
+          },
+          {
+            "display": "chartam",
+            "cue": "form",
+            "tag": "free",
+            "forms": [],
+            "note": "'Form, paper' — a Greek loan with a plain a. L3-M8's word."
+          },
+          {
+            "display": "accipe",
+            "cue": "take!",
+            "tag": "delta",
+            "forms": [
+              "accipe"
+            ],
+            "note": "'Take!' — the order shape of L2-M7's accipiō. accipiō, accipit, accipiam, accipe."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer."
+          },
+          {
+            "display": "signandum",
+            "cue": "to be signed",
+            "tag": "interference",
+            "forms": [
+              "signandum",
+              "signanda"
+            ],
+            "note": "'It is to-be-signed' — the gerundive of L3-M8's signō with nothing to agree with, so neuter."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "An imperative and an obligation in one set of steps, and they are not the same thing. accipe tells you to do it; signandum est says it has to be done, by whoever. Instructions in Latin move between the two freely, and English does the same with 'take' and 'it must be signed'.",
+      "sound": "PRĪ-mum CHAR-tam AC-ci-pe, DE-in-de sig-NAN-dum EST. Twelve syllables, and the two halves are an order and a rule.",
+      "variations": [
+        {
+          "display": "Prīmum chartam accipe, deinde legendum est.",
+          "cue": "First take the form, then it must be read.",
+          "changed": "a different obligation"
+        },
+        {
+          "display": "Charta signanda est.",
+          "cue": "The form must be signed.",
+          "changed": "the gerundive agreeing with charta rather than standing alone"
+        },
+        {
+          "display": "Prīmum chartam accipe.",
+          "cue": "First take the form.",
+          "changed": "one step only"
+        }
+      ],
+      "mistake": {
+        "display": "Prīmum chartam accipe, deinde signandus est.",
+        "why": "the masculine ending where nothing is being agreed with. There is no noun for signandum to answer to — the form is impersonal — so an -us invents a masculine subject the sentence does not have."
+      },
+      "usage": "Said at a counter, explaining a procedure.",
+      "mnemonic": "An order, then a rule.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Ad scrībendum stilus emendus est.",
+      "cue": "A pen must be bought for writing.",
+      "literal": "for writing pen to-be-bought it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For', with the object shape after it."
+          },
+          {
+            "display": "scrībendum",
+            "cue": "writing",
+            "tag": "interference",
+            "forms": [],
+            "note": "'For writing' — a GERUND here, the noun, after ad. The word three places later is the other kind."
+          },
+          {
+            "display": "stilus",
+            "cue": "pen",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Pen' as the subject — stilō after cum. A pointed iron for writing on wax."
+          },
+          {
+            "display": "emendus",
+            "cue": "to be bought",
+            "tag": "interference",
+            "forms": [
+              "emendus",
+              "emenda"
+            ],
+            "note": "'To be bought' — the GERUNDIVE of L1-M8's emō, agreeing with stilus and so masculine: emendus, emenda, emendum."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both -nd- shapes in one sentence, which is the only place this module puts them together. scrībendum is a noun after a preposition and emendus is an adjective agreeing with stilus, and the endings are what tell you: a gerund after ad is always -ndum, and a gerundive changes to match.",
+      "sound": "ad scrī-BEN-dum STI-lus e-MEN-dus EST. The two -nd- words sit at either end of the line, which is how you can tell them apart by sight.",
+      "variations": [
+        {
+          "display": "Ad legendum liber emendus est.",
+          "cue": "A book must be bought for reading.",
+          "changed": "a different pair of verbs"
+        },
+        {
+          "display": "Ad scrībendum charta emenda est.",
+          "cue": "Paper must be bought for writing.",
+          "changed": "a feminine thing bought, so the gerundive moves"
+        },
+        {
+          "display": "Stilus emendus est.",
+          "cue": "A pen must be bought.",
+          "changed": "no purpose, so no gerund"
+        }
+      ],
+      "mistake": {
+        "display": "Ad scrībendus stilus emendus est.",
+        "why": "the gerund given an agreeing ending, because the gerundive beside it has one. A gerund after ad has nothing to agree with — it is a noun — and it is always -ndum. The two shapes in one sentence is what makes this the module's hardest line."
+      },
+      "usage": "Said working out what a job needs.",
+      "mnemonic": "After ad it is -ndum; agreeing, it moves.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Prīmum legendum est, deinde scrībe.",
+      "cue": "First one must read, then write.",
+      "literal": "first to-be-read it-is next write!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb."
+          },
+          {
+            "display": "legendum",
+            "cue": "one must read",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It is to-be-read' — the gerundive with nothing to agree with, so neuter and impersonal."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer."
+          },
+          {
+            "display": "scrībe",
+            "cue": "write!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Write!' — scrībō's order shape."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The module ends where it began: sequencers from L2, an imperative from L2, and one new shape carrying the whole of 'must'. Five words, one of them new, and the sentence is a complete instruction — which is what a level's first module should feel like when the ladder underneath it is thirty rungs deep.",
+      "sound": "PRĪ-mum le-GEN-dum EST, DE-in-de SCRĪ-be. Ten syllables and three long vowels.",
+      "variations": [
+        {
+          "display": "Prīmum scrībendum est, deinde lege.",
+          "cue": "First one must write, then read.",
+          "changed": "the two halves swapped"
+        },
+        {
+          "display": "Prīmum legendum est.",
+          "cue": "First one must read.",
+          "changed": "one step only"
+        },
+        {
+          "display": "Prīmum lege, deinde scrībe.",
+          "cue": "First read, then write.",
+          "changed": "two imperatives, which is S04 — an order rather than a rule"
+        }
+      ],
+      "mistake": {
+        "display": "Prīmum legendum est, deinde scrībendum.",
+        "why": "est dropped from the second half. The gerundive cannot stand without it — legendum est is two words and neither is optional — and the pull to abbreviate a repeated verb is strong enough to break the construction."
+      },
+      "usage": "Said laying out what has to happen.",
+      "mnemonic": "One new shape, thirty rungs of ladder.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Ad scrībendum veniō.",
+      "cue": "I am coming in order to write."
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Epistula legenda est.",
+      "cue": "The letter should be read."
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Scrībendum est.",
+      "cue": "One must write."
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Prīmum lege, deinde dā.",
+      "cue": "First read, then give it."
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Lege ut discās.",
+      "cue": "Read so that you learn."
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Liber legendus nōn est.",
+      "cue": "The book should not be read."
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Cum stilō scrībe.",
+      "cue": "Write with a pen."
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Charta signanda est.",
+      "cue": "The form must be signed."
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Ad legendum liber emendus est.",
+      "cue": "A book must be bought for reading."
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Prīmum legendum est.",
+      "cue": "First one must read."
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Stilō scrībendum est.",
+      "cue": "One must write with a pen."
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Ad discendum lege.",
+      "cue": "Read in order to learn."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

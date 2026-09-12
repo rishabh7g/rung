@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "quia + V (cause)",
+      "ideō + V + , + quia + V",
+      "itaque + V (consequence)",
+      "N-abl (cause, no preposition)",
+      "propter + N-acc (cause, with one)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "quod AND quia BOTH MEAN 'BECAUSE' AND THIS COURSE WRITES ONLY quia. L1-M9 took quod for the causal reading, and L3-M2 gave up two shapes of the relative pronoun — the neuter and the feminine object — to keep that key carrying one true note. A paragraph of causes is exactly where an author reaches for variety, so the discipline is stated here again: quia is the whole of 'because' in en-la, and quod is L1-M9's and nothing else's."
+    },
+    {
+      "tag": "delta",
+      "text": "ideō POINTS FORWARD AND itaque POINTS BACK, AND BOTH COME FIRST IN THEIR CLAUSE. ideō … quia is 'for this reason … because' — a frame English does not have, because 'for this reason' followed by 'because' sounds redundant in English and is standard in Latin: ideō announces that a cause is coming and quia delivers it. itaque draws the consequence after the fact instead. So a chain can be ordered either way and the connective says which end is being explained — and a sentence needs exactly ONE of quia, ideō or itaque, never two."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ABLATIVE OF CAUSE IS THE SIXTH JOB THAT CASE HAS DONE, and again with no preposition: timōre nōn vēnī, 'I did not come out of fear'. After opus est (L1-M3), in and cum (L1-M7), means (L2-M4), time (L2-M6) and comparison (L2-M9), this is the sixth, and every one of the six works by the ending alone. propter plus the OBJECT shape is the same idea with a preposition — the pair L2-M4 set up for means, with in raedā against raedā, and the choice is style rather than meaning."
+    },
+    {
+      "tag": "free",
+      "text": "THE COURSE NOW HAS SEVEN CONNECTIVES THAT MUST COME FIRST AND SIX THAT MUST COME SECOND, and the list is worth more than the principle. First: itaque, ergō, ideō, prīmum, deinde, tum, postrēmō. Second: autem, enim, igitur, quoque, vērō, tamen. And quia, quod, dum, postquam and antequam join two clauses from the front. Thirteen words in three groups, and nothing about a word's meaning tells you which group it is in."
+    },
+    {
+      "tag": "delta",
+      "text": "'TO BE' JOINS TWO SUBJECTS AND NEVER TAKES AN OBJECT: causa timor fuit, 'the reason was fear' — two nominatives in one clause. The course has used this since L1-M1 without naming it, and a module about causes is where it becomes visible, because naming a cause is exactly the sentence that needs two subjects."
+    },
+    {
+      "tag": "interference",
+      "text": "A CAUSE CAN COME FIRST OR LAST AND quia GOES WITH IT EITHER WAY. Quia timōre nōn vēnī, mē pudet puts the cause first; mē pudet, quia timōre nōn vēnī puts it last. Both are correct and the second is commoner. What is never correct is quia in front and itaque behind — two connectives for one relation, which is the 'because … therefore' error English speakers make in English too and notice far less."
+    },
+    {
+      "tag": "free",
+      "text": "THE JOB IS A PARAGRAPH OF CAUSES, NOT A SENTENCE OF THEM. The module's later sentences run three and four clauses, and the machinery is entirely the ladder's: a case for the cause, a connective for the order, L3-M2's possum for what could not be done, L3-M6's impersonals for how it felt. Only ideō, propter, timor and causa are new, which is what leaves room for the length."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "Nōn vēnī, quia aeger fuī.",
+      "cue": "I did not come, because I was ill.",
+      "literal": "not I-came because ill I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies. L1-M3's word."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō, one bar from venit."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the ONLY 'because' this course writes: quod means it too and its key already carries L1-M9's note."
+          },
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum, and the e drops as soon as an ending is added. L3-M7's word."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum, and the only past of it this course writes. The tense for a state that went ON is still to come."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "quia and not quod. Both mean 'because' in Latin and this course writes only quia, because L1-M9 took quod for that reading and L3-M2 had to name the neuter relative as unwritable as a result. A paragraph of causes is where an author reaches for variety and would spend a key that has one true note.",
+      "sound": "nōn VĒ-nī, QUI-a AE-ger FU-ī. Three long vowels, one in each of the sentence's three ideas.",
+      "variations": [
+        {
+          "display": "Nōn vēnī, quia sollicitus fuī.",
+          "cue": "I did not come, because I was worried.",
+          "changed": "L3-M6's feeling as the cause"
+        },
+        {
+          "display": "Vēnī, quia aeger nōn fuī.",
+          "cue": "I came, because I was not ill.",
+          "changed": "both halves positive and negative swapped"
+        },
+        {
+          "display": "Nōn vēnit, quia aeger fuit.",
+          "cue": "He did not come, because he was ill.",
+          "changed": "someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn vēnī, quod aeger fuī.",
+        "why": "quod for quia. Both mean 'because' in real Latin and L1-M9 owns that key for it — L3-M2 gave up two shapes of the relative pronoun to keep it carrying one note, and spending it here would undo that."
+      },
+      "usage": "Said explaining an absence.",
+      "mnemonic": "quia is the only 'because' here.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "Ideō nōn vēnī, quia aeger fuī.",
+      "cue": "That is why I did not come: because I was ill.",
+      "literal": "for-this-reason not I-came because ill I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ideō",
+            "cue": "for this reason",
+            "tag": "delta",
+            "forms": [
+              "ideō"
+            ],
+            "note": "'For this reason', and it points FORWARD to the cause. Its usual partner is quia: ideō … quia, 'for this reason … because', which is a frame English does not have."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the ONLY 'because' this course writes: quod means it too and its key already carries L1-M9's note."
+          },
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "ideō points forward and quia delivers. English has no single word that does what ideō does here — 'for this reason' followed by 'because' sounds redundant in English and is the standard Latin frame, because ideō announces that a cause is coming and quia gives it.",
+      "sound": "i-de-Ō nōn VĒ-nī, QUI-a AE-ger FU-ī. Nine syllables and the long ō of ideō opens them.",
+      "variations": [
+        {
+          "display": "Ideō vēnī, quia tē vidēre volō.",
+          "cue": "That is why I came: because I want to see you.",
+          "changed": "a present reason for a past act"
+        },
+        {
+          "display": "Nōn vēnī, quia aeger fuī.",
+          "cue": "I did not come, because I was ill.",
+          "changed": "ideō dropped, which is shorter and says less"
+        },
+        {
+          "display": "Ideō nōn vēnī, quia sollicitus fuī.",
+          "cue": "That is why I did not come: because I was worried.",
+          "changed": "a different cause"
+        }
+      ],
+      "mistake": {
+        "display": "Ideō nōn vēnī, quod aeger fuī.",
+        "why": "quod for quia, which is real Latin and forbidden here. L1-M9 owns that key for 'because' and L3-M2 gave up two shapes of the relative pronoun to keep it clean — writing it in a second module would put two rows under one surface."
+      },
+      "usage": "Said answering 'why not?' at length.",
+      "mnemonic": "ideō announces; quia delivers.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Timōre nōn vēnī.",
+      "cue": "I did not come out of fear.",
+      "literal": "by-fear not I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "timōre",
+            "cue": "out of fear",
+            "tag": "interference",
+            "forms": [
+              "timor",
+              "timōre",
+              "timōrem"
+            ],
+            "note": "'Out of fear' — the bare ablative, doing CAUSE. No preposition at all: the ending is the whole of 'out of'."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The ablative does a SIXTH job here and again with no preposition. After opus est (L1-M3), in and cum (L1-M7), means (L2-M4), time (L2-M6) and comparison (L2-M9), this is cause — and every one of the six works by the ending alone.",
+      "sound": "ti-MŌ-re nōn VĒ-nī. The long ō of timōre is the case, and it carries 'out of'.",
+      "variations": [
+        {
+          "display": "Timōre nōn vēnit.",
+          "cue": "He did not come out of fear.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Propter timōrem nōn vēnī.",
+          "cue": "I did not come because of fear.",
+          "changed": "the same idea WITH a preposition"
+        },
+        {
+          "display": "Timor magnus est.",
+          "cue": "The fear is great.",
+          "changed": "the noun as a plain subject, where its own shape shows"
+        }
+      ],
+      "mistake": {
+        "display": "Propter timōre nōn vēnī.",
+        "why": "a preposition put in front of the bare cause. The ablative already means 'out of', and propter needs the object shape — so this sentence has a preposition governing the wrong case AND a case already doing the preposition's job."
+      },
+      "usage": "Said giving a reason you are not proud of.",
+      "mnemonic": "The sixth job of one case, and no preposition again.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "Propter timōrem nōn vēnī.",
+      "cue": "I did not come because of fear.",
+      "literal": "because-of fear not I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "propter",
+            "cue": "because of",
+            "tag": "delta",
+            "forms": [
+              "propter"
+            ],
+            "note": "'Because of', and it takes the object shape after it: propter timōrem. It is the cause WITH a preposition, where the bare ablative is the cause without one."
+          },
+          {
+            "display": "timōrem",
+            "cue": "fear",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Fear' — timor as the subject, timōrem after propter, timōre as the bare cause. Three shapes of one noun, and English 'timid' comes from it."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The same sentence as the one above with a preposition added and one ending changed. propter takes the object shape, the bare ablative takes none — exactly the pair L2-M4 set up for means with in raedā against raedā, and the choice is style rather than meaning.",
+      "sound": "PROP-ter ti-MŌ-rem nōn VĒ-nī. Three long vowels, and propter is the only word in the line with none.",
+      "variations": [
+        {
+          "display": "Propter timōrem nōn labōrō.",
+          "cue": "I do not work because of fear.",
+          "changed": "a present consequence"
+        },
+        {
+          "display": "Propter mercēdem labōrō.",
+          "cue": "I work because of the rent.",
+          "changed": "L3-M8's noun as the cause"
+        },
+        {
+          "display": "Timōre nōn vēnī.",
+          "cue": "I did not come out of fear.",
+          "changed": "the preposition dropped, which is tighter"
+        }
+      ],
+      "mistake": {
+        "display": "Propter timōre nōn vēnī.",
+        "why": "the ablative after propter. That preposition takes the object shape and the ablative is what means 'out of' on its own — so the sentence has a preposition governing the wrong case and a case already doing the preposition's job."
+      },
+      "usage": "Said when the reason needs spelling out.",
+      "mnemonic": "propter takes an object; the ablative takes nothing.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "Aeger fuī; itaque nōn vēnī.",
+      "cue": "I was ill; so I did not come.",
+      "literal": "ill I-was and-so not I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum. L3-M7's word."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum."
+          },
+          {
+            "display": "itaque",
+            "cue": "and so",
+            "tag": "delta",
+            "forms": [],
+            "note": "'And so'. L1-M9's word, and it comes FIRST in its clause — the consequence pointing back at what was just said."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "itaque points BACK and ideō points FORWARD, and both come first in their clause. So a cause can be announced before it (ideō … quia) or drawn after it (… itaque …), and the two frames are mirror images — which is worth knowing because English uses 'so' for the second and has nothing for the first.",
+      "sound": "AE-ger FU-ī; I-ta-que nōn VĒ-nī. itaque is three light syllables and it opens its clause.",
+      "variations": [
+        {
+          "display": "Aeger fuī; ergō nōn vēnī.",
+          "cue": "I was ill; therefore I did not come.",
+          "changed": "L1-M9's other first-position consequence"
+        },
+        {
+          "display": "Aeger fuī; nōn igitur vēnī.",
+          "cue": "I was ill; I did not come, then.",
+          "changed": "L1-M10's igitur, which must come SECOND"
+        },
+        {
+          "display": "Ideō nōn vēnī, quia aeger fuī.",
+          "cue": "That is why I did not come: because I was ill.",
+          "changed": "the same two facts in the forward-pointing frame"
+        }
+      ],
+      "mistake": {
+        "display": "Aeger fuī; nōn vēnī itaque.",
+        "why": "itaque at the end. It must come FIRST in its clause — L1-M9 settled that — and the pull to put it last comes from English, where 'so' can go either side of a comma."
+      },
+      "usage": "Said laying out a consequence.",
+      "mnemonic": "itaque looks back; ideō looks forward.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Timōre nōn vēnī; itaque errāvī.",
+      "cue": "I did not come out of fear; so I was wrong.",
+      "literal": "by-fear not I-came and-so I-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "timōre",
+            "cue": "out of fear",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Out of fear' — the bare ablative doing cause. No preposition."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          },
+          {
+            "display": "itaque",
+            "cue": "and so",
+            "tag": "delta",
+            "forms": [],
+            "note": "'And so'. L1-M9's word, first in its clause."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "A cause, an event and a consequence in six words, and the sentence is a small paragraph. That is the module's job: not a sentence of causes but a chain of them, and the machinery for it — a case, a connective and two perfects — has been in the learner's hands since L2.",
+      "sound": "ti-MŌ-re nōn VĒ-nī; I-ta-que er-RĀ-vī. Twelve syllables and four long vowels, two per clause.",
+      "variations": [
+        {
+          "display": "Propter timōrem nōn vēnī; itaque errāvī.",
+          "cue": "I did not come because of fear; so I was wrong.",
+          "changed": "the cause with a preposition"
+        },
+        {
+          "display": "Timōre nōn vēnī; itaque mē pudet.",
+          "cue": "I did not come out of fear; so I am ashamed.",
+          "changed": "L3-M6's impersonal as the consequence"
+        },
+        {
+          "display": "Timōre nōn vēnī.",
+          "cue": "I did not come out of fear.",
+          "changed": "no consequence at all"
+        }
+      ],
+      "mistake": {
+        "display": "Timōre nōn vēnī; errāvī itaque.",
+        "why": "itaque moved to the end again, and the second half now reads as an afterthought rather than a consequence. Position is the whole of what these connectives carry."
+      },
+      "usage": "Said admitting a chain of fault.",
+      "mnemonic": "A cause, an event, a consequence, six words.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Ideō errāvī, quia timōre nōn vēnī.",
+      "cue": "That is why I was wrong: because I did not come out of fear.",
+      "literal": "for-this-reason I-erred because by-fear not I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ideō",
+            "cue": "for this reason",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For this reason', and it points FORWARD to the cause. Its usual partner is quia: ideō … quia, 'for this reason … because', which is a frame English does not have."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the ONLY 'because' this course writes: quod means it too and its key already carries L1-M9's note."
+          },
+          {
+            "display": "timōre",
+            "cue": "out of fear",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Out of fear' — the bare ablative doing cause."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The same three facts as the sentence before, rearranged into the forward frame. ideō … quia puts the consequence first and the cause second, and itaque puts them the other way round — so Latin can order a chain either way and the connective tells you which is being explained.",
+      "sound": "i-de-Ō er-RĀ-vī, QUI-a ti-MŌ-re nōn VĒ-nī. Twelve syllables and five long vowels: a full causal sentence is a slow one.",
+      "variations": [
+        {
+          "display": "Ideō mē pudet, quia timōre nōn vēnī.",
+          "cue": "That is why I am ashamed: because I did not come out of fear.",
+          "changed": "L3-M6's impersonal as the thing explained"
+        },
+        {
+          "display": "Timōre nōn vēnī; itaque errāvī.",
+          "cue": "I did not come out of fear; so I was wrong.",
+          "changed": "the backward frame, saying the same thing"
+        },
+        {
+          "display": "Ideō errāvī, quia propter timōrem nōn vēnī.",
+          "cue": "That is why I was wrong: because I did not come on account of fear.",
+          "changed": "the cause with a preposition inside the clause"
+        }
+      ],
+      "mistake": {
+        "display": "Ideō errāvī, itaque timōre nōn vēnī.",
+        "why": "itaque where quia belongs. ideō announces that a cause is coming, so the clause after it must be the cause — itaque would make it a second consequence, and the sentence then explains nothing."
+      },
+      "usage": "Said explaining yourself carefully.",
+      "mnemonic": "ideō forward, itaque back, and never both.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Causa timor fuit; ideō nōn vēnī.",
+      "cue": "The reason was fear; that is why I did not come.",
+      "literal": "reason fear it-was for-this-reason not I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "causa",
+            "cue": "reason",
+            "tag": "delta",
+            "forms": [
+              "causa"
+            ],
+            "note": "'Reason, cause' — causa as the subject. English 'cause' and 'because' both come from it, which makes it the one word in this module a learner already owns."
+          },
+          {
+            "display": "timor",
+            "cue": "fear",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Fear' — timor as the subject, timōrem after propter, timōre as the bare cause. Three shapes of one noun, and English 'timid' comes from it."
+          },
+          {
+            "display": "fuit",
+            "cue": "it was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It was' — the perfect of sum. L1-M5's word."
+          },
+          {
+            "display": "ideō",
+            "cue": "for this reason",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For this reason', and it points FORWARD to the cause. Its usual partner is quia: ideō … quia, 'for this reason … because', which is a frame English does not have."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "Two nominatives in the first clause and neither is an object. causa timor fuit is 'the reason was fear' — 'to be' joins two subjects rather than taking an object, which is a fact about that verb the course has used since L1-M1 without naming.",
+      "sound": "CAU-sa TI-mor FU-it; i-de-Ō nōn VĒ-nī. Eleven syllables and the long ō of ideō is the hinge.",
+      "variations": [
+        {
+          "display": "Causa timor nōn fuit; ideō vēnī.",
+          "cue": "Fear was not the reason; that is why I came.",
+          "changed": "both halves negated"
+        },
+        {
+          "display": "Causa error fuit; ideō mē pudet.",
+          "cue": "The reason was a mistake; that is why I am ashamed.",
+          "changed": "L3-M6's noun as the cause"
+        },
+        {
+          "display": "Timor causa fuit; ideō nōn vēnī.",
+          "cue": "Fear was the reason; that is why I did not come.",
+          "changed": "the two subjects swapped, which changes the emphasis and nothing else"
+        }
+      ],
+      "mistake": {
+        "display": "Causam timor fuit; ideō nōn vēnī.",
+        "why": "an object shape on one of two subjects. 'To be' joins two nominatives and takes no object at all, so causam has been given the ending thirty modules of transitive verbs have made reflexive."
+      },
+      "usage": "Said naming a cause outright.",
+      "mnemonic": "'To be' joins two subjects, never an object.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Quia timōre nōn vēnī, mē pudet.",
+      "cue": "Because I did not come out of fear, I am ashamed.",
+      "literal": "because by-fear not I-came me it-shames",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the ONLY 'because' this course writes: quod means it too and its key already carries L1-M9's note."
+          },
+          {
+            "display": "timōre",
+            "cue": "out of fear",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Out of fear' — the bare ablative doing cause."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the ACCUSATIVE, because pudet wants it. L3-M6's row, and the family libet and placet do not belong to."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It shames' — impersonal, and it takes the accusative of the person. L3-M6's verb."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "quia can open a sentence as well as follow one, which English does too — and when it opens, the consequence comes after it with no connective at all. So a causal sentence in Latin needs exactly one of quia, ideō or itaque and never two.",
+      "sound": "QUI-a ti-MŌ-re nōn VĒ-nī, MĒ PU-det. Eleven syllables, and the shame is the shortest part of it.",
+      "variations": [
+        {
+          "display": "Quia timōre nōn vēnī, errāvī.",
+          "cue": "Because I did not come out of fear, I was wrong.",
+          "changed": "a plain consequence instead of a feeling"
+        },
+        {
+          "display": "Quia aeger fuī, nōn vēnī.",
+          "cue": "Because I was ill, I did not come.",
+          "changed": "a different cause and effect"
+        },
+        {
+          "display": "Mē pudet, quia timōre nōn vēnī.",
+          "cue": "I am ashamed, because I did not come out of fear.",
+          "changed": "the clause moved to the end, which is the commoner order"
+        }
+      ],
+      "mistake": {
+        "display": "Quia timōre nōn vēnī, itaque mē pudet.",
+        "why": "two connectives for one relation. quia already says the first clause is the cause, so itaque says it a second time — and this is the error English speakers make with 'because … therefore', which is equally wrong there and much less noticeable."
+      },
+      "usage": "Said when the cause matters more than the result.",
+      "mnemonic": "One relation, one connective.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Aeger fuī; ideō nōn vēnī, quia labōrāre nōn possum.",
+      "cue": "I was ill; that is why I did not come: because I cannot work.",
+      "literal": "ill I-was for-this-reason not I-came because to-work not I-can",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum. L3-M7's word."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum."
+          },
+          {
+            "display": "ideō",
+            "cue": "for this reason",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For this reason', and it points FORWARD to the cause. Its usual partner is quia: ideō … quia, 'for this reason … because', which is a frame English does not have."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the ONLY 'because' this course writes: quod means it too and its key already carries L1-M9's note."
+          },
+          {
+            "display": "labōrāre",
+            "cue": "to work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To work' — labōrō's infinitive. M1's shape, and the one possum needs."
+          },
+          {
+            "display": "possum",
+            "cue": "I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I can': possum, potes, potest. L3-M2's verb, and nōn belongs to it rather than to labōrāre."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "Three clauses and one relation. The first states a fact, ideō announces that the reason for the second is coming, and quia gives it — so the sentence is a paragraph and it holds together on two connectives and nothing else. This is what the job means by 'across a paragraph'.",
+      "sound": "AE-ger FU-ī; i-de-Ō nōn VĒ-nī, QUI-a la-bō-RĀ-re nōn POS-sum. Eighteen syllables — the longest line of the module.",
+      "variations": [
+        {
+          "display": "Aeger fuī; ideō nōn vēnī, quia legere nōn possum.",
+          "cue": "I was ill; that is why I did not come: because I cannot read.",
+          "changed": "a different inability"
+        },
+        {
+          "display": "Aeger fuī; itaque nōn vēnī.",
+          "cue": "I was ill; so I did not come.",
+          "changed": "the backward frame and one clause fewer"
+        },
+        {
+          "display": "Ideō nōn vēnī, quia labōrāre nōn possum.",
+          "cue": "That is why I did not come: because I cannot work.",
+          "changed": "the opening fact dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Aeger fuī; ideō nōn vēnī, quia nōn labōrāre possum.",
+        "why": "nōn moved in front of the infinitive. It denies whatever it stands before, so this says 'I am able not to work' — which is a real position and not the reason for an absence. L3-M2 and L3-M8 both spent a plate on this."
+      },
+      "usage": "Said giving a full account of a reason.",
+      "mnemonic": "One relation, one connective — or two that point opposite ways.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "Nōn vēnī, quia aeger fuī.",
+      "cue": "I did not come, because I was ill."
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "Ideō vēnī, quia tē vidēre volō.",
+      "cue": "That is why I came: because I want to see you."
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "Timōre nōn vēnit.",
+      "cue": "He did not come out of fear."
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Propter mercēdem labōrō.",
+      "cue": "I work because of the rent."
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "Aeger fuī; ergō nōn vēnī.",
+      "cue": "I was ill; therefore I did not come."
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Timōre nōn vēnī; itaque mē pudet.",
+      "cue": "I did not come out of fear; so I am ashamed."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Timor magnus est.",
+      "cue": "The fear is great."
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Causa error fuit; ideō mē pudet.",
+      "cue": "The reason was a mistake; that is why I am ashamed."
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Quia aeger fuī, nōn vēnī.",
+      "cue": "Because I was ill, I did not come."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Ideō nōn vēnī, quia labōrāre nōn possum.",
+      "cue": "That is why I did not come: because I cannot work."
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Propter timōrem nōn labōrō.",
+      "cue": "I do not work because of fear."
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Aeger fuī; nōn igitur vēnī.",
+      "cue": "I was ill; I did not come, then."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
