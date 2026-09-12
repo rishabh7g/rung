@@ -10,7 +10,8 @@
  *
  * Eleven courses are briefed: hi-mr through L2, en-es, en-ar, hi-en, en-ru, en-it, en-fr,
  * en-de and en-ko L1 only, en-sa — the tenth, briefed L1 (#607) and now L2 (#612), the latter
- * planned against the finished, merged L1 index — and en-la, the eleventh, briefed L1 (#633). The
+ * planned against the finished, merged L1 index — and en-la, the eleventh, briefed L1 (#633), L2
+ * (#638) and now L3 (#642), each level planned against the one below it after it shipped. The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), the L4/L5 lists are PROPOSED (docs/48-five-level-ladder-plan.md §4, awaiting the
  * same ratification), and a level's briefs are written when its authoring project starts: a
@@ -2919,6 +2920,87 @@
  * phone call built from a named source rather than coined in M7; `quid accidit` and the perfect of
  * asking for help in M8; comparison by ablative and the `-ior`/`-issimus` pair in M9; and M10's
  * four-sentence account, which is the first thing in the course that is a paragraph.
+ *
+ * ## en-la L3: the decisions, taken against the finished L2 (#642)
+ *
+ * Planned against the REAL cumulative index through L2-M10 — **330 surfaces, maxSpan 1** — FOLDED
+ * across all twenty emitted files rather than read off the last one, for #424's reason: each file
+ * carries only what its own module is the FIRST to teach while `surfaceCount` stays cumulative.
+ * Stated as arithmetic so a reader can check it: 24 + 20 + 18 + 24 + 11 + 16 + 16 + 24 + 21 + 15
+ * (L1, 189) + 9 + 17 + 23 + 12 + 11 + 14 + 13 + 14 + 20 + 8 (L2, 141) = 330, which is what
+ * `L2-M10.json`'s `surfaceCount` says.
+ *
+ * ### 1. The subjunctive enters at M4, once, and in one tense
+ *
+ * L2 wrote exactly two subjunctives — `velim` (L2-M1) and `eāmus` (L2-M6) — as fixed forms, named
+ * the mood and explained nothing, and every brief in that level pointed here. **L3-M4 is the one
+ * module in the course where a mood is opened**, and it opens in the PRESENT subjunctive only:
+ * `sī` + indicative for an open condition against `sī` + subjunctive for the ideal, and `ut`/`nē` +
+ * subjunctive for advice and purpose. The imperfect subjunctive a real counterfactual needs is
+ * L4's, and `possim` — a subjunctive of an irregular verb inside a mood being opened — is written
+ * nowhere; M4 says `sī possum` instead.
+ *
+ * `nē` is ALSO the macron twin of L1-M2's seam part-key (#630 (a)): `surfaceIndexKeys('agis-ne')`
+ * donates `ne`, and `nē` with the bar is a different key because rule 4 of `src/engine/surface.ts`
+ * folds case and NEVER a diacritic — checked against the real file. **M4 is `nē`'s owner**, and the
+ * key was kept free through thirty modules for it.
+ *
+ * ### 2. The accusative and infinitive at M3, the reflexive at M5, and no word for "that"
+ *
+ * `putō eum venīre` is "I think that he is coming", built as "I-think him to-come": the person
+ * becomes an object, the verb becomes an infinitive, and **nothing joins the two halves**. It is the
+ * largest structural difference between Latin and English in the whole course, so it enters at M3
+ * on opinion, with `eum`, and only the present infinitive. M5 carries it into reported speech and
+ * adds the two things report needs: the reflexive `sē` (`dīcit sē venīre` = he himself; `dīcit eum
+ * venīre` = someone else) and the perfect infinitive, because **the infinitive's tense is relative
+ * to the reporting verb** rather than absolute.
+ *
+ * The mistake plate is the English `quod` clause — `putō quod venit` — and it is wrong twice over:
+ * it is not the construction, and `quod` is already L1-M9's "because". A plate is exempt from the
+ * index by design (#491), which is the only reason it can be written at all.
+ *
+ * ### 3. Three homographs, three owners, one meaning each — and two shapes of the relative lost
+ *
+ * The shared index has cost this level more than any other. `quod` is L1-M9's "because" and `quam`
+ * is L2-M9's "than", and **first occurrence wins** — so the neuter and feminine-accusative shapes of
+ * the relative pronoun M2 introduces are NAMED IN PROSE AND WRITTEN NOWHERE. M2 writes `quī`, `quae`
+ * and `quem` and says out loud that Latin's relative is a five-shape word of which this course
+ * writes three. `ut` is the third homograph and the sharpest: "so that", "as", "when" and "how" in
+ * full Latin, and **the purpose reading only** here, so the key carries one true note.
+ *
+ * ### 4. Festivals are Roman, and the gap is named rather than filled
+ *
+ * M9's alternative was to name the learner's own festivals in Latin, and it was **rejected**:
+ * `docs/123` §7 allows one named source for modern words, that source has a telephone and a bicycle
+ * in it and does not have Diwali or Christmas Eve, and coining is banned course-wide. So M9 teaches
+ * `Sāturnālia` (plural, with no singular at all) and `diēs nātālis`, and says in a usage line that
+ * these are the Romans' festivals rather than the learner's. Same honesty as M7's telephone and M8's
+ * office, and the same source.
+ *
+ * ### 5. What L3 withholds, and where each piece lands
+ *
+ * Named as deferred in the module that would otherwise reach for it: the **imperfect** and every
+ * past but the perfect — M1 wants it for a habitual day and M10 for eight sentences, and L4-M8 owns
+ * it, so `legēbam`, `habēbam` and `eram` are still free keys after thirty modules; the **gerund**
+ * (M2 wants `ad vīvendum` for purpose and gets `ad` plus a plain noun — L4-M1); the **passive**
+ * (M6's `sollicitus sum` is L2-M8's participle-as-adjective again — L4-M7); the **locative** `domī`
+ * (M7's `melius est … manēre` wants it and writes `domum` instead — L4-M9); the **plain possessive**
+ * `meus` and `eius` (M5 opens `suus` reflexive only, because one module cannot open a possessive
+ * system and a reflexive at once); `potuī` and every perfect of `possum` (M2 opens three persons and
+ * an infinitive frame and stops); the **indirect question** (L4); and `ȳ` in any word, which #631
+ * measured as undrawn by every bundled face and which M8's Greek loan `charta` sidesteps.
+ *
+ * ### Why the en-la L3 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. The clause-joining conjunctions in M1, because a
+ * detailed day needs `dum` and `postquam` where L2-M10 had only adverbs; the relative pronoun and
+ * `possum` in M2, which closes the gap L2-M8 named; the accusative and infinitive in M3, where
+ * opinion first needs it; the subjunctive in M4, once and in one tense; reported speech and `sē` in
+ * M5, which is the construction of M3 with the one pronoun that disambiguates it; two impersonal
+ * patterns in different cases in M6; L1-M1's dative of possession returning for the body in M7;
+ * the genitive of price finally explaining L1-M8's `quantī cōnstat` in M8; a Roman culture named
+ * honestly in M9; and M10's eight-sentence account, which spends no cap at all and is built entirely
+ * out of the level below it.
  *
  */
 
@@ -13349,6 +13431,217 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "INDEX SEAM: prīmum, deinde, tum, postrēmō are the four fresh rows, and everything else in the module should already be taught. If a perfect the account needs is not in the index, open it HERE as its own row with a note back at its present — L1-M5's rule, unchanged. ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL, as it did in L1-M10: macrons per the OLD, no j, no apostrophe, no accent, NFC, no script line, and a hyphen only before que, ne or ve. A four-sentence paragraph is the longest thing the course has asked for, which makes it the likeliest place for a slip.",
       ],
       maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M1': {
+      id: 'L3-M1',
+      title: 'Your day, in detail',
+      job: 'Longer habitual narration with sequencing words',
+      patterns: [
+        'dum + V-present',
+        'postquam + V-perfect',
+        'antequam + V-present',
+        'N-abl (time) + V + , + deinde + V',
+        '<six-sentence habitual day>',
+      ],
+      notes: [
+        "dum TAKES THE PRESENT EVEN WHEN THE STORY IS PAST, and that is this module's first and hardest fact. dum legō means 'while I read' AND 'while I was reading', because dum fixes the time of the main verb rather than carrying one of its own. English changes tense and Latin does not, so a learner writing dum legēbam has reached for a tense this course does not teach AND broken the idiom at the same time. State it twice: once as the rule and once in the note, because a prompt shows an author only the notes.",
+        "postquam TAKES THE PERFECT AND antequam THE PRESENT, and the pairing is not guessable from the meaning. postquam vēnī, 'after I came'; antequam veniō, 'before I come'. Two sequencers, two tenses, and L2-M10's four adverbs (prīmum, deinde, tum, postrēmō) are still available underneath — this module adds the CONJUNCTIONS that join clauses, where L2-M10 had only adverbs that opened them. Say which is which, because the level now has eight sequencing words and a learner needs the list rather than the principle.",
+        "THE IMPERFECT IS STILL DEFERRED AND THIS IS THE MODULE THAT WANTS IT MOST BADLY. A habitual day in the past is exactly the imperfect's job, and L4-M8 owns it: the keys legēbam, habēbam and eram are still free after twenty modules and must stay free. So this module narrates a habitual day in the PRESENT — cotīdiē labōrō, dum labōrō legō — which is what a Roman would do anyway for a standing habit, and the deferral costs the module nothing it needed.",
+        "THE TIME ABLATIVE IS L2-M6's AND IT IS NOW PRODUCTIVE: hōrā prīmā, hōrā sextā, hōrā nōnā. L2-M6 wrote sextā and tertiā; this module needs more ordinals, and each one is a fresh surface that the cap has to carry. prīmā collides with nothing — L2-M10's prīmum is the adverb 'first' and this is the ordinal agreeing with hōrā, so the two are separate keys and the notes must say so or a learner tapping one gets the other's meaning.",
+        "INDEX SEAM: dum, postquam, antequam, prīmā, nōnā, and whatever ordinals the day needs are fresh rows. Every verb in the module should already be taught — the cap goes on the conjunctions and the numbers, not on vocabulary. Written nowhere: legēbam, habēbam, eram and every other imperfect; cum in its 'when' reading, which is L4-M6's; and any subjunctive at all, because the mood enters at M4 and not before.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M2': {
+      id: 'L3-M2',
+      title: 'Work and study',
+      job: 'Explain what you do all day, and how',
+      patterns: [
+        'N-nom + quī / quae + V + est',
+        'possum + V-infinitive',
+        'discō + N-acc',
+        'ad + N-acc (purpose)',
+        'labōrō + N-abl (means)',
+      ],
+      notes: [
+        "THE RELATIVE PRONOUN ENTERS HERE, AND THE INDEX HAS ALREADY TAKEN TWO OF ITS FIVE SHAPES. quī (masculine) and quae (feminine) and quem (masculine object) are fresh keys and are what this module writes. quod, the neuter, IS ALREADY L1-M9's WORD FOR 'BECAUSE' — first occurrence wins, so a neuter relative would resolve to a note reading 'because' with no build failure at all. And quam, the feminine object, IS ALREADY L2-M9's 'THAN'. So BOTH are NAMED IN PROSE AND WRITTEN NOWHERE, and the module says out loud that Latin's relative is a five-shape word of which this course writes three. That is the sharpest consequence the shared index has had on any brief in this course.",
+        "possum ENTERS HERE, AND NO LEVEL BELOW L3 HAS IT. L2-M8 said nōn inveniō and meant 'I cannot find', and named the gap; this module closes it. possum 'I can', potes 'you can', potest 'he can', and it takes an infinitive: labōrāre possum. Teach the three persons and the infinitive frame and stop — the perfect potuī is L4's, because a module that opens a tense of an irregular verb has spent its cap on one word.",
+        "discō IS 'I LEARN' AND IT IS NOT docēre. L1-M1's magister teaches and the discipulus learns, and discō is the discipulus's verb — the two share a root in English ('docile', 'disciple') and are opposite in Latin. discō takes a plain object: linguam discō, 'I am learning a language'. lingua is a fresh row and it is the word this whole product is about, which is worth one usage line.",
+        "PURPOSE IS ad + THE OBJECT SHAPE, AND THE GERUND IS DEFERRED. 'I work to live' wants ad vīvendum, a gerund, and that is L4-M1's. Here purpose is ad plus a plain noun — ad scholam eō ut discam is M4's shape and not yet available either — so this module says ad labōrem eō ('I go to work') and uses L1-M3's volō with an infinitive for everything else. Name the gerund as deferred so an author does not reach for it: an -ndum ending appearing at L3-M2 would be a system opened two modules before its mood.",
+        "INDEX SEAM: quī, quae, quem, possum (with potes and potest in forms — ONE row, because they are shapes of one irregular verb), discō, lingua, labor (with labōrem), officium are fresh rows. labōrō and labōrat are L1-M4's and gain nothing. Written nowhere: quod and quam as relatives, for the reason above; potuī and every perfect of possum; the gerund in any shape; and every subjunctive, still.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M3': {
+      id: 'L3-M3',
+      title: 'Opinions with reasons',
+      job: 'Agree, disagree, soften — reasons attached',
+      patterns: [
+        'putō + N-acc + V-infinitive',
+        'cōnsentiō / ita est / minimē vērō',
+        'fortasse + V',
+        'quia + V (reason)',
+        'mihi vidētur + N-acc + V-infinitive',
+      ],
+      notes: [
+        "THE ACCUSATIVE AND INFINITIVE ENTERS HERE AND THERE IS NO WORD FOR 'THAT'. putō eum venīre is 'I think that he is coming', and it is built as 'I-think him to-come': the person becomes an OBJECT and the verb becomes an INFINITIVE. Nothing joins the two halves. This is the single largest structural difference between Latin and English in the whole course, and it arrives on opinion because opinion is where a learner first needs it. Teach it with eum (M5 takes the reflexive sē for reported speech) and write no quod clause at all.",
+        "THE MISTAKE PLATE IS THE ENGLISH quod CLAUSE, AND IT IS ALSO A HOMOGRAPH PROBLEM. putō quod venit is how an English speaker builds it and how later Latin actually did, and it is wrong for this course twice over: it is not the construction being taught, and quod is already L1-M9's 'because', so writing it here would put a second reading under a key that has one true note. The plate is the place for it — a mistake display is exempt from the index by design (#491) — and the prose must say why.",
+        "THE INFINITIVE'S TENSE IS RELATIVE, NOT ABSOLUTE, AND THIS MODULE ONLY OPENS THE DOOR. putō eum venīre means he is coming AT THE TIME I THINK IT, whenever that is — the present infinitive says 'at the same time as the main verb' rather than 'now'. Say that in one clause and teach only the present infinitive: the perfect infinitive (vēnisse) belongs with reported speech at M5, and a module teaching two infinitive tenses beside a new construction has taught neither.",
+        "AGREEING AND DISAGREEING ARE PHRASES, NOT CONSTRUCTIONS: cōnsentiō ('I agree'), ita est ('that is so' — L1-M2's ita with L1-M1's est, so nothing is new), minimē vērō ('certainly not' — L1-M2's minimē strengthened), and fortasse ('perhaps') to soften anything. fortasse is the module's one real softener and it is worth saying that L2-M8 had none for a complaint: Latin softens an OPINION readily and a complaint not at all.",
+        "INDEX SEAM: putō, cōnsentiō, vērō, fortasse, vidētur and eum are fresh rows. eum is the masculine object of the pronoun L2-M9 opened as ille — and it is a DIFFERENT word (is, ea, id, not ille, illa, illud), so it gets its own row with a note saying which of the two it belongs to, because a learner will assume one family. ita, minimē, quia and est are all taught and gain nothing. Written nowhere: quod as a reporting word; sē and suus, which are M5's; the perfect infinitive; and the subjunctive, which is the very next module's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M4': {
+      id: 'L3-M4',
+      title: 'If and then',
+      job: 'Conditions, wishes, advice',
+      patterns: [
+        'sī + V-present + , + V-present',
+        'sī + V-subjunctive + , + V-subjunctive',
+        'ut + V-subjunctive (purpose)',
+        'nē + V-subjunctive (negative advice)',
+        'sī possum + , + V',
+      ],
+      notes: [
+        "THE SUBJUNCTIVE ENTERS THE COURSE HERE, AND HERE ONLY. L2 wrote exactly two subjunctives — velim (M1) and eāmus (M6) — as fixed forms, named the mood and explained nothing, and every brief in that level said the productive mood was this module's. So this is the one place in the course where a mood is opened rather than borrowed, and the discipline that makes it affordable is that it opens in ONE tense: the present subjunctive, in the shapes this module writes, and nothing else. The imperfect subjunctive, which a real counterfactual needs, is L4's.",
+        "TWO KINDS OF CONDITION AND THE MOOD IS THE ONLY DIFFERENCE. sī plus the indicative is an OPEN condition — sī venit, gaudeō, 'if he is coming, I am glad', and he may well be. sī plus the subjunctive is the IDEAL — sī veniat, gaudeam, 'if he were to come, I should be glad', and nothing is claimed about whether he will. English marks this with 'were' and 'should' and Latin marks it with one ending on each verb, so the two sentences look almost identical and mean different things. This is the module's central trap and both halves change together: a mixed pair is the mistake plate.",
+        "nē IS THE MACRON TWIN OF THE SEAM PART-KEY, AND THIS MODULE IS ITS OWNER. docs/123 §1.1 listed ne against nē: L1-M2's question particle donates the key ne through surfaceIndexKeys, and nē with the bar is a different word and a different key, because rule 4 of surface.ts folds case and NEVER a diacritic — checked against the real file. So nē arrives here without colliding, and it arrives as the NEGATIVE of ut: ut veniat 'so that he may come', nē veniat 'so that he may not come'. There is no nōn in a purpose clause, and reaching for one is the second mistake plate.",
+        "ut IS WRITTEN IN ONE READING ONLY. In full Latin ut is 'so that', 'as', 'when' and 'how', and this course writes the purpose reading and NAMES THE REST IN PROSE. The key carries one true note, exactly as quam does for 'than' (L2-M9) and quod for 'because' (L1-M9) — three homographs, three owners, one meaning each, and the reason is the same every time: first occurrence wins in the index and a second reading has nowhere to live. A module that writes ut for 'as' has given a learner a note about purpose.",
+        "ADVICE IS ut/nē PLUS THE SUBJUNCTIVE AND IT IS GENTLER THAN AN IMPERATIVE. L2-M5 hosted with bare commands (bibe, ēs) and L2-M1 softened requests with quaesō; this module can finally say 'you should' without an order, which is what the job means by advice. possum lands here too if M2 has not already opened it — sī possum, veniam — and the module should write sī possum rather than a subjunctive of possum, because possim is a shape of an irregular verb inside a mood being opened for the first time.",
+        "INDEX SEAM: sī, ut, nē, veniat, gaudeō (with gaudeam), and the present subjunctives the module writes are fresh rows. EVERY SUBJUNCTIVE IS ITS OWN ROW rather than a forms entry of the indicative, for L1-M5's reason about perfect stems: folding veniat into veniō's row would hand a mood's note to the plain present. Written nowhere: possim and every subjunctive of possum; the imperfect subjunctive; sīc, which is still not a word this course writes; and nōn inside a purpose clause.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M5': {
+      id: 'L3-M5',
+      title: 'What someone said',
+      job: "Reporting other people's words",
+      patterns: [
+        'dīcit + sē + V-infinitive',
+        'dīxit + sē + V-perfect-infinitive',
+        'negat + sē + V-infinitive',
+        'putat + N-acc + V-infinitive',
+        'suus + N (reflexive possessive)',
+      ],
+      notes: [
+        "THE REFLEXIVE sē IS THE POINT OF THIS MODULE AND IT IS WHAT ENGLISH CANNOT DO. dīcit sē venīre is 'he says that HE HIMSELF is coming' and dīcit eum venīre is 'he says that SOMEONE ELSE is coming'. One word decides which, and English needs a whole clause of context to do the same job. M3 taught the accusative and infinitive with eum; this module adds the one pronoun that makes reported speech unambiguous, and the contrast between the two sentences is the module's hero pair.",
+        "THE INFINITIVE'S TENSE IS RELATIVE TO THE REPORTING VERB, WHICH IS THE OTHER HALF OF THE SAME LESSON. dīxit sē venīre is 'he said he was coming' — present infinitive, same time as the saying. dīxit sē vēnisse is 'he said he HAD come' — perfect infinitive, earlier than the saying. So English's 'was coming' and 'had come' are one tense-step apart in Latin and the step is in the INFINITIVE, not in dīxit. M3 opened the door with the present infinitive only; this module walks through it and adds the perfect.",
+        "suus IS sē's POSSESSIVE AND IT HAS THE SAME JOB: librum suum legit is 'he is reading HIS OWN book'. This course has taught NO possessive at all — L2-M2 said so out loud, because three of its cues said 'my' and no Latin word carried it — so suus is the first one, and it arrives reflexive rather than plain. meus ('my') and eius ('his, of someone else') are NAMED and written nowhere: one module cannot open a possessive system and a reflexive at the same time, and the reflexive is the one reported speech needs.",
+        "negō IS 'I SAY THAT … NOT', ONE WORD FOR TWO. negat sē venīre is 'he says he is not coming', and there is no nōn anywhere in it. This is the third place in the course where Latin puts a negative inside a verb rather than beside one — L1-M3's nōlō and L2-M9's mālō are the others — and naming all three together is worth a note, because a learner who has met them separately has three exceptions rather than one habit.",
+        "INDEX SEAM: dīcō (with dīcit and dīxit), negō (with negat), sē, suus (with suum), vēnisse and the perfect infinitives the module writes are fresh rows. A PERFECT INFINITIVE IS ITS OWN ROW and not a forms entry of the present infinitive, for the same reason a subjunctive is: vēnisse and venīre are different in tense and the note must say which. eum is M3's and gains nothing. Written nowhere: meus, tuus and eius; the indirect question, which needs a subjunctive in a reported clause and is L4's; and quod as a reporting word, still.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M6': {
+      id: 'L3-M6',
+      title: 'Feelings in depth',
+      job: 'Nuance past good and bad',
+      patterns: [
+        'mē pudet + N-gen',
+        'mē taedet + N-gen',
+        'mihi libet / placet',
+        'sollicitus / commōtus + sum',
+        'fortasse + Adj + sum',
+      ],
+      notes: [
+        "TWO IMPERSONAL PATTERNS AND THEY TAKE DIFFERENT CASES, WHICH IS THE MODULE'S TRAP. pudet and taedet take the ACCUSATIVE of the person who feels it — mē pudet, 'it shames me'; mē taedet, 'it wearies me'. placet and libet take the DATIVE — mihi placet, 'it pleases me'. L1-M3's mihi opus est and L1-M7's mihi placent were both dative, so twenty modules have taught the dative pattern and this one adds an accusative pattern that looks identical in English. Write both, put them side by side, and make the plate the wrong case.",
+        "THE THING FELT ABOUT IS A GENITIVE, WHICH L2-M2 OPENED AND NOTHING HAS USED SINCE. mē pudet erroris, 'I am ashamed of my mistake'. L2-M2 taught the genitive for possession between people (fīlia magistrae) and warned that magistrī was already L1-M1's plural; here the case does a second job, and error is a fresh row whose genitive erroris is the shape the module actually writes. Say that the genitive has two jobs now and that L3 opens no third.",
+        "THE FEELING WORDS ARE ADJECTIVES WITH sum AND THAT IS DELIBERATE. sollicitus sum ('I am worried'), commōtus sum ('I am upset'), and both are L2-M8's arrangement — a participle taught as an adjective that agrees, because the passive is L4-M7's. So this module is the second to use that decision and the note should point back at frāctus est, because a learner who sees the same shape twice and is told 'adjective' twice will not need to be told a third time.",
+        "LATIN'S FEELING VOCABULARY IS SMALLER AND ITS IMPERSONALS ARE BIGGER, AND THE MODULE SHOULD SAY SO. English has a long shelf of adjectives for shades of mood and Latin says a great deal with impersonal verbs instead — the feeling happens TO you rather than being a property you have. That is a real difference in how the two languages carve up the same ground, and it is the one thing a learner should take out of this module even if they forget every word in it.",
+        "INDEX SEAM: pudet, taedet, libet, error (with erroris), sollicitus (with sollicita), commōtus are fresh rows. mē, mihi, placet, fortasse and sum are all taught and gain nothing. Written nowhere: the passive of any of these; the subjunctive of an impersonal; and miser, which is the obvious next feeling word and belongs with L5's register work rather than here.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M7': {
+      id: 'L3-M7',
+      title: 'Body and health',
+      job: 'Say what hurts, and where',
+      patterns: [
+        'mihi + N-nom + dolet',
+        'quid tibi dolet',
+        'aeger / aegra + sum',
+        'medicum + V',
+        'melius est',
+      ],
+      notes: [
+        "mihi caput dolet IS THE DATIVE OF POSSESSION, BACK FROM L1-M1 FOR A NEW JOB. 'My head hurts' is 'to-me the-head hurts' — the head is the SUBJECT and you are the dative, which is exactly the shape of L1-M1's mihi nōmen est ('to me the name is'). So the module's central construction is a pattern the course opened in its first ten sentences and has not used since, and saying that is worth more than teaching it as new. There is no word for 'my' in it, which L2-M2 and L3-M5 both prepared.",
+        "THE PARTS OF THE BODY ARE MOSTLY NEUTER AND THEY GO IN PAIRS, which costs surfaces. caput ('head') is neuter and does not move between subject and object; oculus and oculī, manus and manūs come in twos. Give each its own row with the plural in forms — L2-M6's arrangement for the -mus endings, not a row per shape — and keep the count down by writing two or three parts rather than a diagram.",
+        "aeger IS 'ILL' AND IT DROPS ITS e LIKE liber AND niger DO. aeger, aegra, aegrum — L1-M4's liber and L2-M3's niger both did this, so this is the third instance of one pattern and the note should say so rather than teaching it again. The pattern is worth naming as a pattern at the point where a learner has seen it enough times to believe it.",
+        "melius est IS THE NEUTER OF L2-M9's melior AND IT ARRIVES AS AN IMPERSONAL: melius est domī manēre, 'it is better to stay at home'. That is a comparative doing an adverb's job with an infinitive after it, and every part of it is taught except the neuter shape — so it costs one surface and gives the module its advice. Do NOT write domī: the locative is still L4-M9's, twenty-seven modules after it was first named as deferred, and manēre plus domum or in casā is the way round it.",
+        'INDEX SEAM: doleō (with dolet), caput, aeger (with aegra), medicus (with medicum), melius, and the body parts the module writes are fresh rows. mihi, tibi, quid and sum are taught. Written nowhere: domī, still; the passive; and any imperative of doleō, which would be a strange thing to command.',
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M8': {
+      id: 'L3-M8',
+      title: 'Money and paperwork',
+      job: 'Rent, bills, forms, offices',
+      patterns: [
+        'quantī cōnstat',
+        'pretium + N-gen + est',
+        'solvō + N-acc',
+        'chartam signō',
+        'mercēdem solvō',
+      ],
+      notes: [
+        "L1-M8 TAUGHT quantī cōnstat AS A WHOLE PHRASE AND THIS MODULE CAN FINALLY EXPLAIN IT. quantī is a genitive of price — 'at how much?' — and the genitive has now done three jobs: possession (L2-M2), the thing felt about (M6), and price. That is the third and last job L3 gives it. Point back at L1-M8 explicitly: a learner who has said quantī cōnstat for two levels without knowing why is owed the reason at the moment the course can give it.",
+        "THE MONEY WORDS ARE CLASSICAL AND THE OFFICE WORDS ARE NOT, AND THE MODULE MUST SAY WHICH IS WHICH. pretium ('price'), solvō ('I pay'), mercēs and mercēdem ('rent, wages') and L1-M8's nummus are all Cicero's. An office where you hand in a form is not: officīna pūblica and tabellārium come from the living-Latin community and the Vatican's lexicon (docs/123 §7), the same named source M7's tēlephōnum came from, and nothing is coined here. An author who invents a word for 'tax office' has broken the rule the whole course shares.",
+        'WHAT A LATIN SPEAKER HONESTLY HAS IS A TRANSACTION, NOT A BUREAUCRACY, and the job should be read that way. Rome had contracts, rents, receipts and clerks, so mercēdem solvō and chartam signō are real; a modern form with boxes is not, and a module that pretends otherwise is inventing a culture rather than teaching a language. Teach the paying and the signing, name the office with the borrowed word, and let the module be about the transaction.',
+        'charta IS PAPER AND IT IS A GREEK LOAN WITH NO y IN IT, which is worth one line because docs/123 §8 banned ȳ outright: no bundled face draws it (#631), so a Greek loan in this course takes a plain vowel or a different word. charta is safe. An author reaching for a Greek-looking word should check it against that rule before writing it, because nothing in the build will catch a character the font cannot draw.',
+        "INDEX SEAM: pretium, solvō, mercēs (with mercēdem), charta (with chartam), signō, officīna are fresh rows. quantī, cōnstat, nummus and nummōs are L1-M8's and gain nothing — and quantī keeps its own row here ONLY if the module has something new to say about it, which it does: the note explaining the genitive of price belongs to a row in this module with a pointer back. Written nowhere: any coined bureaucratic noun; ȳ in any word; and the gerund, still L4-M1's.",
+      ],
+      maxWordsPerSentence: 12,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M9': {
+      id: 'L3-M9',
+      title: 'Festivals and everyday culture',
+      job: 'Talk about what is happening around you',
+      patterns: [
+        'Sāturnālia + V',
+        'diēs nātālis + est',
+        'omnēs + V-present (custom)',
+        'mōs + est + V-infinitive',
+        'hodiē + N-nom + est',
+      ],
+      notes: [
+        "THE CULTURE IN THIS MODULE IS ROMAN, AND THAT IS A DECISION TAKEN ONCE FOR THE WHOLE COURSE. The alternative was to name the learner's own festivals in Latin, and it was REJECTED for the same reason nothing else in this course is coined: docs/123 §7 allows one named source for modern words, and that source has a telephone and a bicycle in it and does not have Diwali or Christmas Eve. So the module teaches Sāturnālia and diēs nātālis, says in a usage line that these are the Romans' festivals rather than the learner's, and names the gap honestly — which is the same honesty M7 needed for the telephone and M8 for the office.",
+        "Sāturnālia IS PLURAL AND HAS NO SINGULAR, which is the kind of fact that makes a festival name worth teaching at all. Sāturnālia sunt, never est. Latin has a small set of these — festival names that exist only in the plural — and this is the module where a learner meets the idea that a word can have no singular. L2-M9's tria verba prepared the neuter plural in -a; this is the same ending with no partner behind it.",
+        "A CUSTOM IS mōs est PLUS AN INFINITIVE: mōs est dōna dare, 'it is the custom to give gifts'. That is the same impersonal-plus-infinitive frame M7 used for melius est, so the structure is a reuse and only the noun is new — which is what a ninth module should be spending its cap on. dōnum and dōna are a neuter pair, the ending L2-M9 and this module have now both leaned on.",
+        "hodiē IS THE MODULE'S ONE NEW TIME WORD and it joins L1-M4's set: cotīdiē, crās, herī, and now hodiē. Four caseless time adverbs, none of which takes an ending, beside the time ablative L2-M6 and L3-M1 made productive — so the course now has two ways of saying when, one with a case and one without, and the note should say which words belong to which. A learner who tries to put hodiē in the ablative has crossed the two.",
+        "INDEX SEAM: Sāturnālia, diēs, nātālis, mōs, dōnum (with dōna), hodiē are fresh rows. omnēs is L2-M3's, sunt and est are L1-M1's, and dare is L1-M8's dā as an infinitive — which is a fresh surface even though the imperative is taught, so it needs a row of its own with a note back at L1-M8. Written nowhere: any non-Roman festival name; any coinage; and the relative quod and quam, still L1-M9's and L2-M9's.",
+      ],
+      maxWordsPerSentence: 12,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M10': {
+      id: 'L3-M10',
+      title: 'Your own story',
+      job: 'An eight-sentence account, built from the whole ladder',
+      patterns: [
+        'prīmum + V-perfect',
+        'postquam + V-perfect + , + V-perfect',
+        'dum + V-present + , + V-perfect',
+        'dīxī + mē + V-perfect-infinitive',
+        '<eight-sentence account>',
+      ],
+      notes: [
+        "EIGHT SENTENCES, AND IT IS THE LONGEST THING THE COURSE HAS ASKED FOR. L2-M10's account was four; this is twice that, and the new vocabulary should be ZERO or close to it — every verb, every connective and every noun in it should already be in the index. The cap exists to be spent on words and this module spends it on nothing, which is what a level's last rung is for. If a perfect the account needs is missing, open it HERE as its own row with a note back at its present, which is L1-M5's rule unchanged.",
+        "THE PAST IS STILL THE PERFECT, AFTER THIRTY MODULES. legēbam, habēbam and eram are STILL free keys and L4-M8 still owns them, and an eight-sentence account is twice the pressure L2-M10 put on that rule. The one relief this level brought is dum plus the PRESENT (M1), which covers 'while I was reading' without an imperfect at all — so the account can carry background action honestly, and the module should use it rather than straining. State the rule and state that relief in the same note.",
+        "THE LEVEL'S OWN MACHINERY IS WHAT MAKES EIGHT SENTENCES POSSIBLE: M1's dum, postquam and antequam join clauses where L2-M10 had only adverbs that opened them; M2's relative pronoun lets a noun carry a clause; M5's dīxī mē … reports what was said inside the story. An eight-sentence account built only from L2's tools would be eight flat sentences in a row, and the difference between that and a story is exactly this level's content.",
+        "PRO-DROP AT EIGHT SENTENCES IS THE NATURALNESS TEST, and its exception is the same as L2-M10's: name the subject once, then never until it CHANGES. At four sentences a learner can get away with naming it twice; at eight, an account that names its subject every time reads like a form being filled in. And with reported speech in it the module has a second chance to get this wrong — dīxit sē venīre keeps the subject inside the infinitive, so the sentence around it needs none.",
+        "INDEX SEAM: nothing, if the level has done its work. ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL, as it did at L1-M10 and L2-M10: macrons on every long vowel per the OLD, v and i and never j, no apostrophe, no acute, NFC precomposed, no script line, and a hyphen only before que, ne or ve. An eight-sentence paragraph is the likeliest place in the whole course for a slip, and there is NO BUILD GATE on en-la's spelling — checkScriptMode returns an empty report for a native row — so the only things standing between a wrong macron and a learner are src/course/types.test.ts's en-la block and the author's own sweep.",
+      ],
+      maxWordsPerSentence: 12,
       newWordCap: NEW_WORD_CAP,
     },
   },

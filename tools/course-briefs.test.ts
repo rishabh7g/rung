@@ -589,11 +589,12 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
   const notes = briefs.flatMap((brief) => brief.notes).join('\n');
   const patterns = briefs.flatMap((brief) => brief.patterns);
 
-  it('covers exactly L1-M1..L2-M10 — the eleventh course, briefed L1 (#633) and L2 (#638)', () => {
+  it('covers exactly L1-M1..L3-M10 — briefed L1 (#633), L2 (#638) and L3 (#642)', () => {
     const rungs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     expect(Object.keys(all)).toEqual([
       ...rungs.map((n) => `L1-M${n}`),
       ...rungs.map((n) => `L2-M${n}`),
+      ...rungs.map((n) => `L3-M${n}`),
     ]);
   });
 
@@ -652,12 +653,14 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
   it('writes no j in a pattern, and no acute or apostrophe-elision anywhere', () => {
     for (const pattern of patterns) {
       // The pattern language's own furniture is stripped first, because none of it is Latin: the
-      // `<...>` slots, the `(...)` English asides, and the token `Adj`. Between them they carry
-      // every `j` a correct en-la pattern can contain, and what is left is the Latin skeleton.
+      // `<...>` slots, the `(...)` English asides, and the English tokens `Adj` and `subjunctive`
+      // (L3-M4's conditions are written `sī + V-subjunctive`). Between them they carry every `j` a
+      // correct en-la pattern can contain, and what is left is the Latin skeleton.
       const latinOf = pattern
         .replace(/<[^>]*>/gu, '')
         .replace(/\([^)]*\)/gu, '')
-        .replace(/\bAdj\b/gu, '');
+        .replace(/\bAdj\b/gu, '')
+        .replace(/\bsubjunctive\b/gu, '');
       expect(/[jJ]/.test(latinOf), `pattern "${pattern}" writes a j`).toBe(false);
     }
     expect(/[ÁÉÍÓÚáéíóú]|́/u.test(everything), 'a brief writes an acute').toBe(false);
@@ -824,6 +827,160 @@ describe('en-la L2: the decisions its briefs settle (#638)', () => {
       }
     }
     expect(/[ÁÉÍÓÚáéíóú]|\u0301/u.test(notes), 'an L2 note writes an acute').toBe(false);
+  });
+});
+
+/**
+ * en-la L3 (#642). This level is the one place in the course where a MOOD is opened rather than
+ * borrowed, and it is the level the shared index has cost the most: two shapes of the relative
+ * pronoun are unwritable because L1-M9 and L2-M9 already own their keys. Both facts are the kind a
+ * later author would "fix" — by teaching the full paradigm, or by explaining `velim` at L2-M1 — so
+ * they are pinned here rather than left to the prose.
+ */
+describe('en-la L3: the decisions its briefs settle (#642)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers exactly L1-M1..L3-M10 and climbs its bounds 10 → 11 → 12', () => {
+    expect(Object.keys(all)).toEqual(
+      ['L1', 'L2', 'L3'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+    for (const [id, brief] of l3) {
+      expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+      expect(brief.patterns.length, `${id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${id} notes`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * L2's ten briefs all promised the productive mood to L3-M4. If it drifts to another module, or
+   * arrives in two tenses, the promise L2 made its author is broken.
+   */
+  it('opens the subjunctive at M4, once, and in the present only', () => {
+    const m4 = (all['L3-M4']?.notes ?? []).join('\n');
+    expect(m4).toMatch(/THE SUBJUNCTIVE ENTERS THE COURSE HERE, AND HERE ONLY/);
+    expect(m4).toMatch(/opens in ONE tense: the present subjunctive/);
+    expect(m4).toMatch(/imperfect subjunctive, which a real counterfactual needs, is L4's/);
+    expect(m4).toMatch(/EVERY SUBJUNCTIVE IS ITS OWN ROW/);
+    // No other L3 module may open a mood.
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) {
+      expect((all[id]?.notes ?? []).join('\n'), id).toMatch(/subjunctive/);
+    }
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /L3-M4 is the one\n \* module in the course where a mood is opened/,
+    );
+  });
+
+  /**
+   * `nē` was kept free through thirty modules because `surfaceIndexKeys` donates `ne` from L1-M2's
+   * seam. M4 is its owner, and the brief has to say so or an author will read the key as taken.
+   */
+  it('makes M4 the owner of nē and states why the seam key does not collide', () => {
+    const m4 = (all['L3-M4']?.notes ?? []).join('\n');
+    expect(m4).toMatch(/nē IS THE MACRON TWIN OF THE SEAM PART-KEY/);
+    expect(m4).toMatch(/folds case and NEVER a diacritic/);
+    expect(m4).toMatch(/There is no nōn in a purpose clause/);
+  });
+
+  /**
+   * The accusative and infinitive is the largest structural gap between the two languages in this
+   * course. It enters at M3 with `eum` and the present infinitive, and M5 adds `sē` and the perfect
+   * infinitive — and the English `quod` clause is a mistake plate in both, never a construction.
+   */
+  it('splits the accusative and infinitive across M3 and M5, with no word for "that"', () => {
+    const m3 = (all['L3-M3']?.notes ?? []).join('\n');
+    const m5 = (all['L3-M5']?.notes ?? []).join('\n');
+    expect(m3).toMatch(/THE ACCUSATIVE AND INFINITIVE ENTERS HERE AND THERE IS NO WORD FOR 'THAT'/);
+    expect(m3).toMatch(/THE MISTAKE PLATE IS THE ENGLISH quod CLAUSE/);
+    expect(m3).toMatch(/teach only the present infinitive/);
+    expect(m5).toMatch(/THE REFLEXIVE sē IS THE POINT OF THIS MODULE/);
+    expect(m5).toMatch(/RELATIVE TO THE REPORTING VERB/);
+    expect(m5).toMatch(/dīxit sē vēnisse/);
+  });
+
+  /**
+   * Three homographs with one owner each, and the two shapes of the relative the index has already
+   * spent. Writing them would not fail a build — it would serve a learner the wrong note — which is
+   * exactly why it has to be pinned in a test rather than trusted to prose.
+   */
+  it('keeps quod, quam and ut to one reading each, and names the lost relative shapes', () => {
+    const m2 = (all['L3-M2']?.notes ?? []).join('\n');
+    const m4 = (all['L3-M4']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/THE RELATIVE PRONOUN ENTERS HERE/);
+    expect(m2).toMatch(/ALREADY L1-M9's WORD FOR 'BECAUSE'/);
+    expect(m2).toMatch(/ALREADY L2-M9's 'THAN'/);
+    expect(m2).toMatch(/NAMED IN PROSE AND WRITTEN NOWHERE/);
+    expect(m4).toMatch(/ut IS WRITTEN IN ONE READING ONLY/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Three homographs, three owners, one meaning each/);
+  });
+
+  /** The festivals decision, taken once: Roman, from the one named source, with the gap named. */
+  it('settles the culture as Roman in a NOTE, and bans coining a festival', () => {
+    const m9 = (all['L3-M9']?.notes ?? []).join('\n');
+    expect(m9).toMatch(/THE CULTURE IN THIS MODULE IS ROMAN/);
+    expect(m9).toMatch(/was REJECTED/);
+    expect(m9).toMatch(/Sāturnālia IS PLURAL AND HAS NO SINGULAR/);
+    expect(m9).toMatch(/Written nowhere: any non-Roman festival name; any coinage/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /Festivals are Roman, and the gap is named rather than filled/,
+    );
+  });
+
+  /**
+   * `pudet`/`taedet` take the ACCUSATIVE and `placet`/`libet` the dative. Twenty modules have taught
+   * the dative pattern, so an author will write `mihi pudet` unless the note puts both side by side.
+   */
+  it('keeps the two impersonal patterns in their two different cases at M6', () => {
+    const m6 = (all['L3-M6']?.notes ?? []).join('\n');
+    expect(m6).toMatch(/TWO IMPERSONAL PATTERNS AND THEY TAKE DIFFERENT CASES/);
+    expect(m6).toMatch(/take the ACCUSATIVE of the person/);
+    expect(m6).toMatch(/placet and libet take the DATIVE/);
+    expect(m6).toMatch(/THE THING FELT ABOUT IS A GENITIVE/);
+  });
+
+  /** The imperfect has been deferred since L1-M5 and M1 and M10 are where it gets reached for. */
+  it('holds the past to the perfect across the level, with dum + present as the relief', () => {
+    const m1 = (all['L3-M1']?.notes ?? []).join('\n');
+    const m10 = (all['L3-M10']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/dum TAKES THE PRESENT EVEN WHEN THE STORY IS PAST/);
+    expect(m1).toMatch(/THE IMPERFECT IS STILL DEFERRED/);
+    expect(m10).toMatch(/STILL THE PERFECT, AFTER THIRTY MODULES/);
+    expect(m10).toMatch(/legēbam, habēbam and eram are STILL free keys/);
+    expect(m10).toMatch(/EIGHT SENTENCES/);
+  });
+
+  it("plans against the folded L2 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*330 surfaces, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L1, 189\)/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L2, 141\) = 330/);
+  });
+
+  /** The orthography tests of #633 must hold over thirty briefs, not twenty. */
+  it('keeps the orthography clean across L3 as well', () => {
+    for (const [id, brief] of l3) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L3 note writes an acute').toBe(false);
+    // `ȳ` is undrawn by every bundled face (#631), so no PATTERN may carry it — the alphabet case
+    // above already enforces that. A note may NAME the character in order to ban it, and L3-M8's
+    // does, which is why this is not a check over `notes`.
+    for (const [id, brief] of l3) {
+      for (const pattern of brief.patterns) {
+        expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
+      }
+    }
   });
 });
 
