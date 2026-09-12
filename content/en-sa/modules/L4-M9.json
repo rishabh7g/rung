@@ -1,0 +1,1041 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": [
+    "L4-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future",
+      "participial_past",
+      "imperfect_third_singular_asit",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "aham + N-inst + N-acc + gatavān",
+      "N-loc + N-nom + asti",
+      "N-acc + gatvā + aham + N-acc + gatavān",
+      "mama + yātrā + dīrghā + āsīt",
+      "aham + mitreṇa + saha + N-acc + gatavān"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "THIS MODULE OPENS NO CASE AT ALL, WHICH IS WHAT LETS IT AFFORD ITS PLACES. The instrumental of means is L2-M4's yānena and mārgeṇa; saha plus the instrumental is L2-M6's; the locative of place is L1-M6's and L1-M7's; the -taḥ directions are L2-M4's three beside L1-M7's two; and L3-M1's absolutives are what pack a journey into one sentence. A trip is the module where four earlier decisions finally pay at once."
+    },
+    {
+      "tag": "interference",
+      "text": "A DESTINATION TAKES THE ACCUSATIVE AND NO PREPOSITION AT ALL. English needs two words for 'to the city'; Sanskrit needs one shape — nagaram, grāmam, mahānagaram. A long trip makes it tempting to mark the destination twice, and there is nothing there to mark it with."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH 'BY' COVERS THE VEHICLE, THE ROUTE AND THE COMPANION, AND SANSKRIT SPLITS THEM. The vehicle and the route take the bare instrumental — yānena, mārgeṇa. The companion takes the instrumental PLUS saha behind it — mitreṇa saha. A bare mitreṇa would say you travelled by means of your friend."
+    },
+    {
+      "tag": "delta",
+      "text": "mitreṇa IS THE INSTRUMENTAL OF L2-M2's mitram, and saha stands BEHIND it, never in front. That is the same placement L2-M6 taught with mayā saha, on a new noun: the word for 'with' follows what it joins you to."
+    },
+    {
+      "tag": "delta",
+      "text": "AN ABSOLUTIVE PACKS A JOURNEY INTO ONE SENTENCE. nagaram gatvā aham grāmam gatavān is two legs in one breath: gatvā says the first leg happened first and carries no tense of its own, and the finite verb at the end carries the tense for both. Both legs must belong to the SAME traveller."
+    },
+    {
+      "tag": "delta",
+      "text": "mahānagaram IS HOW mahat STAYS REFUSED. mahat is a consonant stem outside the a-stem paradigm L2-M3 opened, and no shape of it is written anywhere in this course. As the first member of a compound it is mahā-, written inside one token with the join in full, and it declines nothing — which is the trick mātāpitarau, pramāṇapatram, miṣṭānnam and kāryālayasamayaḥ already play."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PLACES, EACH ONE ROW WITH ITS OWN SHAPES. nagaram and nagare; grāmaḥ, grāmam and grāme; sthānam and sthāne; yātrā and yātrām. The naming shape says what a thing is, the -am shape makes it a destination, and the -e shape puts you in it — which is L1-M7's place case, not a new one."
+    },
+    {
+      "tag": "delta",
+      "text": "dūram IS 'FAR' AS AN ADVERB AND dūre IS 'FAR AWAY' AS A PLACE. aham dūram gatavān is how far you went; mama grāmaḥ dūre asti is where the village is; and dūre sthāne is 'at a distant place', with dūre agreeing with the place it describes."
+    },
+    {
+      "tag": "free",
+      "text": "THIS MODULE WRITES NO NEW PROPER NOUN, AND THE REASON IS MECHANICAL. A name has no word row and is still counted against the course, and this course has held that count at zero for four levels. A destination here is nagaram, grāmaḥ or mahānagaram; rāmaḥ and sītā stay the only two names the course writes, and anything more specific belongs in a usage line."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT A TRIP STILL DOES NOT GET. No plural participial past — a journey taken with somebody still puts the companion in mitreṇa saha and keeps the verb SINGULAR and agreeing with the speaker. No word for 'on foot', which L2-M4 refused because the form was not certain enough to ship. No new case. And no formal register, which is L4-M7's alone."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "aham yānena nagaram gatavān.",
+      "script": "अहम् यानेन नगरम् गतवान्।",
+      "cue": "I went to the city by vehicle.",
+      "literal": "I by-vehicle city went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', and the gender the participle agrees with."
+          },
+          {
+            "display": "yānena",
+            "cue": "by vehicle",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's vehicle in its instrumental shape — the means, with no word for 'by' written."
+          },
+          {
+            "display": "nagaram",
+            "cue": "city · town",
+            "tag": "delta",
+            "forms": [
+              "nagaram",
+              "nagare"
+            ],
+            "note": "'City', neuter. nagaram is the naming shape and the destination shape alike; nagare is 'in the city'."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went · has gone (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past. A woman says gatavatī."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Two shapes do two jobs and neither takes a preposition: yānena is how, nagaram is where to. Add a word for 'by' or for 'to' and there is nothing for it to be.",
+      "sound": "a-HAM YAA-neh-na NA-ga-ram ga-ta-VAAN.",
+      "variations": [
+        {
+          "display": "aham yānena nagaram gatavatī.",
+          "script": "अहम् यानेन नगरम् गतवती।",
+          "cue": "I went to the city by vehicle.",
+          "changed": "a woman speaks and the participle forks; neither the means nor the destination has a gender to follow"
+        },
+        {
+          "display": "aham mārgeṇa nagaram gatavān.",
+          "script": "अहम् मार्गेण नगरम् गतवान्।",
+          "cue": "I went to the city by the road.",
+          "changed": "the means becomes L2-M4's road — the same bare instrumental covers the vehicle and the route alike"
+        },
+        {
+          "display": "aham yānena nagaram gamiṣyāmi.",
+          "script": "अहम् यानेन नगरम् गमिष्यामि।",
+          "cue": "I will go to the city by vehicle.",
+          "changed": "the participle becomes L1-M2's simple future and the two case shapes do not move"
+        }
+      ],
+      "usage": "The plainest way to say how you travelled and where to.",
+      "register": "neutral",
+      "mnemonic": "Instrumental for how, accusative for where to."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "aham mitreṇa saha grāmam gatavān.",
+      "script": "अहम् मित्रेण सह ग्रामम् गतवान्।",
+      "cue": "I went to the village with a friend.",
+      "literal": "I with-friend together village went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. The verb agrees with the speaker alone, never with the companion."
+          },
+          {
+            "display": "mitreṇa",
+            "cue": "with a friend · by a friend",
+            "tag": "delta",
+            "forms": [],
+            "note": "The instrumental of L2-M2's mitram. It needs saha behind it to mean 'with' — on its own it would say 'by means of a friend'."
+          },
+          {
+            "display": "saha",
+            "cue": "with · together with",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's 'with', standing BEHIND the instrumental it joins you to, exactly as in mayā saha."
+          },
+          {
+            "display": "grāmam",
+            "cue": "village",
+            "tag": "delta",
+            "forms": [
+              "grāmaḥ",
+              "grāmam",
+              "grāme"
+            ],
+            "note": "The village as a destination. No word for 'to' is written — the -am is the whole of it."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went · has gone (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past, singular. Two people travelled and the verb still says one, because this course writes no plural participial past."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          9
+        ]
+      },
+      "trap": "mitreṇa saha keeps the verb singular. English says 'we went'; here the speaker is the subject and the friend rides in the instrumental beside them.",
+      "sound": "a-HAM mi-TREH-na SA-ha GRAA-mam ga-ta-VAAN.",
+      "variations": [
+        {
+          "display": "aham mitreṇa saha grāmam gatavatī.",
+          "script": "अहम् मित्रेण सह ग्रामम् गतवती।",
+          "cue": "I went to the village with a friend.",
+          "changed": "a woman speaks; the companion's shape does not move, because an instrumental has no speaker to agree with"
+        },
+        {
+          "display": "aham mitreṇa saha grāmam na gatavān.",
+          "script": "अहम् मित्रेण सह ग्रामम् न गतवान्।",
+          "cue": "I did not go to the village with a friend.",
+          "changed": "the verb is negated and the companion does not move — na belongs to the verb and never to the instrumental beside it"
+        },
+        {
+          "display": "aham mitreṇa saha nagaram gatavān.",
+          "script": "अहम् मित्रेण सह नगरम् गतवान्।",
+          "cue": "I went to the city with a friend.",
+          "changed": "the destination changes and the companion frame is untouched — saha stays behind the instrumental wherever the trip goes"
+        }
+      ],
+      "usage": "How a trip taken with somebody is actually reported.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "nagare ekaḥ pustakālayaḥ asti.",
+      "script": "नगरे एकः पुस्तकालयः अस्ति।",
+      "cue": "There is a library in the city.",
+      "literal": "in-city one library is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nagare",
+            "cue": "city · town",
+            "tag": "delta",
+            "forms": [
+              "nagaram",
+              "nagare"
+            ],
+            "note": "L1-M7's place case on the city. Same word as nagaram, and the -e is what puts you inside it."
+          },
+          {
+            "display": "ekaḥ",
+            "cue": "one",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M8's numeral, masculine to agree with pustakālayaḥ."
+          },
+          {
+            "display": "pustakālayaḥ",
+            "cue": "library",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's library in its naming shape — what is there, rather than where anybody goes."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'. A place first, then what is in it."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "variations": [
+        {
+          "display": "grāme ekaḥ pustakālayaḥ na asti.",
+          "script": "ग्रामे एकः पुस्तकालयः न अस्ति।",
+          "cue": "There is no library in the village.",
+          "changed": "the place changes and the existence is denied; na stands in front of asti"
+        },
+        {
+          "display": "nagare ekam mandiram asti.",
+          "script": "नगरे एकम् मन्दिरम् अस्ति।",
+          "cue": "There is a temple in the city.",
+          "changed": "the thing changes gender, so the numeral follows it to ekam while the place word does not move"
+        },
+        {
+          "display": "nagare pūrvam ekaḥ pustakālayaḥ āsīt.",
+          "script": "नगरे पूर्वम् एकः पुस्तकालयः आसीत्।",
+          "cue": "There used to be a library in the city.",
+          "changed": "L4-M8's āsīt puts the same statement in the past, and pūrvam says how far back"
+        }
+      ],
+      "usage": "The way a place is described from the outside in.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "nagaram gatvā aham grāmam gatavān.",
+      "script": "नगरम् गत्वा अहम् ग्रामम् गतवान्।",
+      "cue": "Having gone to the city, I went on to the village.",
+      "literal": "city having-gone I village went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nagaram",
+            "cue": "city · town",
+            "tag": "delta",
+            "forms": [
+              "nagaram",
+              "nagare"
+            ],
+            "note": "'City', neuter. nagaram is the naming shape and the destination shape alike; nagare is 'in the city'."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive of gacchati. It carries no tense and no person, so the verb at the end carries both legs."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', and the single traveller both legs belong to."
+          },
+          {
+            "display": "grāmam",
+            "cue": "village",
+            "tag": "delta",
+            "forms": [
+              "grāmaḥ",
+              "grāmam",
+              "grāme"
+            ],
+            "note": "The village as a destination. No word for 'to' is written — the -am is the whole of it."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went · has gone (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past. It is the only word in the sentence that says when."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "Both legs must be the same person's. An absolutive has no subject of its own, so it borrows the one the finite verb has — and a second traveller would need a second sentence.",
+      "sound": "NA-ga-ram gat-VAA a-HAM GRAA-mam ga-ta-VAAN.",
+      "variations": [
+        {
+          "display": "grāmam gatvā aham nagaram gatavān.",
+          "script": "ग्रामम् गत्वा अहम् नगरम् गतवान्।",
+          "cue": "Having gone to the village, I went on to the city.",
+          "changed": "the two legs trade places, and each destination trades shape with the other — the absolutive marks whichever came first"
+        },
+        {
+          "display": "nagaram gatvā aham grāmam gamiṣyāmi.",
+          "script": "नगरम् गत्वा अहम् ग्रामम् गमिष्यामि।",
+          "cue": "Having gone to the city, I will go on to the village.",
+          "changed": "the finite verb becomes a future and the absolutive does not move, because it has no tense to change"
+        },
+        {
+          "display": "nagaram gatvā paścāt aham grāmam gatavān.",
+          "script": "नगरम् गत्वा पश्चात् अहम् ग्रामम् गतवान्।",
+          "cue": "Having gone to the city, I afterwards went to the village.",
+          "changed": "L4-M6's paścāt is added, which makes the order audible without supplying it — gatvā had already said it"
+        }
+      ],
+      "usage": "Two legs of a trip in one breath, which is what the absolutive is for.",
+      "register": "neutral",
+      "mnemonic": "One traveller, one tense, two legs."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "mama yātrā dīrghā āsīt, aham dūram gatavān.",
+      "script": "मम यात्रा दीर्घा आसीत्, अहम् दूरम् गतवान्।",
+      "cue": "My journey was long; I went far.",
+      "literal": "my journey long was, I far went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape."
+          },
+          {
+            "display": "yātrā",
+            "cue": "journey · trip",
+            "tag": "delta",
+            "forms": [
+              "yātrā",
+              "yātrām"
+            ],
+            "note": "'A journey', feminine, so the adjective beside it is dīrghā and not dīrgham. yātrām is the shape a verb reaches for."
+          },
+          {
+            "display": "dīrghā",
+            "cue": "tall · long",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's adjective, feminine to agree with yātrā. A journey is feminine in Sanskrit and the adjective has to follow it."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A journey that is over is a state that was, and no participle in this course says that."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', subject of the second half."
+          },
+          {
+            "display": "dūram",
+            "cue": "far · far away",
+            "tag": "delta",
+            "forms": [
+              "dūram",
+              "dūre"
+            ],
+            "note": "'Far', as how far you went: aham dūram gatavān. The other shape, dūre, says where something is."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went · has gone (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past. A woman says gatavatī."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "sound": "MA-ma YAA-traa DEER-ghaa AA-seet, a-HAM DOO-ram ga-ta-VAAN.",
+      "variations": [
+        {
+          "display": "mama yātrā dīrghā āsīt, aham dūram gatavatī.",
+          "script": "मम यात्रा दीर्घा आसीत्, अहम् दूरम् गतवती।",
+          "cue": "My journey was long; I went far.",
+          "changed": "a woman speaks; only the participle forks, because dīrghā already agreed with the journey and not with her"
+        },
+        {
+          "display": "mama yātrā dīrghā na āsīt.",
+          "script": "मम यात्रा दीर्घा न आसीत्।",
+          "cue": "My journey was not long.",
+          "changed": "the second half is dropped and the state is denied — na in front of āsīt exactly as in front of asti"
+        },
+        {
+          "display": "mama yātrā dīrghā asti.",
+          "script": "मम यात्रा दीर्घा अस्ति।",
+          "cue": "My journey is long.",
+          "changed": "the same sentence in the present, which is the one word that had to change"
+        }
+      ],
+      "usage": "Said of a trip afterwards, when it is a thing that happened rather than a plan.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "mama grāmaḥ dūre asti, ataḥ aham yānena gacchāmi.",
+      "script": "मम ग्रामः दूरे अस्ति, अतः अहम् यानेन गच्छामि।",
+      "cue": "My village is far away, so I go by vehicle.",
+      "literal": "my village far-away is, therefore I by-vehicle go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape."
+          },
+          {
+            "display": "grāmaḥ",
+            "cue": "village",
+            "tag": "delta",
+            "forms": [
+              "grāmaḥ",
+              "grāmam",
+              "grāme"
+            ],
+            "note": "'Village', masculine. grāmaḥ names it, grāmam makes it a destination, grāme puts you in it."
+          },
+          {
+            "display": "dūre",
+            "cue": "far · far away",
+            "tag": "delta",
+            "forms": [
+              "dūram",
+              "dūre"
+            ],
+            "note": "'Far away', as where something is: mama grāmaḥ dūre asti. It also describes a place — dūre sthāne."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's consequence word. It may only head the consequence and never the cause."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'."
+          },
+          {
+            "display": "yānena",
+            "cue": "by vehicle",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's vehicle in its instrumental shape."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go · I am going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's going verb in the first singular."
+          }
+        ],
+        "rules": [
+          7,
+          0
+        ]
+      },
+      "variations": [
+        {
+          "display": "mama grāmaḥ dūre na asti, ataḥ aham na yānena gacchāmi.",
+          "script": "मम ग्रामः दूरे न अस्ति, अतः अहम् न यानेन गच्छामि।",
+          "cue": "My village is not far away, so I do not go by vehicle.",
+          "changed": "both halves are negated and ataḥ still heads the consequence, which is the half that follows from the other"
+        },
+        {
+          "display": "yataḥ mama grāmaḥ dūre asti aham yānena gacchāmi.",
+          "script": "यतः मम ग्रामः दूरे अस्ति अहम् यानेन गच्छामि।",
+          "cue": "Because my village is far away, I go by vehicle.",
+          "changed": "L1-M9's yataḥ marks the cause instead of ataḥ marking the consequence, and one link is still marked once and never twice"
+        },
+        {
+          "display": "mama grāmaḥ dūre asti, ataḥ aham mārgeṇa gamiṣyāmi.",
+          "script": "मम ग्रामः दूरे अस्ति, अतः अहम् मार्गेण गमिष्यामि।",
+          "cue": "My village is far away, so I will go by the road.",
+          "changed": "the means becomes the route and the verb becomes a future; the bare instrumental covers both without changing shape"
+        }
+      ],
+      "usage": "The everyday reason for taking a vehicle rather than walking.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "mahānagaram dūre sthāne asti, ataḥ aham yānena gamiṣyāmi.",
+      "script": "महानगरम् दूरे स्थाने अस्ति, अतः अहम् यानेन गमिष्यामि।",
+      "cue": "The big city is at a distant place, so I will go by vehicle.",
+      "literal": "big-city at-far at-place is, therefore I by-vehicle will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahānagaram",
+            "cue": "big city",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Big city' — one word, with mahā- as the first member and the join written in full. No shape of mahat is written anywhere in this course."
+          },
+          {
+            "display": "dūre",
+            "cue": "far · far away",
+            "tag": "delta",
+            "forms": [
+              "dūram",
+              "dūre"
+            ],
+            "note": "'Far away', as where something is: mama grāmaḥ dūre asti. It also describes a place — dūre sthāne."
+          },
+          {
+            "display": "sthāne",
+            "cue": "place · spot",
+            "tag": "delta",
+            "forms": [
+              "sthānam",
+              "sthāne"
+            ],
+            "note": "The place you are in. dūre sthāne is 'at a distant place', with dūre agreeing with it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's consequence word."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'."
+          },
+          {
+            "display": "yānena",
+            "cue": "by vehicle",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's vehicle in its instrumental shape."
+          },
+          {
+            "display": "gamiṣyāmi",
+            "cue": "I will go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's simple future in the first singular."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "mahānagaram is ONE word and one tap. Nothing in it is a form of mahat, and this course still writes none.",
+      "sound": "ma-HAA-na-ga-ram DOO-reh STHAA-neh AS-ti, a-TAH a-HAM YAA-neh-na ga-mish-YAA-mi.",
+      "variations": [
+        {
+          "display": "mahānagaram dūre asti.",
+          "script": "महानगरम् दूरे अस्ति।",
+          "cue": "The big city is far away.",
+          "changed": "the place word comes out and dūre stands alone as 'far away', which is its other job"
+        },
+        {
+          "display": "mahānagaram dūre sthāne asti, ataḥ aham mitreṇa saha gamiṣyāmi.",
+          "script": "महानगरम् दूरे स्थाने अस्ति, अतः अहम् मित्रेण सह गमिष्यामि।",
+          "cue": "The big city is at a distant place, so I will go with a friend.",
+          "changed": "the consequence becomes a companion instead of a means, and saha stays behind the instrumental"
+        },
+        {
+          "display": "kim mahānagaram dūre sthāne asti?",
+          "script": "किम् महानगरम् दूरे स्थाने अस्ति?",
+          "cue": "Is the big city at a distant place?",
+          "changed": "L1-M2's kim makes a question of it and nothing else moves"
+        }
+      ],
+      "usage": "Said when a trip is worth planning rather than just taking.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "grāme mandiram asti, tat sthānam sundaram asti.",
+      "script": "ग्रामे मन्दिरम् अस्ति, तत् स्थानम् सुन्दरम् अस्ति।",
+      "cue": "There is a temple in the village; that place is beautiful.",
+      "literal": "in-village temple is, that place beautiful is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grāme",
+            "cue": "village",
+            "tag": "delta",
+            "forms": [
+              "grāmaḥ",
+              "grāmam",
+              "grāme"
+            ],
+            "note": "The village as a place you are in — L1-M7's case, on a new noun."
+          },
+          {
+            "display": "mandiram",
+            "cue": "temple",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's temple in its naming shape."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's 'that', pointing back at what the first half named. Here it is a plain demonstrative and there is no relative clause behind it."
+          },
+          {
+            "display": "sthānam",
+            "cue": "place · spot",
+            "tag": "delta",
+            "forms": [
+              "sthānam",
+              "sthāne"
+            ],
+            "note": "'Place', neuter. It is the general word a particular name would otherwise fill, which is why this module needs it."
+          },
+          {
+            "display": "sundaram",
+            "cue": "beautiful",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, neuter to agree with sthānam."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is', in the second half."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "variations": [
+        {
+          "display": "nagare mandiram asti, tat sthānam sundaram asti.",
+          "script": "नगरे मन्दिरम् अस्ति, तत् स्थानम् सुन्दरम् अस्ति।",
+          "cue": "There is a temple in the city; that place is beautiful.",
+          "changed": "the place changes from village to city and nothing else in the sentence has to move"
+        },
+        {
+          "display": "grāme mandiram asti, tat sthānam sundaram na asti.",
+          "script": "ग्रामे मन्दिरम् अस्ति, तत् स्थानम् सुन्दरम् न अस्ति।",
+          "cue": "There is a temple in the village; that place is not beautiful.",
+          "changed": "the second half is denied and na stands in front of asti as always"
+        },
+        {
+          "display": "grāme mandiram āsīt, tat sthānam sundaram āsīt.",
+          "script": "ग्रामे मन्दिरम् आसीत्, तत् स्थानम् सुन्दरम् आसीत्।",
+          "cue": "There was a temple in the village; that place was beautiful.",
+          "changed": "both halves go into the past with L4-M8's one imperfect, which serves either half without changing shape"
+        }
+      ],
+      "usage": "How a place is praised without naming it — which is how this course keeps its proper nouns at two.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "aham mitreṇa saha mahānagaram gatvā paścāt gṛham āgatya bhojanam khāditavān.",
+      "script": "अहम् मित्रेण सह महानगरम् गत्वा पश्चात् गृहम् आगत्य भोजनम् खादितवान्।",
+      "cue": "Having gone to the big city with a friend and come home afterwards, I ate a meal.",
+      "literal": "I with-friend together big-city having-gone afterwards home having-come meal ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', and the one traveller all three actions belong to."
+          },
+          {
+            "display": "mitreṇa",
+            "cue": "with a friend · by a friend",
+            "tag": "delta",
+            "forms": [],
+            "note": "The instrumental of L2-M2's mitram. It needs saha behind it to mean 'with' — on its own it would say 'by means of a friend'."
+          },
+          {
+            "display": "saha",
+            "cue": "with · together with",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's 'with', standing BEHIND the instrumental it joins you to, exactly as in mayā saha."
+          },
+          {
+            "display": "mahānagaram",
+            "cue": "big city",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Big city' — one word, with mahā- as the first member and the join written in full. No shape of mahat is written anywhere in this course."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive of gacchati, the first leg."
+          },
+          {
+            "display": "paścāt",
+            "cue": "after · afterwards",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M6's 'afterwards', ordering the second leg against the first."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house, as the destination of the second leg."
+          },
+          {
+            "display": "āgatya",
+            "cue": "having come",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive of coming, the second leg."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal · food",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's meal, as the thing eaten."
+          },
+          {
+            "display": "khāditavān",
+            "cue": "ate · has eaten (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past, and the only word here that carries a tense at all."
+          }
+        ],
+        "rules": [
+          4,
+          9
+        ]
+      },
+      "trap": "Two absolutives and one finite verb. The tense is stated once, at the end, and every leg in front of it borrows it — which is why a whole day fits in one sentence.",
+      "sound": "a-HAM mi-TREH-na SA-ha ma-HAA-na-ga-ram gat-VAA pash-CHAAT GRI-ham aa-GAT-ya bho-JA-nam khaa-di-ta-VAAN.",
+      "variations": [
+        {
+          "display": "aham mitreṇa saha mahānagaram gatvā paścāt gṛham āgatya bhojanam khāditavatī.",
+          "script": "अहम् मित्रेण सह महानगरम् गत्वा पश्चात् गृहम् आगत्य भोजनम् खादितवती।",
+          "cue": "Having gone to the big city with a friend and come home afterwards, I ate a meal.",
+          "changed": "a woman speaks; one participle at the very end forks and the two absolutives in front of it do not"
+        },
+        {
+          "display": "aham mahānagaram gatvā gṛham āgatya bhojanam khāditavān.",
+          "script": "अहम् महानगरम् गत्वा गृहम् आगत्य भोजनम् खादितवान्।",
+          "cue": "Having gone to the big city and come home, I ate a meal.",
+          "changed": "the companion and paścāt come out; the two absolutives alone still say the order"
+        },
+        {
+          "display": "aham mitreṇa saha mahānagaram gatvā paścāt gṛham āgatya bhojanam na khāditavān.",
+          "script": "अहम् मित्रेण सह महानगरम् गत्वा पश्चात् गृहम् आगत्य भोजनम् न खादितवान्।",
+          "cue": "Having gone to the big city with a friend and come home afterwards, I did not eat a meal.",
+          "changed": "only the finite verb is negated, because an absolutive cannot be"
+        }
+      ],
+      "usage": "A whole day's trip in one sentence, which is what this level has been building towards.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "pūrvam aham mitreṇa saha yātrām kṛtavān.",
+      "script": "पूर्वम् अहम् मित्रेण सह यात्राम् कृतवान्।",
+      "cue": "I once made a journey with a friend.",
+      "literal": "formerly I with-friend together journey made",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pūrvam",
+            "cue": "before · formerly",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M6's 'formerly', which is what puts the journey in the past beside the participle."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'."
+          },
+          {
+            "display": "mitreṇa",
+            "cue": "with a friend · by a friend",
+            "tag": "delta",
+            "forms": [],
+            "note": "The instrumental of L2-M2's mitram. It needs saha behind it to mean 'with' — on its own it would say 'by means of a friend'."
+          },
+          {
+            "display": "saha",
+            "cue": "with · together with",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's 'with', standing BEHIND the instrumental it joins you to, exactly as in mayā saha."
+          },
+          {
+            "display": "yātrām",
+            "cue": "journey · trip",
+            "tag": "delta",
+            "forms": [
+              "yātrā",
+              "yātrām"
+            ],
+            "note": "The journey as the thing done: yātrām kṛtavān, 'made a journey'. The naming shape is yātrā."
+          },
+          {
+            "display": "kṛtavān",
+            "cue": "did · made (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past of karoti. 'To make a journey' is what Sanskrit says where English says 'to take one'."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "English takes a journey and Sanskrit makes one. The verb is karoti and the journey is what it reaches for, so yātrā becomes yātrām.",
+      "sound": "POOR-vam a-HAM mi-TREH-na SA-ha YAA-traam kri-ta-VAAN.",
+      "variations": [
+        {
+          "display": "pūrvam aham mitreṇa saha yātrām kṛtavatī.",
+          "script": "पूर्वम् अहम् मित्रेण सह यात्राम् कृतवती।",
+          "cue": "I once made a journey with a friend.",
+          "changed": "a woman speaks and the participle forks; the journey keeps its own gender either way"
+        },
+        {
+          "display": "bālye aham mitreṇa saha yātrām kṛtavān.",
+          "script": "बाल्ये अहम् मित्रेण सह यात्राम् कृतवान्।",
+          "cue": "As a child I made a journey with a friend.",
+          "changed": "L4-M8's bālye replaces pūrvam, which puts the trip in a stretch of life rather than merely in the past"
+        },
+        {
+          "display": "pūrvam aham mitreṇa saha yātrām na kṛtavān.",
+          "script": "पूर्वम् अहम् मित्रेण सह यात्राम् न कृतवान्।",
+          "cue": "I had never made a journey with a friend before.",
+          "changed": "the participle is negated, which turns the introduction of a trip into the reason there was none"
+        }
+      ],
+      "usage": "How a trip is introduced before it is told.",
+      "register": "neutral",
+      "mnemonic": "You do not take a journey here; you make one."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M9-C01",
+      "display": "aham yānena mahānagaram gatavān.",
+      "script": "अहम् यानेन महानगरम् गतवान्।",
+      "cue": "I went to the big city by vehicle."
+    },
+    {
+      "id": "L4-M9-C02",
+      "display": "grāme ekaḥ vidyālayaḥ asti.",
+      "script": "ग्रामे एकः विद्यालयः अस्ति।",
+      "cue": "There is a school in the village."
+    },
+    {
+      "id": "L4-M9-C03",
+      "display": "mama yātrā dīrghā na āsīt.",
+      "script": "मम यात्रा दीर्घा न आसीत्।",
+      "cue": "My journey was not long."
+    },
+    {
+      "id": "L4-M9-C04",
+      "display": "aham mitreṇa saha nagaram gatvā paścāt gṛham gatavān.",
+      "script": "अहम् मित्रेण सह नगरम् गत्वा पश्चात् गृहम् गतवान्।",
+      "cue": "Having gone to the city with a friend, I went home afterwards."
+    },
+    {
+      "id": "L4-M9-C05",
+      "display": "nagare ekam sthānam sundaram asti.",
+      "script": "नगरे एकम् स्थानम् सुन्दरम् अस्ति।",
+      "cue": "There is one beautiful place in the city."
+    },
+    {
+      "id": "L4-M9-C06",
+      "display": "mama bhrātā grāme asti, mama pitā nagare asti.",
+      "script": "मम भ्राता ग्रामे अस्ति, मम पिता नगरे अस्ति।",
+      "cue": "My brother is in the village; my father is in the city."
+    },
+    {
+      "id": "L4-M9-C07",
+      "display": "mahānagaram dūre asti, ataḥ vayam śvaḥ gacchāmaḥ.",
+      "script": "महानगरम् दूरे अस्ति, अतः वयम् श्वः गच्छामः।",
+      "cue": "The big city is far away, so we are going tomorrow."
+    },
+    {
+      "id": "L4-M9-C08",
+      "display": "bālye aham pratidinam grāmam gatavān.",
+      "script": "बाल्ये अहम् प्रतिदिनम् ग्रामम् गतवान्।",
+      "cue": "As a child I went to the village every day."
+    },
+    {
+      "id": "L4-M9-C09",
+      "display": "aham mārgeṇa dūram gatavān.",
+      "script": "अहम् मार्गेण दूरम् गतवान्।",
+      "cue": "I went far along the road."
+    },
+    {
+      "id": "L4-M9-C10",
+      "display": "yadā yātrā dīrghā asti tadā aham yānena gacchāmi.",
+      "script": "यदा यात्रा दीर्घा अस्ति तदा अहम् यानेन गच्छामि।",
+      "cue": "When the journey is long, I go by vehicle."
+    },
+    {
+      "id": "L4-M9-C11",
+      "display": "mama mitram nagare asti, mama gṛham grāme asti.",
+      "script": "मम मित्रम् नगरे अस्ति, मम गृहम् ग्रामे अस्ति।",
+      "cue": "My friend is in the city; my house is in the village."
+    },
+    {
+      "id": "L4-M9-C12",
+      "display": "aham mitreṇa saha mandiram gatvā paścāt miṣṭānnam khāditavān.",
+      "script": "अहम् मित्रेण सह मन्दिरम् गत्वा पश्चात् मिष्टान्नम् खादितवान्।",
+      "cue": "Having gone to the temple with a friend, I ate sweets afterwards."
+    },
+    {
+      "id": "L4-M9-C13",
+      "display": "tat sthānam mama gṛhasya samīpe asti.",
+      "script": "तत् स्थानम् मम गृहस्य समीपे अस्ति।",
+      "cue": "That place is near my house."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

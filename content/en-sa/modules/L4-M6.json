@@ -1,0 +1,1041 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": [
+    "L4-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future",
+      "participial_past",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "yāvat + <clause> + tāvat + <clause>",
+      "yadā + <clause> + tadā + <clause>",
+      "N-acc + V-tvā + paścāt + <clause>",
+      "pūrvam + <clause> + adhunā + <clause>",
+      "aham + adya + api + na + V-tavān"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "SANSKRIT BUILDS EVERY SUBORDINATE CLAUSE THE SAME WAY. A word beginning ya- opens the subordinate clause and says what kind of link it is; a word beginning ta- stands in the main clause and answers it. Learn the shape once and five different clauses come with it."
+    },
+    {
+      "tag": "delta",
+      "text": "THE FIVE PAIRS, TOGETHER FOR THE FIRST TIME. yataḥ … ataḥ is cause (L1-M9), yaḥ … saḥ is the relative (L3-M2), yadi … tarhi is the condition (L3-M4), and this module adds yadā … tadā for time and yāvat … tāvat for extent. Same frame, five jobs."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ANSWERING WORD IS NOT EQUALLY OBLIGATORY, and a slogan here would be false of two of the five. L3-M2's saḥ may NEVER be dropped; L3-M4's tarhi MAY be; tāvat may not, because without it yāvat has nothing to measure. This course writes tadā every time."
+    },
+    {
+      "tag": "delta",
+      "text": "yadā … tadā marks a POINT: when this happens, then that happens. yāvat … tāvat marks an EXTENT: for as long as this lasts, that lasts. yadā vṛṣṭiḥ asti is a moment of rain; yāvat vṛṣṭiḥ asti is the whole time it goes on."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ya- CLAUSE COMES FIRST AND COMPLETE, then the main clause. English lets the time clause go either way — 'I read at home when it rains' — so the Sanskrit sentence is the English one reversed, and the literal line shows the reversal rather than hiding it."
+    },
+    {
+      "tag": "delta",
+      "text": "pūrvam is 'before · formerly' and paścāt is 'after · afterwards', and THIS MODULE USES THEM AS ADVERBS ONLY. In real Sanskrit both also stand behind a case-marked noun — bhojanāt paścāt, 'after the meal' — and that use is named here and written nowhere."
+    },
+    {
+      "tag": "delta",
+      "text": "adhunā is 'now'. 'Still' is adhunā api: TWO separate words, adhunā and L1-M10's api, standing side by side. Neither of them changes shape, and nothing joins them — mama mitram adhunā api vidyālayam gacchati."
+    },
+    {
+      "tag": "interference",
+      "text": "'NOT YET' IS WHERE THE DICTIONARY AND THIS COURSE PART. A dictionary prints the joined form, adya plus api run together. External sandhi is never written across a word boundary here, so this course writes na adya api — three words it has owned since L1, and no new word at all. The joined shape is in the sound line."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH 'SINCE' IS TWO WORDS AND SANSKRIT SPLITS THEM. The clock sense is yadā or yāvat; the reason sense is L1-M9's yataḥ or L4-M2's ablative of cause. Translate 'since' the same way for both and you have written a reason where a time belonged."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT THIS MODULE DOES NOT ADD. There is no separate word for 'already' here — the participial past carries it, and pūrvam supplies it when the sentence needs saying out loud. No clock and no calendar, deferred since L2-M6. No new sequencer: L2-M10's prathamam, tataḥ, anantaram and ante join whole SENTENCES, while these pairs join clauses inside one. And no new absolutive — L3-M1 owns those, and paścāt stands beside one rather than replacing it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "yadā vṛṣṭiḥ asti tadā aham gṛhe paṭhāmi.",
+      "script": "यदा वृष्टिः अस्ति तदा अहम् गृहे पठामि।",
+      "cue": "When it rains, I read at home.",
+      "literal": "when rain is then I at-home read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadā",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [],
+            "note": "'When'. It opens the time clause and is answered by tadā in the main clause — the fifth ya- word this course has taught and the same frame as yadi and yaḥ."
+          },
+          {
+            "display": "vṛṣṭiḥ",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M2's rain in its naming shape. vṛṣṭiḥ asti is 'there is rain'; the 'because of' shape is vṛṣṭeḥ."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is', here holding the time clause together."
+          },
+          {
+            "display": "tadā",
+            "cue": "then · at that time",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Then'. The ta- word that answers yadā. It marks the main clause, so it never starts the sentence — the ya- clause does."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It sits in the MAIN clause, behind tadā, because the ya- clause is finished first."
+          },
+          {
+            "display": "gṛhe",
+            "cue": "at home · in the house",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house in its 'in' shape, which L1-M7 made the place case."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's reading verb in the first singular. The -mi says who, so aham could be dropped."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "English says 'I read at home when it rains' and puts the clock second. Sanskrit puts the ya- clause FIRST, so the halves swap places on the way across.",
+      "sound": "ya-DAA VRISH-tih AS-ti ta-DAA a-HAM GRI-heh pa-THAA-mi.",
+      "variations": [
+        {
+          "display": "yadā vṛṣṭiḥ asti tadā aham gṛhe na gacchāmi.",
+          "script": "यदा वृष्टिः अस्ति तदा अहम् गृहे न गच्छामि।",
+          "cue": "When it rains, I do not go home.",
+          "changed": "the main clause is negated, and the negation sits inside it — the time clause is untouched by a na in the other half"
+        },
+        {
+          "display": "yāvat vṛṣṭiḥ asti tāvat aham gṛhe paṭhāmi.",
+          "script": "यावत् वृष्टिः अस्ति तावत् अहम् गृहे पठामि।",
+          "cue": "As long as it rains, I read at home.",
+          "changed": "the pair is swapped and the meaning moves from a point to a stretch: yadā is the moment, yāvat is the whole duration"
+        },
+        {
+          "display": "yadā vṛṣṭiḥ asti tadā mama bhaginī gṛhe paṭhati.",
+          "script": "यदा वृष्टिः अस्ति तदा मम भगिनी गृहे पठति।",
+          "cue": "When it rains, my sister reads at home.",
+          "changed": "the main clause changes person and the verb follows it to -ti; nothing in the yadā clause moves"
+        }
+      ],
+      "usage": "The ordinary way to state a habit tied to a condition of the day.",
+      "register": "neutral",
+      "mnemonic": "ya- opens, ta- answers."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "yāvat aham paṭhāmi tāvat mama bhrātā likhati.",
+      "script": "यावत् अहम् पठामि तावत् मम भ्राता लिखति।",
+      "cue": "While I study, my brother writes.",
+      "literal": "as-long-as I read so-long my brother writes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yāvat",
+            "cue": "as long as · while",
+            "tag": "delta",
+            "forms": [],
+            "note": "'As long as'. It measures an EXTENT of time rather than a point, and is answered by tāvat, which may never be dropped."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', here the subject of the yāvat clause rather than of the main one."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's reading verb in the first singular, inside the subordinate clause — a ya- clause takes an ordinary finite verb."
+          },
+          {
+            "display": "tāvat",
+            "cue": "so long · for that long",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For that long'. The ta- word that answers yāvat. Drop it and yāvat has nothing to measure against, which is why this pair is the strict one."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape."
+          },
+          {
+            "display": "bhrātā",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's brother in its naming shape, subject of the main clause."
+          },
+          {
+            "display": "likhati",
+            "cue": "writes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's writing verb in the third singular — the cell bhrātā, bhavān and saḥ all take."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "tāvat looks droppable because English drops 'so long'. It is not: yāvat with no tāvat behind it leaves the extent measured against nothing.",
+      "sound": "YAA-vat a-HAM pa-THAA-mi TAA-vat MA-ma BHRAA-taa LI-kha-ti.",
+      "variations": [
+        {
+          "display": "yāvat aham paṭhāmi tāvat mama bhaginī likhati.",
+          "script": "यावत् अहम् पठामि तावत् मम भगिनी लिखति।",
+          "cue": "While I study, my sister writes.",
+          "changed": "the main clause's subject changes gender; likhati does not move, because a Sanskrit present tense marks person and not gender"
+        },
+        {
+          "display": "yāvat mama bhrātā likhati tāvat aham paṭhāmi.",
+          "script": "यावत् मम भ्राता लिखति तावत् अहम् पठामि।",
+          "cue": "While my brother writes, I study.",
+          "changed": "the two halves trade places — what was measured is now what measures, and each verb follows its own clause"
+        },
+        {
+          "display": "yāvat aham na paṭhāmi tāvat mama bhrātā na likhati.",
+          "script": "यावत् अहम् न पठामि तावत् मम भ्राता न लिखति।",
+          "cue": "As long as I do not study, my brother does not write.",
+          "changed": "both halves are negated; na stands in front of its own verb in each clause and never once for both"
+        }
+      ],
+      "usage": "Two things going on at the same time, in one breath.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "yāvat vṛṣṭiḥ asti tāvat vayam na gacchāmaḥ.",
+      "script": "यावत् वृष्टिः अस्ति तावत् वयम् न गच्छामः।",
+      "cue": "As long as it is raining, we are not going.",
+      "literal": "as-long-as rain is so-long we not go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yāvat",
+            "cue": "as long as · while",
+            "tag": "delta",
+            "forms": [],
+            "note": "'As long as'. It measures an EXTENT of time rather than a point, and is answered by tāvat, which may never be dropped."
+          },
+          {
+            "display": "vṛṣṭiḥ",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M2's rain in its naming shape. Here it is what lasts, which is why yāvat and not yadā."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'."
+          },
+          {
+            "display": "tāvat",
+            "cue": "so long · for that long",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For that long'. The ta- word that answers yāvat. Drop it and yāvat has nothing to measure against, which is why this pair is the strict one."
+          },
+          {
+            "display": "vayam",
+            "cue": "we",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's 'we', subject of the main clause."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', in front of the verb it denies. It belongs to the main clause alone."
+          },
+          {
+            "display": "gacchāmaḥ",
+            "cue": "we go · shall we go",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's first-plural going verb. The -maḥ agrees with vayam, so the pronoun could be dropped."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "variations": [
+        {
+          "display": "yāvat vṛṣṭiḥ asti tāvat vayam gṛhe paśyāmaḥ.",
+          "script": "यावत् वृष्टिः अस्ति तावत् वयम् गृहे पश्यामः।",
+          "cue": "As long as it is raining, we watch at home.",
+          "changed": "the main clause becomes positive and takes a different first-plural verb; the yāvat clause is untouched"
+        },
+        {
+          "display": "yadā vṛṣṭiḥ asti tadā vayam na gacchāmaḥ.",
+          "script": "यदा वृष्टिः अस्ति तदा वयम् न गच्छामः।",
+          "cue": "When it rains, we do not go.",
+          "changed": "the pair is swapped to yadā … tadā, which reads the rain as an occasion rather than as a stretch of time"
+        },
+        {
+          "display": "yāvat vṛṣṭiḥ asti tāvat bhavatā na gantavyam.",
+          "script": "यावत् वृष्टिः अस्ति तावत् भवता न गन्तव्यम्।",
+          "cue": "As long as it is raining, you must not go.",
+          "changed": "the main clause becomes L4-M1's gerundive, so the person who must not go moves into the instrumental and no nominative is left"
+        }
+      ],
+      "mistake": {
+        "display": "yāvat vṛṣṭiḥ asti vayam na gacchāmaḥ.",
+        "why": "tāvat has been dropped. yāvat measures, and with nothing to measure against the sentence reads as a bare 'while' hanging in the air. L3-M4's tarhi may go; tāvat may not."
+      },
+      "usage": "Said at a doorway, of a plan that is waiting on the weather.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "aham bhojanam khāditvā paścāt pustakam paṭhāmi.",
+      "script": "अहम् भोजनम् खादित्वा पश्चात् पुस्तकम् पठामि।",
+      "cue": "After eating a meal, I read a book.",
+      "literal": "I meal having-eaten afterwards book read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', and the one subject of both halves — an absolutive needs the two actions to belong to the same person."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal · food",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's meal, as the thing eaten."
+          },
+          {
+            "display": "khāditvā",
+            "cue": "having eaten",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive of khādati. It carries no person and no tense; the finite verb at the end carries both."
+          },
+          {
+            "display": "paścāt",
+            "cue": "after · afterwards",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Afterwards'. It stands in front of the clause that comes second, usually behind an absolutive: bhojanam khāditvā paścāt. It orders events inside ONE sentence."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, as the thing read."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's reading verb in the first singular, the only person-marked word in the sentence."
+          }
+        ],
+        "rules": [
+          5,
+          9
+        ]
+      },
+      "trap": "paścāt does not replace the absolutive; it stands beside it. khāditvā already says the eating came first, and paścāt makes the order audible rather than supplying it.",
+      "sound": "a-HAM bho-JA-nam khaa-dit-VAA pash-CHAAT pus-TA-kam pa-THAA-mi.",
+      "variations": [
+        {
+          "display": "aham bhojanam khāditvā paścāt pustakam na paṭhāmi.",
+          "script": "अहम् भोजनम् खादित्वा पश्चात् पुस्तकम् न पठामि।",
+          "cue": "After eating a meal, I do not read a book.",
+          "changed": "the finite verb is negated; the absolutive cannot be negated and stays exactly as it was"
+        },
+        {
+          "display": "aham bhojanam khāditvā paścāt pustakam paṭhitavān.",
+          "script": "अहम् भोजनम् खादित्वा पश्चात् पुस्तकम् पठितवान्।",
+          "cue": "After eating a meal, I read a book.",
+          "changed": "the finite verb becomes L1-M4's participial past, which is the only thing that had to move to put the whole sentence in the past"
+        },
+        {
+          "display": "aham pustakam paṭhitvā paścāt bhojanam khādāmi.",
+          "script": "अहम् पुस्तकम् पठित्वा पश्चात् भोजनम् खादामि।",
+          "cue": "After reading a book, I eat a meal.",
+          "changed": "the two actions trade places, and each verb trades shape with the other — the absolutive marks whichever came first"
+        }
+      ],
+      "usage": "The everyday way to put two of your own actions in order.",
+      "register": "neutral",
+      "mnemonic": "Absolutive first, paścāt says so out loud."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "pūrvam aham saṃskṛtam na paṭhitavān, adhunā pratidinam paṭhāmi.",
+      "script": "पूर्वम् अहम् संस्कृतम् न पठितवान्, अधुना प्रतिदिनम् पठामि।",
+      "cue": "I did not study Sanskrit before; now I study every day.",
+      "literal": "formerly I Sanskrit not studied, now every-day I-study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pūrvam",
+            "cue": "before · formerly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Formerly'. An adverb here and nothing else: it stands in front of its clause. Sanskrit also puts it behind a case-marked noun, and this course does not."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It appears once, in the first half; the -mi of the second half already says who."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit, as the thing studied in both halves."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', denying the participle behind it and nothing in the other half."
+          },
+          {
+            "display": "paṭhitavān",
+            "cue": "read · studied (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past, agreeing with the speaker's gender. A woman says paṭhitavatī and the whole sentence forks there."
+          },
+          {
+            "display": "adhunā",
+            "cue": "now",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Now'. With L1-M10's api behind it — adhunā api — it means 'still'. The two stay two words."
+          },
+          {
+            "display": "pratidinam",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'daily'. A frequency word is what turns a plain present into a habit."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's reading verb in the first singular, carrying the 'now' half."
+          }
+        ],
+        "rules": [
+          5,
+          9
+        ]
+      },
+      "sound": "POOR-vam a-HAM sans-KRI-tam na pa-thi-ta-VAAN, a-dhu-NAA pra-ti-DI-nam pa-THAA-mi.",
+      "variations": [
+        {
+          "display": "pūrvam aham saṃskṛtam na paṭhitavatī, adhunā pratidinam paṭhāmi.",
+          "script": "पूर्वम् अहम् संस्कृतम् न पठितवती, अधुना प्रतिदिनम् पठामि।",
+          "cue": "I did not study Sanskrit before; now I study every day.",
+          "changed": "a woman speaks: only the participle moves, because the past forks at the speaker's gender and the present does not"
+        },
+        {
+          "display": "pūrvam aham saṃskṛtam paṭhitavān, adhunā na paṭhāmi.",
+          "script": "पूर्वम् अहम् संस्कृतम् पठितवान्, अधुना न पठामि।",
+          "cue": "I used to study Sanskrit; now I do not.",
+          "changed": "the negation moves from the first half to the second, which turns a beginning into a stopping"
+        },
+        {
+          "display": "adhunā api aham saṃskṛtam paṭhāmi.",
+          "script": "अधुना अपि अहम् संस्कृतम् पठामि।",
+          "cue": "I still study Sanskrit.",
+          "changed": "the two halves collapse into one and adhunā takes api behind it, which is how this course says 'still'"
+        }
+      ],
+      "usage": "A then-and-now in one sentence, which is what a whole module will be built on later.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "aham pustakam na adya api paṭhitavān.",
+      "script": "अहम् पुस्तकम् न अद्य अपि पठितवान्।",
+      "cue": "I have not read the book yet.",
+      "literal": "I book not today even read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', and the gender the participle at the end agrees with."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, as the thing read."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. It is the first of the three words that together mean 'not yet'."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. Inside this phrase it is not about today at all — the three words together mean 'not yet'."
+          },
+          {
+            "display": "api",
+            "cue": "also · too · even",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's api, standing behind the word it leans on, exactly as L1-M10 taught. 'Not even today' is 'not yet'."
+          },
+          {
+            "display": "paṭhitavān",
+            "cue": "read · studied (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past. A woman says paṭhitavatī."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "A dictionary prints adya and api joined into one word, and copying that would mint a spelling this course does not own. The three words stay three.",
+      "sound": "a-HAM PUS-ta-kam NAAD-yaa-pi pa-thi-ta-VAAN — the three words run together in speech as naadyaapi, and are written apart.",
+      "variations": [
+        {
+          "display": "aham pustakam na adya api paṭhitavatī.",
+          "script": "अहम् पुस्तकम् न अद्य अपि पठितवती।",
+          "cue": "I have not read the book yet.",
+          "changed": "a woman speaks; only the participle moves, and the three-word phrase is untouched by gender"
+        },
+        {
+          "display": "aham pustakam adhunā api paṭhāmi.",
+          "script": "अहम् पुस्तकम् अधुना अपि पठामि।",
+          "cue": "I am still reading the book.",
+          "changed": "'not yet' becomes 'still': adhunā api with a present, against na adya api with a past participle"
+        },
+        {
+          "display": "kim bhavān pustakam na adya api paṭhitavān?",
+          "script": "किम् भवान् पुस्तकम् न अद्य अपि पठितवान्?",
+          "cue": "Have you not read the book yet?",
+          "changed": "L1-M2's kim turns it into a question and the speaker becomes the listener, so the participle agrees with bhavān"
+        }
+      ],
+      "mistake": {
+        "display": "aham pustakam na paṭhitavān adya.",
+        "why": "'Not yet' has been taken apart and adya sent to the end as a plain 'today'. That says 'I did not read the book today', which is about one day and not about a thing still undone."
+      },
+      "usage": "Said of something you mean to finish and have not.",
+      "register": "neutral",
+      "mnemonic": "Not even today: three words, one meaning."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "mama mitram adhunā api vidyālayam gacchati.",
+      "script": "मम मित्रम् अधुना अपि विद्यालयम् गच्छति।",
+      "cue": "My friend still goes to school.",
+      "literal": "my friend now even school goes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape."
+          },
+          {
+            "display": "mitram",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's friend. It is neuter, so nothing in the sentence agrees with it in the masculine."
+          },
+          {
+            "display": "adhunā",
+            "cue": "now",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Now'. With L1-M10's api behind it — adhunā api — it means 'still'. The two stay two words."
+          },
+          {
+            "display": "api",
+            "cue": "also · too · even",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's api behind adhunā. The two together are 'still', and they stay two words."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school, as the destination — the accusative marks it and no word for 'to' is written."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's going verb in the third singular."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "variations": [
+        {
+          "display": "mama mitram adhunā api vidyālayam na gacchati.",
+          "script": "मम मित्रम् अधुना अपि विद्यालयम् न गच्छति।",
+          "cue": "My friend still does not go to school.",
+          "changed": "the verb is negated and 'still' survives in front of it — adhunā api leans on the whole clause, not on the verb alone"
+        },
+        {
+          "display": "mama mitram pūrvam vidyālayam gatavān.",
+          "script": "मम मित्रम् पूर्वम् विद्यालयम् गतवान्।",
+          "cue": "My friend used to go to school.",
+          "changed": "'still' becomes 'formerly' and the present becomes the participial past; the destination is the only thing untouched"
+        },
+        {
+          "display": "kim mama mitram adhunā api vidyālayam gacchati?",
+          "script": "किम् मम मित्रम् अधुना अपि विद्यालयम् गच्छति?",
+          "cue": "Does my friend still go to school?",
+          "changed": "L1-M2's kim at the front makes a question of it and nothing else in the sentence moves"
+        }
+      ],
+      "usage": "Said of a state of affairs you half expected to have ended.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "yadā mama pitā kāryālayam gacchati tadā aham vidyālayam gacchāmi.",
+      "script": "यदा मम पिता कार्यालयम् गच्छति तदा अहम् विद्यालयम् गच्छामि।",
+      "cue": "When my father goes to the office, I go to school.",
+      "literal": "when my father office goes then I school go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadā",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [],
+            "note": "'When'. It opens the time clause and is answered by tadā in the main clause — the fifth ya- word this course has taught and the same frame as yadi and yaḥ."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape, inside the yadā clause."
+          },
+          {
+            "display": "pitā",
+            "cue": "father",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's father in his naming shape, subject of the subordinate clause."
+          },
+          {
+            "display": "kāryālayam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's office, as the destination."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's going verb in the third singular, agreeing with pitā."
+          },
+          {
+            "display": "tadā",
+            "cue": "then · at that time",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Then'. The ta- word that answers yadā. It marks the main clause, so it never starts the sentence — the ya- clause does."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', subject of the main clause and of nothing before tadā."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school, as the destination."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go · I am going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's going verb in the first singular. Two clauses, two subjects, two person endings."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "sound": "ya-DAA MA-ma pi-TAA KAAR-yaa-la-yam GACH-cha-ti ta-DAA a-HAM vid-YAA-la-yam gach-CHAA-mi.",
+      "variations": [
+        {
+          "display": "yadā mama pitā kāryālayam gacchati tadā aham gṛhe paṭhāmi.",
+          "script": "यदा मम पिता कार्यालयम् गच्छति तदा अहम् गृहे पठामि।",
+          "cue": "When my father goes to the office, I read at home.",
+          "changed": "the main clause changes altogether; a ya- clause is finished before the main clause starts, so nothing in it has to move"
+        },
+        {
+          "display": "yadā mama pitā kāryālayam gatavān tadā aham vidyālayam gatavān.",
+          "script": "यदा मम पिता कार्यालयम् गतवान् तदा अहम् विद्यालयम् गतवान्।",
+          "cue": "When my father went to the office, I went to school.",
+          "changed": "both verbs become participial pasts; yadā … tadā does not change shape for tense, because it is not a verb"
+        },
+        {
+          "display": "yadā mama pitā kāryālayam na gacchati tadā aham api na gacchāmi.",
+          "script": "यदा मम पिता कार्यालयम् न गच्छति तदा अहम् अपि न गच्छामि।",
+          "cue": "When my father does not go to the office, I do not go either.",
+          "changed": "both halves are negated and api lands behind aham, which is L1-M10's placement and not a second 'still'"
+        }
+      ],
+      "mistake": {
+        "display": "aham vidyālayam gacchāmi yadā mama pitā kāryālayam gacchati.",
+        "why": "The English order has been kept. The ya- clause is what opens a Sanskrit sentence, and a tadā that never arrives leaves the main clause unanswered."
+      },
+      "usage": "Two daily routines pinned to each other.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "aham kāryālayam gatvā paścāt gṛham gamiṣyāmi.",
+      "script": "अहम् कार्यालयम् गत्वा पश्चात् गृहम् गमिष्यामि।",
+      "cue": "Having gone to the office, I will go home afterwards.",
+      "literal": "I office having-gone afterwards home will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', and the single subject both actions belong to."
+          },
+          {
+            "display": "kāryālayam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's office, as the first destination."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive of gacchati. It takes no tense of its own, so the future at the end covers both actions."
+          },
+          {
+            "display": "paścāt",
+            "cue": "after · afterwards",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Afterwards'. It stands in front of the clause that comes second, usually behind an absolutive: bhojanam khāditvā paścāt. It orders events inside ONE sentence."
+          },
+          {
+            "display": "gṛham",
+            "cue": "home · house",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house, as the second destination."
+          },
+          {
+            "display": "gamiṣyāmi",
+            "cue": "I will go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's simple future in the first singular. It is the only word here that says when."
+          }
+        ],
+        "rules": [
+          5,
+          9
+        ]
+      },
+      "variations": [
+        {
+          "display": "aham kāryālayam gatvā paścāt gṛham gatavān.",
+          "script": "अहम् कार्यालयम् गत्वा पश्चात् गृहम् गतवान्।",
+          "cue": "Having gone to the office, I went home afterwards.",
+          "changed": "the future becomes the participial past, and the absolutive in front of it does not move — that is what tenselessness means"
+        },
+        {
+          "display": "aham kāryālayam gatvā paścāt gṛham gamiṣyāmi vā?",
+          "script": "अहम् कार्यालयम् गत्वा पश्चात् गृहम् गमिष्यामि वा?",
+          "cue": "Shall I go to the office and then go home?",
+          "changed": "L2-M9's vā turns the plan into an open question without touching the order of the two legs"
+        },
+        {
+          "display": "aham gṛham gatvā paścāt kāryālayam gamiṣyāmi.",
+          "script": "अहम् गृहम् गत्वा पश्चात् कार्यालयम् गमिष्यामि।",
+          "cue": "Having gone home, I will go to the office afterwards.",
+          "changed": "the two destinations trade places, which is the whole meaning of the sentence and costs one swap"
+        }
+      ],
+      "usage": "The ordinary way to lay out the rest of your day.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "aham bhojanam pūrvam khāditavān, adhunā na khādāmi.",
+      "script": "अहम् भोजनम् पूर्वम् खादितवान्, अधुना न खादामि।",
+      "cue": "I have already eaten; I am not eating now.",
+      "literal": "I meal before ate, now not I-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It stands once and covers both halves."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal · food",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's meal, as the thing eaten."
+          },
+          {
+            "display": "pūrvam",
+            "cue": "before · formerly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Formerly'. An adverb here and nothing else: it stands in front of its clause. Sanskrit also puts it behind a case-marked noun, and this course does not."
+          },
+          {
+            "display": "khāditavān",
+            "cue": "ate · has eaten (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past. With pūrvam in front it is 'already ate'; this course has no separate word for 'already'."
+          },
+          {
+            "display": "adhunā",
+            "cue": "now",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Now'. With L1-M10's api behind it — adhunā api — it means 'still'. The two stay two words."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', denying the second half alone."
+          },
+          {
+            "display": "khādāmi",
+            "cue": "I eat · I am eating",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's eating verb in the first singular."
+          }
+        ],
+        "rules": [
+          5,
+          9
+        ]
+      },
+      "trap": "There is no word here for 'already'. The participial past carries it, and pūrvam only makes the order explicit — reaching for a separate word finds nothing.",
+      "sound": "a-HAM bho-JA-nam POOR-vam khaa-di-ta-VAAN, a-dhu-NAA na khaa-DAA-mi.",
+      "variations": [
+        {
+          "display": "aham bhojanam pūrvam khāditavatī, adhunā na khādāmi.",
+          "script": "अहम् भोजनम् पूर्वम् खादितवती, अधुना न खादामि।",
+          "cue": "I have already eaten; I am not eating now.",
+          "changed": "a woman speaks, so the participle alone forks; the present in the second half is the same word for either speaker"
+        },
+        {
+          "display": "aham bhojanam pūrvam khāditavān, adhunā api khādāmi.",
+          "script": "अहम् भोजनम् पूर्वम् खादितवान्, अधुना अपि खादामि।",
+          "cue": "I ate before, and I am still eating.",
+          "changed": "na becomes api, which flips the second half from a stop to a continuation — adhunā api is 'still'"
+        },
+        {
+          "display": "aham bhojanam na adya api khāditavān.",
+          "script": "अहम् भोजनम् न अद्य अपि खादितवान्।",
+          "cue": "I have not eaten yet.",
+          "changed": "the whole thing becomes its opposite with the three-word 'not yet', which is the other end of this module"
+        }
+      ],
+      "usage": "The polite refusal at a table: you have eaten, so you are not eating.",
+      "register": "neutral",
+      "mnemonic": "pūrvam plus the past is 'already'."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M6-C01",
+      "display": "yadā aham khādāmi tadā mama bhrātā paṭhati.",
+      "script": "यदा अहम् खादामि तदा मम भ्राता पठति।",
+      "cue": "When I eat, my brother reads."
+    },
+    {
+      "id": "L4-M6-C02",
+      "display": "yāvat bhavān atra asti tāvat aham na gamiṣyāmi.",
+      "script": "यावत् भवान् अत्र अस्ति तावत् अहम् न गमिष्यामि।",
+      "cue": "As long as you are here, I will not go."
+    },
+    {
+      "id": "L4-M6-C03",
+      "display": "pūrvam mama pitā kāryālayam gatavān, adhunā gṛhe asti.",
+      "script": "पूर्वम् मम पिता कार्यालयम् गतवान्, अधुना गृहे अस्ति।",
+      "cue": "My father used to go to the office; now he is at home."
+    },
+    {
+      "id": "L4-M6-C04",
+      "display": "aham jalam pītvā paścāt bhojanam khādāmi.",
+      "script": "अहम् जलम् पीत्वा पश्चात् भोजनम् खादामि।",
+      "cue": "After drinking water, I eat a meal."
+    },
+    {
+      "id": "L4-M6-C05",
+      "display": "mama bhaginī adhunā api saṃskṛtam paṭhati.",
+      "script": "मम भगिनी अधुना अपि संस्कृतम् पठति।",
+      "cue": "My sister still studies Sanskrit."
+    },
+    {
+      "id": "L4-M6-C06",
+      "display": "aham patram na adya api likhitavān.",
+      "script": "अहम् पत्रम् न अद्य अपि लिखितवान्।",
+      "cue": "I have not written the letter yet."
+    },
+    {
+      "id": "L4-M6-C07",
+      "display": "yadā bhavatī gacchati tadā aham api gacchāmi.",
+      "script": "यदा भवती गच्छति तदा अहम् अपि गच्छामि।",
+      "cue": "When you go, I go too."
+    },
+    {
+      "id": "L4-M6-C08",
+      "display": "yāvat aham na paṭhāmi tāvat mama mātā na santuṣṭā.",
+      "script": "यावत् अहम् न पठामि तावत् मम माता न सन्तुष्टा।",
+      "cue": "As long as I do not study, my mother is not pleased."
+    },
+    {
+      "id": "L4-M6-C09",
+      "display": "adhunā vayam mandiram gacchāmaḥ.",
+      "script": "अधुना वयम् मन्दिरम् गच्छामः।",
+      "cue": "Now we are going to the temple."
+    },
+    {
+      "id": "L4-M6-C10",
+      "display": "aham kāryam kṛtvā paścāt miṣṭānnam khāditavān.",
+      "script": "अहम् कार्यम् कृत्वा पश्चात् मिष्टान्नम् खादितवान्।",
+      "cue": "Having finished the work, I ate sweets afterwards."
+    },
+    {
+      "id": "L4-M6-C11",
+      "display": "yadā utsavaḥ asti tadā janāḥ mandiram gacchanti.",
+      "script": "यदा उत्सवः अस्ति तदा जनाः मन्दिरम् गच्छन्ति।",
+      "cue": "When there is a festival, people go to the temple."
+    },
+    {
+      "id": "L4-M6-C12",
+      "display": "mama bhrātā pūrvam atra paṭhitavān, adhunā kāryālaye asti.",
+      "script": "मम भ्राता पूर्वम् अत्र पठितवान्, अधुना कार्यालये अस्ति।",
+      "cue": "My brother used to study here; now he is at the office."
+    },
+    {
+      "id": "L4-M6-C13",
+      "display": "yāvat vṛṣṭiḥ asti tāvat mārgaḥ na uttamaḥ.",
+      "script": "यावत् वृष्टिः अस्ति तावत् मार्गः न उत्तमः।",
+      "cue": "As long as it is raining, the road is not good."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

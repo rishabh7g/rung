@@ -1,0 +1,1116 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": [
+    "L4-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "participial_past",
+      "simple_present",
+      "simple_future",
+      "imperfect_third_singular_asit",
+      "polite_imperative",
+      "verbless_nominal_present",
+      "absolutive"
+    ],
+    "allowedPatterns": [
+      "<six-sentence narrative>",
+      "prathamam + <clause> + . + tataḥ + <clause> + . + ante + <clause>",
+      "<quoted clause> + iti + saḥ + uktavān",
+      "akasmāt + <clause>",
+      "V-tvā + V-tavān/V-tavatī"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "SIX SENTENCES, WITH ONE LINE OF QUOTED SPEECH INSIDE. That is L3-M10's account tightened and given a turn. The sequencers hold it together — prathamam, tataḥ, anantaram, ante (L2-M10) — and each of them sits BETWEEN sentences and never inside one."
+    },
+    {
+      "tag": "delta",
+      "text": "A STORY HAS A SHAPE AND NOT JUST A SEQUENCE, and akasmāt is what marks the turn. Something is going one way, akasmāt it does not, and the last sentence says what that meant. Without it you have a list of things that happened in order."
+    },
+    {
+      "tag": "delta",
+      "text": "THE QUOTED LINE IS L3-M5's iti AND NOTHING ELSE: the words exactly as spoken, then iti, then the verb of saying. NO TENSE SHIFT AND NO PERSON SHIFT — the quote keeps its own speaker's aham and its own present, so bhavān adya gṛham gacchatu iti saḥ uktavān is 'go home today, he said'."
+    },
+    {
+      "tag": "delta",
+      "text": "A QUOTED LINE IS SPOKEN IN THE SAME REGISTER AS THE STORY AROUND IT. A character addressing somebody says bhavān or bhavatī with a third-person verb, exactly as the narration does. The intimate tvam stays where L2-M1 left it — at one sentence in this whole course — because opening it inside a quote would drag the whole second-person paradigm in behind it."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PARTICIPIAL PAST FORKS ONCE, AT THE SPEAKER. All six sentences are a man's or all six are a woman's, and the variations entry supplies the WHOLE story in the other and not one sentence of it. The plural participial past is written nowhere in this course, so a story still cannot be told by two people at once."
+    },
+    {
+      "tag": "free",
+      "text": "PRO-DROP HOLDS OVER SIX SENTENCES. aham appears in the first sentence at most: the -mi ending and the participle's own gender have already said who is speaking, and repeating the pronoun in every sentence reads as insistence rather than as clarity."
+    },
+    {
+      "tag": "free",
+      "text": "A CORRELATIVE PAIR LIVES INSIDE ONE SENTENCE AND NEVER CROSSES A FULL STOP, and that now covers five pairs: yataḥ … ataḥ, yaḥ … saḥ, yadi … tarhi, yadā … tadā and yāvat … tāvat. The sequencers do the opposite job — they only ever sit between sentences — so the two systems never compete for a slot."
+    },
+    {
+      "tag": "delta",
+      "text": "āścaryam IS 'A SURPRISE', neuter, and it goes into L3-M6's frame for a feeling: mahyam āścaryam āsīt, 'to me there was surprise'. That is how a story says what the turn meant without a verb for being surprised."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH REPORTS SPEECH BY MOVING THE TENSE BACK — 'he said he WAS going' — AND SANSKRIT MOVES NOTHING. Whatever was said is quoted as it was said and iti closes it. A learner who shifts the tense has translated the English machinery and not the sentence."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT A STORY STILL DOES NOT GET. No new proper noun: rāmaḥ and sītā are the only two names this course writes, and a character here is mama pitā, ekaḥ janaḥ or an adhyāpakaḥ. No vocative, which a line of dialogue wants more than anything else in the level. No imperfect but L4-M8's āsīt, so agacchat, akarot and abhavat stay unwritten. No plural participial past. And no formal register, which is L4-M7's alone."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "prathamam aham mitreṇa saha vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. akasmāt mama pustakam na āsīt. bhavān adya gṛham gacchatu iti adhyāpakaḥ uktavān. anantaram gṛham gatavān. ante pustakam gṛhe āsīt, tat mahyam āścaryam āsīt.",
+      "script": "प्रथमम् अहम् मित्रेण सह विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अकस्मात् मम पुस्तकम् न आसीत्। भवान् अद्य गृहम् गच्छतु इति अध्यापकः उक्तवान्। अनन्तरम् गृहम् गतवान्। अन्ते पुस्तकम् गृहे आसीत्, तत् मह्यम् आश्चर्यम् आसीत्।",
+      "cue": "First I went to school with a friend. Then I studied Sanskrit. Suddenly my book was not there. 'Go home today,' the teacher said. After that I went home. In the end the book was at home — that was a surprise to me.",
+      "literal": "first I with-friend together school went. then Sanskrit studied. suddenly my book not was. your-honour today home let-go quote teacher said. after-that home went. in-the-end book at-home was, that to-me surprise was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's first sequencer. It sits between sentences and never inside one."
+          },
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book. Here it is what the story turns on, and it is missing before it is found."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "gacchatu",
+            "cue": "please go · let (him) go",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's polite imperative, inside the quote. A character addresses bhavān with a third-person verb, exactly as the narration does."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's past of saying. It agrees with whoever spoke, not with the person telling the story."
+          },
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's teacher, the one who spoke. uktavān agrees with him and not with the narrator."
+          },
+          {
+            "display": "āścaryam",
+            "cue": "a surprise · a wonder",
+            "tag": "delta",
+            "forms": [],
+            "note": "'A surprise', neuter. It sits in L3-M6's frame for a feeling — mahyam āścaryam āsīt — so nobody has to be the one surprised."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          7
+        ]
+      },
+      "trap": "The quoted line keeps its own present and its own listener. bhavān inside it is the narrator being spoken to, not the teacher — and nothing about it changes for having been quoted.",
+      "variations": [
+        {
+          "display": "prathamam aham mitreṇa saha vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. akasmāt mama pustakam na āsīt. bhavatī adya gṛham gacchatu iti adhyāpakaḥ uktavān. anantaram gṛham gatavatī. ante pustakam gṛhe āsīt, tat mahyam āścaryam āsīt.",
+          "script": "प्रथमम् अहम् मित्रेण सह विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। अकस्मात् मम पुस्तकम् न आसीत्। भवती अद्य गृहम् गच्छतु इति अध्यापकः उक्तवान्। अनन्तरम् गृहम् गतवती। अन्ते पुस्तकम् गृहे आसीत्, तत् मह्यम् आश्चर्यम् आसीत्।",
+          "cue": "First I went to school with a friend. Then I studied Sanskrit. Suddenly my book was not there. 'Go home today,' the teacher said. After that I went home. In the end the book was at home — that was a surprise to me.",
+          "changed": "a woman tells the whole story: every participle of hers forks together, and the teacher's own uktavān does not, because it agrees with him"
+        },
+        {
+          "display": "prathamam aham vidyālayam gatavān. akasmāt mama pustakam na āsīt. ante pustakam gṛhe āsīt.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवान्। अकस्मात् मम पुस्तकम् न आसीत्। अन्ते पुस्तकम् गृहे आसीत्।",
+          "cue": "First I went to school. Suddenly my book was not there. In the end the book was at home.",
+          "changed": "the story cut to its three load-bearing sentences — the setting, the turn and what it came to"
+        },
+        {
+          "display": "śvaḥ aham vidyālayam gamiṣyāmi. tataḥ saṃskṛtam paṭhiṣyāmi. ante gṛham gamiṣyāmi.",
+          "script": "श्वः अहम् विद्यालयम् गमिष्यामि। ततः संस्कृतम् पठिष्यामि। अन्ते गृहम् गमिष्यामि।",
+          "cue": "Tomorrow I will go to school. Then I will study Sanskrit. In the end I will go home.",
+          "changed": "the same shape as a plan rather than as a story: the futures replace the participles and akasmāt has nothing to turn"
+        }
+      ],
+      "usage": "The plainest shape this module teaches: setting, turn, quoted line, and what it meant.",
+      "register": "neutral",
+      "mnemonic": "Something was going one way — akasmāt."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "prathamam aham nagaram gatavān. tataḥ mitreṇa saha bhojanam khāditavān. akasmāt vṛṣṭiḥ āsīt. adya bhavān gṛham na gacchatu iti mama pitā uktavān. ataḥ sāyam nagare paṭhitavān. ante vṛṣṭiḥ na āsīt, ataḥ gṛham gatavān.",
+      "script": "प्रथमम् अहम् नगरम् गतवान्। ततः मित्रेण सह भोजनम् खादितवान्। अकस्मात् वृष्टिः आसीत्। अद्य भवान् गृहम् न गच्छतु इति मम पिता उक्तवान्। अतः सायम् नगरे पठितवान्। अन्ते वृष्टिः न आसीत्, अतः गृहम् गतवान्।",
+      "cue": "First I went to the city. Then I ate a meal with a friend. Suddenly it was raining. 'Do not go home today,' my father said. So I studied in the city in the evening. In the end it was not raining, so I went home.",
+      "literal": "first I city went. then with-friend together meal ate. suddenly rain was. today your-honour home not let-go quote my father said. therefore in-the-evening in-city studied. in-the-end rain not was, therefore home went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "vṛṣṭiḥ",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M2's rain in its naming shape, the thing that turns the day round."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', inside the quote and denying the imperative behind it."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "pitā",
+            "cue": "father",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's father, the one who spoke."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's consequence word, heading the consequence and never the cause."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          8
+        ]
+      },
+      "variations": [
+        {
+          "display": "prathamam aham nagaram gatavatī. tataḥ mitreṇa saha bhojanam khāditavatī. akasmāt vṛṣṭiḥ āsīt. adya bhavatī gṛham na gacchatu iti mama pitā uktavān. ataḥ sāyam nagare paṭhitavatī. ante vṛṣṭiḥ na āsīt, ataḥ gṛham gatavatī.",
+          "script": "प्रथमम् अहम् नगरम् गतवती। ततः मित्रेण सह भोजनम् खादितवती। अकस्मात् वृष्टिः आसीत्। अद्य भवती गृहम् न गच्छतु इति मम पिता उक्तवान्। अतः सायम् नगरे पठितवती। अन्ते वृष्टिः न आसीत्, अतः गृहम् गतवती।",
+          "cue": "First I went to the city. Then I ate a meal with a friend. Suddenly it was raining. 'Do not go home today,' my father said. So I studied in the city in the evening. In the end it was not raining, so I went home.",
+          "changed": "a woman tells it, and the person she is addressed as inside the quote forks with her — bhavān becomes bhavatī"
+        },
+        {
+          "display": "prathamam aham nagaram gatavān. akasmāt vṛṣṭiḥ āsīt. ante gṛham gatavān.",
+          "script": "प्रथमम् अहम् नगरम् गतवान्। अकस्मात् वृष्टिः आसीत्। अन्ते गृहम् गतवान्।",
+          "cue": "First I went to the city. Suddenly it was raining. In the end I went home.",
+          "changed": "the three sentences that carry the shape, with the quoted line and both reasons taken out"
+        },
+        {
+          "display": "yadā vṛṣṭiḥ āsīt tadā aham nagare paṭhitavān.",
+          "script": "यदा वृष्टिः आसीत् तदा अहम् नगरे पठितवान्।",
+          "cue": "When it was raining I studied in the city.",
+          "changed": "two of the story's sentences packed into one with L4-M6's time pair, which is what a correlative is for and a sequencer is not"
+        }
+      ],
+      "usage": "A day that changed its mind, which is the commonest story anybody tells.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "prathamam aham yānena mahānagaram gatavān. tataḥ dūre sthāne ekam mandiram gatavān. akasmāt mama yānam na āsīt. bhavān mayā saha gṛham āgacchatu iti ekaḥ janaḥ uktavān. anantaram aham gṛham gatavān. ante mahyam āścaryam āsīt, yataḥ saḥ mama adhyāpakaḥ.",
+      "script": "प्रथमम् अहम् यानेन महानगरम् गतवान्। ततः दूरे स्थाने एकम् मन्दिरम् गतवान्। अकस्मात् मम यानम् न आसीत्। भवान् मया सह गृहम् आगच्छतु इति एकः जनः उक्तवान्। अनन्तरम् अहम् गृहम् गतवान्। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः सः मम अध्यापकः।",
+      "cue": "First I went to the big city by vehicle. Then I went to a temple at a distant place. Suddenly my vehicle was gone. 'Come home with me,' one man said. After that I went home. In the end I was surprised, because he was my teacher.",
+      "literal": "first I by-vehicle big-city went. then at-far at-place one temple went. suddenly my vehicle not was. your-honour with-me together home let-come quote one man said. after-that I home went. in-the-end to-me surprise was, because he my teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahānagaram",
+            "cue": "big city",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M9's compound. No shape of mahat is written anywhere in this course."
+          },
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "yānam",
+            "cue": "vehicle · conveyance",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's vehicle in its naming shape — the thing that is missing, not the means of going."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "mayā",
+            "cue": "by me · with me",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's instrumental of aham, with saha behind it. A character offers company in exactly the frame L4-M9 taught."
+          },
+          {
+            "display": "āgacchatu",
+            "cue": "please come · let (him) come",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's polite imperative, inside the quote."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "janaḥ",
+            "cue": "person",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's person. A story keeps its strangers unnamed, which is how this course keeps its proper nouns at two."
+          },
+          {
+            "display": "āścaryam",
+            "cue": "a surprise · a wonder",
+            "tag": "delta",
+            "forms": [],
+            "note": "'A surprise', neuter. It sits in L3-M6's frame for a feeling — mahyam āścaryam āsīt — so nobody has to be the one surprised."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          9
+        ]
+      },
+      "trap": "The stranger has no name and the story does not need one. A name would ride into the course unindexed, and this course has held that count at zero for four levels.",
+      "variations": [
+        {
+          "display": "prathamam aham yānena mahānagaram gatavatī. tataḥ dūre sthāne ekam mandiram gatavatī. akasmāt mama yānam na āsīt. bhavatī mayā saha gṛham āgacchatu iti ekaḥ janaḥ uktavān. anantaram aham gṛham gatavatī. ante mahyam āścaryam āsīt, yataḥ saḥ mama adhyāpakaḥ.",
+          "script": "प्रथमम् अहम् यानेन महानगरम् गतवती। ततः दूरे स्थाने एकम् मन्दिरम् गतवती। अकस्मात् मम यानम् न आसीत्। भवती मया सह गृहम् आगच्छतु इति एकः जनः उक्तवान्। अनन्तरम् अहम् गृहम् गतवती। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः सः मम अध्यापकः।",
+          "cue": "First I went to the big city by vehicle. Then I went to a temple at a distant place. Suddenly my vehicle was gone. 'Come home with me,' one man said. After that I went home. In the end I was surprised, because he was my teacher.",
+          "changed": "a woman tells it; the stranger's uktavān stays masculine because it belongs to him"
+        },
+        {
+          "display": "prathamam aham mahānagaram gatavān. akasmāt mama yānam na āsīt. ante mahyam āścaryam āsīt.",
+          "script": "प्रथमम् अहम् महानगरम् गतवान्। अकस्मात् मम यानम् न आसीत्। अन्ते मह्यम् आश्चर्यम् आसीत्।",
+          "cue": "First I went to the big city. Suddenly my vehicle was gone. In the end I was surprised.",
+          "changed": "the shape alone: setting, turn, and what it came to"
+        },
+        {
+          "display": "akasmāt mama yānam na āsīt, ataḥ aham mitreṇa saha gṛham gatavān.",
+          "script": "अकस्मात् मम यानम् न आसीत्, अतः अहम् मित्रेण सह गृहम् गतवान्।",
+          "cue": "Suddenly my vehicle was gone, so I went home with a friend.",
+          "changed": "the turn and its consequence in one sentence, with ataḥ marking the link once and the companion riding in mitreṇa saha"
+        }
+      ],
+      "usage": "The story a trip turns into when something goes wrong in the middle of it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "prathamam aham prātaḥ vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. akasmāt mama śirasi vedanā āsīt. bhavān gṛham gacchatu, auṣadham ca pibatu iti adhyāpakaḥ uktavān. anantaram gṛham gatvā auṣadham pītavān. ante vedanā na āsīt, ataḥ mahyam sukham āsīt.",
+      "script": "प्रथमम् अहम् प्रातः विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अकस्मात् मम शिरसि वेदना आसीत्। भवान् गृहम् गच्छतु, औषधम् च पिबतु इति अध्यापकः उक्तवान्। अनन्तरम् गृहम् गत्वा औषधम् पीतवान्। अन्ते वेदना न आसीत्, अतः मह्यम् सुखम् आसीत्।",
+      "cue": "First I went to school in the morning. Then I studied Sanskrit. Suddenly I had a headache. 'Go home and drink the medicine,' the teacher said. After that I went home and drank the medicine. In the end the ache was gone, so I was happy.",
+      "literal": "first I in-the-morning school went. then Sanskrit studied. suddenly my on-head pain was. your-honour home let-go, medicine and let-drink quote teacher said. after-that home having-gone medicine drank. in-the-end pain not was, therefore to-me happiness was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "śirasi",
+            "cue": "head",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M7's head in its 'in' shape. The pain is the subject and the body part is where it is."
+          },
+          {
+            "display": "vedanā",
+            "cue": "pain · ache",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M7's pain, the subject of its own sentence — no verb of hurting exists in this course."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "ca",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'and', standing BEHIND the second of the two things it joins, exactly as L1-M10 taught."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive, packing two of the narrator's actions into one sentence."
+          },
+          {
+            "display": "sukham",
+            "cue": "happiness · ease",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's happiness, in the dative frame with mahyam. Set beside āsīt it says how the story left the narrator."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "ca goes behind auṣadham and not in front of it. The quote keeps the placement rule it would have had outside the quote, because nothing about being quoted changes a word order.",
+      "variations": [
+        {
+          "display": "prathamam aham prātaḥ vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. akasmāt mama śirasi vedanā āsīt. bhavatī gṛham gacchatu, auṣadham ca pibatu iti adhyāpakaḥ uktavān. anantaram gṛham gatvā auṣadham pītavatī. ante vedanā na āsīt, ataḥ mahyam sukham āsīt.",
+          "script": "प्रथमम् अहम् प्रातः विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। अकस्मात् मम शिरसि वेदना आसीत्। भवती गृहम् गच्छतु, औषधम् च पिबतु इति अध्यापकः उक्तवान्। अनन्तरम् गृहम् गत्वा औषधम् पीतवती। अन्ते वेदना न आसीत्, अतः मह्यम् सुखम् आसीत्।",
+          "cue": "First I went to school in the morning. Then I studied Sanskrit. Suddenly I had a headache. 'Go home and drink the medicine,' the teacher said. After that I went home and drank the medicine. In the end the ache was gone, so I was happy.",
+          "changed": "a woman tells it; the dative frame at the end does not fork, because mahyam has no gender"
+        },
+        {
+          "display": "prathamam aham vidyālayam gatavān. akasmāt mama śirasi vedanā āsīt. ante mahyam sukham āsīt.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवान्। अकस्मात् मम शिरसि वेदना आसीत्। अन्ते मह्यम् सुखम् आसीत्।",
+          "cue": "First I went to school. Suddenly I had a headache. In the end I was happy.",
+          "changed": "three sentences: what was going on, what turned it, and where it ended"
+        },
+        {
+          "display": "yadā mama śirasi vedanā āsīt tadā aham gṛham gatavān.",
+          "script": "यदा मम शिरसि वेदना आसीत् तदा अहम् गृहम् गतवान्।",
+          "cue": "When I had a headache I went home.",
+          "changed": "the turn and its consequence folded into one sentence with L4-M6's time pair"
+        }
+      ],
+      "usage": "The shape of every small illness story anybody tells about a working day.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "prathamam aham kāryālayam gatavān. tataḥ tatra ekam patram paṭhitavān. akasmāt atra praveśaḥ niṣiddhaḥ iti sūcanā āsīt. bhavān śvaḥ āgacchatu iti ekaḥ janaḥ uktavān. ataḥ aham khinnaḥ gṛham gatavān. ante śvaḥ punaḥ kāryālayam gamiṣyāmi.",
+      "script": "प्रथमम् अहम् कार्यालयम् गतवान्। ततः तत्र एकम् पत्रम् पठितवान्। अकस्मात् अत्र प्रवेशः निषिद्धः इति सूचना आसीत्। भवान् श्वः आगच्छतु इति एकः जनः उक्तवान्। अतः अहम् खिन्नः गृहम् गतवान्। अन्ते श्वः पुनः कार्यालयम् गमिष्यामि।",
+      "cue": "First I went to the office. Then I read a form there. Suddenly there was a notice: entry is forbidden here. 'Come tomorrow,' one man said. So I went home disappointed. In the end I will go to the office again tomorrow.",
+      "literal": "first I office went. then there one form read. suddenly here entry forbidden quote notice was. your-honour tomorrow let-come quote one man said. therefore I sad home went. in-the-end tomorrow again office will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "praveśaḥ",
+            "cue": "entry · going in",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M7's entry. It is quoted here from a board rather than spoken, and iti closes a posted line as readily as a said one."
+          },
+          {
+            "display": "niṣiddhaḥ",
+            "cue": "forbidden · prohibited",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M7's sign-word, agreeing with praveśaḥ."
+          },
+          {
+            "display": "sūcanā",
+            "cue": "notice · announcement",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M7's notice. The formal line is quoted inside a story told in the everyday register."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, masculine and agreeing with the narrator. A woman says khinnā."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'again', which is what turns a failed errand into a plan."
+          }
+        ],
+        "rules": [
+          2,
+          8
+        ]
+      },
+      "trap": "Two quotes sit in one story and they are different kinds: the first is a posted line, the second is a spoken one. iti closes both, and neither of them shifts a tense.",
+      "variations": [
+        {
+          "display": "prathamam aham kāryālayam gatavatī. tataḥ tatra ekam patram paṭhitavatī. akasmāt atra praveśaḥ niṣiddhaḥ iti sūcanā āsīt. bhavatī śvaḥ āgacchatu iti ekaḥ janaḥ uktavān. ataḥ aham khinnā gṛham gatavatī. ante śvaḥ punaḥ kāryālayam gamiṣyāmi.",
+          "script": "प्रथमम् अहम् कार्यालयम् गतवती। ततः तत्र एकम् पत्रम् पठितवती। अकस्मात् अत्र प्रवेशः निषिद्धः इति सूचना आसीत्। भवती श्वः आगच्छतु इति एकः जनः उक्तवान्। अतः अहम् खिन्ना गृहम् गतवती। अन्ते श्वः पुनः कार्यालयम् गमिष्यामि।",
+          "cue": "First I went to the office. Then I read a form there. Suddenly there was a notice: entry is forbidden here. 'Come tomorrow,' one man said. So I went home disappointed. In the end I will go to the office again tomorrow.",
+          "changed": "a woman tells it: the participles and khinnā fork together, and the last sentence does not, because a future marks person and not gender"
+        },
+        {
+          "display": "prathamam aham kāryālayam gatavān. akasmāt atra praveśaḥ niṣiddhaḥ iti sūcanā āsīt. ante śvaḥ punaḥ gamiṣyāmi.",
+          "script": "प्रथमम् अहम् कार्यालयम् गतवान्। अकस्मात् अत्र प्रवेशः निषिद्धः इति सूचना आसीत्। अन्ते श्वः पुनः गमिष्यामि।",
+          "cue": "First I went to the office. Suddenly there was a notice: entry is forbidden here. In the end I will go again tomorrow.",
+          "changed": "the three sentences that carry the shape, ending on the plan rather than on the setback"
+        },
+        {
+          "display": "yataḥ atra praveśaḥ niṣiddhaḥ āsīt aham gṛham gatavān.",
+          "script": "यतः अत्र प्रवेशः निषिद्धः आसीत् अहम् गृहम् गतवान्।",
+          "cue": "Because entry was forbidden here I went home.",
+          "changed": "the whole errand reduced to one cause sentence, with L1-M9's yataḥ marking the link once"
+        }
+      ],
+      "usage": "Told about an errand that failed, which is where a story about offices usually ends up.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "prathamam aham mitreṇa saha mandiram gatavān. tatra utsavaḥ āsīt. akasmāt vṛṣṭiḥ āsīt. vayam adya gṛham na gacchāmaḥ iti adhyāpakaḥ uktavān. anantaram aham mandire miṣṭānnam khāditavān. ante mahyam āścaryam āsīt, yataḥ utsavaḥ sundaraḥ āsīt.",
+      "script": "प्रथमम् अहम् मित्रेण सह मन्दिरम् गतवान्। तत्र उत्सवः आसीत्। अकस्मात् वृष्टिः आसीत्। वयम् अद्य गृहम् न गच्छामः इति अध्यापकः उक्तवान्। अनन्तरम् अहम् मन्दिरे मिष्टान्नम् खादितवान्। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः उत्सवः सुन्दरः आसीत्।",
+      "cue": "First I went to the temple with a friend. There was a festival there. Suddenly it was raining. 'We are not going home today,' the teacher said. After that I ate sweets in the temple. In the end I was surprised, because the festival was beautiful.",
+      "literal": "first I with-friend together temple went. there festival was. suddenly rain was. we today home not go quote teacher said. after-that I in-temple sweets ate. in-the-end to-me surprise was, because festival beautiful was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "utsavaḥ",
+            "cue": "festival · celebration",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's festival. It is named by a common noun and never by its own name, which is how the course keeps a festival module free of proper nouns."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "vayam",
+            "cue": "we",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's 'we', inside the quote. The speaker inside a quote may use any person their own sentence needs."
+          },
+          {
+            "display": "gacchāmaḥ",
+            "cue": "we go · shall we go",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's first-plural going verb, agreeing with vayam inside the quote and with nothing outside it."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "miṣṭānnam",
+            "cue": "sweets · sweet food",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's sweets, as the thing eaten."
+          },
+          {
+            "display": "āścaryam",
+            "cue": "a surprise · a wonder",
+            "tag": "delta",
+            "forms": [],
+            "note": "'A surprise', neuter. It sits in L3-M6's frame for a feeling — mahyam āścaryam āsīt — so nobody has to be the one surprised."
+          }
+        ],
+        "rules": [
+          2,
+          7
+        ]
+      },
+      "trap": "vayam and gacchāmaḥ live inside the quote and nowhere else. Outside it the narrator is still one person with a singular participle, because this course writes no plural participial past.",
+      "variations": [
+        {
+          "display": "prathamam aham mitreṇa saha mandiram gatavatī. tatra utsavaḥ āsīt. akasmāt vṛṣṭiḥ āsīt. vayam adya gṛham na gacchāmaḥ iti adhyāpakaḥ uktavān. anantaram aham mandire miṣṭānnam khāditavatī. ante mahyam āścaryam āsīt, yataḥ utsavaḥ sundaraḥ āsīt.",
+          "script": "प्रथमम् अहम् मित्रेण सह मन्दिरम् गतवती। तत्र उत्सवः आसीत्। अकस्मात् वृष्टिः आसीत्। वयम् अद्य गृहम् न गच्छामः इति अध्यापकः उक्तवान्। अनन्तरम् अहम् मन्दिरे मिष्टान्नम् खादितवती। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः उत्सवः सुन्दरः आसीत्।",
+          "cue": "First I went to the temple with a friend. There was a festival there. Suddenly it was raining. 'We are not going home today,' the teacher said. After that I ate sweets in the temple. In the end I was surprised, because the festival was beautiful.",
+          "changed": "a woman tells it, and the quoted line does not move at all, because it belongs to somebody else"
+        },
+        {
+          "display": "prathamam aham mandiram gatavān. akasmāt vṛṣṭiḥ āsīt. ante mahyam āścaryam āsīt.",
+          "script": "प्रथमम् अहम् मन्दिरम् गतवान्। अकस्मात् वृष्टिः आसीत्। अन्ते मह्यम् आश्चर्यम् आसीत्।",
+          "cue": "First I went to the temple. Suddenly it was raining. In the end I was surprised.",
+          "changed": "the shape alone, with the rain as the turn and the surprise as its meaning"
+        },
+        {
+          "display": "yadā vṛṣṭiḥ āsīt tadā aham mandire miṣṭānnam khāditavān.",
+          "script": "यदा वृष्टिः आसीत् तदा अहम् मन्दिरे मिष्टान्नम् खादितवान्।",
+          "cue": "When it was raining I ate sweets in the temple.",
+          "changed": "the turn and what followed it folded into one sentence with L4-M6's time pair, which stays inside one full stop where a sequencer could not"
+        }
+      ],
+      "usage": "A day that was spoiled and then was not, which is the twist this module is named for.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "bālye aham pratidinam pustakālayam gatavān. tatra saṃskṛtam paṭhitavān. akasmāt tatra ekaḥ vṛddhaḥ janaḥ āsīt. bhavān idam pustakam paśyatu iti saḥ uktavān. anantaram aham tat pustakam paṭhitavān. ante mahyam tat pustakam rocate.",
+      "script": "बाल्ये अहम् प्रतिदिनम् पुस्तकालयम् गतवान्। तत्र संस्कृतम् पठितवान्। अकस्मात् तत्र एकः वृद्धः जनः आसीत्। भवान् इदम् पुस्तकम् पश्यतु इति सः उक्तवान्। अनन्तरम् अहम् तत् पुस्तकम् पठितवान्। अन्ते मह्यम् तत् पुस्तकम् रोचते।",
+      "cue": "As a child I went to the library every day. I studied Sanskrit there. Suddenly there was an old man there. 'Look at this book,' he said. After that I read that book. To this day I like that book.",
+      "literal": "in-childhood I every-day library went. there Sanskrit studied. suddenly there one old man was. your-honour this book let-see quote he said. after-that I that book read. in-the-end to-me that book is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bālye",
+            "cue": "childhood · in childhood",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's 'in childhood'. It sets a story further back than pūrvam does and needs no date."
+          },
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "vṛddhaḥ",
+            "cue": "old · elder",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's adjective, masculine and agreeing with janaḥ."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "paśyatu",
+            "cue": "sees · looks at",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's polite imperative inside the quote, addressed to bhavān as the narration would address anybody."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's 'that', pointing back at the book the quote named. There is no relative clause here and none is needed."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's liking verb, in the present — the one sentence of this story that reaches the day it is told."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "variations": [
+        {
+          "display": "bālye aham pratidinam pustakālayam gatavatī. tatra saṃskṛtam paṭhitavatī. akasmāt tatra ekaḥ vṛddhaḥ janaḥ āsīt. bhavatī idam pustakam paśyatu iti saḥ uktavān. anantaram aham tat pustakam paṭhitavatī. ante mahyam tat pustakam rocate.",
+          "script": "बाल्ये अहम् प्रतिदिनम् पुस्तकालयम् गतवती। तत्र संस्कृतम् पठितवती। अकस्मात् तत्र एकः वृद्धः जनः आसीत्। भवती इदम् पुस्तकम् पश्यतु इति सः उक्तवान्। अनन्तरम् अहम् तत् पुस्तकम् पठितवती। अन्ते मह्यम् तत् पुस्तकम् रोचते।",
+          "cue": "As a child I went to the library every day. I studied Sanskrit there. Suddenly there was an old man there. 'Look at this book,' he said. After that I read that book. To this day I like that book.",
+          "changed": "a woman tells it; the last sentence is unchanged, because rocate agrees with the book and not with anybody"
+        },
+        {
+          "display": "bālye aham pustakālayam gatavān. akasmāt tatra ekaḥ vṛddhaḥ janaḥ āsīt. ante mahyam tat pustakam rocate.",
+          "script": "बाल्ये अहम् पुस्तकालयम् गतवान्। अकस्मात् तत्र एकः वृद्धः जनः आसीत्। अन्ते मह्यम् तत् पुस्तकम् रोचते।",
+          "cue": "As a child I went to the library. Suddenly there was an old man there. To this day I like that book.",
+          "changed": "the shape alone, ending in the present, which is what makes it a memory rather than an account"
+        },
+        {
+          "display": "bhavān idam pustakam paśyatu iti saḥ uktavān.",
+          "script": "भवान् इदम् पुस्तकम् पश्यतु इति सः उक्तवान्।",
+          "cue": "'Look at this book,' he said.",
+          "changed": "the quoted line lifted out of the story — iti closes it whether or not a narrative stands round it"
+        }
+      ],
+      "usage": "A childhood story whose ending is still going on.",
+      "register": "neutral",
+      "mnemonic": "End in the present and a story becomes a memory."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "prathamam aham grāmam gatavān. tatra mama mātā āsīt. adya aham bhojanam karomi iti sā uktavatī. akasmāt gṛhe annam na āsīt. ataḥ aham nagaram gatvā bhojanam khāditavān. ante mama mātā santuṣṭā āsīt.",
+      "script": "प्रथमम् अहम् ग्रामम् गतवान्। तत्र मम माता आसीत्। अद्य अहम् भोजनम् करोमि इति सा उक्तवती। अकस्मात् गृहे अन्नम् न आसीत्। अतः अहम् नगरम् गत्वा भोजनम् खादितवान्। अन्ते मम माता सन्तुष्टा आसीत्।",
+      "cue": "First I went to the village. My mother was there. 'I am making the meal today,' she said. Suddenly there was no food in the house. So I went to the city and ate a meal. In the end my mother was content.",
+      "literal": "first I village went. there my mother was. today I meal make quote she said. suddenly at-home food not was. therefore I city having-gone meal ate. in-the-end my mother content was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grāmam",
+            "cue": "village",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M9's village, as the destination."
+          },
+          {
+            "display": "mātā",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's mother, and the one who speaks the quoted line."
+          },
+          {
+            "display": "karomi",
+            "cue": "does · makes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's first singular, INSIDE the quote. The aham it belongs to is the mother's and not the narrator's, and that is the whole point of not shifting a person."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "uktavatī",
+            "cue": "said (a woman) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's past of saying, feminine because the mother spoke it. The narrator's own participles stay masculine."
+          },
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "annam",
+            "cue": "food · cooked rice",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's food in its naming shape."
+          },
+          {
+            "display": "santuṣṭā",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, feminine to agree with mātā."
+          }
+        ],
+        "rules": [
+          2,
+          4,
+          8
+        ]
+      },
+      "trap": "The aham inside the quote is the mother and the story around it is the narrator's. Shift the person to make it agree and you have given the mother's line to somebody else.",
+      "variations": [
+        {
+          "display": "prathamam aham grāmam gatavatī. tatra mama mātā āsīt. adya aham bhojanam karomi iti sā uktavatī. akasmāt gṛhe annam na āsīt. ataḥ aham nagaram gatvā bhojanam khāditavatī. ante mama mātā santuṣṭā āsīt.",
+          "script": "प्रथमम् अहम् ग्रामम् गतवती। तत्र मम माता आसीत्। अद्य अहम् भोजनम् करोमि इति सा उक्तवती। अकस्मात् गृहे अन्नम् न आसीत्। अतः अहम् नगरम् गत्वा भोजनम् खादितवती। अन्ते मम माता सन्तुष्टा आसीत्।",
+          "cue": "First I went to the village. My mother was there. 'I am making the meal today,' she said. Suddenly there was no food in the house. So I went to the city and ate a meal. In the end my mother was content.",
+          "changed": "a woman tells it, and the mother's uktavatī was already feminine — two feminines in one story that agree with two different people"
+        },
+        {
+          "display": "prathamam aham grāmam gatavān. akasmāt gṛhe annam na āsīt. ante mama mātā santuṣṭā āsīt.",
+          "script": "प्रथमम् अहम् ग्रामम् गतवान्। अकस्मात् गृहे अन्नम् न आसीत्। अन्ते मम माता सन्तुष्टा आसीत्।",
+          "cue": "First I went to the village. Suddenly there was no food in the house. In the end my mother was content.",
+          "changed": "the shape alone, and the turn is what the middle three sentences were all for"
+        },
+        {
+          "display": "gṛhe annam na āsīt, ataḥ aham nagaram gatvā bhojanam khāditavān.",
+          "script": "गृहे अन्नम् न आसीत्, अतः अहम् नगरम् गत्वा भोजनम् खादितवान्।",
+          "cue": "There was no food in the house, so I went to the city and ate a meal.",
+          "changed": "one sentence out of the story, with ataḥ marking the link and the absolutive keeping both legs to one traveller"
+        }
+      ],
+      "usage": "The domestic version of the twist: the plan fails and the day is saved anyway.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "prathamam aham yānena grāmam gatavān. mama yātrā dīrghā āsīt. akasmāt mārgaḥ na uttamaḥ āsīt. bhavān atra upaviśatu iti mama pitā uktavān. anantaram aham tatra sāyam paṭhitavān. ante mahyam āścaryam āsīt, yataḥ mārgaḥ adhunā uttamaḥ asti.",
+      "script": "प्रथमम् अहम् यानेन ग्रामम् गतवान्। मम यात्रा दीर्घा आसीत्। अकस्मात् मार्गः न उत्तमः आसीत्। भवान् अत्र उपविशतु इति मम पिता उक्तवान्। अनन्तरम् अहम् तत्र सायम् पठितवान्। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः मार्गः अधुना उत्तमः अस्ति।",
+      "cue": "First I went to the village by vehicle. My journey was long. Suddenly the road was not good. 'Sit down here,' my father said. After that I studied there in the evening. In the end I was surprised, because the road is good now.",
+      "literal": "first I by-vehicle village went. my journey long was. suddenly road not good was. your-honour here let-sit quote my father said. after-that I there in-the-evening studied. in-the-end to-me surprise was, because road now good is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yātrā",
+            "cue": "journey · trip",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M9's journey in its naming shape, feminine — which is why dīrghā beside it is feminine too."
+          },
+          {
+            "display": "āsīt",
+            "cue": "was · used to be",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M8's one imperfect, third singular. A story needs it for everything that merely stood there while the actions happened."
+          },
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's road in its naming shape — what the sentence is about rather than how anybody travelled."
+          },
+          {
+            "display": "upaviśatu",
+            "cue": "please sit · let (him) sit",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's polite imperative, inside the quote."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "adhunā",
+            "cue": "now",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M6's 'now'. The last sentence steps out of the story into the day it is told, and asti follows it out."
+          },
+          {
+            "display": "āścaryam",
+            "cue": "a surprise · a wonder",
+            "tag": "delta",
+            "forms": [],
+            "note": "'A surprise', neuter. It sits in L3-M6's frame for a feeling — mahyam āścaryam āsīt — so nobody has to be the one surprised."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          4
+        ]
+      },
+      "variations": [
+        {
+          "display": "prathamam aham yānena grāmam gatavatī. mama yātrā dīrghā āsīt. akasmāt mārgaḥ na uttamaḥ āsīt. bhavatī atra upaviśatu iti mama pitā uktavān. anantaram aham tatra sāyam paṭhitavatī. ante mahyam āścaryam āsīt, yataḥ mārgaḥ adhunā uttamaḥ asti.",
+          "script": "प्रथमम् अहम् यानेन ग्रामम् गतवती। मम यात्रा दीर्घा आसीत्। अकस्मात् मार्गः न उत्तमः आसीत्। भवती अत्र उपविशतु इति मम पिता उक्तवान्। अनन्तरम् अहम् तत्र सायम् पठितवती। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः मार्गः अधुना उत्तमः अस्ति।",
+          "cue": "First I went to the village by vehicle. My journey was long. Suddenly the road was not good. 'Sit down here,' my father said. After that I studied there in the evening. In the end I was surprised, because the road is good now.",
+          "changed": "a woman tells it; dīrghā was already feminine because it agrees with the journey, which no narrator can change"
+        },
+        {
+          "display": "prathamam aham grāmam gatavān. akasmāt mārgaḥ na uttamaḥ āsīt. ante mārgaḥ adhunā uttamaḥ asti.",
+          "script": "प्रथमम् अहम् ग्रामम् गतवान्। अकस्मात् मार्गः न उत्तमः आसीत्। अन्ते मार्गः अधुना उत्तमः अस्ति।",
+          "cue": "First I went to the village. Suddenly the road was not good. In the end the road is good now.",
+          "changed": "the shape alone, with āsīt and asti facing each other across the whole story"
+        },
+        {
+          "display": "pūrvam mārgaḥ na uttamaḥ āsīt, adhunā uttamaḥ asti.",
+          "script": "पूर्वम् मार्गः न उत्तमः आसीत्, अधुना उत्तमः अस्ति।",
+          "cue": "The road used to be bad; now it is good.",
+          "changed": "the story's point taken out of the story, as L4-M8's then-and-now in one sentence"
+        }
+      ],
+      "usage": "A journey story whose twist is that the trouble has since been fixed.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "prathamam aham nagare kāryam kṛtavān. tataḥ kāryālaye patram likhitavān. akasmāt mama bhaginī tatra āsīt. aham api atra kāryam karomi iti sā uktavatī. anantaram aham bhojanam khāditavān. ante mahyam sukham āsīt, yataḥ tat āścaryam sundaram āsīt.",
+      "script": "प्रथमम् अहम् नगरे कार्यम् कृतवान्। ततः कार्यालये पत्रम् लिखितवान्। अकस्मात् मम भगिनी तत्र आसीत्। अहम् अपि अत्र कार्यम् करोमि इति सा उक्तवती। अनन्तरम् अहम् भोजनम् खादितवान्। अन्ते मह्यम् सुखम् आसीत्, यतः तत् आश्चर्यम् सुन्दरम् आसीत्।",
+      "cue": "First I did some work in the city. Then I wrote a form at the office. Suddenly my sister was there. 'I work here too,' she said. After that I had a meal. In the end I was happy, because it was a lovely surprise.",
+      "literal": "first I in-city work did. then at-office form wrote. suddenly my sister there was. I also here work do quote she said. after-that I meal ate. in-the-end to-me happiness was, because that surprise beautiful was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāryam",
+            "cue": "work · the thing to be done",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's work, as the thing done."
+          },
+          {
+            "display": "kṛtavān",
+            "cue": "did · made (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past of karoti. A woman says kṛtavatī."
+          },
+          {
+            "display": "akasmāt",
+            "cue": "suddenly · all at once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and heads the sentence that turns the story. It marks a break in what was going on, not merely speed."
+          },
+          {
+            "display": "bhaginī",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's sister, who speaks the quoted line."
+          },
+          {
+            "display": "api",
+            "cue": "also · too · even",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's api, standing behind the word it leans on — here behind the aham inside the quote."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, standing behind the quoted words. Nothing inside the quote shifts for being quoted."
+          },
+          {
+            "display": "uktavatī",
+            "cue": "said (a woman) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's past of saying, feminine because the sister spoke it."
+          },
+          {
+            "display": "āścaryam",
+            "cue": "a surprise · a wonder",
+            "tag": "delta",
+            "forms": [],
+            "note": "'A surprise', neuter. It sits in L3-M6's frame for a feeling — mahyam āścaryam āsīt — so nobody has to be the one surprised."
+          },
+          {
+            "display": "sundaram",
+            "cue": "beautiful",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, neuter to agree with āścaryam."
+          }
+        ],
+        "rules": [
+          2,
+          4,
+          7
+        ]
+      },
+      "trap": "api leans on the word in front of it, so aham api is 'I too' and not 'also I work'. Move it and the sentence says something the sister did not.",
+      "variations": [
+        {
+          "display": "prathamam aham nagare kāryam kṛtavatī. tataḥ kāryālaye patram likhitavatī. akasmāt mama bhaginī tatra āsīt. aham api atra kāryam karomi iti sā uktavatī. anantaram aham bhojanam khāditavatī. ante mahyam sukham āsīt, yataḥ tat āścaryam sundaram āsīt.",
+          "script": "प्रथमम् अहम् नगरे कार्यम् कृतवती। ततः कार्यालये पत्रम् लिखितवती। अकस्मात् मम भगिनी तत्र आसीत्। अहम् अपि अत्र कार्यम् करोमि इति सा उक्तवती। अनन्तरम् अहम् भोजनम् खादितवती। अन्ते मह्यम् सुखम् आसीत्, यतः तत् आश्चर्यम् सुन्दरम् आसीत्।",
+          "cue": "First I did some work in the city. Then I wrote a form at the office. Suddenly my sister was there. 'I work here too,' she said. After that I had a meal. In the end I was happy, because it was a lovely surprise.",
+          "changed": "a woman tells it, and the story now has two feminine speakers whose participles agree with different people"
+        },
+        {
+          "display": "prathamam aham kāryālaye patram likhitavān. akasmāt mama bhaginī tatra āsīt. ante mahyam sukham āsīt.",
+          "script": "प्रथमम् अहम् कार्यालये पत्रम् लिखितवान्। अकस्मात् मम भगिनी तत्र आसीत्। अन्ते मह्यम् सुखम् आसीत्।",
+          "cue": "First I wrote a form at the office. Suddenly my sister was there. In the end I was happy.",
+          "changed": "the shape alone: the ordinary morning, the turn, and what it left behind"
+        },
+        {
+          "display": "yadā mama bhaginī tatra āsīt tadā mahyam āścaryam āsīt.",
+          "script": "यदा मम भगिनी तत्र आसीत् तदा मह्यम् आश्चर्यम् आसीत्।",
+          "cue": "When my sister was there I was surprised.",
+          "changed": "the turn and its meaning folded into one sentence with L4-M6's time pair, which is a correlative and therefore stays inside one full stop"
+        }
+      ],
+      "usage": "The happiest shape the twist takes: the surprise is a person.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "prathamam aham prātaḥ gṛhe bhojanam kṛtavān. tataḥ vidyālayam gatavān. akasmāt vṛṣṭiḥ āsīt. ataḥ aham tatra sāyam paṭhitavān. ante gṛham gatavān.",
+      "script": "प्रथमम् अहम् प्रातः गृहे भोजनम् कृतवान्। ततः विद्यालयम् गतवान्। अकस्मात् वृष्टिः आसीत्। अतः अहम् तत्र सायम् पठितवान्। अन्ते गृहम् गतवान्।",
+      "cue": "First I made a meal at home in the morning. Then I went to school. Suddenly it was raining. So I studied there in the evening. In the end I went home."
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "bhavān adya kim kṛtavān iti mama pitā pṛcchati. kāryālaye patram likhitavān iti aham uktavān.",
+      "script": "भवान् अद्य किम् कृतवान् इति मम पिता पृच्छति। कार्यालये पत्रम् लिखितवान् इति अहम् उक्तवान्।",
+      "cue": "'What did you do today?' my father asks. 'I wrote a form at the office,' I said."
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "prathamam jalam pibatu. tataḥ auṣadham khādatu. anantaram upaviśatu. ante punaḥ jalam pibatu.",
+      "script": "प्रथमम् जलम् पिबतु। ततः औषधम् खादतु। अनन्तरम् उपविशतु। अन्ते पुनः जलम् पिबतु।",
+      "cue": "First drink water. Then take the medicine. After that sit down. In the end drink water again."
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "avaśyam idam kāryam dīrgham, kintu idam hitam. mama mate ataḥ idam kartavyam.",
+      "script": "अवश्यम् इदम् कार्यम् दीर्घम्, किन्तु इदम् हितम्। मम मते अतः इदम् कर्तव्यम्।",
+      "cue": "Certainly this work is long, but it is good for us. In my opinion it must therefore be done."
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "aham mitreṇa saha yānena mahānagaram gatavān. mama yātrā dīrghā āsīt. tatra ekam sundaram sthānam āsīt. ante aham gṛham gatavān.",
+      "script": "अहम् मित्रेण सह यानेन महानगरम् गतवान्। मम यात्रा दीर्घा आसीत्। तत्र एकम् सुन्दरम् स्थानम् आसीत्। अन्ते अहम् गृहम् गतवान्।",
+      "cue": "I went to the big city by vehicle with a friend. My journey was long. There was one beautiful place there. In the end I went home."
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "bālye aham pratidinam mandiram gatavān. adhunā aham nagare kāryam karomi. adhunā api mahyam tat mandiram rocate.",
+      "script": "बाल्ये अहम् प्रतिदिनम् मन्दिरम् गतवान्। अधुना अहम् नगरे कार्यम् करोमि। अधुना अपि मह्यम् तत् मन्दिरम् रोचते।",
+      "cue": "As a child I went to the temple every day. Now I work in the city. I still like that temple."
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "akasmāt mama śirasi vedanā āsīt. bhavān auṣadham pibatu iti vaidyaḥ uktavān. anantaram vedanā na āsīt.",
+      "script": "अकस्मात् मम शिरसि वेदना आसीत्। भवान् औषधम् पिबतु इति वैद्यः उक्तवान्। अनन्तरम् वेदना न आसीत्।",
+      "cue": "Suddenly I had a headache. 'Drink the medicine,' the doctor said. After that the ache was gone."
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "yadā aham grāmam gatavān tadā mama mātā santuṣṭā āsīt. ante mahyam āścaryam āsīt, yataḥ sā miṣṭānnam kṛtavatī.",
+      "script": "यदा अहम् ग्रामम् गतवान् तदा मम माता सन्तुष्टा आसीत्। अन्ते मह्यम् आश्चर्यम् आसीत्, यतः सा मिष्टान्नम् कृतवती।",
+      "cue": "When I went to the village my mother was pleased. In the end I was surprised, because she had made sweets."
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "prathamam kāryālayam gacchatu. tataḥ tatra ekam patram paśyatu. anantaram śulkam dadātu. ante pramāṇapatram dīyate.",
+      "script": "प्रथमम् कार्यालयम् गच्छतु। ततः तत्र एकम् पत्रम् पश्यतु। अनन्तरम् शुल्कम् ददातु। अन्ते प्रमाणपत्रम् दीयते।",
+      "cue": "First go to the office. Then look at a form there. After that pay the fee. In the end the certificate is issued."
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "pūrvam atra vidyālayaḥ āsīt. adhunā atra kāryālayaḥ asti. akasmāt idam nagaram bhinnam.",
+      "script": "पूर्वम् अत्र विद्यालयः आसीत्। अधुना अत्र कार्यालयः अस्ति। अकस्मात् इदम् नगरम् भिन्नम्।",
+      "cue": "There used to be a school here. Now there is an office here. All at once this city is a different one."
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "aham adya gṛham gacchāmi iti mama bhrātā uktavān. akasmāt vṛṣṭiḥ āsīt, ataḥ saḥ na gatavān.",
+      "script": "अहम् अद्य गृहम् गच्छामि इति मम भ्राता उक्तवान्। अकस्मात् वृष्टिः आसीत्, अतः सः न गतवान्।",
+      "cue": "'I am going home today,' my brother said. Suddenly it was raining, so he did not go."
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "bālye mama abhyāsaḥ uttamaḥ āsīt. pūrvam aham pratidinam saṃskṛtam paṭhitavān. adhunā na paṭhāmi, ataḥ mahyam duḥkham asti.",
+      "script": "बाल्ये मम अभ्यासः उत्तमः आसीत्। पूर्वम् अहम् प्रतिदिनम् संस्कृतम् पठितवान्। अधुना न पठामि, अतः मह्यम् दुःखम् अस्ति।",
+      "cue": "In childhood my practice was excellent. I used to study Sanskrit every day. Now I do not study, so I am sorry about it."
+    },
+    {
+      "id": "L4-M10-C13",
+      "display": "yadi aham adhunā paṭheyam tarhi mama abhyāsaḥ punaḥ uttamaḥ syāt. ataḥ adya aham paṭhāmi.",
+      "script": "यदि अहम् अधुना पठेयम् तर्हि मम अभ्यासः पुनः उत्तमः स्यात्। अतः अद्य अहम् पठामि।",
+      "cue": "If I studied now, my practice would be excellent again. So today I am studying."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

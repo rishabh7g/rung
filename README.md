@@ -1170,7 +1170,7 @@ rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: de
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
 [`docs/122-llm-review-en-sa-L1-L4.md`](docs/122-llm-review-en-sa-L1-L4.md) — one document, now
-eleven waves, ninety-eight sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+twelve waves, one hundred and seven sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1230,10 +1230,29 @@ BOTH HALVES and the pastness carried by `hyaḥ` rather than by any verb, at a c
 all** — `kintu` and `tathāpi` are L1-M10's — and buys `avaśyam`, which concedes IN ADVANCE, plus
 `hitam`, `lābhaḥ`, `matam`/`mate` and `śrutvā`, the absolutive L2-M7 never shipped; and `L4-M5`
 "Disagreeing well" is the level's cheapest module BY DESIGN, three words (`prāyaḥ`, `bhinnam`,
-`saṃśayaḥ`) on top of a lesson the ladder already owned — the optative IS the hedge. A build now
-reports
-`en-sa: 35 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M5)` and closes at **349 surfaces**,
-`maxSpan` still 1; L4 keeps its level `draft` flag until all ten of its rungs are authored, and L5
+`saṃśayaḥ`) on top of a lesson the ladder already owned — the optative IS the hedge. **#623 CLOSED
+LEVEL 4 with five more, and its level `draft` flag came off with its tenth rung**: `L4-M6` "Before
+and after" opens the FIFTH `ya-`/`ta-` pair and is the first module to name all five as one system,
+buying seven indeclinables (`yāvat`, `tāvat`, `yadā`, `tadā`, `pūrvam`, `paścāt`, `adhunā`) and
+writing "not yet" as `na adya api` — three words the course has owned since L1, against the
+dictionary's joined-up spelling, which the `sound` line carries instead; `L4-M7` "Official talk" is
+the module the whole course deferred to and the ONE place the classical register enters `display`,
+chipped `formal` — the agentless passive in exactly three third-singular cells (`kriyate`,
+`dīyate`, `ucyate`), the sign as `praveśaḥ niṣiddhaḥ` with `niṣiddhaḥ` entering as the SECOND and
+last frozen bare `-ta`, the notice as L4-M1's gerundive negated, and `kāryālayasamayaḥ`, three
+members in one token that donates nothing to its own members — while **the sandhi deferral of
+`docs/121` §2.4 stays CLOSED as a refusal and no sandhied `forms` entry was added anywhere**;
+`L4-M8` "Back then" builds the habitual past out of `pūrvam` plus the ordinary participial past and
+opens **exactly one imperfect cell, `āsīt`**, because the participial past has no form for a STATE
+— the frozen-unit technique's third use, and `agacchat`, `akarot` and `abhavat` stay unwritten;
+`L4-M9` "Places and journeys" opens **no case at all**, which is what lets it afford its places
+(`nagaram`, `grāmaḥ`, `sthānam`, `dūram`, `yātrā` and `mitreṇa`) plus `mahānagaram`, the compound
+that is how `mahat` STAYS REFUSED; and `L4-M10` "A story with a twist" is six sentences with one
+quoted line, spending **two surfaces in the whole module** — `akasmāt` and `āścaryam` — and holding
+`tvam` at the one display L2-M1 gave it, because a quoted line is spoken in the narration's own
+register. A build now reports
+`en-sa: 40 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M10)` and closes at **384 surfaces**,
+`maxSpan` still 1; four levels are complete with no level `draft` flag on any of them, and L5
 is still #423's ratified placeholder list with nothing authored in it.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
@@ -1262,7 +1281,8 @@ surfaces) before a single display was written; and M10's first draft of S03's th
 was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
 neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
-nor #618's three, nor #619's five, nor #621's two L4 rungs, nor #622's three, touched it — L2, L3
+nor #618's three, nor #619's five, nor #621's two L4 rungs, nor #622's three, nor #623's five that
+closed the level, touched it — L2, L3
 and L4 write no new proper noun at all, and the
 only names above L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the
 NOMINATIVE rather than opening the vocative a module of quoted dialogue would most want. **#619's
@@ -2424,10 +2444,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Ten courses now ship — **485
+  content" boot screen, because no module had cleared the gate. Ten courses now ship — **490
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko, and
-  thirty-five on en-sa, which is the whole of L1, the whole of L2, the whole of L3 and the first
-  five rungs of L4 (#611, #613, #614, #615, #617, #618, #619, #621, #622) — every one
+  forty on en-sa, which is the whole of L1, the whole of L2, the whole of L3 and the whole of L4
+  (#611, #613, #614, #615, #617, #618, #619, #621, #622, #623) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.
