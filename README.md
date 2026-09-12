@@ -134,7 +134,7 @@ Sixteen files run today:
 | `src/pwa/offlineCourse.test.ts` | the scoped warm's two rules as tables — what the device does **not** download, and what an eviction deletes |
 | `src/state/store.test.ts` | the persisted document: migrations, the persisted slice, and what the progression engine is fed |
 | `tools/author-kit.test.ts` | that `content:kit` stays small — the brief, the bounds and one worked sentence, and nothing else (#480–#487) |
-| `tools/content-build.test.ts` | the fixture-course seam: a course that is a manifest row and a ladder, with no `modules/` at all (#606) |
+| `tools/content-build.test.ts` | the fixture-course seam: a course that is a manifest row and a ladder, with no `modules/` at all (#606) — and, since en-sa graduated, that the catalogue holds no fixture row, that strict and dev now ship the identical ten courses, and that the gate still drops a fixture course on a synthetic tree (#611) |
 | `tools/course-briefs.test.ts` | the briefs against the ladders they mirror, and the decisions en-ko's and en-sa's settle (#109, #376, #607) |
 | `tools/css-classes.test.ts` | the flat CSS namespace (#496) — see below |
 | `tools/delta-index.test.ts` | `fold(deltas) === the cumulative index`, exactly, for every shipped module (#424) |
@@ -1164,6 +1164,92 @@ across the three review docs are what a fluent-Korean pass still owes — natura
 comprehension turns first, then the speech-level judgements, then the pronunciation lines, since
 nobody has heard any of them.
 
+**en-sa ships (#611, 2026-09-12) — the product has TEN courses, the fourth romanized one, and the
+second that was BORN conforming to the no-reading rule.** English (L1) → Sanskrit (L2). Ten L1
+rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: decisions a brief must
+settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
+L1-M3–M5, #610 L1-M6–M10) and reviewed in
+[`docs/122-llm-review-en-sa-L1.md`](docs/122-llm-review-en-sa-L1.md) — one document, three waves,
+twenty-eight sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+`content/courses.json`, and L1's level `draft: true` and its `draftNote` from
+`content/en-sa/levels.json`, was the whole change: a strict `npm run build` now reports `en-sa: 10
+modules (L1-M1..M10)` and emits `public/content/en-sa/` with levels, strings, ten modules and ten
+cumulative indexes closing at **139 surfaces**, and the emitted `courses.json` lists all ten
+courses. The chrome is English (`revealLabel` = "Reveal the Sanskrit") and the switcher offers the
+pair as `english → sanskrit`. **Its L2–L5 ladders stay `draft: true`** — those four levels are
+still #423's ratified placeholder lists and not one rung of them is authored.
+
+**The scheme is IAST and the course is written in PADA form, which is the decision everything else
+rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
+The rule in one line: **external sandhi is never written across a word boundary — `rāmaḥ gacchati`,
+never `rāmo gacchati` — while internal sandhi inside a single token is written in full, so the
+spoken join lives in the `sound` line and a word keeps ONE spelling.** That is not a stylistic
+preference; the word index matches surfaces verbatim, so a sandhied display would give `rāmaḥ` two
+spellings and leave the learner tapping a word no row owns. Two mechanical shapes of the rule are
+pinned by `src/course/types.test.ts` rather than left to review: no token ends in `ṃ` (a final
+anusvāra is a sandhi product — it is `kim` and `phalam`), and no token carries an avagraha, which
+is the one character `src/engine/surface.ts` does not strip from a token edge. Devanagari appears in
+exactly one field — the quiet `script` line — and `checkScriptMode` reports **zero errors across all
+ten modules**: **929 romanized surfaces checked, 0 of them carrying Devanagari in `display` or
+`forms`**, against **530** that carry the quiet Devanagari line underneath. en-ru cost six issues
+and 959 Cyrillic strings to undo; this course never had one to undo.
+
+**The shown-surface ratchet opens at ZERO, and en-sa is the only course in the catalogue there**
+(#491; the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
+20 · en-de 11 · en-ko 12). It was designed rather than discovered, and it cost real content: every
+proper noun the course shows — `rāmaḥ`, `sītā` — carries a word row of its own from M1, because
+CLAUDE.md's warning is that a proper noun is COUNTED and not exempt; M8's agreeing numerals were
+laid out as one row per numeral with the gendered shapes in `forms` (three rows covering seven
+surfaces) before a single display was written; and M10's first draft of S03's third variation
+(`… paṭhiṣyati lekhiṣyati ca?`) actually tripped the line at `shown but untaught: 2 surfaces`, and
+was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
+owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0` and
+this graduation did not touch it.
+
+**The font measurement of #605 was re-run against the content that now exists, not against the
+plan.** `docs/121` §10 read `@fontsource`'s SOURCE faces on 2026-09-12, before a single module was
+authored. Graduation re-verified it the other way round: every character harvested from the emitted
+`public/content/en-sa/` against the cmaps of the GENERATED cuts under `src/fonts/generated/`. Per
+character class — 25 ASCII characters on the romanized line, all in `mukta-latin` at 400/600/700;
+12 non-ASCII IAST marks (`ā ī ū ṛ ṃ ṅ ṇ ś ṣ ṭ ḥ` in `mukta-latin-ext` at all three weights, and `ñ`
+in `mukta-latin`, exactly where §10 said it would be and for the reason it gave); 47 Devanagari
+codepoints on the quiet line and the danda `।`, all in `mukta-devanagari` at all three weights; 19
+non-ASCII characters across the English teaching prose and chrome, all drawn. **Nothing is drawn by
+nothing**, no combining mark survives anywhere in `display` or `forms` (every IAST mark is
+precomposed, which is the defect no diff shows), and all **24** distinct conjuncts the content
+actually writes — `त्र ध्य ह्य स्त स्क ङ्ग स्य च्छ ल्य प्य श्व द्य ष्य न्त ष्ट न्न र्थ ष्प प्र त्य ष्ठ द्व ञ्च न्द` — have every codepoint
+present after subsetting. `ज्ञ` and `क्ष` are **not used** by L1, and their three codepoints are cut
+anyway. No font file, `@font-face`, `unicode-range` or line of `tools/font-subset.ts` was touched.
+
+**No fluent-Sanskrit reviewer has read a word of it, and the gate this course needs is not the gate
+the other nine need.** Nobody grows up speaking Sanskrit at home, so "native speaker" does not name
+a reader; what `docs/122` asks for is a fluent saṃskṛta-sambhāṣaṇam speaker or a Sanskrit teacher,
+and that bar is **UNMET**. The bar en-sa clears is the same one every other course clears — LLM
+review plus the owner's standing authority, signed into each module as `verifiedBy: "Claude Opus 5
+— LLM review, authorised by repo owner"` — and the **47 open questions** running in one list across
+the three waves are what that reader still owes. No later authoring wave may close one of them by
+rewriting a shipped module.
+
+Budget, reported and not gated — `COURSE_LIMIT` has not existed in `tools/payload-budget.ts` since
+#304, and `npm run budget` fails only on attribution (`unmetered` must hold zero files) and the
+precache audit; both are green, `unmetered` at 0 files and `precache 17 files 205.5 KiB gzip =
+shell ok`. Before the graduation a strict build emitted no en-sa rows at all, because the gate
+dropped the course. After: `course:en-sa` **367.6 KiB** gzip (32 files), `precache:en-sa`
+**581.5 KiB** (51 files). `course:hi-mr` stays **621.5 KiB** (106 files) — adding a tenth course
+moved no other course's content. The shared cost is `shell` 213.6 → **213.9 KiB** (+0.3), which is
+the emitted manifest gaining a row and that row's long `romanizationNote`. **en-sa is charged
+twice, and that is the honest price of a romanized course in a non-Latin script**: the Mukta
+`devanagari` cut for the quiet line (`sa: 'devanagari'` in `SCRIPT_BY_LANGUAGE_TAG`, the same three
+weights hi-mr and hi-en pay for, ~270 KiB raw and the whole reason this row is not the lightest in
+the product) **and** the `latin-ext` cut for the IAST marks (`ROMANIZATION_SCRIPT`, charged to any
+romanized row). en-ko is the contrast: its romanization is pure ASCII, so it pays the `latin-ext`
+row and adds nothing to it. The Devanagari cuts came out **byte-identical** — every one of en-sa's
+47 codepoints was already in the union hi-mr and hi-en harvest — so the entire font growth is the
+`latin-ext` cut taking the eight marks new to the catalogue (`ṛ ṝ ḷ ḹ ṃ ṅ ṇ ś`): about a kilobyte,
+shared, which is why `course:en-ar` 405.1 → **406.2**, `course:en-ru` 391.2 → **392.3** and
+`course:en-ko` 403.2 → **404.2** each moved by ~1.1 KiB and the five native-script courses moved by
+nothing. No constant in `tools/payload-budget.ts` was edited.
+
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
 length" under L1–L3, ten rungs each, `draft: true` and `hasContent: false` — proposed lists awaiting
@@ -1270,7 +1356,7 @@ learner-facing line hardcoded in the shell, which is the one thing this list exi
 **And the list shrinks the same way.** Retiring the exit ritual took ten keys with it — `cueLabel`,
 `revealLabelComprehend`, `retry.title`/`.pending`, `rungCard.exitRitual`,
 `practice.summaryToRitual`, `hint.production` and three of the five `verdict.*` — because a key
-no surface renders is a line nine courses are asked to translate for nobody. The two that
+no surface renders is a line ten courses are asked to translate for nobody. The two that
 survived moved rather than died: `verdict.passedRung` and `verdict.toLadder` are said on the
 session summary now and are named for it (`practice.climbedRung`, `practice.climbToLadder`),
 keeping every course's own words for a screen that still says the same thing.
@@ -2125,7 +2211,7 @@ to open it on. What went with it: both routes and their screens, `engine/compreh
 `exitAvailable` predicate and the `exit_available` / `exit_ready` states it fed, the `handover` /
 `cameFrom` hand-over tokens, and the ten `strings.json` keys those screens rendered. What stayed:
 the counters, as a record rather than a door; the comprehension pool in the authored content and
-the shipped module files, because it is authored work across nine courses and retiring it is a
+the shipped module files, because it is authored work across ten courses and retiring it is a
 content change; and the two lines the ritual ended on, which the summary now says
 (`practice.climbedRung`, `practice.climbToLadder`).
 
@@ -2275,8 +2361,9 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Nine courses now ship — hi-mr 30
-  modules, en-es / en-ar / hi-en 20 each, en-ru / en-it / en-fr / en-de / en-ko 10 each — every one
+  content" boot screen, because no module had cleared the gate. Ten courses now ship — **460
+  modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko, and
+  ten on en-sa, whose L1 is all there is of it (#611) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

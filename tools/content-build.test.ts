@@ -181,7 +181,9 @@ describe('the graduated course ships a complete ladder and bundle', () => {
       // verified and shipping. L2..L5 are unauthored placeholder lists and keep theirs.
       const drafted = level.id !== 'L1';
       expect(level.draft, `${level.id} draft`).toBe(drafted ? true : undefined);
-      expect(typeof level.draftNote, `${level.id} draftNote`).toBe(drafted ? 'string' : 'undefined');
+      expect(typeof level.draftNote, `${level.id} draftNote`).toBe(
+        drafted ? 'string' : 'undefined',
+      );
       expect(level.modules.length, `${level.id} rungs`).toBe(10);
       for (const module of level.modules) {
         // An authored rung loses its draft flag and gains content.
