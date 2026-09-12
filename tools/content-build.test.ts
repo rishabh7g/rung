@@ -13,7 +13,7 @@
  * AUTHORED tree, writing to a scratch directory. There is no DOM here and there is nothing to
  * render — see the note on the last test for the part of #606's smoke that cannot be written.
  */
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -109,8 +109,11 @@ describe('the manifest carries the fixture row (#606)', () => {
   });
 });
 
+/** The rungs #608 authored: the first two of L1, and the only en-sa content that exists. */
+const AUTHORED = ['L1-M1', 'L1-M2'];
+
 describe('the fixture course ships a complete ladder and bundle', () => {
-  it('is five levels of ten, every rung undrafted content and every level drafted', () => {
+  it('is five levels of ten, with #608’s two rungs authored and every other one drafted', () => {
     const levels = readJson<{
       courseId: string;
       levels: {
@@ -128,8 +131,11 @@ describe('the fixture course ships a complete ladder and bundle', () => {
       expect(typeof level.draftNote, `${level.id} draftNote`).toBe('string');
       expect(level.modules.length, `${level.id} rungs`).toBe(10);
       for (const module of level.modules) {
-        expect(module.hasContent, `${module.id} hasContent`).toBe(false);
-        expect(module.draft, `${module.id} draft`).toBe(true);
+        // An authored rung loses its draft flag and gains content; the level keeps its own draft
+        // until all ten are authored, which is the rule the skeleton (#606) shipped with.
+        const authored = AUTHORED.includes(module.id);
+        expect(module.hasContent, `${module.id} hasContent`).toBe(authored);
+        expect(module.draft, `${module.id} draft`).toBe(authored ? undefined : true);
       }
     }
   });
@@ -174,8 +180,16 @@ describe('the fixture course ships a complete ladder and bundle', () => {
     expect(differing).toEqual(['revealLabel']);
   });
 
-  it('has no modules folder at all — the skeleton the pipeline tolerates', () => {
-    expect(existsSync(path.join(CONTENT, FIXTURE_COURSE, 'modules'))).toBe(false);
+  /**
+   * #606 shipped the course with NO `modules/` folder, and this case pinned that a missing folder
+   * is tolerated rather than an error. #608 created the folder with the first two rungs, so what
+   * is pinned now is its exact contents: the ladder is authored in order, and a third file here
+   * without its `levels.json` flag flipped would be a rung the app cannot reach.
+   */
+  it('has exactly the rungs #608 authored, and nothing ahead of them', () => {
+    const dir = path.join(CONTENT, FIXTURE_COURSE, 'modules');
+    expect(existsSync(dir)).toBe(true);
+    expect(readdirSync(dir).sort()).toEqual(AUTHORED.map((id) => `${id}.json`));
   });
 });
 
@@ -193,25 +207,36 @@ describe('the gate drops the fixture course, and the build does not trip over it
     );
   });
 
-  it('dev: --with-fixtures admits the course and reports it as unauthored, without erroring', () => {
+  it('dev: --with-fixtures admits the course and ships the rungs it has, without erroring', () => {
     expect(DEV.exitCode).toBe(0);
-    expect(DEV.lines).toContain('en-sa: 0 modules — nothing authored yet');
-    // The absent `content/en-sa/modules/` is the whole point: a missing folder is not an error.
+    expect(DEV.lines).toContain('en-sa: 2 modules (L1-M1..M2)');
     expect(DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
   });
 
   /**
-   * **What the dev build still does NOT do, and what #606's smoke therefore cannot assert.**
+   * **The seam #606 could only assert half of, now that #608 has authored the first two rungs.**
    *
    * `emitTree` writes only the courses that shipped at least one module, and the emitted
-   * `courses.json` is filtered the same way. So a course with an empty ladder is absent from the
-   * manifest the APP reads on both gates, `--with-fixtures` included: the Settings switcher cannot
-   * offer `english → sanskrit`, and no ladder of ten pending rungs can boot, until the first rung
-   * is authored. There is no render to smoke yet, which is why the seam is pinned here instead.
+   * `courses.json` is filtered the same way. While the ladder was empty, en-sa was absent from the
+   * manifest the APP reads on BOTH gates — the Settings switcher could not offer
+   * `english → sanskrit` at all. With two rungs authored the dev gate now emits the course and its
+   * indexes, while the strict gate still drops it on `fixture: true` alone: the row graduates in
+   * its own issue, not in an authoring wave. That asymmetry is the thing worth pinning, because a
+   * course that quietly reached a learner build before its row graduated would be a gate failure
+   * with no other tripwire.
    */
-  it('emits nothing for a course with an empty ladder, even with --with-fixtures', () => {
-    expect(DEV.shipped.has(FIXTURE_COURSE)).toBe(false);
-    expect(emittedCourseIds(DEV)).not.toContain(FIXTURE_COURSE);
-    expect(existsSync(path.join(DEV.outRoot, FIXTURE_COURSE))).toBe(false);
+  it('dev emits the course once it has rungs; strict still drops it on the fixture row', () => {
+    expect(DEV.shipped.has(FIXTURE_COURSE)).toBe(true);
+    expect(emittedCourseIds(DEV)).toContain(FIXTURE_COURSE);
+    expect(existsSync(path.join(DEV.outRoot, FIXTURE_COURSE))).toBe(true);
+    for (const id of AUTHORED) {
+      expect(
+        existsSync(path.join(DEV.outRoot, FIXTURE_COURSE, 'index', `${id}.json`)),
+        `${id} index`,
+      ).toBe(true);
+    }
+
+    expect(STRICT.shipped.has(FIXTURE_COURSE)).toBe(false);
+    expect(existsSync(path.join(STRICT.outRoot, FIXTURE_COURSE))).toBe(false);
   });
 });

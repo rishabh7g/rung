@@ -1,0 +1,807 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": [
+    "L1-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present",
+      "third_person_imperative"
+    ],
+    "allowedPatterns": [
+      "namaste / namaskāraḥ",
+      "kim + <statement>",
+      "ām / na + , + <statement>",
+      "bhavān + kuśalī / bhavatī + kuśalinī",
+      "bhavān/bhavatī + kutra + gacchati",
+      "bhavataḥ/bhavatyāḥ + nāma + kim / kathayatu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE greeting covers everything: namaste, or namaskāraḥ, for morning and night, for arriving and for leaving, and for both people in the exchange. There is no good-morning / good-evening split to learn and no separate goodbye. Each is a single word whose two halves fused long ago — never split one apart to see how it works."
+    },
+    {
+      "tag": "delta",
+      "text": "A yes/no question puts kim at the FRONT and moves nothing else. bhavatī chātrā is 'you are a student'; kim bhavatī chātrā? is 'are you a student?'. Same words, same order, one extra syllable at the start."
+    },
+    {
+      "tag": "interference",
+      "text": "English does two things here that Sanskrit does neither of: it INVERTS ('are you…') and it builds a helper out of nothing ('DO you like…'). There is no Sanskrit word for that 'do', and hunting for one is the single most common way to stall on a question."
+    },
+    {
+      "tag": "delta",
+      "text": "kim is one word with two jobs. At the front of a sentence it is the yes/no marker and means nothing by itself — kim bhavatī chātrā? Standing where the answer would stand, it is the word 'what' — bhavataḥ nāma kim? Its place in the line tells you which."
+    },
+    {
+      "tag": "delta",
+      "text": "'You' is bhavān to a man and bhavatī to a woman, and it takes a THIRD-person verb: bhavān kutra gacchati? is 'where are you going?' built out of the he/she ending. It is closer to 'your honour' than to 'you', which is why the verb behaves as it does. The blunter tvam, with its own endings, belongs to a later level."
+    },
+    {
+      "tag": "delta",
+      "text": "The wellbeing word bends twice over. Asking, it follows the LISTENER: bhavān kuśalī? to a man, bhavatī kuśalinī? to a woman. Answering, it follows the SPEAKER: aham kuśalī from a man, aham kuśalinī from a woman. Who is asked and who replies are two different questions."
+    },
+    {
+      "tag": "delta",
+      "text": "ām and na answer in one word, and either may stand alone. The catch is on the 'no': leaving the verb out only works for a POSITIVE statement, and this level opens no 'I am' to negate — so a no-answer RESTATES positively. na, aham adhyāpakaḥ: 'no, I am a teacher', not 'no, I am not a student'. Negation with a verb arrives in M3."
+    },
+    {
+      "tag": "delta",
+      "text": "A polite request is a THIRD-person imperative: kathayatu, 'let (your honour) tell'. The courtesy sits in the verb's own ending, so there is no separate word for 'please' to bolt on — looking for one is looking for a word this course does not write."
+    },
+    {
+      "tag": "free",
+      "text": "Intonation alone can ask a question, exactly as it can in English: bhavān kuśalī? is the same three syllables as the statement, said upward. Nothing in the line moves, and the question mark is punctuation rather than part of any word."
+    },
+    {
+      "tag": "delta",
+      "text": "gacchati is one verb wearing an ending, not a word in its own right. The same verb turns up across this level as gacchāmi ('I go'), gantum ('to go'), gatavān / gatavatī ('went') and gamiṣyāmi ('I will go'). Learn it as a stem with changeable ends and the later modules cost nothing."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "namaste.",
+      "script": "नमस्ते।",
+      "cue": "Hello.",
+      "literal": "a-bow to-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "namaste",
+            "cue": "hello · goodbye",
+            "tag": "delta",
+            "forms": [
+              "namaste"
+            ],
+            "note": "The all-purpose greeting, said on arriving and on leaving alike. It is one word — namaḥ ('a bow') fused with 'to you' — and is never split."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is nothing here to match to 'good morning', 'good evening' or 'goodbye'. One word covers the lot, and looking for the other three is looking for distinctions this language does not make at the door.",
+      "sound": "na-mas-TE. Three short, even syllables — the s is a plain dental s, tongue on the teeth. It is one word: namaḥ ('a bow') and 'to you' fused long ago, which is why the visarga of namaḥ has turned into an s and cannot be heard as an echo any more.",
+      "variations": [
+        {
+          "display": "namaskāraḥ.",
+          "script": "नमस्कारः।",
+          "cue": "Hello. · Greetings.",
+          "changed": "the other word for the very same greeting — neither is more formal than the other"
+        },
+        {
+          "display": "namaste, bhavān kuśalī?",
+          "script": "नमस्ते, भवान् कुशली?",
+          "cue": "Hello, are you well?",
+          "changed": "the greeting opening a turn, with the question that usually follows it"
+        },
+        {
+          "display": "namaste, bhavatī kuśalinī?",
+          "script": "नमस्ते, भवती कुशलिनी?",
+          "cue": "Hello, are you well? (to a woman)",
+          "changed": "the same turn to a woman — the greeting does not bend, but everything after it does"
+        }
+      ],
+      "mistake": {
+        "display": "namaskāraḥ namaste.",
+        "why": "Both words have been stacked as if one were 'hello' and the other 'good day'. They are the same greeting twice, and saying them together is like opening with 'hello good morning'. Either one alone is the whole thing."
+      },
+      "usage": "The first word of any exchange, and the last — at any hour, to anybody.",
+      "register": "neutral",
+      "mnemonic": "One word in, one word out, all day long."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "bhavān kuśalī?",
+      "script": "भवान् कुशली?",
+      "cue": "Are you well? (to a man)",
+      "literal": "your-honour well?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [
+              "bhavān",
+              "bhavatī",
+              "bhavataḥ",
+              "bhavatyāḥ"
+            ],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both. bhavataḥ / bhavatyāḥ is the 'of you' shape."
+          },
+          {
+            "display": "kuśalī",
+            "cue": "well · in good health",
+            "tag": "delta",
+            "forms": [
+              "kuśalī",
+              "kuśalinī"
+            ],
+            "note": "'Well', and it carries the gender of whoever it describes: kuśalī of a man, kuśalinī of a woman — asked or answered alike."
+          }
+        ],
+        "rules": [
+          4,
+          5,
+          8
+        ]
+      },
+      "trap": "English asks this by inverting — 'ARE you well'. Nothing inverts here, and there is no verb to invert: the two words stand in the order a statement would use, and the voice does the rest.",
+      "sound": "bha-VAAN ku-sha-LEE. The bh is a b with a real puff behind it, a sound English has nowhere. ś is close to English 'sh', made with the tongue a little further forward than the ṣ you will meet later. Nothing joins across these two words — the -n of bhavān sits still before a k — so they are said exactly as written.",
+      "variations": [
+        {
+          "display": "bhavatī kuśalinī?",
+          "script": "भवती कुशलिनी?",
+          "cue": "Are you well? (to a woman)",
+          "changed": "both words bend for the listener at once — the address and the adjective travel together"
+        },
+        {
+          "display": "kim bhavān kuśalī?",
+          "script": "किम् भवान् कुशली?",
+          "cue": "Are you well? (to a man)",
+          "changed": "the question marker spelled out in front; nothing else in the line moves"
+        },
+        {
+          "display": "rāmaḥ kuśalī?",
+          "script": "रामः कुशली?",
+          "cue": "Is Rāma well?",
+          "changed": "asking after somebody who is not in the room — bhavān is only for the person facing you"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān kuśalinī?",
+        "why": "The address is masculine and the adjective feminine, so the sentence describes two different people. kuśalī / kuśalinī follows whoever is being asked, and it has to match the bhavān / bhavatī in front of it."
+      },
+      "usage": "The ordinary 'how are you', asked straight after the greeting.",
+      "register": "neutral",
+      "mnemonic": "Both words look at the same person. If they disagree, one of them is wrong."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "aham kuśalī.",
+      "script": "अहम् कुशली।",
+      "cue": "I am well. (a man speaking)",
+      "literal": "I well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. Opened in M1."
+          },
+          {
+            "display": "kuśalī",
+            "cue": "well · in good health",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Well', and it carries the gender of whoever it describes: kuśalī of a man, kuśalinī of a woman — asked or answered alike."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "It is tempting to answer in the shape you were asked in. Do not: kuśalī / kuśalinī follows the SPEAKER here, so a woman answers kuśalinī however the question was put to her.",
+      "sound": "A-ham ku-sha-LEE. Before the k the m of aham softens to a nasal hum — it is said ahaṃ kuśalī, while the page keeps the m, because the m is the word's own and the hum is only what the neighbour does to it. The ī at the end is long: 'lee', held.",
+      "variations": [
+        {
+          "display": "aham kuśalinī.",
+          "script": "अहम् कुशलिनी।",
+          "cue": "I am well. (a woman speaking)",
+          "changed": "a woman answers — the word follows the speaker, not whoever asked"
+        },
+        {
+          "display": "rāmaḥ kuśalī.",
+          "script": "रामः कुशली।",
+          "cue": "Rāma is well.",
+          "changed": "answering about somebody else; the pronoun simply goes and a name takes its place"
+        },
+        {
+          "display": "namaste, aham kuśalī.",
+          "script": "नमस्ते, अहम् कुशली।",
+          "cue": "Hello, I am well.",
+          "changed": "the greeting in front of the answer, which is how the turn usually comes out"
+        }
+      ],
+      "mistake": {
+        "display": "mama kuśalī.",
+        "why": "mama is 'of me' and cannot be the one who is well. The person who is well is the subject of the sentence, and that shape is aham — the same three-way split M1 opened with aham / mama / mahyam."
+      },
+      "usage": "The answer to bhavān kuśalī?, and a thing you say unprompted on arriving.",
+      "register": "neutral",
+      "mnemonic": "Asked, it follows them. Answered, it follows you."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "kim bhavatī chātrā?",
+      "script": "किम् भवती छात्रा?",
+      "cue": "Are you a student? (to a woman)",
+      "literal": "[question] your-honour student?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [
+              "kim"
+            ],
+            "note": "Two jobs, sorted by place. At the front it turns a statement into a yes/no question; where the answer would stand it is 'what': bhavataḥ nāma kim?"
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both. bhavataḥ / bhavatyāḥ is the 'of you' shape."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Student', carrying the student's own gender: chātraḥ of a man, chātrā of a woman. Opened in M1."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "trap": "There is no word here for 'are' and none for 'do'. English needs one or the other in every question it asks; Sanskrit needs neither, and the whole machinery is the one syllable at the front.",
+      "sound": "kim bha-va-TEE CHAA-traa. Before the bh, the m of kim becomes a nasal hum — kiṃ bhavatī — which is exactly why the page writes kim and not the hum: the m is the word, the hum is the join. ch is one sound, the ch of 'church', and the ā of chātrā is long at both ends of the word.",
+      "variations": [
+        {
+          "display": "kim bhavān chātraḥ?",
+          "script": "किम् भवान् छात्रः?",
+          "cue": "Are you a student? (to a man)",
+          "changed": "to a man: kim stays exactly where it is and the two words behind it bend"
+        },
+        {
+          "display": "bhavatī chātrā.",
+          "script": "भवती छात्रा।",
+          "cue": "You are a student.",
+          "changed": "drop kim and the same words, in the same order, are a plain statement"
+        },
+        {
+          "display": "kim rāmaḥ chātraḥ?",
+          "script": "किम् रामः छात्रः?",
+          "cue": "Is Rāma a student?",
+          "changed": "the question is about a third person now, and still nothing moves but the subject"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatī kim chātrā?",
+        "why": "The marker has been slotted into the middle the way English slots 'are' in. In the middle kim stops being the yes/no marker and starts reading as 'what', so the sentence turns into a garbled 'you what student'. It owns the front of the line."
+      },
+      "usage": "Checking something you half know about the person in front of you.",
+      "register": "neutral",
+      "mnemonic": "kim at the door, and the room behind it untouched."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "ām, aham chātraḥ.",
+      "script": "आम्, अहम् छात्रः।",
+      "cue": "Yes, I am a student.",
+      "literal": "yes, I student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ām",
+            "cue": "yes",
+            "tag": "free",
+            "forms": [
+              "ām"
+            ],
+            "note": "'Yes', and it can stand entirely alone. The ā is long, which is the only thing keeping it apart from a short exclamation."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. Opened in M1."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Student', carrying the student's own gender: chātraḥ of a man, chātrā of a woman. Opened in M1."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English can answer 'yes, I am' and stop, because 'am' carries the sentence. There is no 'am' here to lean on, so the choice is between the bare ām and restating the whole thing — there is no halfway house.",
+      "sound": "aam, A-ham CHAA-traḥ. The ā of ām is long and the a of aham is short: that length is the whole difference between them. The comma is a real pause, so nothing joins across it; said without the pause the two would run together and the a of aham would be swallowed, which is a join this course never writes into the line.",
+      "variations": [
+        {
+          "display": "ām, aham chātrā.",
+          "script": "आम्, अहम् छात्रा।",
+          "cue": "Yes, I am a student. (a woman answering)",
+          "changed": "a woman answers, and only the last word bends"
+        },
+        {
+          "display": "ām.",
+          "script": "आम्।",
+          "cue": "Yes.",
+          "changed": "the bare answer — the restatement is optional, and often left off"
+        },
+        {
+          "display": "ām, rāmaḥ chātraḥ.",
+          "script": "आम्, रामः छात्रः।",
+          "cue": "Yes, Rāma is a student.",
+          "changed": "confirming something about a third person rather than about yourself"
+        }
+      ],
+      "mistake": {
+        "display": "ām, aham.",
+        "why": "'Yes, I' — which is the English 'yes, I am' with the 'am' knocked out. Nothing was holding that sentence up in the first place, so what is left is a pronoun on its own. Say ām alone, or say the statement whole."
+      },
+      "usage": "Confirming what you have just been asked, in a word or in a sentence.",
+      "register": "neutral",
+      "mnemonic": "All of it, or one word of it. Never the English middle."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "na, aham adhyāpakaḥ.",
+      "script": "न, अहम् अध्यापकः।",
+      "cue": "No, I am a teacher.",
+      "literal": "no, I teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "delta",
+            "forms": [
+              "na"
+            ],
+            "note": "Two jobs: the one-word answer 'no', and — from M3 — the 'not' that stands in front of a verb. It never negates a bare noun on its own."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. Opened in M1."
+          },
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Teacher'; the feminine is adhyāpikā, with an i inside the word rather than the -ā that chātrā takes. Opened in M1."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English says 'no, I'm not a student'. This level cannot: leaving the verb out only works when the statement is positive, and there is no 'I am' here to put a 'not' in front of. So the no-answer says what you ARE instead.",
+      "sound": "na, A-ham a-DHYAA-pa-kaḥ. na is one short syllable with nothing to hold — it is over before you notice it. dhy is a single cluster: an aspirated d with the y riding straight off it. The final -ḥ is an echo of the a in front of it, 'ka-ha'.",
+      "variations": [
+        {
+          "display": "na, aham adhyāpikā.",
+          "script": "न, अहम् अध्यापिका।",
+          "cue": "No, I am a teacher. (a woman answering)",
+          "changed": "a woman answers, and the teacher-word takes its own feminine rather than a swapped ending"
+        },
+        {
+          "display": "na.",
+          "script": "न।",
+          "cue": "No.",
+          "changed": "the bare refusal — as with ām, the restatement is optional"
+        },
+        {
+          "display": "na, rāmaḥ adhyāpakaḥ.",
+          "script": "न, रामः अध्यापकः।",
+          "cue": "No, Rāma is a teacher.",
+          "changed": "the correction lands on somebody else, and the frame does not change"
+        }
+      ],
+      "mistake": {
+        "display": "na, aham na chātraḥ.",
+        "why": "The English 'I am not a student', built by putting na in front of the noun. na negates a VERB (that is M3's job), and there is no verb here at all — so the second na has nothing to attach to. A no-answer at this level restates positively."
+      },
+      "usage": "Correcting a wrong guess about you, politely and in one move.",
+      "register": "neutral",
+      "mnemonic": "Say what you are. The 'not' has nothing to hang on yet."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "bhavān kutra gacchati?",
+      "script": "भवान् कुत्र गच्छति?",
+      "cue": "Where are you going?",
+      "literal": "your-honour where goes?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both. bhavataḥ / bhavatyāḥ is the 'of you' shape."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "delta",
+            "forms": [
+              "kutra"
+            ],
+            "note": "'Where'. It sits where the answer would sit, in front of the verb, rather than dragging the sentence around behind it: bhavān kutra gacchati?"
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [
+              "gacchati",
+              "gacchāmi",
+              "gantum",
+              "gatavān",
+              "gatavatī",
+              "gamiṣyāmi"
+            ],
+            "note": "The verb 'go' in the shapes this level writes: gacchati (goes), gacchāmi (I go), gantum (to go), gatavān / gatavatī (went), gamiṣyāmi (I will go)."
+          }
+        ],
+        "rules": [
+          4,
+          9
+        ]
+      },
+      "trap": "The verb says 'goes', not 'go', and that is not a slip. bhavān is grammatically a third person — it is nearer 'your honour' than 'you' — so the polite address and the he/she ending belong together.",
+      "sound": "bha-VAAN KU-tra GACH-cha-ti. The t of kutra is dental, tongue against the teeth, and the cch of gacchati is held a beat longer than a single ch — that length is part of the word. Nothing joins across the three: the -n of bhavān sits still before a k, and kutra ends in a vowel.",
+      "variations": [
+        {
+          "display": "bhavatī kutra gacchati?",
+          "script": "भवती कुत्र गच्छति?",
+          "cue": "Where are you going? (to a woman)",
+          "changed": "only the address bends — the verb does not, because it was never agreeing with the gender"
+        },
+        {
+          "display": "rāmaḥ kutra gacchati?",
+          "script": "रामः कुत्र गच्छति?",
+          "cue": "Where is Rāma going?",
+          "changed": "a name in the subject slot, and the same verb again: it was third person all along"
+        },
+        {
+          "display": "kim bhavān gacchati?",
+          "script": "किम् भवान् गच्छति?",
+          "cue": "Are you going?",
+          "changed": "the yes/no marker takes the place kutra held, and the question stops asking where"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān kutra gacchasi?",
+        "why": "gacchasi is the 'you' ending, and it has been reached for because bhavān translates as 'you'. It belongs with tvam, the blunt address this course leaves for later. With bhavān the verb stays gacchati."
+      },
+      "usage": "The ordinary question to someone on their way somewhere.",
+      "register": "neutral",
+      "mnemonic": "Your honour goes. Not: you go."
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "bhavataḥ nāma kim?",
+      "script": "भवतः नाम किम्?",
+      "cue": "What is your name?",
+      "literal": "of-your-honour name what?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both. bhavataḥ / bhavatyāḥ is the 'of you' shape."
+          },
+          {
+            "display": "nāma",
+            "cue": "name",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Name'. It never bends, and the slot in front of it is a possessive one — mama nāma, bhavataḥ nāma. Opened in M1."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two jobs, sorted by place. At the front it turns a statement into a yes/no question; where the answer would stand it is 'what': bhavataḥ nāma kim?"
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "kim is at the END here, and that is not a second rule. This is the other kim — the word 'what' — standing exactly where the answer will stand. The yes/no marker is the one that owns the front of a sentence.",
+      "sound": "bha-va-TAHA NAA-ma KIM. This is the sentence where the spoken join is loudest: the -aḥ of bhavataḥ turns into -o before the n, so it comes out bhavato nāma kim. The page keeps bhavataḥ because that is the word; the join is what a neighbour does to it, and it is worth hearing once and then reading past.",
+      "variations": [
+        {
+          "display": "bhavatyāḥ nāma kim?",
+          "script": "भवत्याः नाम किम्?",
+          "cue": "What is your name? (to a woman)",
+          "changed": "only the address bends — and its 'of you' shape is a whole new word, not an added ending"
+        },
+        {
+          "display": "mama nāma rāmaḥ.",
+          "script": "मम नाम रामः।",
+          "cue": "My name is Rāma.",
+          "changed": "the answer, in M1's frame: what kim was holding is simply replaced by the name"
+        },
+        {
+          "display": "kim bhavataḥ nāma rāmaḥ?",
+          "script": "किम् भवतः नाम रामः?",
+          "cue": "Is your name Rāma?",
+          "changed": "both kims in one line — the marker at the front, and the name where 'what' used to be"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān nāma kim?",
+        "why": "The plain bhavān has been used where the 'of you' shape belongs. The slot in front of nāma is a possessive one — it was mama in M1's mama nāma rāmaḥ — so here it has to be bhavataḥ."
+      },
+      "usage": "Asking a name, which is usually the second thing said after the greeting.",
+      "register": "neutral",
+      "mnemonic": "Front of the line, it is a question mark. End of the line, it is 'what'."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "bhavataḥ nāma kathayatu.",
+      "script": "भवतः नाम कथयतु।",
+      "cue": "Please tell me your name.",
+      "literal": "of-your-honour name let-(him)-tell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both. bhavataḥ / bhavatyāḥ is the 'of you' shape."
+          },
+          {
+            "display": "nāma",
+            "cue": "name",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Name'. It never bends, and the slot in front of it is a possessive one — mama nāma, bhavataḥ nāma. Opened in M1."
+          },
+          {
+            "display": "kathayatu",
+            "cue": "please tell · let (him/her) tell",
+            "tag": "delta",
+            "forms": [
+              "kathayatu"
+            ],
+            "note": "A polite request, built as a third-person command: 'let your honour tell'. The courtesy is the ending -tu, and no word for 'please' is added."
+          }
+        ],
+        "rules": [
+          4,
+          7
+        ]
+      },
+      "trap": "There is no word for 'please' in this sentence and none missing from it. English bolts politeness onto a command; Sanskrit builds it into the verb, so the command itself is already the polite one.",
+      "sound": "bha-va-TAHA NAA-ma ka-tha-ya-TU. The same join as before — bhavato nāma — and then a word of four light syllables. The th of kathayatu is an aspirated t, a t with a puff, and never the th of English 'the' or 'thin'.",
+      "variations": [
+        {
+          "display": "bhavatyāḥ nāma kathayatu.",
+          "script": "भवत्याः नाम कथयतु।",
+          "cue": "Please tell me your name. (to a woman)",
+          "changed": "the address bends and the request does not — the verb is third person for both"
+        },
+        {
+          "display": "bhavān kathayatu.",
+          "script": "भवान् कथयतु।",
+          "cue": "Please tell me. · Do go on.",
+          "changed": "the request with nothing yet asked for, which is how you hand someone the floor"
+        },
+        {
+          "display": "namaste, bhavataḥ nāma kathayatu.",
+          "script": "नमस्ते, भवतः नाम कथयतु।",
+          "cue": "Hello, please tell me your name.",
+          "changed": "the greeting in front of the request, which is the whole opening of a conversation"
+        }
+      ],
+      "mistake": {
+        "display": "bhavataḥ nāma kathaya.",
+        "why": "kathaya is the blunt command you would give a child or a close friend — it goes with tvam. Said to bhavān it is a register mismatch rather than a grammar error, which is the harder kind to hear yourself make. The polite form is kathayatu."
+      },
+      "usage": "Asking for something to be said — a name, a repetition, a direction.",
+      "register": "neutral",
+      "mnemonic": "-tu on the end IS the please."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "namaskāraḥ, aham sītā.",
+      "script": "नमस्कारः, अहम् सीता।",
+      "cue": "Hello, I am Sītā.",
+      "literal": "greeting, I Sītā",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "namaskāraḥ",
+            "cue": "hello · greetings",
+            "tag": "delta",
+            "forms": [
+              "namaskāraḥ"
+            ],
+            "note": "The same greeting in the other word, and it is a masculine noun — hence the -ḥ. Either one does the whole job on its own."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. Opened in M1."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "A woman's name, sitting in the name slot exactly as rāmaḥ does. Opened in M1."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "namaskāraḥ ends in -ḥ and not in -am, however many words of this course end in -am. It is a masculine noun; phalam, pustakam and idam end as they do because they are neuter.",
+      "sound": "na-mas-KAA-raḥ, A-ham SEE-taa. The long ā in the middle is what separates namaskāraḥ from the short, even namaste. The final -ḥ is the echo, 'raa-ha'. The comma is a real pause; run together without it, the -aḥ would turn into -o and swallow the a of aham — exactly the kind of join this course keeps out of the written line.",
+      "variations": [
+        {
+          "display": "namaste, aham rāmaḥ.",
+          "script": "नमस्ते, अहम् रामः।",
+          "cue": "Hello, I am Rāma.",
+          "changed": "the other greeting, and a man introducing himself in the same two moves"
+        },
+        {
+          "display": "namaskāraḥ, mama nāma sītā.",
+          "script": "नमस्कारः, मम नाम सीता।",
+          "cue": "Hello, my name is Sītā.",
+          "changed": "the longer introduction, with M1's name frame after the greeting instead of the short one"
+        },
+        {
+          "display": "namaskāraḥ, aham bhāratīyā.",
+          "script": "नमस्कारः, अहम् भारतीया।",
+          "cue": "Hello, I am Indian.",
+          "changed": "the greeting followed by where she is from rather than who she is"
+        }
+      ],
+      "mistake": {
+        "display": "namaskāram, aham sītā.",
+        "why": "The greeting has been given the -am ending that phalam, pustakam and idam carry. Those are neuter nouns; namaskāraḥ is masculine, and its -ḥ is the ending that says so. The vowel at the end of a word is doing work, not decorating it."
+      },
+      "usage": "Opening a conversation with someone who does not know you.",
+      "register": "neutral",
+      "mnemonic": "-aḥ for him, -ā for her, -am for it. namaskāraḥ is a him."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M2-C01",
+      "display": "kim bhavān adhyāpakaḥ?",
+      "script": "किम् भवान् अध्यापकः?",
+      "cue": "Are you a teacher?"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "na, aham chātraḥ.",
+      "script": "न, अहम् छात्रः।",
+      "cue": "No, I am a student."
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "sītā kutra gacchati?",
+      "script": "सीता कुत्र गच्छति?",
+      "cue": "Where is Sītā going?"
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "ām, aham bhāratīyaḥ.",
+      "script": "आम्, अहम् भारतीयः।",
+      "cue": "Yes, I am Indian."
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "kim rāmaḥ kuśalī?",
+      "script": "किम् रामः कुशली?",
+      "cue": "Is Rāma well?"
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "namaste, aham adhyāpikā.",
+      "script": "नमस्ते, अहम् अध्यापिका।",
+      "cue": "Hello, I am a teacher. (a woman speaking)"
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "sītā kuśalinī.",
+      "script": "सीता कुशलिनी।",
+      "cue": "Sītā is well."
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "kim bhavatī bhāratīyā?",
+      "script": "किम् भवती भारतीया?",
+      "cue": "Are you Indian? (to a woman)"
+    },
+    {
+      "id": "L1-M2-C09",
+      "display": "mama adhyāpakaḥ kutra gacchati?",
+      "script": "मम अध्यापकः कुत्र गच्छति?",
+      "cue": "Where is my teacher going?"
+    },
+    {
+      "id": "L1-M2-C10",
+      "display": "na, sītā adhyāpikā.",
+      "script": "न, सीता अध्यापिका।",
+      "cue": "No, Sītā is a teacher."
+    },
+    {
+      "id": "L1-M2-C11",
+      "display": "bhavataḥ pustakam kutra?",
+      "script": "भवतः पुस्तकम् कुत्र?",
+      "cue": "Where is your book?"
+    },
+    {
+      "id": "L1-M2-C12",
+      "display": "kim idam bhavataḥ pustakam?",
+      "script": "किम् इदम् भवतः पुस्तकम्?",
+      "cue": "Is this your book?"
+    },
+    {
+      "id": "L1-M2-C13",
+      "display": "ām, mahyam saṃskṛtam rocate.",
+      "script": "आम्, मह्यम् संस्कृतम् रोचते।",
+      "cue": "Yes, I like Sanskrit."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

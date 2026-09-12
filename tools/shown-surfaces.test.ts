@@ -38,6 +38,11 @@ const BASELINE: Readonly<Record<string, number>> = {
   'en-fr': 20,
   'en-de': 11,
   'en-ko': 12,
+  // en-sa opens at ZERO (#608, `docs/122`): the first course authored under this rule from its
+  // first rung. Both names it shows, `rāmaḥ` and `sītā`, carry word rows of their own rather than
+  // riding unindexed, which is what keeps the count off the floor other courses' proper nouns sit
+  // on. Written out rather than left implicit so the number is a measurement and not an absence.
+  'en-sa': 0,
 };
 
 function ladderOrder(a: string, b: string): number {
