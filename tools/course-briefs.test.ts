@@ -793,12 +793,13 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
   const notes = briefs.flatMap((brief) => brief.notes).join('\n');
   const patterns = briefs.flatMap((brief) => brief.patterns);
 
-  it('covers exactly L1-M1..L3-M10 — briefed L1 (#633), L2 (#638) and L3 (#642)', () => {
+  it('covers exactly L1-M1..L4-M10 — briefed L1 (#633), L2 (#638), L3 (#642) and L4 (#646)', () => {
     const rungs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     expect(Object.keys(all)).toEqual([
       ...rungs.map((n) => `L1-M${n}`),
       ...rungs.map((n) => `L2-M${n}`),
       ...rungs.map((n) => `L3-M${n}`),
+      ...rungs.map((n) => `L4-M${n}`),
     ]);
   });
 
@@ -1046,9 +1047,9 @@ describe('en-la L3: the decisions its briefs settle (#642)', () => {
   const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
   const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L3-M10 and climbs its bounds 10 → 11 → 12', () => {
+  it('covers exactly L1-M1..L4-M10 and climbs its bounds 10 → 11 → 12', () => {
     expect(Object.keys(all)).toEqual(
-      ['L1', 'L2', 'L3'].flatMap((level) =>
+      ['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     );
@@ -1185,6 +1186,155 @@ describe('en-la L3: the decisions its briefs settle (#642)', () => {
         expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
       }
     }
+  });
+});
+
+/**
+ * en-la L4 (#646). This is the level where four promissory notes come due at once — the gerund, the
+ * passive, the imperfect and the locative — and where the course diverges from en-sa by writing a
+ * real past counterfactual instead of a workaround. Two of its decisions were settled by running the
+ * real `src/engine/surface.ts` rather than by reasoning, and those runs are what the tests pin.
+ */
+describe('en-la L4: the decisions its briefs settle (#646)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l4 = Object.entries(all).filter(([id]) => id.startsWith('L4-'));
+  const notes = l4.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers exactly L1-M1..L4-M10 and climbs its bounds 12 → 13 → 14', () => {
+    expect(Object.keys(all)).toEqual(
+      ['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L4-M1', 'L4-M2', 'L4-M3']) expect(bound(id), id).toBe(12);
+    for (const id of ['L4-M4', 'L4-M5', 'L4-M6', 'L4-M7']) expect(bound(id), id).toBe(13);
+    for (const id of ['L4-M8', 'L4-M9', 'L4-M10']) expect(bound(id), id).toBe(14);
+    for (const [id, brief] of l4) {
+      expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+      expect(brief.patterns.length, `${id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${id} notes`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * Four deferrals, each named in a lower level's brief and each landing in a specific module here.
+   * If one drifts, a promise made to a learner three levels ago is quietly broken.
+   */
+  it('lands the gerund, the passive, the imperfect and the locative in their promised modules', () => {
+    expect((all['L4-M1']?.notes ?? []).join('\n')).toMatch(
+      /THE GERUND ARRIVES AND IT IS WHAT L3-M2 SAID IT LACKED/,
+    );
+    expect((all['L4-M7']?.notes ?? []).join('\n')).toMatch(
+      /THE PASSIVE ENTERS HERE, AND L2-M8 AND L3-M6 BOTH PROMISED IT TO THIS MODULE/,
+    );
+    expect((all['L4-M8']?.notes ?? []).join('\n')).toMatch(
+      /THE IMPERFECT ARRIVES, THIRTY-ONE MODULES AFTER IT WAS DEFERRED/,
+    );
+    expect((all['L4-M9']?.notes ?? []).join('\n')).toMatch(/THE LOCATIVE ARRIVES/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /Four things this course has deferred for thirty-one modules all arrive in this level/,
+    );
+  });
+
+  /**
+   * The counterfactual decision, and the reason it differs from en-sa: Latin HAS the form. A later
+   * author reading en-sa's module would be tempted to copy its workaround.
+   */
+  it('writes the past counterfactual in full, and names the two tenses it costs', () => {
+    const m3 = (all['L4-M3']?.notes ?? []).join('\n');
+    expect(m3).toMatch(/LATIN HAS A REAL PAST COUNTERFACTUAL AND THIS COURSE WRITES IT IN FULL/);
+    expect(m3).toMatch(/PLUPERFECT SUBJUNCTIVE in both halves/);
+    expect(m3).toMatch(/IMPERFECT subjunctive \(venīrem, venīrēs\) for the present unreal/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/unlike en-sa's workaround/);
+  });
+
+  /**
+   * `venīrem` is a mood and `venīēbam` a tense, opened four modules apart in one level. Each module
+   * has to disown the other's shape or an author will write whichever they met first.
+   */
+  it('keeps the imperfect subjunctive (M3) and the imperfect indicative (M8) apart in both notes', () => {
+    expect((all['L4-M3']?.notes ?? []).join('\n')).toMatch(
+      /THE IMPERFECT SUBJUNCTIVE IS NOT THE IMPERFECT INDICATIVE, AND M8 OWNS THAT ONE/,
+    );
+    expect((all['L4-M8']?.notes ?? []).join('\n')).toMatch(
+      /THE IMPERFECT SUBJUNCTIVE IS M3's AND IS NOT THIS/,
+    );
+    expect((all['L4-M8']?.notes ?? []).join('\n')).toMatch(
+      /legēbam, habēbam and eram as free keys/,
+    );
+  });
+
+  /**
+   * The abbreviation decision was settled by running normalizeSurface, not by reasoning — and the
+   * run belongs in the header, because a later author will otherwise re-derive it wrongly.
+   */
+  it('records the abbreviation run and writes the undotted form only', () => {
+    const m7 = (all['L4-M7']?.notes ?? []).join('\n');
+    expect(m7).toMatch(/ABBREVIATIONS ARE DISPLAYS/);
+    expect(m7).toMatch(/TWO KEYS for one thing/);
+    expect(m7).toMatch(/write the UNDOTTED form only/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/normalizeSurface\('S\.P\.Q\.R\.'\)\s+-> 's\.p\.q\.r'/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Rule 3 strips a \*\*trailing\*\* dot/);
+  });
+
+  /**
+   * `cum` is the one homograph L3's remedy cannot handle, because the second reading IS a module's
+   * job. The remedy is a per-sentence word row whose note carries both readings.
+   */
+  it('gives cum its second reading at M6 with a two-reading note, not by withholding it', () => {
+    const m6 = (all['L4-M6']?.notes ?? []).join('\n');
+    expect(m6).toMatch(
+      /cum GETS ITS SECOND READING HERE AND M6 IS ITS OWNER FOR THAT READING ONLY/,
+    );
+    expect(m6).toMatch(/WORD ROW OF THEIR OWN whose note names both readings/);
+    expect(m6).toMatch(/dōnec IS 'UNTIL' AND IT TAKES THE INDICATIVE/);
+    expect((all['L4-M1']?.notes ?? []).join('\n')).toMatch(/cum's second reading is coming/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/the note is the only place it can live/);
+  });
+
+  /** A closed list needs fencing on both sides, which is two plates rather than one. */
+  it('makes the place constructions a closed list with a plate in each direction', () => {
+    const m9 = (all['L4-M9']?.notes ?? []).join('\n');
+    expect(m9).toMatch(/CITY NAMES AND home BEHAVE THE SAME WAY AND NOTHING ELSE DOES/);
+    expect(m9).toMatch(/THE MISTAKE PLATE IS THE MISSING PREPOSITION IN BOTH DIRECTIONS/);
+    expect(m9).toMatch(/Rōmae IS A LOCATIVE AND ALSO A GENITIVE/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Place constructions are a CLOSED LIST/);
+  });
+
+  /** `nōnne` and `num` were reserved at L1-M2 and M4 is their owner. */
+  it('makes M4 the owner of the reserved question keys', () => {
+    const m4 = (all['L4-M4']?.notes ?? []).join('\n');
+    expect(m4).toMatch(/nōnne AND num ARE THE TWO RESERVED QUESTION KEYS AND M4 IS THEIR OWNER/);
+    expect(m4).toMatch(/wrote nōnne and num NOWHERE/);
+  });
+
+  /** `inquit` is postpositive, and a module that gets that wrong writes something no Roman wrote. */
+  it('makes inquit postpositive and flags the quotation-mark question', () => {
+    const m10 = (all['L4-M10']?.notes ?? []).join('\n');
+    expect(m10).toMatch(/inquit IS POSTPOSITIVE/);
+    expect(m10).toMatch(/AFTER the first word or two of the quotation, never before/);
+    expect(m10).toMatch(/QUOTATION MARKS ARE THE ONE NEW CHARACTER QUESTION/);
+    expect(m10).toMatch(/ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL/);
+  });
+
+  it("plans against the folded L3 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*479 surfaces, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L3, 149\) = 479/);
+  });
+
+  /** The orthography tests of #633 must hold over forty briefs, not thirty. */
+  it('keeps the orthography clean across L4 as well', () => {
+    for (const [id, brief] of l4) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+        expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L4 note writes an acute').toBe(false);
   });
 });
 
