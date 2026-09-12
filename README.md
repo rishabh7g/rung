@@ -1222,7 +1222,7 @@ ten modules**: **929 romanized surfaces checked, 0 of them carrying Devanagari i
 and 959 Cyrillic strings to undo; this course never had one to undo.
 
 **The shown-surface ratchet opens at ZERO, and en-sa was the first course in the catalogue there**
-(#491; en-la joined it at #637 and held it through all three of its authored levels at #641 and #645, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
+(#491; en-la joined it at #637 and has held it through all four of its authored levels, forty rungs, at #641, #645 and #649, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
 20 · en-de 11 · en-ko 12). It was designed rather than discovered, and it cost real content: every
 proper noun the course shows — `rāmaḥ`, `sītā` — carries a word row of its own from M1, because
 CLAUDE.md's warning is that a proper noun is COUNTED and not exempt; M8's agreeing numerals were
@@ -1446,10 +1446,19 @@ L3-M2 also carries the sharpest thing the shared index has done to this course: 
 shapes** and the other two are named in a rule and written nowhere. Writing either would serve a
 learner the wrong note with no build failure at all.
 
-**en-la's L4 has opened, and it is where four deferred systems come due (#646-#647, 2026-09-12).**
-Ten briefs ([`docs/131`](docs/131-en-la-L4-brief-decisions.md)) and three modules so far
-([`docs/132`](docs/132-llm-review-en-la-L4.md)): `en-la: 33 modules`, **538 cumulative surfaces**, and
-**no `shown but untaught` line at any of the thirty-three**. The gerund and gerundive land at M1, and
+**en-la's L4 is complete, and it paid off every debt the course had (#646-#649, 2026-09-12).** Ten
+briefs ([`docs/131`](docs/131-en-la-L4-brief-decisions.md)) and ten modules in three waves
+([`docs/132`](docs/132-llm-review-en-la-L4.md)): `en-la: 40 modules`, **624 cumulative surfaces**,
+`maxSpan` 1, and **no `shown but untaught` line at any of the forty** — four whole levels at a zero
+ratchet.
+
+**Four deferred systems, all four landed**: the gerund and gerundive at M1 (L3-M2 named the gap), the
+passive at M7 (L2-M8's `frāctus est` and L3-M6's `sollicitus sum` both pointed here), **the imperfect
+at M8 — thirty-four modules after L1-M5 deferred it and named `legēbam`, `habēbam` and `eram` as keys
+to hold open, all three now spent in that module's first four sentences** — and the locative `domī` at
+M9, twenty-nine modules after L2-M4 named it. M8-S02 is the sentence L1-M5 could not write: every
+module from L1-M9 to L3-M10 said `fuī` where English would have said `eram`, and its plate is that
+shape in the one place it is now the weaker choice. The gerund and gerundive land at M1, and
 the past counterfactual is written **in full** at M3 — the pluperfect subjunctive in both halves, which
 is where this course diverges from en-sa's honest workaround, plus the imperfect subjunctive for the
 present unreal. Two new subjunctive tenses in one module, the largest grammatical spend in en-la,
@@ -2575,11 +2584,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **508
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **515
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
   twenty-five on en-sa, which is the whole of L1, the whole of L2 and the first five rungs of L3
-  (#611, #613, #614, #615, #617, #618), and thirty-three on en-la, which is the whole of L1, L2 and
-  L3 plus the first three rungs of L4 (#637, #641, #645, #647) — every one
+  (#611, #613, #614, #615, #617, #618), and forty on en-la, which is the whole of L1, L2, L3 and
+  L4 (#637, #641, #645, #649) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.
