@@ -12,7 +12,7 @@
  * This file checks that claim against every shipped module of every course, which is the only test
  * that could catch a fold that silently drops or re-owns a surface.
  */
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
@@ -29,8 +29,15 @@ function courseIds(): string[] {
   return manifest.map((row) => row.id);
 }
 
+/**
+ * A course with no `modules/` folder at all is a skeleton the pipeline already tolerates (#267 on
+ * hi-en, #326 on en-fr, #356 on en-de, #374 on en-ko, #606 on en-sa): the manifest row and the
+ * ladder land first, the folder arrives with the first authored rung. An empty ladder folds to an
+ * empty index, which is trivially equal to itself — the claim below is not weakened by it.
+ */
 function modulesOf(courseId: string): { id: string; module: Module }[] {
   const dir = path.join(CONTENT, courseId, 'modules');
+  if (!existsSync(dir)) return [];
   return readdirSync(dir)
     .filter((file) => file.endsWith('.json'))
     .map((file) => file.replace(/\.json$/, ''))

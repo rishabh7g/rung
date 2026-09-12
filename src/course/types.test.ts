@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 449 — eight complete five-level ladders, and en-ar one rung short (#581, #590-#597)', () => {
+  it('finds all 452 — nine complete five-level ladders, and en-sa’s first two rungs (#608)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -540,6 +540,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ru/modules/L5-M7.json',
       'content/en-ru/modules/L5-M8.json',
       'content/en-ru/modules/L5-M9.json',
+      'content/en-sa/modules/L1-M1.json',
+      'content/en-sa/modules/L1-M2.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -1127,6 +1129,153 @@ describe('ModuleContent against the modules that exist', () => {
           for (const form of word.forms) {
             expect(form, `${at} form of ${word.display} carries Hangul`).toMatch(noHangul);
             expect(form, `${at} form of ${word.display} is pure ASCII`).toMatch(asciiOnly);
+          }
+        }
+      }
+    }
+  });
+
+  /**
+   * en-sa (#603–#611) is the fourth romanized course and the second BORN one, after en-ko. What
+   * makes it different from every course before it is that its decisions are phonological rather
+   * than orthographic, so `checkScriptMode` — which only ever asks "is this Latin?" — cannot see
+   * a single one of them. This case is where they are held against the shipped files:
+   *
+   *   • **Not one Devanagari character outside `script`.** Same rule as en-ko's Hangul, and for
+   *     the same reason: #353 says an English speaker is never asked to decode a script, so a
+   *     `note` quoting Devanagari would be asking for exactly that. hi-mr is the opposite case in
+   *     the same alphabet — its teaching prose IS Devanagari — which is why this is asserted per
+   *     course and not globally.
+   *   • **NFC, and this is the one no human eye catches.** Every IAST mark is precomposed: `ā`
+   *     U+0101, `ṛ` U+1E5B, `ṃ` U+1E43, `ś` U+015B. A DECOMPOSED mark renders identically in a
+   *     diff and passes `checkScriptMode`, which allows `Script=Inherited` on purpose — and then
+   *     `tools/font-subset.ts` drops it, because no target claims U+0304/U+0323/U+0307, so the
+   *     accent draws from `system-ui` while `surface.ts` still normalises the index key to the
+   *     right place. The index would be right and the rendering wrong, which is why this is a
+   *     test and not a review note (measured under #605).
+   *   • **Pada form — the decision the whole course rests on** (`docs/121` §2). `display` never
+   *     writes external sandhi, so a word keeps ONE spelling and the bare noun keeps a row a
+   *     learner can tap. Two shapes of that rule are mechanical and are pinned here: no token
+   *     ends in `ṃ` (a final anusvāra is a sandhi product — it is `kim` and `phalam`), and no
+   *     token carries an avagraha. The avagraha ban is not taste: `'` is the ONE character
+   *     `surface.ts` rule 3 does not strip from a token edge, and rule 2 folds `’` into it, so
+   *     `'pi` would be a real index key that is not `api` — and it would collide with en-ar's
+   *     hamza class on the way.
+   *   • **The register, scoped to the level that froze it.** L1 speaks `bhavān`/`bhavatī` with a
+   *     third-person verb, and `tvam` is deferred to L2-M1 (#612). So the ban is written `L1`
+   *     from the first commit rather than globally — #418 recorded five assertions across this
+   *     milestone that were correct for one level and had to be scoped by the level chartered to
+   *     lift them, and there is no reason to spend that lesson a sixth time.
+   */
+  it('keeps en-sa to the decisions docs/121 settled: IAST, NFC, pada form, bhavān not tvam', () => {
+    const enSa = MODULE_FILES.filter(([name]) => name.includes('en-sa'));
+    const devanagari = /\p{Script=Devanagari}/u;
+    const noDevanagari = /^\P{Script=Devanagari}+$/u;
+    const latin = /[A-Za-z]/;
+    /**
+     * IAST's whole alphabet: ASCII, plus the sixteen marks and their capitals that `docs/121` §1.2
+     * enumerates and #605 measured against Mukta's cmap. Anything outside it is either a scheme
+     * this course does not write or a decomposed sequence the NFC check below will also catch.
+     */
+    const iastOnly = /^[\x20-\x7EĀāĪīŚśŪūÑñḌḍḤḥḶḷḸḹṂṃṄṅṆṇṚṛṜṝṢṣṬṭ]+$/u;
+    /** The second-person register L1 does not speak; L2-M1 (#612) is chartered to open it. */
+    const INTIMATE = new Set(['tvam', 'tva', 'tava', 'tubhyam', 'tvām', 'te']);
+
+    expect(enSa.length, 'the en-sa modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enSa) {
+      const module = parseModule(json, file);
+      const isL1 = module.id.startsWith('L1-');
+
+      /**
+       * One L2 surface. `pada` is false for a `mistake` plate: a plate is deliberately WRONG
+       * Sanskrit, and the wrong thing a module most wants to show is precisely a sandhied or
+       * anusvāra-final form. `buildWordIndex` never reads a mistake, so the invariant those two
+       * checks protect is not at risk there. Everything else still holds on a plate — no
+       * Devanagari, IAST only, NFC, and the register.
+       */
+      const surface = (
+        target: { display: string; script?: string | null },
+        at: string,
+        pada = true,
+      ): void => {
+        expect(target.display, `${at} display carries Devanagari`).toMatch(noDevanagari);
+        expect(target.display, `${at} display is Latin`).toMatch(latin);
+        expect(target.display, `${at} display is IAST only`).toMatch(iastOnly);
+        expect(target.display, `${at} display is not NFC`).toBe(target.display.normalize('NFC'));
+        // `script` is REQUIRED on the surfaces a learner reads and absent on the one they do not.
+        // `docs/121` §9.1 seats the quiet line on sentences, distinct variations and pool items,
+        // and deliberately keeps it off word rows and mistake plates in L1 — a plate is wrong
+        // Sanskrit, and setting the wrong form in Devanagari as well would double the thing the
+        // learner must not absorb. `pada` marks exactly the plate, so it carries this too.
+        if (pada) {
+          expect(target.script, `${at} carries the Devanagari on its script line`).toMatch(
+            devanagari,
+          );
+          expect(target.script ?? '', `${at} script is not NFC`).toBe(
+            (target.script ?? '').normalize('NFC'),
+          );
+        } else {
+          expect(target.script ?? null, `${at} mistake plate carries a script line`).toBeNull();
+        }
+        for (const token of tokenizeSurface(target.display)) {
+          if (pada) {
+            expect(token.endsWith('ṃ'), `${at} writes the sandhi anusvāra on "${token}"`).toBe(
+              false,
+            );
+            expect(token.includes("'"), `${at} writes an avagraha in "${token}"`).toBe(false);
+          }
+          if (isL1) {
+            expect(INTIMATE.has(token), `${at} writes the intimate "${token}" in L1`).toBe(false);
+          }
+        }
+      };
+
+      // Teaching prose is English, and — as with en-ko — may not even QUOTE the native script:
+      // there is nothing in this course a learner is asked to read in Devanagari.
+      for (const rule of module.rules) {
+        expect(rule.text, `${file} rule`).toMatch(latin);
+        expect(rule.text, `${file} rule quotes Devanagari`).toMatch(noDevanagari);
+        expect(rule.text, `${file} rule is not NFC`).toBe(rule.text.normalize('NFC'));
+      }
+      for (const item of module.comprehensionPool) {
+        surface(item, item.id);
+        expect(item.cue, `${item.id} cue is English only`).toMatch(noDevanagari);
+      }
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        surface(sentence, at);
+        expect(sentence.cue, `${at} cue is English only`).toMatch(noDevanagari);
+        // No gloss on an English-L1 course (#405).
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
+        // L1 speaks one register, so the chip never varies (`formal` arrives at L4-M7).
+        if (isL1) expect(sentence.register ?? 'neutral', `${at} register`).toBe('neutral');
+        for (const field of ['sound', 'usage', 'mnemonic', 'trap', 'literal'] as const) {
+          const value = sentence[field];
+          if (value !== undefined) {
+            expect(value, `${at} ${field}`).toMatch(noDevanagari);
+            expect(value, `${at} ${field} is not NFC`).toBe(value.normalize('NFC'));
+          }
+        }
+        if (sentence.mistake !== undefined) {
+          surface(sentence.mistake, `${at} mistake`, false);
+          expect(sentence.mistake.why, `${at} mistake.why`).toMatch(noDevanagari);
+        }
+        for (const variation of sentence.variations ?? []) {
+          surface(variation, `${at} variation`);
+          expect(variation.cue, `${at} variation cue`).toMatch(noDevanagari);
+          expect(variation.changed, `${at} variation changed`).toMatch(noDevanagari);
+        }
+        for (const word of sentence.deconstruction.words) {
+          expect(word.display, `${at} word display carries Devanagari`).toMatch(noDevanagari);
+          expect(word.display, `${at} word display is IAST only`).toMatch(iastOnly);
+          expect(word.display, `${at} word display is not NFC`).toBe(word.display.normalize('NFC'));
+          expect(word.cue, `${at} cue of ${word.display}`).toMatch(noDevanagari);
+          expect(word.note, `${at} note of ${word.display}`).toMatch(noDevanagari);
+          expect(word.note, `${at} note of ${word.display}`).toMatch(latin);
+          for (const form of word.forms) {
+            expect(form, `${at} form of ${word.display} carries Devanagari`).toMatch(noDevanagari);
+            expect(form, `${at} form of ${word.display} is IAST only`).toMatch(iastOnly);
+            expect(form, `${at} form of ${word.display} is not NFC`).toBe(form.normalize('NFC'));
           }
         }
       }

@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "aham + N/Adj",
+      "<name> + (mama) + N/Adj",
+      "mama nāma + <name>",
+      "mahyam/<name>-dat + N + rocate",
+      "idam + (mama) + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A Sanskrit sentence puts its verb LAST by default, and what says who did what is the ENDING on each word, not its place in the line. mahyam phalam rocate is, piece by piece, 'to-me fruit is-pleasing'. Get the endings right and the order is yours."
+    },
+    {
+      "tag": "delta",
+      "text": "There is no 'a' and no 'the'. pustakam is 'a book' and 'the book' and nothing on the page tells them apart — the situation does. If you are hunting for the article you are hunting for a word Sanskrit does not have."
+    },
+    {
+      "tag": "interference",
+      "text": "The present 'am / is / are' is simply left out. aham chātraḥ is a complete sentence with no verb in it at all. The slogan you will hear is 'Sanskrit has no verb to be'; the law is narrower and truer — the PRESENT copula is optional, and asti (M3's word) is a different thing that carries existence and having."
+    },
+    {
+      "tag": "delta",
+      "text": "A word that names or describes a person carries THAT person's gender, and it bends for it: a man says aham chātraḥ, a woman aham chātrā. Neither one is the basic shape with the other bolted on. Learn both, every time, from the first word you meet."
+    },
+    {
+      "tag": "interference",
+      "text": "Liking runs backwards. The one who likes goes into the dative — mahyam, 'to me' — and the thing liked is the SUBJECT, so the verb rocate answers to the thing and never to you. mahyam phalam rocate is 'to-me fruit is-pleasing'. Write aham here and the sentence has two subjects and no sense."
+    },
+    {
+      "tag": "delta",
+      "text": "One word, three shapes: aham is 'I', mama is 'my / of me', mahyam is 'to me'. English does the same trick in miniature with I / my / me, so the idea transfers; what does not is how far it goes — in Sanskrit the whole word changes, and every noun does it too."
+    },
+    {
+      "tag": "delta",
+      "text": "idam is 'this' for a neuter thing — a book, a fruit, a piece of music. idam pustakam reads BOTH 'this is a book' and 'this book', and only the situation decides which. Sanskrit is content with that; English is not, which is why it feels unfinished."
+    },
+    {
+      "tag": "delta",
+      "text": "This course writes every word in its PADA form — the shape it has standing alone — and never glues the edge of one word onto the next, however it is said. So a word-final nasal is written m: aham, phalam, idam, mahyam. The join you actually hear is in the SOUND line under every sentence, where it can be learned without losing the word."
+    },
+    {
+      "tag": "delta",
+      "text": "The -ḥ ending, the visarga, is not an English h. It is a short echo of the vowel in front of it: rāmaḥ comes out 'raa-ma-ha', chātraḥ 'chaa-tra-ha'. You will see it on nearly every masculine noun in this module, so it is worth getting right once."
+    },
+    {
+      "tag": "free",
+      "text": "Once the endings are right, moving a word is EMPHASIS and not grammar. phalam mahyam rocate and mahyam phalam rocate are the same sentence with the spotlight in a different place. That freedom is real, and it only exists because the endings did the work first."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "aham chātraḥ.",
+      "script": "अहम् छात्रः।",
+      "cue": "I am a student.",
+      "literal": "I student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "aham",
+              "mama",
+              "mahyam"
+            ],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "delta",
+            "forms": [
+              "chātraḥ",
+              "chātrā"
+            ],
+            "note": "'Student', and it carries the student's own gender: chātraḥ of a man, chātrā of a woman. Neither is the plain form of the other."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          8
+        ]
+      },
+      "trap": "There is no word for 'am' to put in the middle and no word for 'a' to put in front. Two words is the whole sentence, and it is not an abbreviation of a longer one.",
+      "sound": "A-ham CHAA-traḥ. The ā of chātraḥ is a genuinely long vowel — hold it — and the ch is one sound, the ch of 'church', not a c followed by an h. The -ḥ at the end is an echo of the a in front of it: 'chaa-tra-ha'. Said at speed the two words join and the m of aham becomes a nasal hum: ahaṃ chātraḥ. The page keeps the m; your mouth need not.",
+      "variations": [
+        {
+          "display": "aham chātrā.",
+          "script": "अहम् छात्रा।",
+          "cue": "I am a student. (a woman speaking)",
+          "changed": "the same sentence in a woman's mouth — the noun itself carries her gender"
+        },
+        {
+          "display": "rāmaḥ chātraḥ.",
+          "script": "रामः छात्रः।",
+          "cue": "Rāma is a student.",
+          "changed": "a name takes the pronoun's place and nothing else in the sentence moves"
+        },
+        {
+          "display": "aham bhāratīyaḥ chātraḥ.",
+          "script": "अहम् भारतीयः छात्रः।",
+          "cue": "I am an Indian student.",
+          "changed": "an adjective slots in front of the noun, and both agree with the speaker"
+        }
+      ],
+      "mistake": {
+        "display": "aham asmi chātraḥ.",
+        "why": "Two things at once, and they are the same English reflex. asmi ('I am') has been invented for a sentence that does not carry it — the present copula is simply left out — and it has been dropped into the English slot in the middle, where no Sanskrit verb ever stands."
+      },
+      "usage": "The first thing you say about yourself, to anybody at all.",
+      "register": "neutral",
+      "mnemonic": "Two nouns side by side already mean 'this is that'. Nothing goes between them."
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "mama nāma rāmaḥ.",
+      "script": "मम नाम रामः।",
+      "cue": "My name is Rāma.",
+      "literal": "of-me name Rāma",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "nāma",
+            "cue": "name",
+            "tag": "delta",
+            "forms": [
+              "nāma"
+            ],
+            "note": "'Name'. It never bends, and it needs no verb around it: mama nāma rāmaḥ is literally 'of-me name Rāma'."
+          },
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [
+              "rāmaḥ",
+              "rāmāya",
+              "rāmasya"
+            ],
+            "note": "A man's name, and it takes endings like any other word: rāmaḥ does the acting, rāmāya is 'to Rāma', rāmasya is 'Rāma's'."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [
+              "sītā",
+              "sītāyai"
+            ],
+            "note": "A woman's name. It sits in the name slot exactly as rāmaḥ does — nothing in the frame bends for it — and its 'to Sītā' is sītāyai."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          5,
+          8
+        ]
+      },
+      "trap": "English says 'my name IS Rāma' and the 'is' feels load-bearing. Here the three words simply stand next to each other; adding a verb adds nothing and costs the rhythm.",
+      "sound": "MA-ma NAA-ma RAA-maḥ. Three m's and two long ā's — mama is short-short, nāma and rāmaḥ each open long, and that length is the only thing separating them. The final -ḥ is the echo again: 'raa-ma-ha'. Nothing joins across the words here, so what you read is what you say.",
+      "variations": [
+        {
+          "display": "mama nāma sītā.",
+          "script": "मम नाम सीता।",
+          "cue": "My name is Sītā.",
+          "changed": "a woman's name in the same slot — nothing in the frame bends for it, unlike chātraḥ / chātrā"
+        },
+        {
+          "display": "aham rāmaḥ.",
+          "script": "अहम् रामः।",
+          "cue": "I am Rāma.",
+          "changed": "the same introduction with no word for 'name' in it at all"
+        },
+        {
+          "display": "rāmaḥ mama adhyāpakaḥ.",
+          "script": "रामः मम अध्यापकः।",
+          "cue": "Rāma is my teacher.",
+          "changed": "the name moves into the subject slot of a different sentence, and mama makes the teacher mine"
+        }
+      ],
+      "mistake": {
+        "display": "aham nāma rāmaḥ.",
+        "why": "aham is the shape of 'I' that DOES something, and nothing here is being done. The slot in front of nāma is a possessive one — 'of-me name' — and mama is what aham looks like when it stands there."
+      },
+      "usage": "Giving your name when you meet someone, and the answer to being asked for it.",
+      "register": "neutral",
+      "mnemonic": "'Of-me name Rāma' — read it in that order and the missing 'is' stops being missing."
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "aham bhāratīyaḥ.",
+      "script": "अहम् भारतीयः।",
+      "cue": "I am Indian.",
+      "literal": "I Indian",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "bhāratīyaḥ",
+            "cue": "Indian",
+            "tag": "delta",
+            "forms": [
+              "bhāratīyaḥ",
+              "bhāratīyā",
+              "bhāratīyam"
+            ],
+            "note": "'Indian', an adjective that agrees with what it describes: bhāratīyaḥ of a man, bhāratīyā of a woman, bhāratīyam of a thing."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          8
+        ]
+      },
+      "trap": "In English 'Indian' can sit still while the speaker changes. Here it cannot: the word leans on whoever is speaking, and a man and a woman say two different words.",
+      "sound": "A-ham BHAA-ra-TEE-yaḥ. The bh is one sound — a b with a real puff of breath behind it — and English has nothing like it, so it is worth practising alone. Two long vowels, ā then ī, carry the word. Said at speed the m of aham turns into a hum: ahaṃ bhāratīyaḥ.",
+      "variations": [
+        {
+          "display": "aham bhāratīyā.",
+          "script": "अहम् भारतीया।",
+          "cue": "I am Indian. (a woman speaking)",
+          "changed": "a woman says it, and the adjective follows her and not the country"
+        },
+        {
+          "display": "sītā bhāratīyā.",
+          "script": "सीता भारतीया।",
+          "cue": "Sītā is Indian.",
+          "changed": "someone else is the subject, and the adjective agrees with HER, not with the speaker"
+        },
+        {
+          "display": "aham bhāratīyaḥ adhyāpakaḥ.",
+          "script": "अहम् भारतीयः अध्यापकः।",
+          "cue": "I am an Indian teacher.",
+          "changed": "the adjective stops standing alone and takes a noun in front of which to sit"
+        }
+      ],
+      "mistake": {
+        "display": "aham bhāratīyaḥ asti.",
+        "why": "asti is 'he / she / it is' and it can never mean 'I am' — its ending names a third person. And this sentence wanted no verb in the first place: two words were already the whole of it."
+      },
+      "usage": "Saying where you are from, in the one word that does the job.",
+      "register": "neutral",
+      "mnemonic": "The adjective looks at the speaker, not at the country."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "aham adhyāpakaḥ.",
+      "script": "अहम् अध्यापकः।",
+      "cue": "I am a teacher.",
+      "literal": "I teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher",
+            "tag": "interference",
+            "forms": [
+              "adhyāpakaḥ",
+              "adhyāpikā"
+            ],
+            "note": "'Teacher'. The feminine is adhyāpikā, with an i inside the word — not the -ā you could swap in for chātraḥ. The pattern does not carry over."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          8
+        ]
+      },
+      "trap": "chātraḥ made its feminine by trading -aḥ for -ā, and it is tempting to do the same here. adhyāpakaḥ does not: its feminine is adhyāpikā, with an i in the middle of the word.",
+      "sound": "A-ham a-DHYAA-pa-kaḥ. dhy is a single cluster — the dh is an aspirated d, another sound English lacks, and the y rides straight off it. Before the vowel of adhyāpakaḥ the m of aham does NOT become a hum; it stays an m and runs into the next word: ahamadhyāpakaḥ.",
+      "variations": [
+        {
+          "display": "aham adhyāpikā.",
+          "script": "अहम् अध्यापिका।",
+          "cue": "I am a teacher. (a woman speaking)",
+          "changed": "a woman says it — and this pair does not simply swap -aḥ for -ā"
+        },
+        {
+          "display": "rāmaḥ adhyāpakaḥ.",
+          "script": "रामः अध्यापकः।",
+          "cue": "Rāma is a teacher.",
+          "changed": "somebody else is the subject; the pronoun goes and nothing replaces it"
+        },
+        {
+          "display": "mama adhyāpakaḥ rāmaḥ.",
+          "script": "मम अध्यापकः रामः।",
+          "cue": "My teacher is Rāma.",
+          "changed": "mama makes the teacher mine, and the name moves to the far end as the answer"
+        }
+      ],
+      "mistake": {
+        "display": "aham adhyāpakā.",
+        "why": "The feminine has been built by the chātrā recipe — knock off the -ḥ, lengthen the a. It is adhyāpikā. Sanskrit has several ways of making a feminine and this word does not use the one you just learned."
+      },
+      "usage": "Saying what you do, in the same two-word frame as saying who you are.",
+      "register": "neutral",
+      "mnemonic": "chātrā loses a letter; adhyāpikā gains one. Two recipes, not one."
+    },
+    {
+      "id": "L1-M1-S05",
+      "display": "mahyam phalam rocate.",
+      "script": "मह्यम् फलम् रोचते।",
+      "cue": "I like fruit.",
+      "literal": "to-me fruit is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [
+              "phalam"
+            ],
+            "note": "'Fruit', a neuter noun. The ph is an aspirated p — a p with a puff after it — and never the f of English 'phone'."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "interference",
+            "forms": [
+              "rocate"
+            ],
+            "note": "'Is pleasing'. It answers to the THING liked, not to the liker, so 'I like fruit' comes out mahyam phalam rocate — 'to-me fruit is-pleasing'."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          5,
+          7
+        ]
+      },
+      "trap": "English makes you the subject of 'like'. Sanskrit makes the FRUIT the subject and hands you the dative: the sentence says the fruit pleases you, and the verb is keeping company with the fruit, not with you.",
+      "sound": "MAH-yam PHA-lam RO-cha-te. ph is an aspirated p, never an f — 'p-huh', not 'fuh'. The c of rocate is the ch of 'church'. Both word-final m's soften to a hum before the consonant that follows, so it is said mahyaṃ phalaṃ rocate while the page keeps mahyam phalam — the m is the word's own, and the hum is only what a neighbour does to it.",
+      "variations": [
+        {
+          "display": "mahyam pustakam rocate.",
+          "script": "मह्यम् पुस्तकम् रोचते।",
+          "cue": "I like books.",
+          "changed": "the thing liked changes and nothing else does — the verb was never answering to me"
+        },
+        {
+          "display": "rāmāya phalam rocate.",
+          "script": "रामाय फलम् रोचते।",
+          "cue": "Rāma likes fruit.",
+          "changed": "somebody else does the liking, and his name goes into the same dative slot mahyam sits in"
+        },
+        {
+          "display": "mahyam idam rocate.",
+          "script": "मह्यम् इदम् रोचते।",
+          "cue": "I like this.",
+          "changed": "the thing liked is not named at all, only pointed at"
+        }
+      ],
+      "mistake": {
+        "display": "aham phalam rocate.",
+        "why": "This is the English sentence with Sanskrit words in it. aham is a subject, phalam is a subject, and rocate can only have one — so the line has two candidates and no sense. The liker belongs in the dative: mahyam."
+      },
+      "usage": "Saying what you like, and the frame every other liking sentence is built on.",
+      "register": "neutral",
+      "mnemonic": "The fruit does the pleasing. You are only the one it is pleasing TO."
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "mahyam saṃskṛtam rocate.",
+      "script": "मह्यम् संस्कृतम् रोचते।",
+      "cue": "I like Sanskrit.",
+      "literal": "to-me Sanskrit is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [
+              "saṃskṛtam"
+            ],
+            "note": "The language's own name for itself, a neuter noun. The ṛ is said 'ri', so the whole word comes out 'sans-kri-tam'."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Is pleasing'. It answers to the THING liked, not to the liker, so 'I like fruit' comes out mahyam phalam rocate — 'to-me fruit is-pleasing'."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          9
+        ]
+      },
+      "trap": "'I like Sanskrit' has you at the front, and so does this sentence — but the word at the front is 'to me', not 'I'. The resemblance is a coincidence of order, not of grammar.",
+      "sound": "MAH-yam SANS-kri-tam RO-cha-te. The ṛ of saṃskṛtam is said 'ri' in the tradition this course speaks, so the word is 'sans-kri-tam' and never 'sans-kroo-tam'. The ṃ inside it is a nasal hum before the s. Spoken quickly: mahyaṃ saṃskṛtaṃ rocate.",
+      "variations": [
+        {
+          "display": "idam saṃskṛtam.",
+          "script": "इदम् संस्कृतम्।",
+          "cue": "This is Sanskrit.",
+          "changed": "the same word with no dative anywhere near it — pointing at a page rather than liking it"
+        },
+        {
+          "display": "saṃskṛtam mahyam rocate.",
+          "script": "संस्कृतम् मह्यम् रोचते।",
+          "cue": "I like Sanskrit. (with the stress on Sanskrit)",
+          "changed": "the two words trade places; the endings, not the order, still say who likes what"
+        },
+        {
+          "display": "mahyam idam pustakam rocate.",
+          "script": "मह्यम् इदम् पुस्तकम् रोचते।",
+          "cue": "I like this book.",
+          "changed": "the thing liked grows to two words, and idam now reads 'this book' rather than 'this is a book'"
+        }
+      ],
+      "mistake": {
+        "display": "mahyam saṃskṛtam rocāmi.",
+        "why": "The verb has been made to agree with the speaker — rocāmi is 'I please'. But the subject of this sentence is Sanskrit, and mahyam cannot be a subject at all: it is already in the dative. Keep rocate."
+      },
+      "usage": "Saying you like a subject, a language or a study.",
+      "register": "neutral",
+      "mnemonic": "Whatever is in the nominative is what the verb is listening to."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "mahyam saṅgītam rocate.",
+      "script": "मह्यम् सङ्गीतम् रोचते।",
+      "cue": "I like music.",
+      "literal": "to-me music is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "saṅgītam",
+            "cue": "music",
+            "tag": "free",
+            "forms": [
+              "saṅgītam"
+            ],
+            "note": "'Music', a neuter noun. The ṅ is the ng of English 'sing', sitting where it does because a g follows it."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Is pleasing'. It answers to the THING liked, not to the liker, so 'I like fruit' comes out mahyam phalam rocate — 'to-me fruit is-pleasing'."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          5
+        ]
+      },
+      "trap": "The English habit is to reach for 'my' whenever 'I' will not fit. mama saṅgītam rocate is real Sanskrit, but it says 'my music is pleasing' — a different sentence about a different thing.",
+      "sound": "MAH-yam sang-GEE-tam RO-cha-te. The ṅ is the ng of English 'sing', and it is written out because a g follows it. The ī is long — 'gee', held. Said at speed both final m's hum: mahyaṃ saṅgītaṃ rocate.",
+      "variations": [
+        {
+          "display": "mahyam bhāratīyam saṅgītam rocate.",
+          "script": "मह्यम् भारतीयम् सङ्गीतम् रोचते।",
+          "cue": "I like Indian music.",
+          "changed": "an adjective joins the thing liked, and takes the neuter shape to match it"
+        },
+        {
+          "display": "sītāyai saṅgītam rocate.",
+          "script": "सीतायै सङ्गीतम् रोचते।",
+          "cue": "Sītā likes music.",
+          "changed": "a woman does the liking, and her name takes the dative ending -āyai"
+        },
+        {
+          "display": "mahyam idam saṅgītam rocate.",
+          "script": "मह्यम् इदम् सङ्गीतम् रोचते।",
+          "cue": "I like this music.",
+          "changed": "idam sits in front of the noun and reads 'this music'"
+        }
+      ],
+      "mistake": {
+        "display": "mama saṅgītam rocate.",
+        "why": "mama is 'of me', so this says 'my music is pleasing' — it names whose music it is and never says who likes it. The liker needs the dative, mahyam. One letter of difference, and a different sentence."
+      },
+      "usage": "Saying what you enjoy — music, food, a place — in the frame that covers all of them.",
+      "register": "neutral",
+      "mnemonic": "mama owns it. mahyam enjoys it."
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "idam pustakam.",
+      "script": "इदम् पुस्तकम्।",
+      "cue": "This is a book.",
+      "literal": "this book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "delta",
+            "forms": [
+              "idam"
+            ],
+            "note": "'This', the shape used for a neuter thing (pustakam, phalam, saṅgītam). idam pustakam is both 'this is a book' and 'this book'."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [
+              "pustakam"
+            ],
+            "note": "'Book', a neuter noun, and one of the easiest words in the module: nothing about it misleads an English speaker."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          6
+        ]
+      },
+      "trap": "English forces a choice between 'this is a book' and 'this book'. idam pustakam is both, and Sanskrit does not feel the gap. Waiting for the sentence to finish is waiting for something that is not coming.",
+      "sound": "I-dam PU-sta-kam. Every vowel here is short, which is what makes the word quick; the t of pustakam is a dental t, tongue on the back of the teeth, not the English t made further back. Before the p, the m of idam becomes a hum: idaṃ pustakam.",
+      "variations": [
+        {
+          "display": "idam phalam.",
+          "script": "इदम् फलम्।",
+          "cue": "This is a fruit.",
+          "changed": "a different thing pointed at — both are neuter, so idam itself does not move"
+        },
+        {
+          "display": "idam saṃskṛtam.",
+          "script": "इदम् संस्कृतम्।",
+          "cue": "This is Sanskrit.",
+          "changed": "pointing at a page rather than an object, with the same two-word frame"
+        },
+        {
+          "display": "idam bhāratīyam saṅgītam.",
+          "script": "इदम् भारतीयम् सङ्गीतम्।",
+          "cue": "This is Indian music.",
+          "changed": "an adjective joins the noun, in the neuter shape that matches it"
+        }
+      ],
+      "mistake": {
+        "display": "ayam pustakam.",
+        "why": "ayam is the masculine 'this', and pustakam is neuter. The pointing word has to match the thing pointed at, and for a book that is idam. Sanskrit has three of these and picking one is not optional."
+      },
+      "usage": "Naming something in front of you — on a table, in your hand, on a shelf.",
+      "register": "neutral",
+      "mnemonic": "idam goes with the words that end in -am."
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "idam mama pustakam.",
+      "script": "इदम् मम पुस्तकम्।",
+      "cue": "This is my book.",
+      "literal": "this of-me book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This', the shape used for a neuter thing (pustakam, phalam, saṅgītam). idam pustakam is both 'this is a book' and 'this book'."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "'Book', a neuter noun, and one of the easiest words in the module: nothing about it misleads an English speaker."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5,
+          6
+        ]
+      },
+      "trap": "English needs 'is' to glue 'this' to 'my book'. Here the three words are already a sentence, and the owner simply stands in front of the thing owned — the order English uses too, which is the one piece of this that costs nothing.",
+      "sound": "I-dam MA-ma PU-sta-kam. Two short a's in mama, said evenly — there is no stress beat to hunt for, because Sanskrit counts vowel LENGTH rather than loudness. Spoken quickly: idaṃ mama pustakam, with the hum only on the m that meets a consonant.",
+      "variations": [
+        {
+          "display": "idam mama phalam.",
+          "script": "इदम् मम फलम्।",
+          "cue": "This is my fruit.",
+          "changed": "the owner holds his place and only the thing owned changes"
+        },
+        {
+          "display": "idam rāmasya pustakam.",
+          "script": "इदम् रामस्य पुस्तकम्।",
+          "cue": "This is Rāma's book.",
+          "changed": "a named owner instead of 'my' — -sya on the name is doing exactly what mama does"
+        },
+        {
+          "display": "mahyam mama pustakam rocate.",
+          "script": "मह्यम् मम पुस्तकम् रोचते।",
+          "cue": "I like my book.",
+          "changed": "both oblique shapes of 'I' in one line: mahyam does the liking, mama does the owning"
+        }
+      ],
+      "mistake": {
+        "display": "idam asti mama pustakam.",
+        "why": "asti has been dropped in to be the English 'is'. It is a real word, but it means 'there is' and 'has' rather than being the glue between two nouns — and this sentence needed no glue at all."
+      },
+      "usage": "Claiming something, or answering when someone holds up your book.",
+      "register": "neutral",
+      "mnemonic": "this — of-me — book. Three words, three jobs, no verb."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "sītā mama adhyāpikā.",
+      "script": "सीता मम अध्यापिका।",
+      "cue": "Sītā is my teacher.",
+      "literal": "Sītā of-me teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "A woman's name. It sits in the name slot exactly as rāmaḥ does — nothing in the frame bends for it — and its 'to Sītā' is sītāyai."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham does the acting, mama is 'my / of me', mahyam is 'to me'. mama nāma rāmaḥ is 'of-me name Rāma'."
+          },
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Teacher'. The feminine is adhyāpikā, with an i inside the word — not the -ā you could swap in for chātraḥ. The pattern does not carry over."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "It is easy to leave adhyāpakaḥ alone here, because in English 'teacher' does not change for a woman. In Sanskrit the noun names the person, so it carries her gender: adhyāpikā.",
+      "sound": "SEE-taa MA-ma a-DHYAA-pi-kaa. Both vowels of sītā are long, ī then ā, and the word is unhurried because of it. Nothing joins across these three words — every one of them ends in a vowel — so this is a sentence you can say exactly as it is written.",
+      "variations": [
+        {
+          "display": "rāmaḥ mama adhyāpakaḥ.",
+          "script": "रामः मम अध्यापकः।",
+          "cue": "Rāma is my teacher.",
+          "changed": "a man: the name and the noun turn masculine together, in one move"
+        },
+        {
+          "display": "sītā adhyāpikā.",
+          "script": "सीता अध्यापिका।",
+          "cue": "Sītā is a teacher.",
+          "changed": "drop the owner and the sentence is still whole — mama was never holding it up"
+        },
+        {
+          "display": "sītā mama chātrā.",
+          "script": "सीता मम छात्रा।",
+          "cue": "Sītā is my student.",
+          "changed": "the relationship reverses, and the new noun takes her gender too"
+        }
+      ],
+      "mistake": {
+        "display": "sītā mama adhyāpakaḥ.",
+        "why": "The teacher is a woman and the word has stayed masculine. English lets 'teacher' sit still; Sanskrit does not, because the noun is describing HER. adhyāpikā."
+      },
+      "usage": "Introducing someone by their relationship to you.",
+      "register": "neutral",
+      "mnemonic": "The word bends towards the person it names, never towards the speaker."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M1-C01",
+      "display": "rāmaḥ bhāratīyaḥ chātraḥ.",
+      "script": "रामः भारतीयः छात्रः।",
+      "cue": "Rāma is an Indian student."
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "sītā mama chātrā.",
+      "script": "सीता मम छात्रा।",
+      "cue": "Sītā is my student."
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "rāmāya saṅgītam rocate.",
+      "script": "रामाय सङ्गीतम् रोचते।",
+      "cue": "Rāma likes music."
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "sītāyai saṃskṛtam rocate.",
+      "script": "सीतायै संस्कृतम् रोचते।",
+      "cue": "Sītā likes Sanskrit."
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "idam rāmasya phalam.",
+      "script": "इदम् रामस्य फलम्।",
+      "cue": "This is Rāma's fruit."
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "aham bhāratīyā chātrā.",
+      "script": "अहम् भारतीया छात्रा।",
+      "cue": "I am an Indian student. (a woman speaking)"
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "mama adhyāpikā sītā.",
+      "script": "मम अध्यापिका सीता।",
+      "cue": "My teacher is Sītā."
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "idam mama saṅgītam.",
+      "script": "इदम् मम सङ्गीतम्।",
+      "cue": "This is my music."
+    },
+    {
+      "id": "L1-M1-C09",
+      "display": "sītā bhāratīyā adhyāpikā.",
+      "script": "सीता भारतीया अध्यापिका।",
+      "cue": "Sītā is an Indian teacher."
+    },
+    {
+      "id": "L1-M1-C10",
+      "display": "mahyam rāmasya pustakam rocate.",
+      "script": "मह्यम् रामस्य पुस्तकम् रोचते।",
+      "cue": "I like Rāma's book."
+    },
+    {
+      "id": "L1-M1-C11",
+      "display": "idam bhāratīyam saṅgītam.",
+      "script": "इदम् भारतीयम् सङ्गीतम्।",
+      "cue": "This is Indian music."
+    },
+    {
+      "id": "L1-M1-C12",
+      "display": "rāmāya idam pustakam rocate.",
+      "script": "रामाय इदम् पुस्तकम् रोचते।",
+      "cue": "Rāma likes this book."
+    },
+    {
+      "id": "L1-M1-C13",
+      "display": "sītāyai phalam rocate.",
+      "script": "सीतायै फलम् रोचते।",
+      "cue": "Sītā likes fruit."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -8,8 +8,8 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Nine courses are briefed: hi-mr through L2, and en-es, en-ar, hi-en, en-ru, en-it, en-fr,
- * en-de and en-ko L1 only. The
+ * Ten courses are briefed: hi-mr through L2, en-es, en-ar, hi-en, en-ru, en-it, en-fr,
+ * en-de and en-ko L1 only, and en-sa — the tenth, briefed L1 only (#607). The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), the L4/L5 lists are PROPOSED (docs/48-five-level-ladder-plan.md §4, awaiting the
  * same ratification), and a level's briefs are written when its authoring project starts: a
@@ -70,7 +70,12 @@
  *    token, German capitalises every noun, and the two together silently merge `Sie`/`sie`,
  *    `Essen`/`essen` and `Morgen`/`morgen` into one entry each — checked against the real
  *    function, not assumed (`normalizeSurface('Sie') === normalizeSurface('sie')`) — so en-de's
- *    index rules get their own section below, and it is the longest of the eight.
+ *    index rules get their own section below, and it is the longest of them. Sanskrit is exposed
+ *    on the opposite seam to Korean and Arabic: it has NO hyphen at all, so a surface earns
+ *    exactly one key and an inflected shape is reachable only through the `forms` of the row that
+ *    lists it — while a case ending rewrites the whole token (`rāmaḥ`, `rāmam`, `rāmasya`,
+ *    `rāme`), and one sandhi join or one word-final anusvāra mints a twin the fold will never
+ *    merge (checked, not assumed). en-sa's index rules get their own section below too.
  *
  * ## Why the en-es ladder teaches what it teaches
  *
@@ -1475,6 +1480,174 @@
  * two tokens for what German needs three to say), so `maxWordsPerSentence` is slack here and the
  * bound that actually bites is `newWordCap` — every particle, every ending and every counter is a
  * new surface.
+ *
+ * ## en-sa: decisions a brief must settle before any Sanskrit is written
+ *
+ * en-sa is the tenth course, and the second born conforming to `docs/design-contract.md`'s "rung
+ * teaches speech, not script" (#353) — `scriptMode: "romanized"` from its first commit, the way
+ * en-ko was and the way en-ru had to be dragged. The scheme was settled BEFORE any brief existed
+ * (#604, recorded in `docs/121-en-sa-romanization-decisions.md`), so a brief TEACHES it and never
+ * re-derives it. Everything below is what a brief must settle ON TOP of the scheme, modelled on
+ * the en-ko section above, and every point is repeated in the note of the module it governs,
+ * because a prompt only ever shows an author the notes.
+ *
+ * ### 0. The scheme, in the lines a brief has to obey — settled, not reopened
+ *
+ * IAST, **precomposed (NFC)**: `a ā i ī u ū ṛ ṝ ḷ ḹ e ai o au ṃ ḥ · k kh g gh ṅ · c ch j jh ñ ·
+ * ṭ ṭh ḍ ḍh ṇ · t th d dh n · p ph b bh m · y r l v · ś ṣ s h`. **PADA FORM: no external sandhi
+ * across a word boundary** — `rāmaḥ gacchati`, never `rāmo gacchati` — while internal sandhi
+ * inside one token IS written in full (`pustakālayaḥ`, `namaste`, `āgacchati`), so a compound is
+ * one word row. **A word-final nasal is `m`, never `ṃ`** (`kim`, `phalam`, `mahyam`). **No
+ * avagraha and no hyphen anywhere in `display`. No stress marks** — Sanskrit has syllable weight,
+ * not English stress, so the acutes en-ru marks and the ones en-ar allows have no seat here.
+ * Citation forms: nominative singular for a noun (`rāmaḥ`, `bālā`, `phalam`), third singular
+ * present for a verb (`gacchati`). The spoken join belongs in `sound`, which is `Sentence`-only.
+ *
+ * Three of those are index rules rather than taste, and each was checked against the real
+ * `src/engine/surface.ts` rather than assumed. `normalizeSurface('kim') !== normalizeSurface('kiṃ')`
+ * and `normalizeSurface('phalam') !== normalizeSurface('phalaṃ')`: an anusvāra slip at a word end
+ * mints a second, unreachable key for a word the course already teaches. `normalizeSurface('rāmaḥ')
+ * !== normalizeSurface('rāmo')`: one sandhi join does the same. And the apostrophe is the one
+ * character rule 3 does NOT strip at a word edge (`normalizeSurface("'pi")` is `"'pi"`), so an
+ * avagraha would survive into the key AND fold with en-ar's hamza class — the ban is mechanical,
+ * not aesthetic.
+ *
+ * **NFC is mandatory and it is a rendering hazard, not a formality.** Every mark is precomposed —
+ * `ā` U+0101, `ī` U+012B, `ṛ` U+1E5B, `ṃ` U+1E43, `ḥ` U+1E25, `ś` U+015B, `ṣ` U+1E63, `ṭ` U+1E6D,
+ * `ḍ` U+1E0D, `ṇ` U+1E47, `ñ` U+00F1, `ṅ` U+1E45 — never a base letter plus a combining mark. The
+ * decomposed spellings carry U+0304, U+0323, U+0307, U+0301 and U+0303, and NO target in
+ * `tools/font-subset.ts` claims any of them: `latin` stops at U+00FF and `latin-ext` starts at
+ * U+0100. A decomposed `ā` therefore passes `checkScriptMode` (which deliberately allows
+ * `Script=Inherited`), is dropped by `coveredChars`, and renders its base letter from the bundled
+ * face with its accent from `system-ui`. Nothing in the build normalises — `tools/content-build.ts`
+ * emits authored bytes verbatim — and `surface.ts` normalises only the INDEX KEY, so the index
+ * would resolve correctly while the rendered line looked wrong, which is the worst shape this bug
+ * could take. en-ru already carries the rule; en-sa matches it, and the brief file's own strings
+ * are pinned NFC by test.
+ *
+ * ### 1. (a) Which "you", and which past — course-wide, decided once
+ *
+ * **The everyday "you" is `bhavān` (to a man) / `bhavatī` (to a woman) WITH A THIRD-PERSON VERB**:
+ * `bhavān kutra gacchati?` is "where are you going?", built out of the he/she ending. `tvam` with
+ * second-person endings is the intimate address; it is NAMED as deferred to L2-M1's register
+ * module and is written in no L1 display — the same shape of decision en-fr makes for `tu`/`vous`,
+ * en-de for `du`/`Sie` and en-ko for its speech level. The consequence M4 pays: the second-person
+ * ending `-si` (`gacchasi`) belongs to `tvam`, so M4 states the three-person paradigm in its RULE
+ * prose and writes only `-mi` and `-ti` in displays. A shown surface is a taught surface (#491),
+ * and a `gacchasi` in a display would be teaching the register the course deferred.
+ *
+ * **The past is the participle `-tavān`/`-tavatī`**, which is an adjective agreeing with its
+ * subject, not a conjugated verb: a man says `aham gatavān`, a woman `aham gatavatī`. So **every
+ * "I did" row owns both shapes from its first row** — the hero writes one, a `variations` entry
+ * supplies the other, and the note is written true of both — exactly as hi-mr's L1-M5 owns both
+ * gendered shapes of "I went" on one row. The imperfect (`agacchat`) and the other lakāras are deferred and named
+ * in M5. The simple future `gamiṣyāmi` IS kept (M6): it is regular, and it is the one tense that
+ * behaves the way an English speaker expects. The classical register is named as L4-M7's, and no
+ * earlier module reaches for it.
+ *
+ * ### 2. (b) The index seam without a hyphen — case endings are whole new tokens
+ *
+ * en-ko rests on the particle hyphen and en-ar on `al-`; **en-sa has no hyphen at all**, so
+ * `surfaceIndexKeys` returns exactly ONE key per surface (checked: `surfaceIndexKeys('pustakasya
+ * upari')` is `['pustakasya upari']`, nothing donated). Two consequences, and they run the whole
+ * course. (i) A multi-token surface claims no part of itself, so it is the same save tool en-es
+ * uses with `Me llamo` — `pustakasya upari` leaves both `pustakasya` and `upari` free. (ii) There
+ * is no hyphen part to catch an inflected shape, so **an inflected shape is reachable ONLY through
+ * the `forms` of the row that lists it.**
+ *
+ * Sanskrit then does the thing no earlier course does at this volume: a case ending changes the
+ * WHOLE token. `rāmaḥ`, `rāmam`, `rāmasya`, `rāme` are four keys the fold will never merge, and so
+ * are `pustakam`/`pustakasya`, `gṛham`/`gṛhe`/`gṛhasya`, `aham`/`mama`/`mahyam`. The discipline is
+ * hi-mr's docs/15 rule, "plan the WAVE, not the module": L1 is authored as one wave, so a
+ * first-teach row lists every shape THIS LEVEL writes, and only shapes of THAT word — never a
+ * cousin, never a synonym (`docs/07-llm-review-L1-M6-M10.md`). The owners, each restated in its
+ * module's note: `aham` (M1) owns `mama` and `mahyam`; `pustakam` (M1) owns `pustakasya` (M7);
+ * `gacchati` (M2) owns `gacchāmi` (M4), `gantum` (M3), `gatavān`/`gatavatī` (M5) and `gamiṣyāmi`
+ * (M6); `gṛham` (M7) owns `gṛhe` and `gṛhasya`; `phalam` (M1) owns `phale` and `phalāni` (M8);
+ * `bhavān` (M2) owns `bhavatī`. **A participle is a shape of its verb, not a new lexeme**, so M5
+ * opens no rival row and its teaching lives in `rules[]` — the en-ko M5 precedent exactly.
+ *
+ * ### 3. (c) Homographs — first occurrence wins, so every collision has a named owner
+ *
+ * The index is cumulative and FIRST OCCURRENCE WINS (`tools/content-build.ts`), so the earliest
+ * module to write a spelling owns the note every later learner sees. The failure is concrete: if
+ * one module wrote `te` for "they" and a later one wrote `te` for "your", a learner who taps
+ * "your" is shown a note telling them it means "they" — review 08's correction-4 homograph bug in
+ * Sanskrit dress.
+ * The rulings:
+ *
+ * - **`kim` is the sharp one.** M2 opens it as the sentence-initial yes/no particle and OWNS the
+ *   key; M9's "why" is the single token `kimartham`, its own key, so M9 opens no rival row. M2's
+ *   note is therefore written true of BOTH readings from the first row — the question particle
+ *   and the interrogative "what" — which is the hi-en `do` precedent.
+ * - **`vā`** is named in M2's prose as the sentence-final alternative to `kim` and is written in
+ *   no L1 display, in either reading; the key stays free for L2. **`te`** (they / your) and
+ *   **`tat`** (that / it) are written nowhere in L1: the pointing word is `idam` (M1) and
+ *   `atra`/`tatra` (M7), and L1 stays singular, so neither reading is needed. **`me`** is never
+ *   written — this course says `mama` and `mahyam`, which is also what keeps the `aham` row whole.
+ * - **`api`** is written in exactly one reading, "also", owned by M10; the interrogative `api`
+ *   (another sentence-initial yes/no particle) is named in M2's prose and written nowhere.
+ * - **`saḥ`/`sā` is NOT a problem, and that is worth recording so nobody goes looking for it.**
+ *   `surface.ts` rule 4 lowercases without a locale and NEVER touches diacritics, so `saḥ`, `sā`
+ *   and a bare `sa` are three distinct keys (checked, not assumed), and sentence-initial `Saḥ`
+ *   folds harmlessly onto `saḥ` the way `Soy` folds onto `soy`. This is en-de's capitalisation
+ *   catastrophe NOT happening.
+ *
+ * ### 4. (d) Gender lands on the speaker, the listener, the adjective and the number
+ *
+ * Four places, and English prepares a learner for none of them. The speaker: `aham chātraḥ` /
+ * `aham chātrā`, and every participial past (`gatavān`/`gatavatī`). The listener: `bhavān` /
+ * `bhavatī`, and the wellbeing word with them (`kuśalī` / `kuśalinī`). The adjective:
+ * `sundaraḥ`/`sundarī`/`sundaram`, `khinnaḥ`/`khinnā`, `santuṣṭaḥ`/`santuṣṭā` (M9). And the
+ * NUMBER: `ekaḥ`/`ekā`/`ekam`, `dvau`/`dve` (M8) — a numeral that agrees is the module's whole
+ * lesson. The standing rule: **the hero writes one gendered shape and a `variations` entry
+ * supplies the other**, in the same item, from the first row that shows the pair. **The dual
+ * enters at L1-M8 and nowhere earlier** — no module before it writes `dvau`, `dve`, `phale` or
+ * `chātrau`, and the test pins that.
+ *
+ * ### 5. (e) Devanagari lives in exactly one field
+ *
+ * `script`, and nowhere else: never in `display`, never in `forms`, never quoted inside an English
+ * rule, note or brief. `checkScriptMode` enforces the first two; the third is on the author, and
+ * for these briefs it is enforced by test. `script?: string` is typed on FIVE shapes —
+ * `Word` (`src/course/types.ts:41`), `Variation` (59), `Mistake` (68), `Sentence` (83) and
+ * `PoolItem` (112) — and `checkScriptMode` visits all five, unlike `sound?: string`, which is
+ * `Sentence`-only (96). Two riders so an author does not guess: `Word.script`'s own comment says
+ * "No word row uses it today; pool items do", so using it here is a DECISION rather than a
+ * default; and a `Mistake.script` is a wrong Sanskrit sentence set in Devanagari, authored only if
+ * the module means to show the wrong form on both lines. The Devanagari itself is pada — word
+ * separated, never sandhi-joined — with the daṇḍa U+0964 as the full stop and the double daṇḍa
+ * U+0965 for a verse close; both are in the font pipeline's `DEVANAGARI_BASELINE` and ride
+ * regardless of what the harvest sees.
+ *
+ * ### 6. Fields, and the one that does the real work
+ *
+ * The L1 is English, so **there is no `glossEn`** — #405 removed the field from every `en-*`
+ * course and `checkGlossEn` fails a build that carries one. `literal` is the tool that replaces
+ * it, and in a verb-final, case-marked language it is needed on nearly every sentence rather than
+ * occasionally: `mama pustakam asti` is "of-me book is", `mahyam saṅgītam rocate` is
+ * "to-me music is-pleasing", and an author who skips `literal` is hiding the one thing that makes
+ * the case system readable. Every teaching field — `rules[].text`, word `note`, `trap`, `sound`,
+ * `usage`, `mnemonic`, `cue`, `mistake.why`, `variations[].changed` — is ENGLISH; Sanskrit appears
+ * only in the L2 slots (sentence / word / variation / mistake / pool `display`, and word `forms`)
+ * in IAST, and in `script` in Devanagari.
+ *
+ * ### 7. Bounds, and which one actually binds
+ *
+ * Bounds climb 4 → 7 across L1, the same ramp en-ko uses and for a sharper version of the same
+ * reason: Sanskrit's synthesis packs a whole English clause into two tokens (`gacchāmi` is "I am
+ * going"; `mama pustakam asti` is "I have a book"), so `maxWordsPerSentence` is real slack here
+ * and **the constraint that actually binds is `newWordCap` (`NEW_WORD_CAP`, 25)** — every case
+ * ending and every gendered shape is a new surface, and a single noun shown in three cases with
+ * both genders has spent six of the twenty-five. Plan every module against the cap before
+ * authoring, and cut sentences rather than cutting the honesty of an agreement rule.
+ *
+ * Kept deliberately OUT of L1, and named as deferred in the module that would otherwise reach for
+ * it: `tvam` and the second-person endings (decision 1, named in M4); the imperfect and the other
+ * lakāras (M5); `mā` with the imperative (M3); external sandhi as a productive system (M1, and
+ * every module after it); the dual before M8 (decision 4); the instrumental, ablative and vocative
+ * as cases; plurals beyond the counted ones M8 needs; and the classical register, which is
+ * L4-M7's.
  *
  * ## en-es L2: the decisions, taken against the finished L1 (#426)
  *
@@ -11823,6 +11996,223 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
       ],
       maxWordsPerSentence: 16,
       newWordCap: 25,
+    },
+  },
+  'en-sa': {
+    'L1-M1': {
+      id: 'L1-M1',
+      title: 'Who I am',
+      job: 'Introduce yourself and state what you like',
+      patterns: ['aham + N/Adj', 'mama nāma + <name>', 'mahyam + N + rocate', 'idam + N'],
+      notes: [
+        "LANGUAGE OF THE FIELDS, settled once for the course: the document speaks the course's L1, so every teaching field — rules[].text, word note, trap, sound, usage, mnemonic, cue, mistake.why and variations[].changed — is ENGLISH, and Sanskrit appears only in the L2 slots: sentence / word / variation / mistake / pool display, and word forms. Those slots carry IAST (#604), never Devanagari; checkScriptMode fails the build on a Devanagari display or form, and the quiet Devanagari line goes in script, which is typed on FIVE shapes — Word, Variation, Mistake, Sentence and PoolItem — while sound is Sentence-only. There is NO glossEn on this course (#405 removed the field from every en-* course and checkGlossEn fails a build that carries one). literal is the tool that replaces it, and in a verb-final, case-marked language it is needed on nearly every sentence rather than occasionally: mama pustakam asti is 'of-me book is', mahyam phalam rocate is 'to-me fruit is-pleasing'. An author who skips literal is hiding the one thing that makes the case system readable.",
+        "THREE STRUCTURAL FACTS, all in M1, because no Sanskrit sentence can dodge them. (a) The verb is LAST by default, and what says who did what is the CASE ENDING, not the position — so moving a word is emphasis, never grammar. The slogan this module will attract is 'Sanskrit has free word order'; the law that replaces it is 'case-marked, and verb-final by default'. A brief that repeats the slogan leaves the learner unable to write a sentence at all, because free order is only free once the endings are right. (b) There are NO ARTICLES: pustakam is 'a book' and 'the book' and nothing on the page tells them apart. (c) THE PRESENT COPULA IS OPTIONAL: aham chātraḥ is a complete sentence with no verb in it. The second slogan is 'there is no to be'; the law is that the present copula is optional and asti is not — asti carries existence and possession, and M3 owns it.",
+        "THE SCHEME, taught here and never re-derived (#604, docs/121): IAST, precomposed (NFC), and PADA FORM — no external sandhi across a word boundary. Write rāmaḥ gacchati, never rāmo gacchati; write na icchāmi, never necchāmi. Internal sandhi inside one token IS written in full (pustakālayaḥ, namaste, āgacchati), so a compound is one word row. A word-final nasal is written m and never the anusvāra (kim, phalam, mahyam, idam); there is no avagraha and no hyphen anywhere in display — the hyphens in these briefs' PATTERNS are meta-notation for an ending or a case and never reach a display; there are no stress marks, because Sanskrit has syllable weight and not English stress. The slogan every module will attract is 'learn the sandhi first'; the law is that this course writes pada form and the spoken join lives in sound. Three of those are index rules rather than taste, and each was checked against the real src/engine/surface.ts instead of assumed: the anusvāra spelling of a word-final nasal and the plain m spelling normalise to DIFFERENT keys; rāmaḥ and rāmo normalise to different keys; and the apostrophe is the one character the edge-punctuation strip does NOT remove, so an avagraha would survive into the key and fold with en-ar's hamza class on top of that. One anusvāra slip, one sandhi join or one avagraha therefore mints a second, unreachable surface for a word the course already teaches.",
+        "REGISTER, settled course-wide and inherited by all ten modules. The everyday 'you' is bhavān (to a man) / bhavatī (to a woman) WITH A THIRD-PERSON VERB — bhavān kutra gacchati? is 'where are you going?', built out of the he/she ending. tvam with second-person endings is the intimate address: it is NAMED as deferred to L2-M1's register module and appears in no L1 display, so the index never carries a shape the course does not teach. The past, likewise settled once: it is the participle -tavān/-tavatī, which AGREES with the speaker's gender, so every 'I did' row owns both shapes from its first row (M5). The imperfect and the other lakāras are deferred; the simple future gamiṣyāmi is kept (M6); the classical register is L4-M7's and no earlier module reaches for it.",
+        "LIKING IS DATIVE AND BACKWARDS, the gustar shape in Sanskrit dress: mahyam phalam rocate is 'to-me fruit is-pleasing'. The thing liked is the grammatical SUBJECT, so the verb follows IT and not the speaker — a plural thing takes rocante, which M9 shows when it returns to this frame. mahyam is the dative of aham, so it belongs in the aham row's forms and not in a row of its own. Carry literal on every one of these; the reversal is the lesson.",
+        'GENDER ON THE SPEAKER, from the very first sentence: aham chātraḥ (a man) · aham chātrā (a woman), aham bhāratīyaḥ · aham bhāratīyā. The standing rule for the whole course, and it starts here — the hero writes one gendered shape and a variations entry supplies the other, in the same item, so no learner ever meets a course that can only introduce half of them. Neither shape is the default and the note must not present the masculine as one.',
+        "INDEX SEAM, and it is the decision the whole course rests on because there is no hyphen to catch anything. surfaceIndexKeys returns exactly ONE key per surface here (checked: a two-token surface donates neither token, and there are no hyphen parts), so an inflected shape is reachable ONLY through the forms of the row that lists it. A case ending changes the WHOLE token — rāmaḥ, rāmam, rāmasya, rāme are four keys the fold will never merge — so plan the WAVE, not the module (hi-mr docs/15): a first-teach row lists every shape THIS LEVEL writes, and only shapes of THAT word, never a cousin and never a synonym (docs/07-llm-review-L1-M6-M10.md). Opened here and owning their level: aham (with mama and mahyam in forms), pustakam (with M7's pustakasya), phalam (with M8's phale and phalāni), chātraḥ (with chātrā and M8's chātrau). Written NOWHERE in L1, so their keys stay free and no learner is ever shown a false note: me (this course says mama and mahyam), te (they / your), tat (that / it — the pointing word is idam here and atra/tatra in M7). PROPER NOUNS: a name rides unindexed (#61) and IS counted by the shown-surface ratchet (#491), so mama nāma <name> either gives the name a row or the module raises the baseline it must then live with — decide before authoring, not after.",
+      ],
+      maxWordsPerSentence: 4,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M2': {
+      id: 'L1-M2',
+      title: 'First exchange',
+      job: 'Greetings, wellbeing, yes/no questions',
+      patterns: [
+        'namaste / namaskāraḥ',
+        'kim + <statement>',
+        'ām / na + , + <statement>',
+        'bhavān + kuśalī / bhavatī + kuśalinī',
+        'bhavān/bhavatī + kutra + gacchati',
+      ],
+      notes: [
+        'namaste and namaskāraḥ are ONE greeting for every hour of the day, for arriving and for leaving, and for both people in the exchange — there is no good-morning / good-afternoon split and no separate goodbye to teach. That is a clean delta from every European course in the catalogue and it is the cheapest win in the level. Both are single tokens with their internal sandhi already written (namaste is namaḥ + te fused; teach it whole and do NOT let the pieces suggest that the enclitic te is a word this course writes).',
+        "A YES/NO QUESTION PUTS kim IN FRONT AND MOVES NOTHING ELSE. bhavān chātraḥ is 'you are a student'; kim bhavān chātraḥ? is 'are you a student?'. That is a DOUBLE delta — no inversion (English moves the verb, German moves it further) and no do-support (English builds a helper Sanskrit has no equivalent for) — and it is the whole question grammar of L1. RATIFIED HERE: sentence-initial kim is what this course teaches. The alternatives are real and are named in prose and written NOWHERE — sentence-final vā, and sentence-initial api — so that a later module cannot quietly introduce one and so that both keys stay free for L2. INDEX CONSEQUENCE, and it is intended: surface.ts strips edge punctuation, so a question and its statement twin are the SAME index key. They are the same words; the intonation is not spelled.",
+        "kim IS THE COURSE'S SHARPEST HOMOGRAPH AND THIS MODULE OWNS IT. The index is cumulative and FIRST OCCURRENCE WINS, so the earliest module to write a spelling owns the note every later learner sees. kim is both the yes/no particle taught here and the interrogative 'what', and M9's 'why' is the separate single token kimartham, which opens no rival row. So this module's kim note must be written true of BOTH readings from the first row — the question particle and 'what' — exactly as hi-en's do row defines the helper AND the main verb. Write it as one word with two jobs, not as a particle that a later module will have to contradict.",
+        "WELLBEING IS GENDERED ON THE LISTENER, and it is the module's honest twist: bhavān kuśalī? to a man, bhavatī kuśalinī? to a woman — the adjective bends with the address. The answer bends with the speaker: aham kuśalī / aham kuśalinī. Both pairs are hero-plus-variation, the standing rule from M1. Restated here because a prompt only shows an author the notes: bhavān / bhavatī take a THIRD-person verb (bhavān kutra gacchati?), and tvam with second-person endings is deferred to L2-M1 and written in no display.",
+        "ām and na answer the question in one word: ām, aham chātraḥ — na, aham adhyāpakaḥ. AND THE HONEST LIMIT THAT GOES WITH THEM, decided here so an author does not discover it mid-module: dropping the copula works for a POSITIVE statement, but a NEGATED one needs the verb back, and this course opens no first-person copula in L1. So a no-answer restates positively (na, aham adhyāpakaḥ) and the negated sentence waits for M3, where na asti is written on a third-person subject (mama pustakam na asti). na is also the negator M3 puts in front of the verb, so the row opened here must be written true of both jobs. kathayatu ('please tell') introduces the shape this course uses for every polite request — a THIRD-person imperative addressed to bhavān / bhavatī, which is the register decision showing up in the verb rather than in a pronoun. M3's dadātu is the same shape; name the pattern here and let M3 spend a rule on it.",
+        'INDEX SEAM: gacchati is opened HERE and it is the row that carries the verb for the whole level — gacchāmi (M4), gantum (M3), gatavān / gatavatī (M5) and gamiṣyāmi (M6) are all FORMS of this one row, because a participle and an infinitive are shapes of their verb and not new lexemes. Its note must therefore be written true of all five from the first row: "the verb √gam in the shapes this level writes", never "the present of gam". bhavān is one row with bhavatī in forms. kim, ām, na, kutra, namaste, namaskāraḥ, kathayatu, kuśalī (with kuśalinī in forms) are fresh rows. vā and api are written nowhere; saḥ and sā are M5\'s and are NOT a collision — surface.ts rule 4 lowercases without a locale and never touches diacritics, so saḥ, sā and a bare sa are three distinct keys and a sentence-initial Saḥ folds harmlessly onto saḥ.',
+      ],
+      maxWordsPerSentence: 4,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M3': {
+      id: 'L1-M3',
+      title: 'Needs and wants',
+      job: "Say what you want and don't want",
+      patterns: [
+        'N-acc + icchāmi',
+        'V-tum + icchāmi',
+        'mama + N + asti',
+        'mama + N + na asti',
+        'N-acc + dadātu',
+        'na + V',
+      ],
+      notes: [
+        "WANTING TAKES AN OBJECT OR AN INFINITIVE, and both land before the verb: pustakam icchāmi ('a book I-want'), gantum icchāmi ('to-go I-want'). The infinitive is the -tum form and it is a shape of its verb, not a new word — gantum belongs in M2's gacchati row. Carry literal on every one of them; the order IS the lesson, and it is M1's verb-final law being paid off rather than a new rule.",
+        "asti IS THE MODULE'S BIG IDEA: existence and possession collapse into one verb with a genitive. mama pustakam asti is both 'I have a book' and 'there is a book of mine', and Sanskrit has no separate verb for having at all. English splits those into two constructions; this is one, and it is worth a rule of its own. It also finishes the job M1's second slogan started — 'there is no to be' is false: the present COPULA is optional (aham chātraḥ), asti is not, and the two are different sentences.",
+        "NEGATION SPLITS TWO WAYS AND L1 TEACHES ONE. na goes in front of the verb — na icchāmi, mama pustakam na asti — and that is the course's negation. mā is the negator used with an imperative and NOWHERE else; it is named here in prose and written in no display, so a later module cannot quietly introduce it. Pada form matters visibly here: write na icchāmi as two words, never the sandhi-joined necchāmi, which would be a fresh key for a phrase the learner already knows.",
+        "THE POLITE REQUEST IS A THIRD-PERSON IMPERATIVE: jalam dadātu ('please give water'), the same shape as M2's kathayatu and the same register decision — the honour is in the verb, not in a pronoun. Teach it as a pattern here, because M8's shopping turns run on it. English's 'please' is a separate word bolted onto a command; there is nothing to bolt on here, and a learner looking for the Sanskrit word for please is looking for a word this course does not write.",
+        "THE ACCUSATIVE IS THE FIRST CASE ENDING THE LEVEL WRITES, and the module has to be honest about a problem it cannot fully solve: nearly every easy L1 object is NEUTER — pustakam, phalam, jalam — where the nominative and the accusative are the same word, so the ending is invisible in exactly the sentences that need it. Say so in the rule rather than pretending the learner has seen a case ending, and show the accusative at least once on a masculine noun the level already owns (chātraḥ → chātram) so that the ending exists on the page. M6's accusative of destination (vidyālayam gacchāmi) is where it finally becomes unavoidable.",
+        "INDEX SEAM: asti is opened here for existence AND possession, and M7 extends it to location with NO rival row — so this note must already be true of all three, exactly as en-ko planned isseoyo across M3 and M7. na is M2's row extended to negation, not a second row; write M2's note true of both jobs. gantum is a form of M2's gacchati row. Fresh rows: icchāmi (whose note says \"the verb √iṣ in the shapes this level writes\", so M5's and M6's shapes can join it later), dadātu and jalam. mama is NOT opened here — it is a form inside M1's aham row — and nothing in this module opens a second row for a word M1 or M2 already owns.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M4': {
+      id: 'L1-M4',
+      title: 'My day',
+      job: 'Daily habits and time words',
+      patterns: [
+        'aham + N-acc + V-āmi',
+        'V-āmi',
+        '<time> + V-āmi',
+        'bhavān/bhavatī + <time> + V-ati',
+        'pratidinam + V-āmi',
+      ],
+      notes: [
+        'THE PRESENT PARADIGM, AND THE ONE CELL THIS COURSE DOES NOT WRITE. The three singular endings are -mi (I), -si (you, intimate) and -ti (he / she / bhavān / bhavatī): gacchāmi · gacchasi · gacchati. State all three in the RULE, because a learner who has only seen two cannot read anything — but write only -mi and -ti in DISPLAYS, because -si belongs to tvam, which the register decision defers to L2-M1. A shown surface is a taught surface and is ratcheted (#491), so a gacchasi in a display would be teaching the register this course withheld. This is the module where that decision costs something; pay it deliberately and say so in the note.',
+        'THE SUBJECT IS DROPPED whenever the ending supplies it, and this is the module where that becomes a rule rather than a liberty: gacchāmi on its own is a whole sentence. The slogan to refuse is that Sanskrit drops pronouns to sound poetic; the law is that the ending already carries the person, so aham is REDUNDANT and writing it is emphasis. Author at least three sentences with no subject at all, and say that repeating aham in every sentence is the anglophone tell M10 comes back to.',
+        "TIME WORDS TAKE NO CASE AT ALL: adya, prātaḥ, sāyam, pratidinam are indeclinables that just sit in the sentence — no ending, no preposition, nothing. That is a clean delta and it sets up the contrast M7 needs, where PLACE does take a case (gṛhe) and position words take a genitive. Teach the two together in the learner's head by saying here that time is free and place is not.",
+        "ONE PRESENT COVERS BOTH ENGLISH PRESENTS: paṭhāmi is 'I read' and 'I am reading', and pratidinam paṭhāmi is 'I read every day'. There is no progressive to build and nothing to reach for. The interference to plate is a learner inventing one.",
+        "THE GENDER RELIEF, and it is worth naming as a relief because M5 takes it away again: the present tense marks the speaker's gender NOWHERE. gacchāmi is what a man says and what a woman says. After M1's chātraḥ / chātrā and M2's kuśalī / kuśalinī this is a rest point, and hi-mr's L1-M6 note — its future marker never changes for gender, and the brief says so out loud — is the precedent.",
+        'INDEX SEAM: gacchāmi is a FORM of M2\'s gacchati row and opens nothing. The verbs opened here — paṭhati, khādati, pibati, likhati, karoti — each open ONE row whose forms carry every shape this LEVEL writes: the 3sg citation form, this module\'s -āmi, M5\'s -tavān / -tavatī participle and M6\'s -iṣyāmi future. Their notes must therefore be written "the verb √X in the shapes this level writes", never "the present of X", or M5 and M6 will be shown a note that is false of the sentence in front of them. Fresh rows: adya, prātaḥ, sāyam, pratidinam.',
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M5': {
+      id: 'L1-M5',
+      title: 'Yesterday',
+      job: 'Past tense — the first big divergence',
+      patterns: [
+        'aham + V-tavān / V-tavatī',
+        'hyaḥ + V-tavān / V-tavatī',
+        'saḥ + V-tavān',
+        'sā + V-tavatī',
+        'na + V-tavān / V-tavatī',
+      ],
+      notes: [
+        "THE PAST IS A PARTICIPLE THAT AGREES, and that is the module's law. The slogan it will attract is that the past IS the -tavān ending; the truth is that -tavat is an ADJECTIVE agreeing with its subject in gender and number, so a man says aham gatavān and a woman says aham gatavatī, a man says aham khāditavān and a woman aham khāditavatī. There is no auxiliary and no conjugation: nothing corresponds to English 'did' or 'have', and a learner hunting for the Sanskrit word for 'did' is hunting for a word that does not exist.",
+        'THE CONSEQUENCE FOR EVERY ROW IN THIS MODULE, stated as a rule rather than left to taste: every "I did" item owns BOTH gendered shapes from its first row — the hero writes one, a variations entry supplies the other, and the note is written true of both. hi-mr\'s L1-M5 is the precedent and it is the reason this course states the rule in M1 rather than discovering it here. Neither shape is the default; a module that ships only -tavān has taught half its learners a sentence they cannot say.',
+        "THE RELIEF, and naming it as a relief is worth more than leaving it unsaid: there is NO perfect / preterite split. One past does the work English divides between 'I went', 'I have gone' and 'I did go'. After German's auxiliary choice and French's passé composé an author will brace for a fork; a learner braced for a choice invents one, so say plainly that there is nothing to choose.",
+        'DEFERRED, named here and written nowhere: the imperfect (agacchat) and the other lakāras. They are real, they are what a classical text uses, and this course reaches none of them before L4-M7. Naming them is what stops a later module quietly introducing one; writing one would put a shape in the index the course cannot explain.',
+        'saḥ and sā enter here as the third-person subjects, and they are NOT an index collision — recorded so that nobody goes looking for one and nobody "fixes" the spelling to dodge a problem it does not have. surface.ts rule 4 lowercases without a locale and never touches diacritics, so saḥ, sā and a bare sa are three distinct keys (checked against the real function), and a sentence-initial Saḥ folds onto saḥ exactly as Soy folds onto soy in en-es. This is en-de\'s capitalisation catastrophe NOT happening.',
+        "INDEX SEAM, and it is the one to verify against the emitted index rather than reason about: a participle goes in the FORMS of the row that taught its verb, because it is the same verb — gatavān and gatavatī belong to M2's gacchati row, khāditavān and khāditavatī to M4's khādati row, paṭhitavān and paṭhitavatī to M4's paṭhati row. This module opens NO verb row at all, and its teaching lives in rules[] — the en-ko M5 precedent exactly. Read the emitted index after the first build and confirm each participle key points at the module that opened the verb; if one opened a row of its own, the module is wrong, not the index. Fresh rows: hyaḥ, saḥ, sā.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M6': {
+      id: 'L1-M6',
+      title: 'Tomorrow',
+      job: 'Future and plans',
+      patterns: [
+        'śvaḥ + V-iṣyāmi',
+        'aham + <place>-acc + gamiṣyāmi',
+        'śvaḥ + V-āmi',
+        'bhavān/bhavatī + śvaḥ + V-iṣyati',
+      ],
+      notes: [
+        "THE SIMPLE FUTURE IS THE MOST REGULAR FORM IN THE LEVEL, and the slogan to refuse is that the future is the hard tense. It is one marker, -iṣya-, followed by M4's own endings: gamiṣyāmi, paṭhiṣyāmi, kariṣyāmi, and gamiṣyati for bhavān / bhavatī. A learner who has M4's endings already has this tense. Frame it that way — one rule, two tenses — rather than as a new paradigm.",
+        'AND IT MARKS NO GENDER, which is the second half of the good news and the reason this module follows M5 rather than preceding it: after a whole module in which every past sentence forked into -tavān and -tavatī, gamiṣyāmi is what every speaker says. Say it out loud; it is the clearest evidence a learner gets that the gender marking is a property of the PARTICIPLE and not of the past as an idea.',
+        "THE DELTA WORTH TEACHING FIRST BECAUSE IT IS FREE: śvaḥ plus the plain present already does the job. śvaḥ gacchāmi is 'I'm going tomorrow', and it needs nothing the learner does not have from M4. Teach that first and let the -iṣya- future carry the sentences where the time word is absent.",
+        "THE ACCUSATIVE OF DESTINATION, and this is where the case ending finally becomes visible: a place you are GOING TO takes the accusative and no preposition at all — vidyālayam gacchāmi, gṛham gamiṣyāmi. English's 'to' has no counterpart on the page. It is also the module's honest repayment of M3's problem, because vidyālayaḥ → vidyālayam is a masculine noun where the ending actually shows. M7's locative is the OTHER job — being somewhere, not going there — so the two must be taught as a pair and neither presented as 'the place case'.",
+        'DEFERRED, named and written nowhere: the periphrastic future and every other lakāra (M5 named the imperfect; the list does not grow here). This module writes one future and says that it does.',
+        "INDEX SEAM: gamiṣyāmi and gamiṣyati are FORMS of M2's gacchati row; paṭhiṣyāmi and kariṣyāmi are forms of M4's paṭhati and karoti rows. This module opens no verb row either. vidyālayaḥ is opened here with vidyālayam in forms, and M7's vidyālaye joins the SAME row — plan the wave, not the module, because there is no hyphen to catch the locative later. gṛham likewise is opened here if the destination sentence needs it, with M7's gṛhe and gṛhasya in the same row. Fresh: śvaḥ.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M7': {
+      id: 'L1-M7',
+      title: 'Where things are',
+      job: 'Locations and prepositions',
+      patterns: [
+        'N + <place>-loc + asti',
+        'N + kutra + asti',
+        'N + N-gen + upari / adhaḥ / samīpe + asti',
+        'atra / tatra + N + asti',
+      ],
+      notes: [
+        "THIS IS THE MODULE WHERE ENGLISH PREPOSITIONS STOP EXISTING. The LOCATIVE ending alone does at, in and on: gṛhe is 'at home', vidyālaye is 'at school', pustakālaye is 'in the library' — no separate word anywhere. English cannot say any of those without a preposition, so the delta is total and the interference is a learner leaving a gap where the preposition should have been and then filling it with something.",
+        "POSITION WORDS ARE POSTPOSITIONS THAT TAKE A GENITIVE, and the slogan to refuse is that a postposition is just a preposition moved to the back. Moving it is the small half; the real law is that the noun it governs goes into the GENITIVE, which English never does — pustakasya upari is 'of-the-book on-top', gṛhasya samīpe is 'of-the-house near'. upari, adhaḥ, purataḥ, pṛṣṭhataḥ and samīpe all work this way. Carry literal on every one of them, in the genitive-first order, or the construction is invisible.",
+        'THE PAIR THAT MUST BE TAUGHT AS A PAIR: the locative is where something IS (gṛhe asti) and M6\'s accusative is where something is GOING (gṛham gacchāmi). English uses "at" and "to" and gives the learner a signal; Sanskrit uses two endings on the same noun and the test is the VERB, not the place. Say that in one line and the rest of the level follows.',
+        "kutra asks the question with M2's grammar unchanged — no inversion, no do-support, nothing moves: pustakam kutra asti? The answers are atra and tatra, which are indeclinable like M4's time words and take no ending at all, so the question looks exactly like the answer with one word swapped. asti returns from M3 and opens NO new row.",
+        "INDEX SEAM, and it is where the no-hyphen decision pays off: pustakasya upari is a TWO-TOKEN surface, and a multi-token surface donates neither of its tokens (checked against surfaceIndexKeys — with no hyphen anywhere, a surface earns exactly one key). So the phrase can be a surface of its own while pustakasya and upari stay free, which is the same save en-es makes with Me llamo and the only spanning tool this course has. Case shapes go home to their nouns: gṛhe and gṛhasya to the gṛham row, vidyālaye to M6's vidyālayaḥ row, pustakasya to M1's pustakam row. asti stays M3's — M3's note was written to be true of location, so this module must not contradict it. Fresh rows: kutra, atra, tatra, upari, adhaḥ, purataḥ, pṛṣṭhataḥ, samīpe, pustakālayaḥ.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M8': {
+      id: 'L1-M8',
+      title: 'Numbers & shopping',
+      job: 'Prices, quantities, buying',
+      patterns: [
+        '<numeral> + N',
+        '<numeral> + N-acc + dadātu',
+        'kati + N',
+        'kiyat mūlyam',
+        '<numeral> + rūpyakāṇi',
+      ],
+      notes: [
+        'NUMERALS 1 TO 4 DECLINE BY GENDER AND FIVE UPWARD DO NOT, and the slogan to refuse is that numbers are vocabulary. In Sanskrit the low numerals are ADJECTIVES that agree with what they count: ekaḥ / ekā / ekam, dvau / dve, trayaḥ / tisraḥ / trīṇi, catvāraḥ / catasraḥ / catvāri — and then pañca, daśa and everything above them never change at all. Nothing in English prepares a learner for a number that agrees, and no other course in this catalogue carries a comparable load in one module.',
+        'TWO IS A DUAL, AND IT CHANGES THE NOUN AS WELL AS THE NUMERAL: dvau chātrau, dve phale. THE DUAL ENTERS HERE AND NOWHERE EARLIER — no module before M8 writes dvau, dve, phale or chātrau, and the test pins it. A third number is the fact of the module: English has singular and plural and stops. ONE LIMIT, decided here so an author does not have to guess: L1 shows the dual on the NOUN only, inside an object phrase or a counted noun phrase (dve phale dadātu), and the dual VERB agreement is named as deferred and written in no display.',
+        'THE CAP BINDS HARDEST HERE, harder than anywhere else in the level, and it binds on newWordCap rather than on maxWordsPerSentence: every numeral in every gender is a separate surface, and so is every counted plural. Plan the module against NEW_WORD_CAP before authoring a single sentence. The recommended spend: ekaḥ / ekā / ekam and dvau / dve written in full, three and four stated in a rule with one gendered shape each written, and pañca and daśa as the invariable ones. If it still binds, cut the number of SENTENCES that need a fresh numeral — never cut the honesty of the agreement rule, and never teach a numeral without the gender it is agreeing with.',
+        "THE SHOPPING FRAME runs on shapes the learner already has: kati asks how many, kiyat mūlyam asks the price, rūpyakāṇi is what the price is in, and the request is M3's third-person imperative dadātu with no new row. That is deliberate — the module cannot afford new grammar on top of the numerals, so the only new SYSTEM here is agreement on a number.",
+        "PLURALS ARRIVE AS A BY-PRODUCT, not as a topic: phalāni and rūpyakāṇi are the counted plurals the frame needs, and they are FORMS of their nouns' rows, never new rows. Say in the note that L1 teaches the plural only where a count forces it, so an author does not start building a paradigm the cap cannot pay for.",
+        "INDEX SEAM: dve, phale and phalāni are forms of M1's phalam row; dvau and chātrau are forms of M1's chātraḥ row; rūpyakāṇi is a form of the rūpyakam row opened here. ekaḥ / ekā / ekam is ONE row with three forms — one word, three shapes — and the same for any of three and four this module writes. dadātu stays M3's row and gets no second one. Fresh rows: eka, dvi, pañca, daśa, kati, mūlyam (with kiyat), rūpyakam.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M9': {
+      id: 'L1-M9',
+      title: 'Feelings & opinions',
+      job: 'Why — because and so',
+      patterns: [
+        'N + Adj',
+        'aham + Adj',
+        'kimartham / kutaḥ + <question>',
+        '<clause> + yataḥ + <clause>',
+        'ataḥ + <clause>',
+        'mahyam + N + rocate',
+      ],
+      notes: [
+        "AN ADJECTIVE AGREES IN GENDER, NUMBER AND CASE, and its ending is COPIED FROM THE NOUN rather than chosen from a list. sundaraḥ chātraḥ, sundarī bālā, sundaram puṣpam — one adjective, three endings, and each one is the noun's own. The slogan to refuse is that adjectives just take -a or -ā; the law is three genders and every case, which is why the adjective is taught in M9 and not in M3: it needs the cases M6 and M7 put on the page.",
+        'FEELINGS ARE GENDERED ON THE SPEAKER, for the third time in the level and the last: aham khinnaḥ / aham khinnā, aham santuṣṭaḥ / aham santuṣṭā. Same standing rule as M1 and M5 — the hero writes one shape and a variations entry supplies the other, and the note is true of both. By this module the pattern should feel like a habit rather than a surprise, and the note can say so.',
+        "WHY AND BECAUSE: kimartham and kutaḥ ask, yataḥ answers inside the sentence, and ataḥ starts the consequence. kimartham is a single token and its own index key, so it opens NO rival to M2's kim — that is why M2 was allowed to own kim for both its readings. Word order is M2's again: the question word goes in front and nothing else moves.",
+        "THE COPULA IS STILL ABSENT, and this is where an English speaker will finally reach for one: puṣpam sundaram is a complete sentence meaning 'the flower is beautiful', with no verb in it. The interference is precise and worth plating — a learner writes asti, because they have now met it in M3 and M7. asti is existence and possession, not a linking verb, and putting it here changes the sentence into 'a beautiful flower exists'.",
+        'mahyam … rocate returns from M1 with no new row, and it comes back for a reason: a plural thing liked takes rocante, which is agreement doing exactly what the adjectives in this module do. Name it; write it only if the cap allows, since a counted plural is a fresh surface.',
+        "INDEX SEAM: sundaraḥ / sundarī / sundaram is ONE row with three forms, and so is khinnaḥ / khinnā and santuṣṭaḥ / santuṣṭā — three shapes of one word, never three rows. rocate stays M1's row and rocante joins it as a form. Fresh rows: kimartham, kutaḥ, yataḥ, ataḥ, sundara, khinna, santuṣṭa, puṣpam, bālā. ataḥ is opened here and M10 re-uses it with no rival row, so this note must already be true of the sentence-initial consequence M10 writes.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M10': {
+      id: 'L1-M10',
+      title: 'Connected talk',
+      job: 'Short 2–3 sentence exchanges',
+      patterns: [
+        '<sentence> + . + <sentence>',
+        'N + N + ca',
+        'kintu + <sentence>',
+        'ataḥ + <sentence>',
+        '<question> → <answer> + . + yataḥ + <clause>',
+      ],
+      notes: [
+        "Each item is a TURN of two or three short sentences — a question and its answer, or a statement, a reason and a follow-up — not one long sentence. The per-sentence bound applies to each sentence inside the turn, and Sanskrit's synthesis means these turns stay very short in tokens even when they say a lot, so prefer three real sentences to two padded ones.",
+        "ca COMES AFTER THE WORD IT JOINS, and it is the catalogue's first postpositive conjunction: pustakam phalam ca is 'a book and a fruit'. The slogan is that ca means and; the law is that ca means and, and it comes AFTER. The module then has to hold two opposite placements at once, which is its real difficulty: kintu, ataḥ and tathāpi are sentence-INITIAL, exactly where English puts them, while ca is the one word that is not. Teach the contrast explicitly rather than teaching ca alone.",
+        'A WARNING FOR THE ca SENTENCES, and it has already misled three authoring waves elsewhere in this repo: a proper noun rides UNINDEXED (#61) and is nonetheless COUNTED by the shown-surface ratchet (#491), so a display that joins two names with ca raises the "shown but untaught" baseline and fails the ratchet. Anchor ca on common nouns this level already owns — pustakam phalam ca, jalam phalam ca — or give the name a row of its own. Decide before authoring; the ratchet is lowered in the commit that fixes the content, never raised.',
+        'PRO-DROP ACROSS THE TURN is the naturalness marker, and this is the module that enforces it. M4 introduced dropping the subject; here it becomes a property of the whole turn — aham appears in the FIRST sentence of a turn at most, and usually nowhere. A turn that repeats aham in every sentence is wrong even though every sentence in it is grammatical, and it is the single most audible anglophone tell this course can fix.',
+        "THE REGISTER HOLDS FROM THE FIRST LINE OF A TURN TO THE LAST: bhavān / bhavatī with a THIRD-person verb, all the way through. This is now a within-item consistency problem rather than a between-module one, which is exactly why it is worth restating in the last module's brief — one tvam-shaped ending inside a turn is audible, and tvam is deferred to L2-M1.",
+        'PADA FORM HOLDS TO THE LAST TURN TOO, and two sentences side by side is precisely where an author reaches for a join: write rāmaḥ gacchati and not rāmo gacchati, na asti and not nāsti, and put the spoken join in sound where it belongs. The slogan "learn the sandhi first" is answered for the tenth and last time here.',
+        "INDEX SEAM: ca, kintu, tathāpi and api are fresh rows. api is written in exactly ONE reading, 'also', which this module owns — the interrogative api was named in M2 and is written nowhere, so the key carries one true note. ataḥ and yataḥ stay M9's rows and get no second ones. Language of the fields holds to the last turn: ENGLISH in every teaching field, IAST in every L2 slot, Devanagari only in script, no glossEn, and literal wherever a turn's order moves — which, with a verb at the end of each clause and a postpositive ca, is all of them.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
     },
   },
 };
