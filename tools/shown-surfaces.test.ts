@@ -14,7 +14,7 @@
  *
  * Lower a baseline in the same commit that fixes the content. Never raise one.
  */
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
@@ -44,9 +44,17 @@ function ladderOrder(a: string, b: string): number {
   return a.localeCompare(b, 'en', { numeric: true });
 }
 
-/** Every module of one course, in ladder order — the sequence the cumulative index is built over. */
+/**
+ * Every module of one course, in ladder order — the sequence the cumulative index is built over.
+ *
+ * A course whose `modules/` folder does not exist yet is a skeleton the pipeline already tolerates
+ * (#267 on hi-en, #326 on en-fr, #356 on en-de, #374 on en-ko, #606 on en-sa). It shows nothing, so
+ * it finds nothing, and the ratchet holds it at the implicit baseline of 0 that every course absent
+ * from the map below is held at — which is exactly the line the first authoring wave has to meet.
+ */
 function modulesOf(courseId: string): { id: string; module: Module }[] {
   const dir = path.join(CONTENT, courseId, 'modules');
+  if (!existsSync(dir)) return [];
   return readdirSync(dir)
     .filter((file) => file.endsWith('.json'))
     .map((file) => file.replace(/\.json$/, ''))
