@@ -3,14 +3,20 @@
   "id": "L4-M4",
   "title": "Persuading",
   "job": "Make a case, concede a point, hold your ground",
-  "prerequisites": ["L4-M3"],
+  "prerequisites": [
+    "L4-M3"
+  ],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-09-08",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 13,
-    "allowedTenses": ["simple_present_imperfective", "simple_past", "imperative"],
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_past",
+      "imperative"
+    ],
     "allowedPatterns": [
       "Ved' + <clause>",
       "<first stressed word> + zhe + <rest of clause>",
@@ -56,7 +62,9 @@
             "script": "ведь",
             "cue": "after all, come on",
             "tag": "delta",
-            "forms": ["ved'"],
+            "forms": [
+              "ved'"
+            ],
             "note": "Appeals to something you both already know, and opens its clause. Unstressed, with no dictionary equivalent — English does this with surely or with a tag question."
           },
           {
@@ -64,7 +72,9 @@
             "script": "сами",
             "cue": "yourselves",
             "tag": "free",
-            "forms": ["sámi"],
+            "forms": [
+              "sámi"
+            ],
             "note": "The vy form of self, agreeing with the person addressed. It is what makes ved' bite: not somebody said it, you did."
           },
           {
@@ -72,11 +82,16 @@
             "script": "сказали",
             "cue": "said (you, polite)",
             "tag": "free",
-            "forms": ["skazáli"],
+            "forms": [
+              "skazáli"
+            ],
             "note": "The plural past of L2-M10's skazál, with the -li ending L1-M5's býli uses. Vy skazáli is what one person said to you, said politely."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "ved' is not because and not after all in the sense of in the end. It is the sound of reminding somebody of their own words, and its whole job is to make the next sentence hard to argue with.",
       "sound": "VYET' — one syllable, the d devoiced to t by the soft sign, and no stress of its own to speak of.",
@@ -116,11 +131,16 @@
             "script": "же",
             "cue": "(insisting)",
             "tag": "delta",
-            "forms": ["zhe"],
+            "forms": [
+              "zhe"
+            ],
             "note": "Insists, and sits AFTER the first stressed word of its clause and nowhere else: Ya zhe govoríl, Éhto zhe dórogo. Unstressed itself, and untranslatable one word at a time."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "English says this with stress: I DID tell you. Russian will not take stress for that job, so it puts a word there instead — and the word must go in second position, whatever happens to be in first.",
       "sound": "zhe — one unstressed syllable, leaning on the word in front of it, said as one breath with it: YA-zhe.",
@@ -160,7 +180,9 @@
             "script": "во-первых",
             "cue": "firstly",
             "tag": "free",
-            "forms": ["vo-pérvykh"],
+            "forms": [
+              "vo-pérvykh"
+            ],
             "note": "Firstly, and hyphenated. The hyphen also indexes the bare vo — the shape L1-M7's v takes before a consonant cluster, exactly as L3-M2's s becomes so before mnoy."
           },
           {
@@ -168,11 +190,15 @@
             "script": "во-вторых",
             "cue": "secondly",
             "tag": "free",
-            "forms": ["vo-vtorýkh"],
+            "forms": [
+              "vo-vtorýkh"
+            ],
             "note": "Secondly, built the same way on vtoróy, second. The pair numbers your reasons, and it is firstly / secondly with no shift at all — one of the free ones."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "There is no bare pérvykh and no bare vtorýkh in use here: each is one hyphenated word with a comma after it. English can say first without any dressing; Russian dresses both halves the same way.",
       "sound": "va-PYER-vykh — three syllables, stress in the middle, and the -ykh ending is the one L2-M2's plural adjectives use.",
@@ -212,11 +238,15 @@
             "script": "например",
             "cue": "for example",
             "tag": "free",
-            "forms": ["naprimér"],
+            "forms": [
+              "naprimér"
+            ],
             "note": "One word for two, and it is fenced with a comma the way L3-M3 fences every opener. Stress right at the end: nap-ri-MYER."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "An example is not an argument, and Russian marks the difference the same way English does — naprimér supports the reason you already gave and never replaces it. A learner who opens with it has skipped the claim.",
       "sound": "nap-ri-MYER — three syllables, stress on the last, and the final r is trilled lightly.",
@@ -256,11 +286,15 @@
             "script": "зато",
             "cue": "on the other hand, to make up for it",
             "tag": "delta",
-            "forms": ["zató"],
+            "forms": [
+              "zató"
+            ],
             "note": "The word English lacks. It opens the clause that WINS, and it says the second half makes up for the first — which is what turns L3-M3's khotyá from a surrender into an argument."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "English although can head either clause and Russian khotyá heads only the conceded one. Put khotyá on the half you are keeping and you have argued against yourself in perfect grammar.",
       "sound": "za-TO — two syllables, stress on the second, and the first o reduces to a.",
@@ -300,11 +334,16 @@
             "script": "с одной стороны",
             "cue": "on the one hand",
             "tag": "free",
-            "forms": ["s odnóy storoný", "s drugóy storoný"],
+            "forms": [
+              "s odnóy storoný",
+              "s drugóy storoný"
+            ],
             "note": "On the one hand / on the other, phrase for phrase and with no hyphen anywhere. Three tokens each, frozen in the genitive, and the pair is learnt and indexed whole."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "This weighs two things and decides nothing, where khotyá … zató decides. Use it to show you have thought about the other side; use zató when you want the argument to end somewhere.",
       "sound": "s ad-NOY sta-ra-NÝ — five syllables run together as one phrase, and the stress falls on the very last one.",
@@ -344,11 +383,15 @@
             "script": "даже",
             "cue": "even",
             "tag": "delta",
-            "forms": ["dázhe"],
+            "forms": [
+              "dázhe"
+            ],
             "note": "Stands immediately before the item it is surprised by: dázhe vrach, even the doctor. Move it and you move the surprise, so its position is the whole of its meaning."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "English even floats — even the doctor agrees, the doctor even agrees, the doctor agrees even with me — and each says something different. Russian is the same, which means a learner who puts dázhe where it feels natural in English will say the wrong one.",
       "sound": "DA-zhe — two syllables, stress on the first, the zh as in measure.",
@@ -388,11 +431,15 @@
             "script": "именно",
             "cue": "precisely, exactly",
             "tag": "free",
-            "forms": ["ímenno"],
+            "forms": [
+              "ímenno"
+            ],
             "note": "Points at exactly one thing and says that is the one. Ímenno poéhtomu is precisely for that reason. Stress on the first syllable, and it always leans on the word after it."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "ímenno is not the same as óchen'. It does not intensify anything — it narrows, picking one item out of the several that were on the table, which is why it is an argument word and not an emphasis word.",
       "sound": "EE-me-na — three syllables, stress on the first, and the double n is held a beat longer.",
@@ -432,11 +479,15 @@
             "script": "согласитесь",
             "cue": "you must admit",
             "tag": "free",
-            "forms": ["soglasítes'"],
+            "forms": [
+              "soglasítes'"
+            ],
             "note": "Literally agree! — the vy-imperative of soglasít'sya, built on L3-M3's soglásen. It is L4-M1's imperative shape with the reflexive -sya on the end of it."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "This is not an order even though it is an imperative. It invites the other person to draw the conclusion themselves, and English does the same thing with you must admit — which is also not a command.",
       "sound": "sag-la-SEE-tyes' — four syllables, stress on the third, and the ending is soft: -tyes', not -tes.",
@@ -476,11 +527,16 @@
             "script": "подумайте",
             "cue": "think about it",
             "tag": "free",
-            "forms": ["podúmayte"],
+            "forms": [
+              "podúmayte"
+            ],
             "note": "The perfective imperative of L1-M9's dúmayu family: think it over once, and reach a conclusion. Handing the conclusion over is a persuasive move, not an instruction."
           }
         ],
-        "rules": [4, 0]
+        "rules": [
+          4,
+          0
+        ]
       },
       "trap": "Perfective and imperfective imperatives are not interchangeable here. Dúmayte sámi tells somebody to go on thinking, which sounds like a dismissal; podúmayte asks for one act of thought and then an answer.",
       "sound": "pa-DU-may-tye — four syllables, stress on the second, and the final -te is soft.",
@@ -582,5 +638,8 @@
       "cue": "Think about it yourself — you're right, after all."
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

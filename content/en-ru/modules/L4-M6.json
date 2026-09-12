@@ -3,14 +3,20 @@
   "id": "L4-M6",
   "title": "Before and after",
   "job": "Time clauses: while, until, since, already, not yet",
-  "prerequisites": ["L4-M5"],
+  "prerequisites": [
+    "L4-M5"
+  ],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-09-08",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 13,
-    "allowedTenses": ["simple_present_imperfective", "simple_past", "simple_future_perfective"],
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_past",
+      "simple_future_perfective"
+    ],
     "allowedPatterns": [
       "Poká + <imperfective clause> + , + <imperfective clause>",
       "Poká ne + <perfective clause> + , + <clause>",
@@ -60,11 +66,15 @@
             "script": "пока",
             "cue": "while",
             "tag": "delta",
-            "forms": ["poká"],
+            "forms": [
+              "poká"
+            ],
             "note": "While, of two stretches running side by side. Both clauses stay IMPERFECTIVE: nothing here reaches an end. With ne after it the word means until instead."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "poká is not when. kogdá (L2-M10) puts one event at another's moment; poká holds two stretches open at once, which is why neither verb may be perfective.",
       "sound": "pa-KA — two syllables, stress on the second, and the unstressed first o is a plain ah.",
@@ -104,7 +114,9 @@
             "script": "пока не",
             "cue": "until",
             "tag": "interference",
-            "forms": ["poká ne"],
+            "forms": [
+              "poká ne"
+            ],
             "note": "Until. The ne is part of the connector and negates nothing; the verb after it is PERFECTIVE, because it is the event that ends the waiting."
           },
           {
@@ -112,11 +124,18 @@
             "script": "вернусь",
             "cue": "I'll come back",
             "tag": "delta",
-            "forms": ["vernús'", "vernyótes'", "vernút'sya"],
+            "forms": [
+              "vernús'",
+              "vernyótes'",
+              "vernút'sya"
+            ],
             "note": "Perfective future of vernút'sya, to come back. Its past cells are already taught: vernúlsya and vernúlas' are L2-M10's, vernúlis' is L3-M10's."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "Do not drop the ne to make the sentence look sane. Podozhdíte, poká ya vernús' is not the polite version of this — it is a sentence a Russian has to stop and re-read.",
       "sound": "ver-NUS — stress on the u, and the final s' is soft, the tongue flat against the palate.",
@@ -156,11 +175,15 @@
             "script": "после того как",
             "cue": "after (something happened)",
             "tag": "free",
-            "forms": ["poslé tovó kak"],
+            "forms": [
+              "poslé tovó kak"
+            ],
             "note": "After, in front of a whole clause. Three words that behave as one and never come apart. For a noun rather than a clause, plain poslé plus the genitive does the job."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "The three words are a unit — tovó is not pointing at anything and kak is not how. Translating them one at a time gives after that as, which is not English and not Russian either.",
       "sound": "pas-LYE ta-VO kak — four beats run together, and the middle word is spelt with g but said with v.",
@@ -200,7 +223,9 @@
             "script": "перед тем как",
             "cue": "before (doing something)",
             "tag": "free",
-            "forms": ["péred tem kak"],
+            "forms": [
+              "péred tem kak"
+            ],
             "note": "Before, and where the two subjects are the same it is followed by the INFINITIVE, not a full clause — péred tem kak otvétit', before answering."
           },
           {
@@ -208,11 +233,15 @@
             "script": "ответить",
             "cue": "to answer",
             "tag": "free",
-            "forms": ["otvétit'"],
+            "forms": [
+              "otvétit'"
+            ],
             "note": "The infinitive of the verb L3-M5 taught in the past, otvétil and otvétila; those two cells stay L3-M5's and only the infinitive opens here."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "English before answering has an -ing; Russian has an infinitive. There is no form of otvétit' that behaves like answering, and nothing to build.",
       "sound": "PYE-rit tyem kak — the first word is front-stressed and its final d hardens to a t.",
@@ -252,11 +281,17 @@
             "script": "утра",
             "cue": "morning (after s)",
             "tag": "delta",
-            "forms": ["utrá", "útro"],
+            "forms": [
+              "utrá",
+              "útro"
+            ],
             "note": "The genitive s takes for a point in time: s utrá, since this morning. Note the stress moves off the first syllable — útro but s utrá."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "There is no verb in the Russian at all, and none is missing. I have been here needs a have and a been in English; Russian needs only Ya zdes' plus the point the being started from.",
       "sound": "s oot-RA — the s leans on the next word and the stress lands on the final a.",
@@ -296,11 +331,17 @@
             "script": "жду",
             "cue": "I wait, I'm waiting",
             "tag": "delta",
-            "forms": ["zhdu", "zhdyót", "zhdat'"],
+            "forms": [
+              "zhdu",
+              "zhdyót",
+              "zhdat'"
+            ],
             "note": "Present of zhdat', to wait. It takes its object bare — zhdu vas, no preposition, where English needs for."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "Two English habits to drop at once: the perfect (have been waiting) and the for in waiting FOR you. Russian has neither — a present tense and a bare object.",
       "sound": "zhdoo — one syllable, and the zh is the s of pleasure said hard, straight into the d.",
@@ -340,11 +381,15 @@
             "script": "ещё не",
             "cue": "not yet",
             "tag": "delta",
-            "forms": ["yeshchyó ne"],
+            "forms": [
+              "yeshchyó ne"
+            ],
             "note": "Not yet, learnt whole. L1-M8's yeshchyó on its own is still or more; with ne in front of a perfective past it says the thing has not happened so far."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "English puts yet at the END of the sentence; Russian puts yeshchyó ne in front of the verb and never at the end. She hasn't come yet is Oná yeshchyó ne prishlá, word for word not-yet came.",
       "sound": "yish-CHO nye — the shch is a long soft sh, and the two words run together as one.",
@@ -384,11 +429,15 @@
             "script": "уже не",
             "cue": "not any more",
             "tag": "delta",
-            "forms": ["uzhé ne"],
+            "forms": [
+              "uzhé ne"
+            ],
             "note": "Not any more. Two words the learner already owns — L2-M5's uzhé and L1-M3's ne — meaning something neither of them means alone. Take it whole."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "already not is a dead end. uzhé ne is not any more, and English builds that idea out of a third word (more) that has no counterpart here at all.",
       "sound": "oo-ZHE nye — stress on the second syllable of uzhé, and the zh is soft-edged but not palatal.",
@@ -428,11 +477,15 @@
             "script": "с тех пор",
             "cue": "since then, ever since",
             "tag": "delta",
-            "forms": ["s tekh por"],
+            "forms": [
+              "s tekh por"
+            ],
             "note": "Since then — three words taken whole, pointing back at a moment already mentioned. For a named point in time use s plus the genitive instead: s utrá."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "English since covers both jobs; Russian splits them. s utrá needs a noun in the genitive; s tekh por needs no noun at all, because the moment is one you have already given.",
       "sound": "s tyekh POR — three short words, the stress at the end, and the s glued to the front.",
@@ -472,7 +525,9 @@
             "script": "после",
             "cue": "after (a thing)",
             "tag": "free",
-            "forms": ["poslé"],
+            "forms": [
+              "poslé"
+            ],
             "note": "After, in front of a noun in the GENITIVE. L2-M10 taught the phrase poslé étovo whole; the bare preposition, free to take any noun, opens here."
           },
           {
@@ -480,7 +535,10 @@
             "script": "обеда",
             "cue": "lunch (after poslé)",
             "tag": "free",
-            "forms": ["obéd", "obéda"],
+            "forms": [
+              "obéd",
+              "obéda"
+            ],
             "note": "Lunch, the midday meal. The -a is the genitive poslé demands; the dictionary form is obéd."
           },
           {
@@ -488,11 +546,15 @@
             "script": "через",
             "cue": "in, after (a stretch from now)",
             "tag": "delta",
-            "forms": ["chérez"],
+            "forms": [
+              "chérez"
+            ],
             "note": "Time ahead, measured from now, with the ACCUSATIVE: chérez chas, in an hour. English says in; poslé would say after some other event, which is a different claim."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "English uses in for both in an hour and in the morning. Russian splits them: chérez chas is a stretch counted forward from now, and v is what puts you inside a time.",
       "sound": "CHE-riz — front-stressed, and the final z softens towards the word after it.",
@@ -594,5 +656,8 @@
       "cue": "He's waiting for you after lunch."
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

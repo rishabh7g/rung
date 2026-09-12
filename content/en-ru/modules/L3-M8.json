@@ -3,14 +3,20 @@
   "id": "L3-M8",
   "title": "Money and paperwork",
   "job": "Rent, bills, forms, offices",
-  "prerequisites": ["L3-M7"],
+  "prerequisites": [
+    "L3-M7"
+  ],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-09-08",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 12,
-    "allowedTenses": ["simple_present_imperfective", "simple_past", "simple_future_perfective"],
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_past",
+      "simple_future_perfective"
+    ],
     "allowedPatterns": [
       "<number> + <N-genitive singular or plural>",
       "Nádo zaplatít' + <amount>",
@@ -56,11 +62,16 @@
             "script": "двести",
             "cue": "two hundred",
             "tag": "delta",
-            "forms": ["dvésti"],
+            "forms": [
+              "dvésti"
+            ],
             "note": "Two hundred. It ends the number in a zero, so what follows is the genitive plural: dvésti rubléy. The rule reads the LAST digit and nothing else."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "rubléy is not a plural in the English sense — it is the genitive plural, and it appears because the number ends in 0.",
       "sound": "EH-ta STO-it DVYE-sti rub-LEY. dvésti keeps its stress at the front, rubléy at the very end.",
@@ -100,7 +111,11 @@
             "script": "аренда",
             "cue": "rent",
             "tag": "delta",
-            "forms": ["arénda", "aréndu", "aréndy"],
+            "forms": [
+              "arénda",
+              "aréndu",
+              "aréndy"
+            ],
             "note": "The rent on a flat, as a sum rather than as an act. Paying it is platít' aréndu, in the accusative, and the word itself never changes its stress."
           },
           {
@@ -108,11 +123,18 @@
             "script": "тысяч",
             "cue": "thousands (counted)",
             "tag": "delta",
-            "forms": ["týsyach", "týsyacha", "týsyachu"],
+            "forms": [
+              "týsyach",
+              "týsyacha",
+              "týsyachu"
+            ],
             "note": "A thousand is týsyacha; after sto it becomes the genitive plural týsyach, and the roubles after it follow the same rule. Two counted nouns, one rule."
           }
         ],
-        "rules": [0, 2]
+        "rules": [
+          0,
+          2
+        ]
       },
       "trap": "Two counted nouns in a row, and the rule is applied twice: sto decides týsyach, and the whole number decides rubléy.",
       "sound": "a-RYEN-da STO-it sto TY-syach rub-LEY. týsyach is front-stressed and short.",
@@ -152,7 +174,11 @@
             "script": "заплатить",
             "cue": "to pay",
             "tag": "delta",
-            "forms": ["zaplatít'", "zaplatíl", "zaplatíla"],
+            "forms": [
+              "zaplatít'",
+              "zaplatíl",
+              "zaplatíla"
+            ],
             "note": "The finished act of paying. After nádo it stays an infinitive, exactly as after L2-M1's nádo — one form, and the person is left out or put in the dative."
           },
           {
@@ -160,11 +186,16 @@
             "script": "триста",
             "cue": "three hundred",
             "tag": "delta",
-            "forms": ["trísta"],
+            "forms": [
+              "trísta"
+            ],
             "note": "Three hundred, front-stressed like dvésti. It ends in a zero, so the noun after it is the genitive plural: trísta rubléy."
           }
         ],
-        "rules": [0, 3]
+        "rules": [
+          0,
+          3
+        ]
       },
       "trap": "nádo takes an infinitive and no subject. Adding ya to it is the one thing that makes this sentence wrong.",
       "sound": "NA-da za-pla-TIT TRI-sta rub-LEY. The infinitive ending -tit' is short and unstressed at the end.",
@@ -204,11 +235,15 @@
             "script": "налог",
             "cue": "tax",
             "tag": "delta",
-            "forms": ["nalóg"],
+            "forms": [
+              "nalóg"
+            ],
             "note": "A tax, and the thing paid, so it stands in the accusative — which for this noun looks exactly like the plain form. Stress on the ending: na-LOG."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "mózhno needs no ya either. The question is about what is possible here, not about you.",
       "sound": "gdye MOZH-na za-pla-TIT na-LOK. The final g of nalóg is said as a k.",
@@ -248,7 +283,9 @@
             "script": "заполните",
             "cue": "fill in (polite)",
             "tag": "delta",
-            "forms": ["zapólnite"],
+            "forms": [
+              "zapólnite"
+            ],
             "note": "L2-M1's polite imperative on a new verb: the -ite ending is the one in skazhíte and pomogíte. It is what you are told, not what you say."
           },
           {
@@ -256,11 +293,17 @@
             "script": "анкету",
             "cue": "a form (to fill in)",
             "tag": "delta",
-            "forms": ["ankétu", "ankéta"],
+            "forms": [
+              "ankétu",
+              "ankéta"
+            ],
             "note": "The printed form with boxes on it. Accusative here because it is the thing filled in; on its own it is ankéta."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "ankéta is a form, not a questionnaire in the survey sense, and never a formality. It is the paper in front of you.",
       "sound": "za-POL-ni-tye an-KYE-tu, pa-ZHA-lu-sta. pozháluysta loses its middle: pa-ZHAL-sta in fast speech.",
@@ -300,11 +343,16 @@
             "script": "подпись",
             "cue": "signature",
             "tag": "delta",
-            "forms": ["pódpis'", "pódpisi"],
+            "forms": [
+              "pódpis'",
+              "pódpisi"
+            ],
             "note": "Signature, stressed on the first syllable: POD-pis'. It is feminine despite the consonant ending, which is why it takes vásha and not vash."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "A noun ending in -' can be either gender, and this one is feminine. vásha pódpis', never vash pódpis'.",
       "sound": "VA-sha POT-pis ZDYES. The d is said as a t before the p.",
@@ -344,11 +392,16 @@
             "script": "документ",
             "cue": "a document, an official paper",
             "tag": "delta",
-            "forms": ["dokumént", "dokuménty"],
+            "forms": [
+              "dokumént",
+              "dokuménty"
+            ],
             "note": "Any official paper, and in the plural dokuménty is what an official means by \"your papers\". Stress on the last syllable: do-ku-MENT."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "No moy in it. Losing it already says whose it was, and Russian leaves the possessive out.",
       "sound": "ya pa-ti-RYAL da-ku-MYENT. Both words put their weight on the last syllable.",
@@ -388,11 +441,16 @@
             "script": "квитанция",
             "cue": "a receipt, a paid slip",
             "tag": "delta",
-            "forms": ["kvitántsiya", "kvitántsiyu"],
+            "forms": [
+              "kvitántsiya",
+              "kvitántsiyu"
+            ],
             "note": "The slip that proves a payment, as against schyot, which is the bill asking for it. Stress in the middle: kvi-TAN-tsi-ya."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "yest' belongs here, unlike in the health module: the whole point is that the receipt exists and you are holding it.",
       "sound": "u mi-NYA yest kvi-TAN-tsi-ya. The -iya ending runs together into one soft syllable.",
@@ -432,11 +490,15 @@
             "script": "срок",
             "cue": "deadline, term",
             "tag": "delta",
-            "forms": ["srok"],
+            "forms": [
+              "srok"
+            ],
             "note": "The date by which a thing must be done — a deadline, a term, a period of validity. One syllable, and no verb needed around it."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "There is no verb in the sentence, because Russian has no present tense of \"to be\". The two words are simply set beside each other.",
       "sound": "srok u-ZHE ZAF-tra. závtra is said with an f in the middle.",
@@ -476,11 +538,17 @@
             "script": "картой",
             "cue": "by card",
             "tag": "delta",
-            "forms": ["kártoy", "kárta", "kártu"],
+            "forms": [
+              "kártoy",
+              "kárta",
+              "kártu"
+            ],
             "note": "The instrumental — the case that means BY means of. It is L2-M2's ending on a new noun: kártoy for the card, and the plain form is kárta."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "No preposition. \"By card\" is one word in Russian, and the ending carries the \"by\".",
       "sound": "MOZH-na za-pla-TIT KAR-toy. The question is made by the rise at the end alone.",
@@ -582,5 +650,8 @@
       "cue": "How much is the rent?"
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

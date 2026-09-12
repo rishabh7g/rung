@@ -872,11 +872,16 @@ restates a question already asked.
      `Doyédete do stántsii i poverníte`, the pattern in the brief needs revising before L5 builds on
      it.
 
-101. **`povernite` in L2-M4 has no acute.** L2-M4-S03 ships `"display": "povernite"` for поверните,
+101. **RESOLVED by #599, 2026-09-12 — `povernite` in L2-M4 had no acute.** L2-M4-S03 ships `"display": "povernite"` for поверните,
      which is the only reason `poverníte` was free for M9 to open. Confirm the stress is on the `í`
      — поверни́те — and, if so, this is a defect in a shipped L2 module for a later L2 wave to fix,
      not for this one. Until it is fixed the course carries two keys for one word, and a learner
      tapping L2-M4's spelling gets a note while a learner tapping M9's gets a different one.
+
+     **Answered: the stress is on the `í`, and L2-M4-S03 now writes `Poverníte`.** M9-S07's row for
+     the accented spelling is gone, the stress sentence it carried is folded into L2-M4's own note,
+     and the course holds one key for the word again. The sweep that fixed it found eight more of
+     this class — see #599.
 
 102. **The punctuation of a spoken line** (M10, all ten accounts). Confirm the shape
      `— Ya ne znáyu, — skazál Iván.`: em dash and space to open, comma before the closing dash, verb
@@ -889,9 +894,14 @@ restates a question already asked.
      than a thing. S09 puts the contrast next to it — `Éhto bylá interésnaya istóriya`, agreeing
      with a feminine noun — and the pair is only worth keeping if both are natural.
 
-104. **`zanyát` in L3-M5 is stressed wrongly.** L3-M5-S08 ships `"display": "zanyát"` for занят with
+104. **RESOLVED by #599, 2026-09-12 — `zanyát` in L3-M5 was stressed wrongly.** L3-M5-S08 ships `"display": "zanyát"` for занят with
      `"forms": ["zanyát", "zanyatá"]`. The feminine `zanyatá` is right; the masculine should be
      `zányat`, front-stressed, matching the `zányato` this wave opens in M7-S09. Confirm, and if
      confirmed this is a defect for a later L3 wave: this wave could not touch it, avoided the word
      in M10 rather than opening a second key for it, and reworded M7-S09's note and mnemonic so that
      neither states anything about that word's stress.
+
+     **Answered: front-stressed, and L3-M5 now writes `zányat` with `zanyatá` unchanged.** The
+     feminine was always right, which is what made the pair look plausible. Note that this defect is
+     invisible to the gate #599 added: a misplaced acute satisfies every mechanical rule, so this
+     class still belongs to the native-speaker gate.
